@@ -1,0 +1,108 @@
+﻿body
+{
+    background-color: #FEF9CD;
+}
+div{background-color: #FEF9CD;}
+.hand
+{
+    padding: 4px;
+    cursor: pointer;
+    background-color: #D1E8CC;
+}
+.unsee{ display:none;}
+.letter
+{
+    font-family: Arial;
+    font-size: 9pt;
+    text-align:center;
+    background-color: #D1E8CC;
+    height: 18px;
+    line-height: 18px;
+    padding: 2px;
+}
+.wrongchar
+{
+    color: #FF0000;
+}
+.meandiv
+{
+    width: 200px;
+    margin: 2px;
+    height: 120px;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    padding: 6px;
+    text-align:left;
+    line-height:150%;
+}
+.showtxt
+{
+    height: 40px;
+    border-style: none;
+    font-family: Georgia;
+    font-size: 28pt;
+    text-align:center;
+    font-weight: bold;
+}
+.inputtxt
+{
+    width: 360px;
+    border: 1px solid #B2B2B2;
+    height: 40px;
+    font-family: Georgia;
+    font-size: 28pt;
+    text-align:center;
+    background-color: #D1E8CC;
+    font-weight: bold;
+}
+#inputdiv{width:800px; margin:2px; padding:6px; }
+
+.applecss{  padding: 2px; margin: 2px; text-align:left;}
+.typepy
+{
+    font-family: Arial;
+    font-size: 18pt;
+    text-align: center;
+}
+.typecn
+{
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-size: 32pt;
+    text-align: center;
+}
+.typewd
+{
+    border: 1px dashed #999999;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-size: 36pt;
+    line-height: 36pt;
+    margin: auto;
+    background-color: #D1E8CC;
+    text-align: center;
+    width: 600px;
+    font-weight: bold;
+}
+
+/*键盘总宽高*/
+#keyboard
+{
+    width: 483px;
+    height: 162px;
+    margin: 2px;
+    padding: 6px;
+}
+/*数字键字母键符号键*/
+.keyCom{background-image:url(keyCom.gif);width:32px;height:28px;background-repeat:no-repeat;float:left;
+	font-family:Helvetica;font-size:14px;text-align:center;line-height:14px;padding-top:5px;}
+/*功能键*/
+.tab{width:42px;background:url(tab.gif) no-repeat;}
+.cap{width:54px;background:url(cap.gif) no-repeat;}
+.shift{width:72px;background:url(shift.gif) no-repeat;}
+.ctrl{width:42px;background:url(ctrl.gif) no-repeat;}
+.alt{width:40px;background:url(alt.gif) no-repeat;}
+.enterup1{width:38px;background:url(enter1.gif) no-repeat;}
+.enterup2{width:58px;background:url(enter2.gif) no-repeat;}
+.key2{width:24px;background:url(key2.gif) no-repeat;}
+.keymic{width:24px;background:url(keymic.gif) no-repeat;}
+.space{width:212px;background:url(spaceup.gif);}
+.keyText{float:left;font-family:arial;font-size:12px;padding:5px 0 0 8px;height:28px;}

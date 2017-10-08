@@ -1,0 +1,102 @@
+﻿LearnSite信息技术学习平台
+
+作者：温州水乡
+
+Code license: GNU General Public License v2  
+
+LearnSite信息技术学习平台搭建说明： LearnSite学习平台②群 392339019  
+
+--------------------------------------------------------------------------------------------
+
+网站搭建步骤：(安装平台所需操作系统： windows2000或windows2003服务器版，推荐使用windows2003)
+
+1、下载网站平台最新压缩包
+
+2、解压到一个硬盘分区
+
+3、把网站目录属性-->安全中添加everyone可修改(必需)。
+
+4、搭建iis，支持ASP.NET v2_0_50727  (IIS 中Asp.net选择ASP.NET v2_0_50727,文档添加index.aspx)
+
+5、安装sql2005 express数据库服务器，再下载一个 Microsoft SQL Sever Management Studio Express, 
+这个软件就像是SQL2000中的企业管理器。
+
+6、在slq2005 express管理器，先创建learnsite数据库名称，再在这个数据库下执行learnsite.sql脚本，
+直接生成learnsite数据库所有表。
+
+7、web.config中请更改TEACODE-73AA43\SQL2005EXPRESS为你的数据库服务器名称
+这段中的LearnSite20111228906为你创建的数据库名称和12345为你的数据库密码：
+
+<add name="SqlServer" providerName="System.Data.SqlClient" connectionString="Data Source=TEACODE-73AA43\SQL2005EXPRESS;
+Initial Catalog=LearnSite20111228906;uid=sa;pwd=12345;"/>
+			
+8、打开网站：从学生平台首页，进入教师平台 然后登录后台
+
+用管理员账号admin密码12345登录管理员平台
+
+  先系统设置：网站名称，学期等
+
+  再班级管理：创建班级
+  
+  再教师管理：添加教师账号，选择所教班级
+
+  再新生导入：导入学生 （学号为数字且一般不要大于12位）
+
+退出后用教师账号登录教师平台
+
+添加学案
+
+并在学案中添加课堂活动（一个活动可提交一个作业）
+
+
+===================================================================================================================
+如果要配置Ftp，请按以下说明配置，方便网页教学（网页制作的学案活动类型为htm，会在学案活动中显示Ftp账号和密码
+如无网页教学内容，可以不配置Ftp)
+------------------------------------------------------------------------------------------------------------
+
+首先，在slq2005 express管理器，先创建ftp数据库名称，再在这个数据库下执行ftp.sql脚本，
+直接生成ftp数据库所有表。
+
+再ftp数据库 跟odbc相连，操作步骤如下：
+
+ Serv-U-v6.4.0.6快乐无极版 企业版access数据库使用说明：
+
+1.打开Serv-U管理员面板，在域上右键新建域后的第四步选择域类型：存储于ODBC数据库中 
+2.在控制面板--->管理工具--->ODBC 数据源管理器中建立系统数据源：ftp  (配置到数据库服务器中的ftp数据库)
+3.打开Serv-U安装目录下的ServUDaemon.ini文件，做以下操作： 
+(1)用下面的代码覆盖原来的ODBCSource、ODBCTables、ODBCColumns 
+
+ODBCSource=ftp||
+ODBCTables=user_accounts|group_accounts|user_access|group_access|user_IP_access|group_IP_access
+ODBCColumns=user|password|skey|homedir||access|disable||relpaths|||changepass|quotaenable||||maxusers|||ratioup|ratiodown|ratiocredit|quotacurrent|quotamax|expiration|privilege|passtype|ratiotype|groups|notes|indexno||
+
+(2)把“ReloadSettings=True”语句拷到每个节点的后面，如[GLOGAL]、[DOMAINS]、[Domain1]、[Domain2]等节后的后面 
+-----------------------------------------------------------------------------------------------------------
+Serv_u目录中的ServUDaemon.ini文件修改完成参考如下：
+[GLOBAL]
+ReloadSettings=True
+RegistrationKey=/s0mZGHJRkLhN17kC6BHqXtKGeymqrzy2CKSy/jSEc0iYs8FOgXhN17k9F9FqXQ9bpuIxcWZq030v9axkaApCxiiNS2HQx7VOZZpyhQn
+ProcessID=2912
+Version=6.4.0.6
+[DOMAINS]
+ReloadSettings=True
+Domain1=192.168.0.8||21|www|1|0|1
+[Domain1]
+ReloadSettings=True
+CacheTTL=60
+ODBCSource=ftp||
+ODBCTables=user_accounts|group_accounts|user_access|group_access|user_IP_access|group_IP_access
+ODBCColumns=user|password|skey|homedir||access|disable||relpaths|||changepass|quotaenable||||maxusers|||ratioup|ratiodown|ratiocredit|quotacurrent|quotamax|expiration|privilege|passtype|ratiotype|groups|notes|indexno||
+------------------------------------------------------------------------------------------------------------
+
+配置完ftp服务器后，用管理员账号登录后台，生成网站空间中的ftp账号,
+
+生成完毕，请在ftp服务器的域中的odbc里点击：从数据库重新载入账号*******重要
+
+这样又就能在ftp服务器的域中加载生成的用户了。
+
+（如果域离线，特别注意默认21端口是否被占用，可用netstat -a　查看）
+
+
+
+

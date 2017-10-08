@@ -1,0 +1,9 @@
+1、kindeditor\plugins\template\html目录中将静态文件xc.html添加进去，这个就是模版文件
+
+2、kindeditor\lang\zh_CN.js最后几行的，如下增加学案模板的静态文件名
+'1.html' : '图片和文字',
+'2.html' : '表格',
+'3.html' : '项目编号',
+'xc.html':'学案模板'
+                    
+3、将[sucai文件夹]添加至Images文件夹中，方便显示图片

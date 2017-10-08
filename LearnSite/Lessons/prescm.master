@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="prescm.master.cs" Inherits="Lessons_prescm" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title></title>   
+    <link href="../App_Themes/Student/StyleSheet.css" rel="stylesheet" type="text/css" />
+    </head>
+<body>
+    <form id="form1" runat="server">
+    <center>
+      <div  class="studmasterhead">
+            <div  class="banner" >
+                <script src="../Js/road.js" type="text/javascript"></script>
+      	<script type="text/javascript" >      	    
+            var first = "../";
+            ShowRoad(first);
+            </script> 
+                </div>
+                <center>
+            <div  class="menu">
+            <asp:Menu ID="Menuact" runat="server" DynamicHorizontalOffset="2"  
+                    ForeColor="Black" Orientation="Horizontal" Height="24px"  Font-Size="9pt" 
+                    SkipLinkText="">
+                <StaticMenuItemStyle HorizontalPadding="2px" VerticalPadding="2px" />
+                <DynamicHoverStyle BackColor="#79A0FD" ForeColor="White" />
+                <DynamicMenuStyle BackColor="#E3EAEB" />
+                <StaticSelectedStyle BackColor="#6A96FD" ForeColor="White" />
+                <DynamicSelectedStyle BackColor="#FFE0C0" />
+                <DynamicMenuItemStyle HorizontalPadding="2px" VerticalPadding="2px" />
+                <StaticHoverStyle BackColor="#79A0FD" ForeColor="#F7F7F7" />
+            </asp:Menu>
+            </div>
+            </center>
+      <div class="stu">
+            <center>
+            <div class="placeauto" >
+            <div  class="path"> 
+            &nbsp;
+            </div>
+        <asp:contentplaceholder id="Ppcm" runat="server">
+        </asp:contentplaceholder>
+        </div>
+        </center>
+        <br />        
+        </div>
+        </div>
+       </center>
+    </form>
+</body>
+</html>

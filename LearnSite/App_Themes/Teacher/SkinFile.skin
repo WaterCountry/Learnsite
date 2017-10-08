@@ -1,0 +1,83 @@
+﻿<%--
+默认的外观模板。以下外观仅作为示例提供。
+
+1. 命名的控件外观。SkinId 的定义应唯一，因为在同一主题中不允许一个控件类型有重复的 SkinId。
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. 默认外观。未定义 SkinId。在同一主题中每个控件类型只允许有一个默认的控件外观。
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:TextBox  SkinId="TextBoxindex" runat="server" BorderStyle="None"  BorderWidth="0px" Font-Bold="True" 
+        Font-Size="9pt" ></asp:TextBox>
+        
+<asp:TextBox SkinId="TextBoxaa" runat="server" BackColor="#EFEFEF" 
+        BorderColor="#DDDDDD" BorderStyle="Solid" BorderWidth="1px" Font-Size="9pt"  Width="56px"></asp:TextBox>
+        
+<asp:TextBox SkinId="TextBoxbb" runat="server" BorderStyle="None" BorderWidth="0px"  
+        Font-Names="Arial" Font-Size="14pt" Width="22px"></asp:TextBox>
+        
+<asp:TextBox  runat="server"  SkinId ="TextBoxNum" BackColor="#F7F7F7" 
+            BorderColor="#DBDBDB" BorderStyle="Solid" BorderWidth="1px" Font-Names="Arial" 
+            Font-Size="9pt" Height="16px"></asp:TextBox>
+            
+<asp:TextBox SkinId="TextBoxNormal" runat="server" BorderColor="#E7E7E7" BorderStyle="Solid"
+                BorderWidth="1px" Font-Size="9pt"></asp:TextBox>
+ 
+ <asp:Button runat="server" SkinId="BtnLong" BackColor="#E6E6E6" 
+            BorderColor="#D4D4D4" BorderWidth="1px" Font-Family="宋体, Arial, Helvetica, sans-serif" 
+            Font-Size="9pt"  Width="160px"  Height="20px" /> 
+           
+<asp:Button runat="server" SkinId="BtnNormal" BackColor="#E6E6E6" 
+            BorderColor="#D4D4D4" BorderWidth="1px" Font-Family="宋体, Arial, Helvetica, sans-serif" 
+            Font-Size="9pt"  Width="80px"  Height="20px" /> 
+
+<asp:Button runat="server" SkinId="BtnSmall" BackColor="#E6E6E6" 
+            BorderColor="#D4D4D4" BorderWidth="1px" Font-Family="宋体, Arial, Helvetica, sans-serif" 
+            Font-Size="9pt"  Width="60px"  Height="20px" />                   
+
+<asp:GridView SkinId="GridViewInfo" runat="server" AutoGenerateColumns="False" BorderColor="#E7E7E7" BorderWidth="1px" 
+                    CellPadding="3" ForeColor="#111111" GridLines="None" Font-Family="Arial, sans-serif" >
+                    <FooterStyle BackColor="White"  ForeColor="#111111" />  
+                    <RowStyle ForeColor="#111111" Font-Size="9pt"  />
+                    <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                     <PagerStyle BackColor="#EFEFEF" Font-Size="9pt" ForeColor="Black" 
+                        HorizontalAlign="Center" />
+                     <HeaderStyle BackColor="#9EA9B1" Font-Bold="False" Font-Size="9pt" 
+                        ForeColor="#111111" />
+                     <AlternatingRowStyle BackColor="#E7E7E7" />
+</asp:GridView> 
+
+<asp:GridView SkinId="GVmission" runat="server" AutoGenerateColumns="False" BorderColor="#E7E7E7" BorderWidth="1px" 
+                    CellPadding="3" ForeColor="#111111" GridLines="None" Font-Family="宋体, Arial, Helvetica, sans-serif" >
+             <HeaderStyle BackColor="#B5BDC4" Font-Bold="False" Font-Size="9pt" Height="12px"  ForeColor="#111111" />
+                         <RowStyle ForeColor="#111111" Font-Size="9pt"  />
+                     <AlternatingRowStyle BackColor="#E7E7E7" />
+         </asp:GridView>
+         
+<asp:GridView SkinId="GVSliver" runat="server" AutoGenerateColumns="False"
+            BorderColor="#E7E7E7" BorderWidth="1px"  Font-Names="Arial" Font-Size="9pt"
+            ForeColor="Black" GridLines="None"  BorderStyle="Solid" >
+            <SelectedRowStyle BackColor="LightCoral" ForeColor="GhostWhite" />
+             <RowStyle Font-Size="9pt" ForeColor="#111111" Height="18px" />
+             <PagerStyle BackColor="#EFEFEF" Font-Size="9pt" ForeColor="Black"  HorizontalAlign="Center" />
+             <HeaderStyle BackColor="#EFEFEF" Font-Bold="False" Font-Size="9pt"  ForeColor="#111111" />
+             <AlternatingRowStyle BackColor="#E7E7E7" />
+        </asp:GridView>           
+         
+<asp:HyperLink  SkinId="HyperLinkBtn" runat="server" BackColor="#E6E6E6"  BorderColor="#D4D4D4"
+             BorderStyle="Solid" BorderWidth="1px" Font-Underline="False" Font-Size="9pt"
+             ForeColor="Black" Width="80px" Height="16px"></asp:HyperLink > 
+<asp:LinkButton SkinId="LinkBtn" runat="server" BackColor="#E6E6E6"  BorderColor="#D4D4D4"
+             BorderStyle="Solid" BorderWidth="1px" Font-Underline="False" Font-Size="9pt"
+             ForeColor="Black" Width="90px" Height="16px"></asp:LinkButton>    
+                
+<asp:Label SkinId="Labelname" runat="server" Height="14px" Width="60px" BackColor="#EBEBEB" BorderColor="#E7E7E7" BorderWidth="1px" ForeColor="Black" BorderStyle="Solid"></asp:Label>
+<asp:Label SkinId="LabelMsgRed" runat="server"  ForeColor="Red" Font-Family="宋体, Arial, Helvetica, sans-serif"  Font-Size="9pt"></asp:Label>
+<asp:Label SkinId="LabelMsgBlack" runat="server"  ForeColor="Black" Font-Family="宋体, Arial, Helvetica, sans-serif"  Font-Size="9pt"></asp:Label>    
+<asp:LinkButton SkinId="BtnEditor" runat="server"  ForeColor="Black" BackColor="#EEEEEE" BorderColor="#E3E3E3" BorderStyle="Solid" 
+        BorderWidth="1px" Font-Size="9pt" Font-Underline="False" Height="14px" Width="14px"  ></asp:LinkButton>  
+<asp:LinkButton SkinId="BtnL" runat="server"  ForeColor="Black" BackColor="#C4DBFF"  Font-Size="9pt" Font-Underline="False" Height="14px" Width="14px"  ></asp:LinkButton>                

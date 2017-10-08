@@ -1,0 +1,18 @@
+﻿
+
+1、浏览器，只能使用chrome44版才连接稳定（其他不稳定或连接不上）
+
+2、使用Arduino板时，请安装好arduino驱动，
+并使用ArduinoIDE上传自带的示例里Firmata下的StandardFirmata标准通讯协议
+
+3、安装ScratchDevicePluginChrome.msi插件
+Chrome: 要启用 chrome://flags/#enable-npapi 这个，否则无法正常使用
+
+
+4、编写好脚本后，先保存一下，当绿色显示连接时，Arduino扩展激活，就能实现Scratch跟arduino交互通讯。
+
+注意：及时更新Statics目录下的extensions目录（新的arduinoExtension.js在chrome44版下连接很稳定）
+
+
+详细请参考：
+http://blog.cavedu.com/arduino-opensource/scratch-extension-for-arduino-scratch-arduino-%e7%9a%84%e6%96%b0%e6%96%b9%e6%a1%88/

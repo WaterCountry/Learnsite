@@ -1,0 +1,733 @@
+﻿body
+{
+    padding: 0px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+}
+table {border-collapse:collapse;}
+.stu
+{
+    background-color: #FFFFFF;
+}
+.buttonimg
+{
+    border-width: 0px;
+    background-position: center;
+    background-image: url('btn.gif');
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-size: 9pt;
+}
+.buttonnone
+{
+    width: 80px;
+    height: 18px;
+    background-color: #FFFFFF;
+}
+*
+{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+a
+{    
+    text-decoration: none;
+} /*链接无下划线none,有为underline*/
+a:link
+{
+    text-decoration: none;
+} /*未访问的链接 */
+a:visited
+{
+    color: #000000;
+    text-decoration: none;
+} /*已访问的链接*/
+a:hover
+{
+    text-decoration: none;
+} /*鼠标在链接上 */
+a:active
+{
+    color: #000000;
+    text-decoration: none;
+} /*点击激活链接*/
+
+.banner
+{
+    padding: 0px;
+    margin: 0px;
+    border-width: 0px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    overflow: hidden;
+}
+.logo1
+{
+    float: left;
+    width: 160px;
+    height: 60px;
+}
+.logo2
+{
+    float: left;
+    width: 640px;
+    height: 60px;
+}
+.menu
+{
+    background-color: #C5D6FE;
+    font-family: Arial;
+}
+
+.nav {width:900px;  margin:0px;text-align:center;background-color: #C5D6FE;height:30px;}
+.nav li {float:left; width:100px;  display:inline; padding:0px; margin:0px 4px 0px 4px; text-align:center;}
+.nav li a {display:block; padding:4px 0px 0px 4px; color:#000;  text-decoration:none;}
+.nav li a:hover {color:#F7F7F7; background-color:#79A0FD;}
+
+li.home {background:url(../../Images/lesson.png) top left no-repeat;}
+li.mission {background:url(../../Images/mission.png) top left no-repeat;}
+li.survey {background:url(../../Images/survey.png) top left no-repeat;}
+li.topic {background:url(../../Images/topic.png) top left no-repeat;}
+li.inquiry {background:url(../../Images/inquiry.png) top left no-repeat;}
+li.return {background:url(../../Images/return.png) top left no-repeat;}
+
+.foot
+{
+    font-size: 9pt;
+    font-family: Arial;
+    width: 980px;
+}
+.path
+{
+    margin:auto;
+    width: 980px;
+    height: 12px;
+}
+.studmasterhead
+{
+    width: 980px;
+    text-align: left;
+    margin: auto;
+    padding-top: 0px;
+}
+.placeauto
+{
+    margin: auto;
+}
+.bg
+{
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.indexdiv
+{
+    margin: auto;
+    width: 258px;
+}
+.pfdiv
+{
+    border: 1px solid #E8E8E8;
+    margin: auto;
+    width: 258px;
+}
+.indexhead
+{
+    border-width: 0px;
+    background-color: #C5D6FE;
+    height: 20px;
+    line-height: 20px;
+}
+.indexheader
+{
+    border-width: 0px;
+    background-image: url('head.gif');
+    height: 20px;
+    line-height: 20px;
+}
+.indexlogin
+{
+    background-image: url('login.jpg');
+}
+.indexsql
+{
+    margin: auto;
+    width: 360px;
+    vertical-align: middle;
+}
+#student
+{
+    margin: auto;
+    width: 980px;
+    font-family: Arial;
+    font-size: 9pt;
+}
+
+.left
+{
+    float: left;
+    width: 805px;
+    text-align: center;
+    overflow: hidden;
+}
+.right
+{
+    float: right;
+    width: 170px;
+    text-align: center;
+    overflow: hidden;
+}
+.show
+{
+    border: 1px solid lightsteelblue;
+    width: 80px;
+    height: 60px;
+    vertical-align: middle;
+    background-color: #E9F1FE;
+    font-size: 9pt;
+    font-family: Arial;
+}
+.centerdiv
+{
+    text-align: center;
+}
+.center
+{
+    background-color: #C0D6E4;
+    height: 18px;
+    padding-right: 2px;
+    line-height: 18px;
+}
+.pagediv
+{
+    font-size: 9pt;
+    width: 100%;
+    color: black;
+    height: 13px;
+    text-align: right;
+}
+.onlinediv
+{
+    border: 1px solid #ABC1EB;
+    vertical-align: middle;
+    width: 70px;
+    height: 38px;
+    text-align: center;
+}
+.onlinebg
+{
+    background-color: #C0D6E4;
+}
+
+.divtop
+{
+    float: left;
+    width: 310px;
+}
+
+.divscoreheight
+{
+    float: left;
+    width: 400px;
+}
+
+.divscore
+{
+    margin:auto; 
+    width: 390px;
+}
+.divRank
+{
+    padding: 2px;
+    margin: auto;
+    width: 150px;
+}
+.divinfo
+{
+    margin:auto; 
+    height:24px;
+    width:150px;
+    border: 1px solid #FFFFFF;
+}
+.divinfo1
+{
+    border: 1px solid #ABC1EB;    
+    float: left;
+    width: 60px;
+    text-align: center;
+    background-color: #C0D6E4;
+    height: 16px;
+}
+
+.divinfo2
+{
+    border: 1px solid #ABC1EB;
+    float: left;
+    height: 16px;
+    width: 80px;
+}
+
+.divvote
+{
+    border: 1px solid #E1EDFF;
+    width: 70px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #FFFAEE;
+}
+.divgood
+{
+    border: 1px solid #EAEFFB;
+    background-color: #F7FBFF;   
+    width: 80px;
+    text-align: center;
+    vertical-align: middle;
+}
+.divvotebg
+{
+    background-color: #E1EDFF;
+}
+.divcenter
+{ text-align:center;}
+.divborder
+{
+    border: 1px solid #EAEAEA;
+}
+.typecontent
+{
+    padding: 1px;
+    width: 680px;
+    height: 180px;
+    font-family: Arial;
+    font-size: 14pt;
+    background-color: #9799AC;
+    overflow: auto;
+    line-height: 30px;
+    text-align: left;
+}
+.text7
+{
+    padding: 1px;
+    border: 1px solid gainsboro;
+    width: 50px;
+    background-color: #D9E1F0;
+    font-size: 9pt;
+    height: 16px;
+}
+.text1
+{
+    border: 1px solid gainsboro;
+    width: 60px;
+    background-color: #D9E1F0;
+    font-size: 24pt;
+    height: 32px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 黑体;
+}
+.text3
+{
+    border: 1px solid gainsboro;
+    width: 60px;
+    background-color: #D9E1F0;
+    font-size: 14pt;
+    text-align: center;
+    font-family: Arial;
+}
+
+.textareacss
+{
+    margin: auto;
+    line-height: 30px;
+    border: 1px solid #E0E0E0;
+    width: 680px;
+    height: 180px;
+    background-color: #F8EEC7;
+    overflow: hidden;
+    font-size: 14pt;
+    font-family: Arial;
+}
+.downworkbd
+{
+    margin:auto;
+    border: 1px solid #E6E6E6;
+    width: 360px;
+}
+.downfilebd
+{
+    margin:auto;
+    border: 1px solid #E6E6E6;
+    width: 560px;
+}
+.downcontentbd
+{
+    border: 1px solid #E6E6E6;
+    width: 790px;
+}
+.downcontent
+{
+    margin: auto;
+    width: 780px;
+    text-align: left;
+    font: 12px/150% Arial;
+    padding: 10px 3px 3px 10px;
+}
+.textboxcenter
+{
+    text-align: center;
+}
+
+#showcontent
+{
+    margin:auto;
+    width: 980px;
+    font-family: Arial;
+    font-size: 9pt;
+}
+.coursetitle
+{
+    height: 20px;
+    font-size: 12pt;
+    font-family: Arial;
+    font-weight: bold;
+}
+.descriptioncontent
+{
+    margin: auto;
+    width: 980px;
+    text-align: left;
+    font-family: Arial;
+    line-height:1.5;
+    padding: 2px 2px 2px 2px;
+    font-size: 14px;
+}
+.coursecontent
+{
+    margin: auto;
+    width: 800px;
+    text-align: left;
+    font-family: Arial;
+    line-height:1.5;
+    padding: 2px 2px 2px 2px;
+    font-size: 14px;
+}
+.ccontent
+{
+    margin: auto;
+    width: 780px;
+}
+.myinfo
+{
+    margin: auto;
+    width: 160px;
+}
+.missiontitle
+{
+    font-size: 12pt;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+    border-bottom-color: #D5D5D5;
+    padding-bottom: 2px;
+}
+.courseother
+{
+    padding: 2px;
+    font-size: 9pt;
+    font-family: Arial;
+}
+.divnull
+{
+    margin: auto;
+    width: 90%;
+}
+.divbgupload
+{
+    
+}
+.ruletabel
+{
+    font-size: 9pt;
+    width: 500px;
+}
+.rulehead
+{
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+    color: black;
+    height: 16px;
+    background-color: #C0D6E4;
+    text-align: center;
+}
+.ruletd
+{
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+    border-bottom-color: #C0C0C0;
+}
+
+.quizscoreheight
+{
+    float: left;
+    width: 400px;
+}
+.quizone
+{
+    overflow: auto;
+    width: 580px;
+    text-align: center;
+    padding: 2px;
+    margin: auto;
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+    border-bottom-color: #B0B0B0;
+}
+.quizleftnum
+{
+    float: left;
+    width: 30px;
+}
+.quizleftquestion
+{
+    float: left;
+    width: 360px;
+    text-align: left;
+    vertical-align: top;
+}
+.quizleftanswer
+{
+    float: left;
+    width: 4px;
+}
+.quizleftup
+{
+    float: right;
+    width: 140px;
+    vertical-align: top;
+}
+.quizresult
+{
+    margin:auto;
+    width: 90%;
+}
+.quizmyhead
+{
+    margin:auto;
+    border: 0px;
+    width: 70px;
+    height: 26px;
+}
+.quizmyscore
+{
+    margin:auto;
+    width: 98%;
+    background-color: #F8DFC9;
+    border: 1px solid #E6E8E8;
+}
+.quizinfo
+{
+    margin:auto;
+    width: 128px;
+    border: 1px solid #ABC1EB;
+}
+.quizhead
+{
+    border: 1px solid #ABC1EB;
+    text-align: center;
+    background-color: #C0D6E4;
+}
+.quiztime
+{
+    margin:auto;
+    border: 1px solid #E6E8E8;
+    width: 70px;
+    background-color: #F8DFC9;
+    font-size: 9pt;
+    font-family: Arial;
+    text-align: center;
+}
+.divquizscore
+{
+    margin:auto; 
+    width: 390px;
+}
+.uploaddiv
+{
+    font-family: Arial;
+    font-size: 9pt;
+    width: 160px;
+    margin: auto;
+    text-align: center;
+}
+.panelFtpcss
+{
+    text-align: left;
+    background-color: #FBE3C4;
+}
+.panelselfcss
+{
+    text-align:center;
+    background-color: #FBE3C4;
+}
+.btncopy
+{
+    background-color: #F2DFC1;
+    border: 1px solid #E9C794;
+    font-family: Arial;
+    font-size: 9pt;
+}
+.txtszcenter
+{
+    line-height: 18px;
+}
+.sitevote
+{
+    border: 1px solid #E1EDFF;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #FFFFFF;
+}
+.sitevotebg
+{
+    background-color: #E1EDFF;
+}
+.txts24center
+{
+    line-height: 24px;
+}
+.txts20center
+{
+    line-height: 20px;
+}
+.topicleft
+{
+    float: left;
+    width: 300px;
+    height: 12px;
+}
+.topicright
+{
+    float: right;
+    width: 240px;
+    text-align: right;
+}
+.topichead
+{
+    padding: 2px;
+    background-color: #E2EDFC;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #E7E7E7;
+    height: 20px;
+    line-height: 18px;
+}
+.topictext
+{
+    border: 1px dashed #CCCCCC;
+    padding: 2px;
+    float: left;
+    margin: auto;
+    white-space: normal;
+    display: block;
+    line-height: 20px;
+    width: 720px;
+    background-color: #FFFFDD;
+}
+.topicagree
+{
+    float: right;
+    width: 30px;
+    vertical-align: middle;
+}
+.formtext
+{
+    border: 1px dashed #CCCCCC;
+    padding: 2px;
+    float: left;
+    margin: auto;
+    white-space: normal;
+    display: block;
+    line-height: 20px;
+    width: 820px;
+    background-color: #FFFFDD;
+}
+.leftmaster
+{
+    float: left;
+    width: 790px;
+    text-align: center;
+    overflow: hidden;
+}
+.rightmaster
+{
+    float: right;
+    width: 180px;
+    text-align: center;
+    overflow: hidden;
+}
+.sharedisk
+{
+    border-width: 0px;
+    padding: 0px;
+    width: 80px;
+    height: 20px;
+    background-image: url('../../Images/share.gif');
+    background-repeat: no-repeat;
+    font-size: 9pt;
+    line-height: 20px;
+}
+.nomicdisk
+{
+    margin: 0px;
+    border-width: 0px;
+    padding: 0px;
+    width: 100px;
+    height: 22px;
+    background-image: url('../../Images/nomicdisk.gif');
+    background-repeat: no-repeat;
+    font-size: 9pt;
+    line-height: 22px;
+}      
+.textbox
+{
+    overflow-y: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: #E6FFE6;
+    height: 80px;
+} 
+.textlabel
+{
+    background-color:#E6FFE6; height:20px;width:80px;
+}
+.onlinename
+{
+    font-size: 9pt;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    height: 18px;
+}
+.onlineflag
+{
+    border-style: 0;
+}
+.onlinedate
+{
+    font-family: Arial;
+    font-size: 8pt;
+    width: 40px;
+}
+.timg { border:0px;width:240px; height:180px;border-radius: 16px;  } a:hover img{filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6}
+.divindex{margin: auto;overflow: hidden;font-size: 9pt;font-family: Arial, Helvetica, sans-serif;}
+.thumbbox{width:24.9%;float:left;}

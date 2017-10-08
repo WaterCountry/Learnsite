@@ -1,0 +1,8 @@
+﻿先在服务里关闭iis admin service服务 
+
+    找到windows/system32/inesrv下的metabase.xml, 
+
+    打开，找到ASPMaxRequestEntityAllowed 把他修改为需要的值，默认为204800，即200K    把它修改为你所需的大小即可。如：51200000（50M）
+
+    然后重启iis admin service服务。
+

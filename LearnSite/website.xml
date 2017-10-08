@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LearnSite>
+  <website>
+    <add key="Term" value="1" />
+    <add key="Downtime" value="30" />
+    <add key="Downcan" value="True" />
+    <add key="WebVote_Limit" value="False" />
+    <add key="AllowFileType" value="jpg|png|txt|html|htm|gif|avi|swf|mpg" />
+    <add key="AllowDir" value="images|_private" />
+    <add key="SiteTitle" value="信息技术学习网站" />
+    <add key="LoginMode" value="0" />
+    <add key="CourseType" value="Python|Sketchup|Office|Word|Powerpoint|Excel|Htm|Photo|Flash|Email|RoBot|Game|Computer|Internet|Program|Supple|Movie|Music|FreeMind|Scratch|易语言" />
+    <add key="CoursePeriod" value="100" />
+    <add key="WorksType" value="py|skp|dxf|dae|doc|docx|ppt|pptx|xls|xlsx|office|htm|wps|dps|et|txt|rtf|mht|rar|zip|jpg|gif|png|bmp|psd|flash|swf|fla|mpg|avi|mp4|3gp|mkv|mov|flv|wmv|exe|pkt|wav|gsp|flw|mm|sb|sb2|e|pas|c|lgo|mp3|mid|wma|rm|ra|ram|asf" />
+    <add key="WorkDowntime" value="12" />
+    <add key="WorkIpLimit" value="False" />
+    <add key="StudentCookiesPeriod" value="5" />
+    <add key="ClassMax" value="30" />
+    <add key="SingleLogin" value="False" />
+    <add key="SignSort" value="0" />
+    <add key="AutoHostName" value="False" />
+    <add key="CookiesFix" value="1" />
+    <add key="GroupMax" value="6" />
+    <add key="UploadMode" value="0" />
+    <add key="FtpPort" value="21" />
+    <add key="Kindeditor" value="gif,jpg,jpeg,png,bmp,tif,tiff,swf,flv,mp3,wav,wma,wmv,mid,avi,mpg,mp4,asf,rm,rmvb,doc,docx,xls,xlsx,ppt,pptx,htm,html,txt,zip,rar,gz,bz2,flv,psd,fla,e,chm,mht,sb,sb2,pdf" />
+    <add key="ShareDiskLimit" value="30" />
+    <add key="TeacherLogin" value="False" />
+    <add key="HostName" value="192.168.0.2,www.learnsite.org,10.168.120.8" />
+    <add key="HouseMode" value="False" />
+  </website>
+</LearnSite>

@@ -1,0 +1,69 @@
+<!--
+分页模板 V1.1
+分页只支持前辍+自动编号型,自定义文字暂不支持
+模板设置中会有javascript错误,不影响使用.
+作者:hwdpiao @qq:603608711
+时间:2017.4.7
+-->
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>分页模板@hwdpiao</title>
+	<script type="text/javascript">
+	var datajs={'title':'任务', 'pagenum':4}
+	datajs['title']=prompt("请输入分页文字前辍:默认"+datajs['title'],datajs['title']);
+	datajs['pagenum']=prompt("请输入分页数:默认"+datajs['pagenum'],datajs['pagenum']);
+	window.onload=function(){
+		var obj = document.getElementById("frameContent");
+		var pages = document.getElementById("pages");
+		for (var i=1;i<=datajs['pagenum'];i++){
+			pages.innerHTML += "<li ><a href=''>"+datajs['title']+i+"</a></li> ";
+			obj.innerHTML += "<div >内容"+i+"</div> ";
+		}
+
+
+	}
+	</script>
+
+	</head>
+	<body>
+	<style type="text/css">
+		ul.pagination {display: inline-block;padding: 0;margin: 0;}
+		ul.pagination li {display: inline;}
+		ul.pagination li a {color: black;float: left;padding: 8px 16px;text-decoration: none;}
+		ul.pagination li a.active {background-color: #4CAF50;color: white;}
+		ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+		#frameContent div {border:1px solid #000;}
+	</style>
+	<ul id="pages" class="pagination"></ul>
+	<div id="frameContent"></div>
+ <script type="text/javascript">
+	if(typeof(jQuery)!="undefined"){
+		$(function() {
+			showpage(0);
+			$("#pages li").on("click", function () {
+				var liindex = $(this).index();
+				showpage($(this).index());
+			});
+			function showpage(index) {
+				$("#pages li a").removeClass('active');
+				$("#pages li:eq(" + index + ") a").addClass('active');
+				$("#frameContent div").hide();
+				$("#frameContent div:eq(" + index + ")").show();
+			}
+
+
+		});
+
+	 }
+
+
+
+
+ </script>
+	</body>
+
+</html>
+

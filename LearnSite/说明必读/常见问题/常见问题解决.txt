@@ -1,0 +1,104 @@
+﻿LearnSite信息技术教学辅助平台 搭建时遇见的一些常见问题解决办法收藏如下：
+(网站搭建里最好下载QQ群共享中的一些使用演示，然后参考下面)
+
+1、数据库连接不上？
+确定sql2005安装时选择 sql混合模式登录，设定sa的密码
+确定网站目录中web.config中数据库服务器名称与数据库名
+
+3、网站首页打不开？
+查看IIS管理器中Web服务扩展中 ASP.NET v2_0_50727是否允许
+查看网站属性 asp.net 版本是否是ASP.NET v2_0_50727   文档中默认内容文档是否添加了index.aspx
+
+
+4、某些电脑网站登录不了或不能退出？
+查看IE---工具---Internet选项---隐私---中
+查看客户机系统日期（年月日）与服务器是否一致
+查看是否安装了上网助手或IE保护之类的软件导致cookies不能使用
+
+5、管理员登录后系统设置出错或作品不能提交等？
+
+查看网站文件夹属性中的安全里是否添加了everyone 可读写修改
+
+
+6、教师能登录，但学生登录不了或密码错误？
+查看教师界面菜单中 上课  点击开始上课，生成学生班级密码（每节课都要点击一下开始上课，防止该班学生登录别班账号）
+
+7、学生登录后退出按钮隐藏位置？
+在班级密码模式下，防止学生随意退出，隐藏位置在登录后的网站首页（myinfo.aspx）中右侧 我的IP 下方1厘米位置。
+为了让下节课别班学生登录，请上完课后请学生关机，让学生机（要安装有还原系统）通过系统还原恢复。
+
+8、学案包无法导入问题？
+先查看学案包能不能用WinRAR打开并解压，不能解压说明已经损坏或压缩包内有文件名含有特殊符号
+再查看你的学案中上传的资料素材文件名是否含有特殊符号。
+
+9、添加学案时，由于备课时间超过session默认20分钟后无法在Fckeditor编辑器中上传图片等文件？
+查看在webconfig中session超时设置  <sessionState mode="InProc" timeout="720"/> 
+并注意在IIS里设置Session超时时间，IIS中的超时时间应大于webconfig中session超时时间
+在IIS里设置Session超时时间方法为: 在IIS里面右键点击默认网站->主目录->
+应用程序设置里点配置->选项->启用会话状态->会话超时那里设置时间      
+
+10.在IE8浏览器里下载 docx，pptx，xlsx 时，下载的文件变成zip，是怎么回事？
+
+请将学习平台网站在浏览器中添加为信任网站，就正常了
+
+11.在添加文章时，插入了FLV格式视频，但前台访问时却不能播放，这是什么原因？
+
+解决：这是因为我们还缺少了一步设置，下面把设置步骤列出来
+(1)．在2003服务器上，找开IIS管理器。 
+(2)．展开本地服务器名称，右击选择属性，在Internet信息服务标签上,点击最下方的计算机MIME映射下面的编辑按钮。 
+(3)．点击”新类型”按钮，扩展名添上”.FLV”,内容类型(MIME)添上“flv-application/octet-stream” 
+(4)．点击确定 
+(5)．重新启动www服务
+
+12、学生无法登录，提示已经在其他电脑登录？
+解决：
+在教师上课页面上，教师可以在已登录签到学生姓名下的小按钮解除该学生单点登录锁定（解除后，原登录的页面在刷新时会自动跟转到登录页面）；
+
+13、学生退出按钮倒计时修改？
+
+学生界面的平台退出按钮使用js限制为倒计时30秒后按钮有效,可以Student目录下的myinfo.aspx页面中修改有效时间。
+<script type="text/javascript">
+            var i = 30;//设定退出按钮几秒钟后有效
+            function setbar() {
+                i--;
+                if (i <0) {
+                    document.getElementById("ctl00_Cphs_BtnExit").disabled = false;
+                    return;
+                }
+                else {
+                    document.getElementById("ctl00_Cphs_BtnExit").disabled = true;
+                }
+                if (document.getElementById('ctl00_Cphs_BtnExit').value != "") {
+                    document.getElementById('ctl00_Cphs_BtnExit').value = "平台退出" + i;
+                }
+                setTimeout("setbar()", 1000);
+            }
+            setTimeout("setbar()", 1000);    
+          </script>
+
+14、学生在测验中，测验页面的下一步是next ?
+
+解决：请卸载asp.net framework2.0 英文语言包，再从网上下载中文语言包安装
+
+15、找不到全体下线按钮？
+
+解决：请在Teacher目录下用记事本打开start.aspx，将最下方的这段代码
+<asp:Button ID="BtnaAllQuit" runat="server" Text="全班下线"  SkinID="BtnSmall" onclick="BtnaAllQuit_Click" Visible="false" />
+其中Visible="false" 改为Visible="true" 重新刷新上课页面即可
+
+16、学生机的flash版本为flash9，作品提交按钮显示不出？
+
+解决：可以在管理员后台，将作品提交上传方式选择为普通无刷新上传（将不使用flash方式上传）
+
+17、指法练习 不能跳下一个单词？
+解决： 如果是全新安装的话，请执行根目录下的 http://服务器IP/UpGrade.aspx页面，就会将英文字典导入数据库。
+
+18、CS0016: Could not write to output file ‘c:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files\– ‘拒绝访问’ ??
+
+解决： 这个是服务器设置问题：
+网上提供的资料是：为下面两个文件夹赋予Network Service、IIS_IUSERS的全部权限，
+
+我今天的测试是只需要给Network Service全部权限就好。
+
+1、C:\Windows\Temp
+2、C:\Windows\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files

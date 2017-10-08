@@ -1,0 +1,22 @@
+﻿<div>
+<br/>
+<br/>
+<script type="text/javascript" src="/Plugins/mp3/audio-player.js"></script>  
+<script type="text/javascript">  
+    AudioPlayer.setup("/Plugins/mp3/player.swf", {   
+        width: 360,
+		initialvolume: 100,
+		remaining:"yes",
+        autostart: "yes",
+		noinfo:"yes",
+		checkpolicy:"no" ,
+		buffer:5
+    });   
+</script> 
+<p id="audioplayer_1">AudioPlayer</p>
+<script type="text/javascript">  
+AudioPlayer.embed("audioplayer_1", {   
+    soundFile: "1.mp3"
+});   
+</script>
+</div>

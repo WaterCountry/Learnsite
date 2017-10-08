@@ -1,0 +1,25 @@
+<!--Play with Flash Player ../Plugins/scratch/ -->
+<script src="../Plugins/scratch/swfobject.js" type="text/javascript"></script>
+<script type="text/javascript">  
+    var fwidth = 482;// flash view width
+    var fheight = 400; // flash view height
+    installPlayer('../Plugins/scratch/Scratch.swf', 'PlayerOnly');
+    function installPlayer(swfName, swfID) {
+        var flashvars = {
+            project: 'Friend.sb?version=3'
+        };
+        var params = {
+            allowScriptAccess: 'always',
+            allowFullScreen: true
+        };
+        var attributes = {};
+        swfobject.embedSWF(swfName, swfID, fwidth, fheight, '10.0', false, flashvars, params, attributes);
+    }
+</script>
+<div id="PlayerOnly" style="margin: auto; text-align: center">
+<p style="margin: auto; padding: 2px; WIDTH: 270px;  BACKGROUND-COLOR: #FFFFCC; text-align: center; font-size: 9pt; height: 90px;  left:60px;">
+    <br />加载 project 中……<br />
+    <br />如果 project 很久未能加载,<br />
+    <br />请确认是否已安装<a href="http://get.adobe.com/flashplayer/">Flash插件</a> 
+</p>
+</div>

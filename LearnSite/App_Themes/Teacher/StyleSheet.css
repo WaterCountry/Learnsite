@@ -1,0 +1,676 @@
+﻿body
+{   
+    margin: 0 auto;
+}
+table {border-collapse:collapse;}
+.mainarea
+{
+    width: 100%;
+}
+.mainhead
+{
+    width: 100%;
+    height: 30px;
+    background-color: #9EA9B1;
+    font-family: Arial;
+    font-size: 9pt;
+}
+.mainleft
+{
+    width: 80px;
+    position: absolute;
+    left: 0;
+    border: 1px solid #EFF1FE;
+    font-family: Arial;
+    font-size: 9pt;
+    z-index: 1;
+}
+.mainright
+{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-family: Arial;
+    font-size: 9pt;
+}
+.mainrightcontent
+{
+    margin-left:100px;
+    text-align: center;
+}
+.mainleftbottom
+{
+    background-color: #9EA9B1;
+    font-size: 9pt;
+}
+.managerleftbottom
+{
+    height: 20px;
+    background-color: #9EA9B1;
+    width: 78px;
+}
+
+.mainrighttop
+{
+    height: 4px;
+}
+
+#navig
+{
+    width: 90px;    
+    border: 1px solid #CCCCCC;
+}
+#navigul
+{
+    margin: 0px;
+    padding: 0px;
+     list-style-type:none;
+}
+.navigli
+{
+    line-height: 36px;
+    font-size: 9pt;
+    font-family: 宋体, Arial;
+    margin: 0px;
+    padding: 0px;
+    height: 36px;
+    text-align:center
+}
+.navigli a{    
+    display:block;
+    width: 80px;
+    height: 36px;
+    text-decoration:none
+}
+.navigli a:link, .navigli a:visited{
+    color:#222222;
+    border-left: 8px solid #eaeaea;
+}
+.navigli a:hover
+{
+    /* 鼠标经过时 */
+    background-color: #7E8E9A; /* 改变背景色 */
+    color: #FFFFFF; /* 改变文字颜色 */
+    border-left: 8px solid #666F75;
+    font-family: 宋体, Arial;
+    font-size: 9pt;
+    font-weight: bold;
+    border-left-color: #697A87;
+}
+.navmenu
+{
+    margin: 0px;
+    padding: 0px;
+    height:40px;
+    background-color: #eaeaea; /* 改变背景色 */
+    text-align:center;
+    line-height:40px;
+}
+
+.placehold
+{
+    margin: auto;
+    text-align: center;
+    font-size: 9pt;
+    font-family: Arial;
+}
+.pattitude
+{
+     margin: auto;
+    border: 1px solid #E0E0E0;
+    width: 320px;
+    text-align: center;
+}
+.phead
+{
+    background-color: #939CA2;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+}
+
+.cline
+{
+    height: 4px;
+}
+.chead
+{
+    margin: auto;
+    font-size: 9pt;
+    font-family: Arial;
+    height: 30px;
+    text-align: center;
+}   
+.cheadright
+{
+    margin: auto;
+    font-size: 9pt;
+    font-family: Arial;
+    height: 24px;
+    text-align: right;
+    width: 640px;
+}
+.cheadleft
+{
+     margin: auto;
+    width: 660px;
+    border: 1px solid gainsboro;
+    font-size: 9pt;
+    text-align: left;
+}       
+.create
+{
+     margin: auto;
+    border: 1px solid #E6E6E6;
+    width: 410px;
+    font-size: 9pt;
+    text-align: left;
+}
+.cplace
+{
+    margin: auto;
+    text-align: center;
+    width: 880px;
+}
+.cleft
+{
+    font-size: 9pt;
+    font-family: Arial;
+    text-align: left;
+}
+.cimport
+{
+    margin: auto;
+    border: 1px solid #E0E0E0;
+    width: 500px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 9pt;
+}
+.courseshow
+{
+    text-align: center;
+}
+.coursetitle
+{
+    height: 20px;
+    font-size: 12pt;
+    font-family: Arial;
+    font-weight: bold;
+}
+.coursecontent
+{
+    border-color: #CCCCCC;
+    border-width: 1px;
+    margin: auto;
+    width: 800px;
+    text-align: left;
+    font-family: Arial;
+    line-height: 1.5;
+    padding: 10px 3px 3px 10px;
+    border-top-style: dashed;
+    font-size: 14px;
+}
+.ccontent
+{
+    margin: auto;
+    width: 600px;
+    text-align: left;
+}
+
+.missiontitle
+{
+    height: 18px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+    background-color: #FAFBFC;
+}
+.courseother
+{
+    padding: 2px;
+    margin: auto;
+    width: 660px;
+    font-size: 9pt;
+    font-family: Arial;
+}
+.indexdiv
+{
+     margin: auto;
+    border: 1px solid #D4D4D4;
+    width: 270px;
+    height: 200px;
+    text-align: center;
+}
+.infomation
+{
+     margin: auto;
+    border: 1px solid #D4D4D4;
+    width: 550px;
+    font-size: 9pt;
+    font-family: Arial;
+}
+.pagediv
+{
+    font-size: 9pt;
+    width: 100%;
+    color: black;
+    height: 13px;
+    text-align: right;
+}
+.softdiv
+{
+     margin: auto;
+    font-family: Arial;
+    font-size: 9pt;
+    width: 90%;
+    text-align: left;
+}
+.softcontent
+{
+     margin: auto;
+    width: 860px;
+    text-align: left;
+}
+.softcenter
+{
+     margin: auto;
+    font-family: Arial;
+    font-size: 9pt;
+    width: 700px;
+}
+.startdiv
+{
+    margin:auto;
+    width: 96%;
+    font-family: Arial;
+    font-size: 9pt;
+}
+.typedivhead
+{
+    margin: auto;
+    width: 660px;
+    text-align: left;
+    height: 28px;
+}
+.typediv
+{
+    margin: auto;
+    width: 660px;
+    text-align: center;
+    background-color: #FEF4E7;
+}
+.typedivcenter
+{
+     margin: auto;
+    width: 660px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 9pt;
+}
+
+.typeplace
+{
+     margin: auto;
+    text-align: center;
+    width: 600px;
+}
+/*----------------------*/
+.webdeal
+{
+     margin: auto;
+    border: 1px solid #DDDDDD;
+    width: 450px;
+}
+.website
+{
+    margin: auto;
+    border: 1px solid #DDDDDD;
+    width: 410px;
+}
+.websitediv
+{
+    margin: auto;
+    border-color: #E8E8E8;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+.webdealnote
+{
+    margin: auto;
+    padding:10px;
+    text-align: left;
+    font-size: 9pt;
+    font-family: Arial;
+    background-color: #F4F3EC;
+    width: 316px;
+}
+
+.quizdiv
+{
+    margin: auto;
+    font-family: Arial;
+    font-size: 9pt;
+    width: 880px;
+}
+.quizleft
+{
+    margin: auto;
+    font-family: Arial;
+    font-size: 9pt;
+    width: 700px;
+    text-align: left;
+    height: 24px;
+}
+.quizleft1
+{
+    float: left;
+    width: 240px;
+    text-align: right;
+}
+.quizright1
+{
+    float: right;
+    width: 420px;
+    text-align: right;
+}
+.quizright2
+{
+    float:left;
+    left:220px;
+    width: 420px;
+    text-align: left;
+}
+.quizleft2
+{  
+    float: left;
+    width: 60px;
+    text-align: right;
+}
+.quizleft3
+{
+    float: left;
+    width: 620px;
+}
+.quizfengxi
+{
+     margin: auto;
+    text-align: left;
+    font-family: Arial;
+    font-size: 9pt;
+     width: 660px;
+}
+.managediv
+{
+    margin: auto;
+}
+.manageplace
+{
+    text-align: center;
+    font-size: 9pt;
+    font-family: Arial;
+    width: 100%;
+}
+.centerdiv
+{
+    margin: auto;
+    width: 98%;
+}
+.settingdiv
+{
+    margin: auto;
+    border: 1px solid #D4D4D4;
+    width: 450px;
+    font-size: 9pt;
+    font-family: Arial;
+}
+.setting
+{
+    margin: auto;
+    width: 350px;
+    text-align: left;
+}
+.roomcreate
+{
+     margin: auto;
+    border: 1px solid #DBDBDB;
+    font-family: Arial;
+    font-size: 9pt;
+    width: 600px;
+}
+.teachermg
+{
+    margin: auto;
+    font-family: Arial;
+    font-size: 9pt;
+    width: 90%;
+    text-align: right;
+    height: 22px;
+}
+.teacherdiv
+{
+    margin: auto;
+    font-family: Arial;
+    font-size: 9pt;
+    width: 90%;
+}
+.teacheradd
+{
+    margin: auto;
+    border: 1px solid #CCCCCC;
+    width: 280px;
+}
+.packagediv
+{
+    border-style: none;
+    border-width: 0px;
+    margin: auto;
+    width: 280px;
+}
+.divscore
+{
+    border: 1px solid #EEF7FF;
+    width: 80px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #FFFAEE;
+}
+.divonline
+{
+    border-color: #F0F0F0;
+    border-width: 1px;
+    vertical-align: middle;
+    width: 82px;
+    text-align: center;
+}
+.divunline
+{
+    border-color: #F0F0F0;
+    border-width: 1px;
+    vertical-align: middle;
+    width: 82px;
+    text-align: center;
+}
+.divvotebg
+{
+    background-color: #E1EDFF;
+}
+.divcenter
+{
+    text-align: center;
+}
+.textcenter
+{
+    height: 24px;
+    font-family: Arial;
+    font-size: 9pt;
+    line-height: 24px;
+    text-align: center;
+}
+.textcenter18
+{
+    height: 18px;
+    font-family: Arial;
+    font-size: 9pt;
+    line-height: 18px;
+    text-align: center;
+}
+.textcenter20
+{
+    height: 20px;
+    font-family: Arial;
+    font-size: 9pt;
+    line-height: 20px;
+    text-align: center;
+}
+.labelname
+{
+    display: inline-block;
+    color: Black;
+    background-color: #F3F3F3;
+    border-color: #E7E7E7;
+    border-width: 1px;
+    border-style: Solid;
+    height: 14px;
+    width: 60px;
+    line-height: 14px;
+}
+.lockbtn
+{
+    display: inline-block;
+    color: Black;
+    background-color: #CAD9BB;
+    font-family: Arial;
+    font-size: 9pt;
+    text-decoration: none;
+    height: 14px;
+    width: 14px;
+}
+.groupscore
+{
+    display: inline-block;
+    font-size: 8pt;
+    font-weight: bold;
+    width: 6px;
+}
+.wscored
+{
+    display: inline-block;
+    color: Black;
+    background-color: #C4DBFF;
+    font-size: 9pt;
+    text-decoration: none;
+    height: 14px;
+    width: 14px;
+}
+.workname
+{
+    display: inline-block;
+    background-color: #CDE2FE;
+    text-decoration: none;
+    height: 16px;
+    width: 54px;
+    line-height: 16px;
+    font-size: 9pt;
+}
+.HyperlinkLong
+{
+    display: inline-block;
+    width: 120px;
+    text-decoration: none;
+    height: 16px;
+    line-height: 16px;
+    font-size: 9pt;
+    color: Black;
+    border-width: 1px;
+    border-style: Solid;
+    border-color: #D4D4D4;
+    background-color: #E6E6E6;
+}
+.HyperlinkNormal
+{
+    margin: 2px;
+    display: inline-block;
+    width: 80px;
+    text-decoration: none;
+    height: 18px;
+    line-height: 18px;
+    font-size: 9pt;
+    color: Black;
+    border-width: 1px;
+    border-style: Solid;
+    border-color: #D4D4D4;
+    background-color: #E6E6E6;
+}
+.doneksdiv
+{
+    border-width: 1px;
+    vertical-align: middle;
+    width: 20px;
+    text-align: center;
+    float: left;
+}
+.donekc
+{
+    display: inline-block;
+    color: Black;
+    background-color: #CFE4D0;
+    font-weight: bold;
+    height: 16px;
+    width: 20px;
+}
+.newkc
+{
+    display: inline-block;
+    color: Black;
+    background-color: #EBD3C5;
+    font-weight: bold;
+    height: 16px;
+    width: 20px;
+}
+.divgroupscore
+{
+    border: 1px solid #EEF7FF;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #FFFAEE;
+}
+.groupname
+{
+    display: inline-block;
+    background-color: #CDE2FE;
+    margin: auto;
+    padding: 2px;
+    width: 90px;
+    font-size: 9pt;
+    text-align: center;
+    height: 16px;
+    line-height: 16px;
+    text-decoration: none;
+}
+.typerset
+{
+    height: 24px;
+    text-align: left;
+    background-color: #D9ECFF;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-color: #DDDDDD;
+    border-bottom-color: #DDDDDD;
+}
+.textbox
+{
+    overflow-y: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: #E6FFE6;
+    height: 80px;
+} 
+.textlabel
+{
+    background-color:#E6FFE6; height:20px;width:80px;
+}

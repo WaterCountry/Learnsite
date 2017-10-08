@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Pf.master.cs" Inherits="Student_Profile_Pf" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>信息技术学习网站</title>   
+    <link href="../App_Themes/Student/StyleSheet.css" rel="stylesheet" type="text/css" />
+    </head>
+<body>
+    <form id="form1" runat="server">
+    <center>
+      <div  class="studmasterhead">
+            <div  class="banner" >
+                <script src="../Js/road.js" type="text/javascript"></script>
+      	<script type="text/javascript" >
+      	    var first = "../";
+      	    ShowRoad(first);
+            </script>  
+                </div>
+                <center>
+            <div  class="menu">
+            <asp:Menu ID="Menu1" runat="server" Font-Names="Verdana" Font-Size="9pt" 
+                ForeColor="Black" StaticSubMenuIndent="10px" 
+                DynamicEnableDefaultPopOutImage="False" 
+                MaximumDynamicDisplayLevels="1" Orientation="Horizontal" Height="24px" 
+                    Width="880px" SkipLinkText="" >
+                <StaticMenuItemStyle HorizontalPadding="5px" />
+                <StaticHoverStyle BackColor="#91B1FD" ForeColor="White" />
+                <Items>
+                    <asp:MenuItem Text="基本信息" Value="基本信息" 
+                        NavigateUrl="~/Profile/mychange.aspx"></asp:MenuItem>
+                    <asp:MenuItem  NavigateUrl="~/Profile/mygroup.aspx"
+                         Text="小组合作" Value="小组合作" >
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Profile/myterm.aspx" 
+                        Text="学习成果" Value="学习成果"  ></asp:MenuItem>
+                    <asp:MenuItem  NavigateUrl="~/Profile/mysign.aspx" 
+                        Text="签到记录" Value="签到记录"  ></asp:MenuItem>
+                    <asp:MenuItem Text="密码修改" Value="密码修改" 
+                         NavigateUrl="~/Profile/mypwd.aspx"  ></asp:MenuItem>
+                    <asp:MenuItem Text="班级修改" Value="班级修改" 
+                        NavigateUrl="~/Profile/myclass.aspx"  ></asp:MenuItem>
+                    <asp:MenuItem Text="相片修改" Value="相片修改"
+                      NavigateUrl="~/Profile/myphoto.aspx"  ></asp:MenuItem>
+                    <asp:MenuItem Text="性别修改" Value="性别修改"
+                       NavigateUrl="~/Profile/mysex.aspx"  ></asp:MenuItem>
+                    <asp:MenuItem Text="姓名修改" Value="姓名修改"
+                       NavigateUrl="~/Profile/myname.aspx"  ></asp:MenuItem>
+                    <asp:MenuItem Text="返回首页" Value="返回首页"
+                       NavigateUrl="~/Student/myinfo.aspx" ImageUrl="~/Images/separate2.png"></asp:MenuItem>
+                </Items>
+            </asp:Menu>
+            </div>
+            </center>
+            
+      <div class="stu">
+            <div  class="path"> 
+            &nbsp;
+            </div>
+            <center>
+            <div style="font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt; width: 980px; margin: auto">
+<div style="float:left; overflow: hidden; text-align: center; width: 800px" >
+        <div style="margin: auto; width: 680px; text-align: center;" >     
+            <asp:ContentPlaceHolder ID="Cstu" runat="server">
+            </asp:ContentPlaceHolder>
+</div>
+    <br />
+</div>
+<div style="float:right; overflow: hidden; text-align: center; width: 170px">
+<div>    
+    <asp:Image ID="Imageface" runat="server" EnableTheming="True" Height="80px" 
+        Width="80px"  />    
+    <div id="DivRank" class="divinfo" >
+    <asp:Label ID="LabelRank" runat="server"></asp:Label>
+    </div>
+    </div> 
+    <div class="divinfo">
+    <div class="divinfo1">学号:</div>
+    <div class="divinfo2"><asp:Label ID="snum" runat="server" ></asp:Label></div>
+    </div>
+    <div class="divinfo">
+    <div class="divinfo1">班级:</div>
+    <div class="divinfo2"><asp:Label ID="sclass" runat="server" ></asp:Label></div>
+    </div>
+    <div class="divinfo">
+    <div class="divinfo1">姓名:</div>
+    <div class="divinfo2"><asp:Label ID="sname" runat="server" ></asp:Label></div>
+    </div>    
+    <div class="divinfo">
+    <div class="divinfo1">表现:</div>
+    <div class="divinfo2">
+        <asp:HyperLink ID="sattitude" runat="server" 
+            NavigateUrl="~/Student/attituderank.aspx" Target="_blank" ToolTip="点击显示表现排行">[sattitude]</asp:HyperLink>
+        </div>
+    </div>
+    <div class="divinfo">
+    <div class="divinfo1">学分:</div>
+    <div class="divinfo2"><asp:Label ID="sscore" runat="server" ></asp:Label></div>
+    </div>
+    <div class="divinfo">
+    <div class="divinfo1">组长:</div>
+    <div class="divinfo2"><asp:Label ID="sleadername" runat="server" ></asp:Label></div>
+    </div>
+    <div class="divinfo">
+    <div class="divinfo1">MyIP:</div>
+    <div class="divinfo2"><asp:Label ID="Labelip" runat="server"  SkinID="LabelSize8" ></asp:Label></div>
+    </div> 
+    <br />
+    </div>
+</div>
+        </center>
+        <br />        
+        </div>
+        </div>
+       </center>
+    </form>
+</body>
+</html>

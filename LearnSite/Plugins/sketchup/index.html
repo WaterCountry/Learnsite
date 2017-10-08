@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+	<head>		
+		<meta charset=utf-8>
+  		<title>ThreeJS SketchUp Tests 草图大师模型预览测试</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			#divbody {
+				background:#777;
+				padding:0;
+				margin:0;
+				font-weight: bold;
+				overflow:hidden;
+				height: 600px;
+				width: 800px;
+			}
+		</style>
+	</head>
+	<body>
+	<center>
+	<div id="divbody">
+		<div id="container"></div>		
+	</div>
+	</center>
+		<script src="three.min.js"></script>		
+		<script src="Animation.js"></script>
+		<script src="AnimationHandler.js"></script>
+		<script src="KeyFrameAnimation.js"></script>
+
+		<script src="ColladaLoader.js"></script>
+		<script src="OrbitControls.js"></script>
+		<script src="Detector.js"></script>
+		<script src="stats.min.js"></script>
+		<script src="init.js"></script>
+		<script>
+			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+
+			var container, stats;
+			var camera, scene, renderer, controls;
+			var height=600,width=800;
+			var daefile="monster.dae";
+
+			init(width,height,daefile);
+			animate();
+			onWindowResize();
+
+			function onWindowResize() {
+				camera.aspect = width / height;
+				camera.updateProjectionMatrix();
+				renderer.setSize( width, height );
+			}
+			function animate() {
+				requestAnimationFrame( animate );
+				render();
+				stats.update();
+			}
+
+			function render() {
+				renderer.render( scene, camera );
+			}
+		</script>
+	</body>
+</html>

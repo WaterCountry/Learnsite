@@ -1,0 +1,9 @@
+CS0016: Could not write to output file 'c:/WINDOWS/Microsoft.NET/Framework/v2.0.50727/Temporary ASP.NET Files/-- '拒绝访问' 
+
+想到的第一个解决方法是，把备份的文件覆盖掉现在修改过后的文件，立即行动！可以解决，但是过了几分钟之后，问题还是存在，然后再覆盖就不好使了， 并且发现另外几个链接的文件都出现了这个问题，想了很多方法还是没有解决，参考网上大家的建议以及MSDN中找到的解决方法，终于找到了解决方法：
+
+出现CS0016的原因一般是临时目录的权限不够，解决的办法是给Windows目录下的临时文件夹Temp的安全选项卡中加入NetWork Service用户并赋予全权。
+
+记住，你最好重新启动一下计算机，因为我按照MSDN的执行之后发现问题依旧，最后看到了他们的notes，才重起电脑，问题解决！
+
+MSDN的资料如下：http://support.microsoft.com/default.aspx?scid=kb;en-us;825791

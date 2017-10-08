@@ -1,0 +1,76 @@
+﻿<script src="../weboffice/main.js" type="text/javascript"></script>
+<SCRIPT language=javascript event=NotifyCtrlReady for=WebOffice1>
+	WebOffice1_NotifyCtrlReady()
+</SCRIPT>
+<SCRIPT language=javascript event=NotifyWordEvent(eventname) for=WebOffice1>
+ WebOffice1_NotifyWordEvent(eventname)
+</SCRIPT>
+<SCRIPT language=javascript>
+    function WebOffice1_NotifyCtrlReady() {
+        document.all.WebOffice1.OptionFlag |= 128;
+        var officeid = "888888";
+        var officetype = "999999";
+		var thisurl = document.location.href;
+        var thissite = thisurl.split("/");
+        var thisip = thissite[2];
+        if (thissite.length > 5)
+            thisip = thissite[2] + "/" + thissite[3];
+        var url = "http://"+thisip+"/weboffice/";
+        var getdocurl = url + "getoffice.aspx?id=" + officeid;
+        document.all.WebOffice1.LoadOriginalFile(getdocurl, fixExt(officetype));
+        NobToolBar();
+        allHideMenu_onclick();
+        notMenu();
+        //okMenu();
+    }
+    function fixExt(ext) {
+        switch (ext) {
+            case "docx":
+                ext = "doc";
+                break;
+            case "pptx":
+                ext = "ppt";
+                break;
+            case "xlsx":
+                ext = "xls";
+                break;
+        }
+        return ext;
+    }
+    var vNoCopy = 1;
+    var vNoPrint = 1;
+    var vNoSave = 1;
+    var vClose = 0;
+    function WebOffice1_NotifyWordEvent(eventname) {
+        if (eventname == "DocumentBeforeSave") {
+            if (vNoSave) {
+                document.all.WebOffice1.lContinue = 0;
+                alert("此文档已经禁止保存");
+            } else {
+                document.all.WebOffice1.lContinue = 1;
+            }
+        } else if (eventname == "DocumentBeforePrint") {
+            if (vNoPrint) {
+                document.all.WebOffice1.lContinue = 0;
+                alert("此文档已经禁止打印");
+            } else {
+                document.all.WebOffice1.lContinue = 1;
+            }
+        } else if (eventname == "WindowSelectionChange") {
+            if (vNoCopy) {
+                document.all.WebOffice1.lContinue = 0;
+            } else {
+                document.all.WebOffice1.lContinue = 1;
+            }
+        } else if (eventname == "DocumentBeforeClose") {
+            if (vClose == 0) {
+                document.all.WebOffice1.lContinue = 0;
+            } else {
+                document.all.WebOffice1.lContinue = 1;
+            }
+        } 
+    }
+</SCRIPT>
+<div>
+    <script src="../weboffice/LoadWebOffice.js" type="text/javascript"></script>
+</div>

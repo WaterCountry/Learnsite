@@ -1,0 +1,84 @@
+body
+{
+    background-color: #333333;
+}
+.floor
+{
+    top: 0px;
+    position: absolute;
+}
+.house
+{
+    width: 800px;
+    top: 0px;
+    margin: auto;
+    overflow: hidden;
+}
+
+ .computer-place
+{
+    width: 60px;
+    float:left;
+    margin: 0px; 
+}
+  .computer
+{
+    margin: 0px;
+    width: 60px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-image: url('images/computer.gif');
+    font-family: ËÎÌו, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    text-align: center;
+    line-height: 36px;
+}
+.sortablediv
+{
+    margin:auto;
+    width: 760px;    
+	height:600px;
+    cursor: pointer;
+    background-image: url('images/house.gif');
+    background-repeat: repeat;
+    overflow: hidden;
+}
+.menu
+{
+    margin: auto;
+    padding: 2px;
+    width: 760px; 
+    font-family: ËÎÌו, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    overflow: hidden;
+    text-align: left;
+    background-color: #999999;
+    line-height: 24px;
+    height: 24px;
+}
+.nosortablediv
+{
+    margin: auto;
+    width: 760px;
+    height: 600px;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #F2FDF3;
+}
+.nomenu
+{
+    margin: auto;
+    padding: 2px;
+    width: 760px;
+    font-family: ËÎÌו, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    overflow: hidden;
+    text-align: center;
+    line-height: 24px;
+    height: 24px;
+    color: #FFFFFF;
+}
+.msgtext
+{
+    width: 180px;
+}

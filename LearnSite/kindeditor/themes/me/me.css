@@ -1,0 +1,58 @@
+﻿.ke-upload-button
+{
+    position: relative;
+    text-align: center;
+}
+.ke-upload-area {
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	height: 25px;
+}
+.ke-upload-area .ke-upload-file {
+	position: absolute;
+	font-size: 60px;
+	top: 0;
+	right: 0;
+	padding: 0;
+	margin: 0;
+	z-index: 811212;
+	border: 0 none;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.ke-button-common {
+	background: url(me.gif) no-repeat ;
+	cursor: pointer;	
+	width:100px;
+	height: 23px;
+	line-height: 23px;
+	overflow: visible;
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+}
+.ke-button-outer {
+	background-position: 0 -25px;
+	padding: 0;
+	position: relative;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: middle;
+	zoom: 1;
+	display: inline;
+}
+.ke-button
+{
+    background-position: right -25px;
+    padding: 0 12px;
+    margin: 0;
+    font-family: "sans serif" ,tahoma,verdana,helvetica;
+    border: 0 none;
+    color: #333;
+    font-size: 12px;
+    left: 2px;
+    text-decoration: none;
+    text-align: center;
+}
