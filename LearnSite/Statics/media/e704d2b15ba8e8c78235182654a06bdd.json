@@ -1,0 +1,46 @@
+{
+	"objName": "Dani",
+	"sounds": [{
+			"soundName": "pop",
+			"soundID": -1,
+			"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+			"sampleCount": 258,
+			"rate": 11025,
+			"format": ""
+		}],
+	"costumes": [{
+			"costumeName": "dani-a",
+			"baseLayerID": -1,
+			"baseLayerMD5": "05074ff0178d82b80d05d672cf93af94.svg",
+			"bitmapResolution": 1,
+			"rotationCenterX": 51,
+			"rotationCenterY": 122
+		},
+		{
+			"costumeName": "dani-b",
+			"baseLayerID": -1,
+			"baseLayerMD5": "650028dc28b7b92eec36519d94a179e6.svg",
+			"bitmapResolution": 1,
+			"rotationCenterX": 86,
+			"rotationCenterY": 122
+		},
+		{
+			"costumeName": "dani-c",
+			"baseLayerID": -1,
+			"baseLayerMD5": "a469d57b39ddc7cb612764b8f9ea403c.svg",
+			"bitmapResolution": 1,
+			"rotationCenterX": 51,
+			"rotationCenterY": 121
+		}],
+	"currentCostumeIndex": 0,
+	"scratchX": 0,
+	"scratchY": 0,
+	"scale": 1,
+	"direction": 90,
+	"rotationStyle": "normal",
+	"isDraggable": false,
+	"indexInLibrary": 100000,
+	"visible": true,
+	"spriteInfo": {
+	}
+}

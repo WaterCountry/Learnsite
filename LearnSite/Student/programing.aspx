@@ -98,6 +98,9 @@
         function showsave() {
             $('#savebtn').show(); //显示立即保存按钮
         }
+        function hidesave() {
+            $('#savebtn').hide(); //隐藏立即保存按钮
+        }
         function showreturn() {
             $('#uploading').html("");
             $('#returnbtn').show(); //显示返回按钮

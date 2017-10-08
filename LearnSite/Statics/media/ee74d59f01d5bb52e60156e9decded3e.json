@@ -1,0 +1,30 @@
+{
+	"objName": "Hat Beanie",
+	"sounds": [{
+			"soundName": "pop",
+			"soundID": -1,
+			"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+			"sampleCount": 258,
+			"rate": 11025,
+			"format": ""
+		}],
+	"costumes": [{
+			"costumeName": "hat beanie",
+			"baseLayerID": -1,
+			"baseLayerMD5": "a1c55cdf553a053f85455c7ae5cbe5cc.svg",
+			"bitmapResolution": 1,
+			"rotationCenterX": 31,
+			"rotationCenterY": 21
+		}],
+	"currentCostumeIndex": 0,
+	"scratchX": 0,
+	"scratchY": 0,
+	"scale": 1,
+	"direction": 90,
+	"rotationStyle": "normal",
+	"isDraggable": true,
+	"indexInLibrary": 100000,
+	"visible": true,
+	"spriteInfo": {
+	}
+}
