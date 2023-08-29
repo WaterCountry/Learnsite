@@ -2,6 +2,6 @@
     var editor = this, name = 'text';
     // 点击图标时执行
     editor.clickToolbar(name, function () {
-        editor.insertHtml('<div class="textbox" style="background-color:#E6FFE6;" contenteditable="true">&nbsp;</div>');
+        editor.insertHtml('<div style="background-color:#FBF4D5;border: 1px dashed #ccc; height:auto; " class="textbox" contenteditable="true"> &nbsp;</div>');
     });
 });

@@ -1,0 +1,359 @@
+@font-face {
+  font-family: 'Fira Code';
+  src: url('fonts/FiraCode-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+body{		
+	background-color:#252d30;
+    color: #fff;
+}
+.container {
+    margin: auto;
+}
+
+.map{
+    position: fixed;
+    top: 60px;   
+	right: 660px;
+    z-index: 999;
+	width:160px;
+	height:160px;
+	margin:auto;
+	text-align:center;		
+	//cursor: hand;
+	opacity:0.6;
+    //background-color: #515759;
+	//filter:invert(100%);
+}
+.mapimg{
+	max-height:150px;
+	max-width:150px;
+	//opacity:0.8;
+}
+.mapimg:hover{
+	filter:invert(100%);
+}
+.tooltip{
+	position: fixed;
+	bottom:0px;
+	height:30px;
+	line-height:30px;
+	background:#353f42;
+	left:0px;
+}
+.keyword{	
+	margin:4px;
+	padding:2px;
+	color:#56676b;	
+}
+.keyword:hover{
+    background-color: #252d30;
+	cursor: hand;	
+}
+.keyopen{	
+	margin:4px;
+	padding:2px;
+	color:#56676b;	
+}
+.keyopen:hover{
+	color:#ccc;	
+	cursor: hand;	
+}
+.keymodel{	
+	margin:4px;
+	padding:2px;
+	color:#56676b;	
+	font-size: 20px;
+}
+.keymodel:hover{
+	color:#ccc;	
+	cursor: hand;	
+}
+#btnshow {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 380px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #333;
+    opacity:0.8 ;
+	cursor:pointer
+}
+#btnshow:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+
+#btnreturn {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #333;    
+    opacity:0.8 ;
+	cursor:pointer
+}
+#btnreturn:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+#btnupload {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 176px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #333;
+    opacity:0.8 ;
+	cursor:pointer
+}
+#btnupload:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+#btnsave {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 220px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #333;
+    opacity:0.8 ;
+	cursor:pointer
+}
+#btnsave:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+
+#btnerase {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #333;
+    opacity:0.8 ;
+	cursor:pointer
+}
+#btnerase:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+#btnclear {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 550px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #333;
+    opacity:0.8 ;
+	cursor:pointer
+}
+#btnclear:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+#title{    
+	position: fixed;
+    top: 20px;
+    right: 425px;
+    border: 0px solid #e0dbcb; 
+    text-decoration: none;
+    background: #transparent;
+    color:#999; 
+	font-size: 18px;
+	background-color: #3f4b4f;
+	line-height:24px;
+	height:29px;
+}
+#savemsg
+{
+  position: fixed;  
+  bottom: 36px;
+  right:50px;
+  z-index: 999;
+  color:#F85B10; 
+  font-size:20px; 
+}
+.cvdiv{	
+    top: 60px;
+    right: 50px;	
+    position: fixed;
+	width:602px;
+	height:600px;
+    //background: url(../code/grididle.png) ;
+	opacity:0.8;
+}
+
+#content{ 
+    top: 60px;   
+	right: 50px;
+	width:560px;
+	height:560px;
+	overflow-y:auto;
+    z-index: 999;
+    position: fixed;
+    color: #fff;
+    background-color: #515759;
+    padding: 20px;
+	opacity:0.8;
+	display:none;
+}
+
+.button:hover {
+    background-color: #768b75; /* Green */
+    color: #fff;
+}
+#editor {
+    min-height: 30px;
+    padding: 20px;
+	position: absolute;
+	top:  0px;
+	bottom: 20px;
+    overflow-y:scroll;
+	left:0px;
+	right:0px;
+	color:#666;
+	font-family: "Arial","Microsoft YaHei";
+	font-size:22px;	
+	background-color:#252d30;
+}
+
+#big{
+	position:absolute;
+	right:16px;
+	bottom:140px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -32px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 999;
+	cursor:pointer;
+}
+#big:hover {background-color: #3f4b4f;border-radius:16px;}
+#small{
+	position:absolute;
+	right:16px;
+	bottom:100px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -64px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 999;
+	cursor:pointer;
+}
+#small:hover {background-color: #3f4b4f;border-radius:16px;}
+#run{
+	position:absolute;
+	right:16px;
+	bottom:180px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -160px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 999;
+	cursor:pointer;
+}
+#run:hover {background-color: #3f4b4f;border-radius:16px;}
+
+.divprog{	
+	margin:0px;
+	padding:2px;	
+	color:#666;
+	font-family: "Arial","Microsoft YaHei";
+	user-select: none;
+	//font-family: 'Fira Code',Arial,'宋体';
+	font-size:20px;
+}
+.divpass{		
+	color:#61b063;
+	text-align:right;
+}
+.divwrong{		
+	color:#b06161;
+	text-align:right;
+}
+.ace_gutter-cell {
+    visibility: hidden;
+    padding-left: 0;
+    padding-right: 30px;	
+}
+
+.in-gutter::before {
+    content: "";
+}
+
+.in-gutter::after {
+    content: ">>> ";
+    position: absolute;
+    right: 0;
+}
+
+.in-gutter::before {
+    position: absolute;
+    left: 5px;
+    padding: 0;
+}
+
+.in-gutter {
+    padding-left: 48px;
+    visibility: visible;
+    display: block;
+    color: #699867;
+	font-weight: bold;
+}
+
+.out-gutter {
+    color: crimson;
+}
+.ace_gutter {
+    font-size: 24px;
+}
+.ace_gutter-cell:not(:first-child):after {
+    content: "...:";
+    visibility: visible;
+    position: absolute;
+    right: 0;
+    color: #3d4b50;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸#585858;*/
+::-webkit-scrollbar
+{
+	width: 10px;
+	height: 10px;
+	background-color: #252d30;
+}
+ 
+ 
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+	background-color: #384549;
+}
+

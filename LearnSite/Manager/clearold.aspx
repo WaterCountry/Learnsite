@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Manager/Manage.master"  StylesheetTheme="Teacher"   AutoEventWireup="true" CodeFile="clearold.aspx.cs" Inherits="Manager_clearold" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/manager/Manage.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Manager_clearold, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div class="manageplace" >
@@ -37,9 +37,7 @@
         </div>
         <br />
     <div style="border: 1px solid #CCCCCC; margin: auto; width: 322px; text-align:center; background-color: #FEECE9;">
-            请选择要清空学生的班级：<br />
-            <br />
-            <asp:DropDownList ID="DDLgrade" 
+            请选择：<asp:DropDownList ID="DDLgrade" 
             runat="server" Font-Size="9pt" 
             Width="40px" EnableTheming="True" AutoPostBack="True" 
             onselectedindexchanged="DDLgrade_SelectedIndexChanged">
@@ -50,9 +48,7 @@
             班级<br />
             <br />
             当前学生数：<asp:TextBox ID="TextBoxcount" runat="server" SkinID="TextBoxaa"></asp:TextBox>
-            <br />
-            <br />
-            <asp:CheckBox ID="CheckBoxDel" runat="server" Text="确认操作" />
+            &nbsp;<asp:CheckBox ID="CheckBoxDel" runat="server" Text="确认操作" />
             <br />
             <br />
             <asp:Button ID="ButtonClearStudent" runat="server" SkinID="BtnLong" Text="清空该班级所有学生" 

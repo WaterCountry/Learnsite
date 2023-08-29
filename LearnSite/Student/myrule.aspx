@@ -1,20 +1,15 @@
-﻿<%@ Page Title="" Language="C#" StylesheetTheme="Student" AutoEventWireup="true" CodeFile="myrule.aspx.cs" Inherits="Student_myrule" %>
+﻿<%@ page title="" language="C#" stylesheettheme="Student" autoeventwireup="true" inherits="Student_myrule, LearnSite" %>
     
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
     <title></title>   
-    <link href="../App_Themes/Student/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/student/StyleSheet.css" rel="stylesheet" type="text/css" />
     </head>
-<body>
+<body class="ground">
     <form id="form1" runat="server">
     <center>
       <div  class="studmasterhead">
-            <div  class="banner" >
-                <script src="../Js/road.js" type="text/javascript"></script>
-      	<script type="text/javascript" >
-      	    var first = "../";
-      	    ShowRoad(first);
-            </script> 
+            <div  class="banner" > 
                 </div>
                 <center>
             <div  class="menu">
@@ -23,13 +18,13 @@
             </center>
             <center>
             <div class="placeauto" >
-            <div class="stu">
+            <div >
             <div  class="path"> 
             &nbsp;
             </div>
          <div id="student">
         <br />
-        <br />
+        <br /><center>
         <table   class="ruletabel"
             cellpadding="3">
             <tr>
@@ -95,7 +90,7 @@
               </td>
             </tr>
             </table>
-        <br />
+        <br /></center>
         <br />
         <asp:Button ID="Btnreturn" runat="server"  Text="关闭" BorderStyle="None" 
                  CssClass="buttonimg" Width="80px"/>

@@ -1,0 +1,96 @@
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=5,IE=9" ><![endif]-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grapheditor</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="styles/grapheditor.css">
+	<script type="text/javascript">
+		// Parses URL parameters. Supported parameters are:
+		// - lang=xy: Specifies the language of the user interface.
+		// - touch=1: Enables a touch-style user interface.
+		// - storage=local: Enables HTML5 local storage.
+		// - chrome=0: Chromeless mode.
+
+		// Default resources are included in grapheditor resources
+		mxLoadResources = false;
+		mxBasePath = 'src/';
+	</script>
+	<script type="text/javascript" src="mxClient.js"></script>
+	<style>		
+		.text{
+			position: fixed;
+			top: 4px;
+			right: 50%;
+			z-index: 888;
+			border-radius: 20px;   
+			width:100px;
+		}	
+	</style>
+</head>
+<body class="geEditor">
+
+<button class="text"  onclick="savexml()" type="button"  >立即保存</button>
+
+	<script type="text/javascript">
+		// Extends EditorUi to update I/O action states based on availability of backend
+		//(function()
+		//{
+		/*
+			var editorUiInit = EditorUi.prototype.init;
+			
+			EditorUi.prototype.init = function()
+			{
+				editorUiInit.apply(this, arguments);
+				this.actions.get('export').setEnabled(true);
+
+				// Updates action states which require a backend
+				if (!Editor.useLocalStorage)
+				{
+					mxUtils.post(OPEN_URL, '', mxUtils.bind(this, function(req)
+					{
+						var enabled = true; //req.getStatus() != 404;
+						this.actions.get('open').setEnabled(enabled || Graph.fileSupport);
+						this.actions.get('import').setEnabled(enabled || Graph.fileSupport);
+						this.actions.get('save').setEnabled(enabled);
+						this.actions.get('saveAs').setEnabled(enabled);
+						this.actions.get('export').setEnabled(enabled);
+					}));
+				}
+			};
+			
+			// Adds required resources (disables loading of fallback properties, this can only
+			// be used if we know that all keys are defined in the language specific file)
+			mxResources.loadDefaultBundle = false;
+			var bundle = mxResources.getDefaultBundle(RESOURCE_BASE, mxLanguage) ||
+				mxResources.getSpecialBundle(RESOURCE_BASE, mxLanguage);
+
+			// Fixes possible asynchronous requests
+			mxUtils.getAll([bundle, STYLE_PATH + '/default.xml'], function(xhr)
+			{
+				// Adds bundle text to resources
+				mxResources.parse(xhr[0].getText());
+				
+				// Configures the default graph theme
+				var themes = new Object();
+				themes[Graph.prototype.defaultThemeName] = xhr[1].getDocumentElement(); 
+				
+				// Main
+				new EditorUi(new Editor(urlParams['chrome'] == '0', themes));
+			}, function()
+			{
+				document.body.innerHTML = '<center style="margin-top:10%;">Error loading resource files. Please check browser console.</center>';
+			});
+		//})();
+		*/
+		 var container = document.getElementById('graph');
+		 var graph = new mxGraph(container);
+
+		function savexml(){
+			var xml = mxUtils.getXml(new mxCodec().encode(this.graph.getModel())) ;
+			console.log(xml);
+		}
+	</script>
+</body>
+</html>

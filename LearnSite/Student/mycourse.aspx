@@ -1,36 +1,36 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Stud.master" StylesheetTheme="Student" AutoEventWireup="true" CodeFile="mycourse.aspx.cs" Inherits="Student_mycourse" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/student/Stud.master" stylesheettheme="Student" autoeventwireup="true" inherits="Student_mycourse, LearnSite" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Cphs" Runat="Server">
 <div id="student">
 <div class="left">
 <div class="ccontent">
     <asp:GridView ID="GridViewnewkc" runat="server" Width="100%" 
         SkinID="GridViewInfo" onrowdatabound="GridViewnewkc_RowDataBound" 
-        AutoGenerateColumns="False" Caption="未学学案" CaptionAlign="Left" 
+        AutoGenerateColumns="False" 
         EnableModelValidation="True" PageSize="5" AllowPaging="True" 
         onpageindexchanging="GridViewnewkc_PageIndexChanging" >
         <Columns>
-            <asp:BoundField DataField="Cid">
+            <asp:BoundField DataField="cid"  Visible="false">
             <ItemStyle Width="30px" ForeColor="White" />
             </asp:BoundField>
             <asp:BoundField DataField="Cclass" HeaderText="分类" >
             <HeaderStyle HorizontalAlign="Left" />
-            <ItemStyle Width="60px" HorizontalAlign="Left" />
+            <ItemStyle Width="80px" HorizontalAlign="Left" />
             </asp:BoundField>
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:Image ID="ImageLeaf" runat="server" ImageUrl="~/Images/leaf.gif" />
+                    <asp:Image ID="ImageLeaf" runat="server" ImageUrl="~/images/leaf.gif" />
                 </ItemTemplate>
-                <ItemStyle Width="20px" />
+                <ItemStyle Width="24px" />
             </asp:TemplateField>
-            <asp:HyperLinkField DataNavigateUrlFields="Cid" 
-                DataNavigateUrlFormatString="~/Student/showcourse.aspx?Cid={0}" DataTextField="Ctitle" 
-                HeaderText="学案" >
+            <asp:HyperLinkField DataNavigateUrlFields="cid" 
+                DataNavigateUrlFormatString="~/student/showcourse.aspx?cid={0}" DataTextField="ctitle" 
+                HeaderText="未学学案" >
             <HeaderStyle HorizontalAlign="Left" />
             <ItemStyle HorizontalAlign="Left" />
             </asp:HyperLinkField>
             <asp:BoundField DataField="Cdate" HeaderText="日期" >
             <HeaderStyle HorizontalAlign="Left" />
-            <ItemStyle HorizontalAlign="Left" Width="80px" />
+            <ItemStyle HorizontalAlign="Left" Width="100px" />
             </asp:BoundField>
         </Columns>
        <PagerTemplate>
@@ -55,40 +55,40 @@
                 &nbsp;&nbsp;
             </div>
         </PagerTemplate>
-        <RowStyle Height="28px" />
+        <RowStyle Height="32px" />
     </asp:GridView>
-    </div>
+    </div><br />
    <div class="ccontent">
        <asp:GridView ID="GridViewdonekc" runat="server" AllowPaging="True" 
-           AutoGenerateColumns="False" Caption="已学学案" CaptionAlign="Left" 
+           AutoGenerateColumns="False" 
            EnableModelValidation="True" 
            OnPageIndexChanging="GridViewdonekc_PageIndexChanging" 
            onrowdatabound="GridViewdonekc_RowDataBound" SkinID="GridViewInfo" 
            Width="100%" PageSize="5">
            <Columns>
-               <asp:BoundField DataField="Cid">
+               <asp:BoundField DataField="cid" Visible="false">
                <ItemStyle ForeColor="White" Width="30px" />
                </asp:BoundField>
                <asp:BoundField DataField="Cclass" HeaderText="分类">
                <HeaderStyle HorizontalAlign="Left" />
-               <ItemStyle HorizontalAlign="Left" Width="60px" />
+               <ItemStyle HorizontalAlign="Left" Width="80px" />
                </asp:BoundField>
                 <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:Image ID="ImageLeaf" runat="server" ImageUrl="~/Images/fruit.gif" />
+                    <asp:Image ID="ImageLeaf" runat="server" ImageUrl="~/images/fruit.gif" />
                 </ItemTemplate>
-                <ItemStyle Width="20px" />
+                <ItemStyle Width="24px" />
             </asp:TemplateField>
-               <asp:HyperLinkField DataNavigateUrlFields="Cid" 
-                   DataNavigateUrlFormatString="~/Student/showcourse.aspx?Cid={0}" 
-                   DataTextField="Ctitle" HeaderText="学案">
+               <asp:HyperLinkField DataNavigateUrlFields="cid" 
+                   DataNavigateUrlFormatString="~/student/showcourse.aspx?cid={0}" 
+                   DataTextField="ctitle" HeaderText="已学学案">
                <HeaderStyle HorizontalAlign="Left" />
                <ItemStyle HorizontalAlign="Left" />
                </asp:HyperLinkField>
-               <asp:BoundField DataField="Cobj" HeaderText="年级" >
+               <asp:BoundField DataField="cobj" HeaderText="年级" >
                <ItemStyle Width="40px" />
                </asp:BoundField>
-               <asp:BoundField DataField="Cterm" HeaderText="学期" >
+               <asp:BoundField DataField="cterm" HeaderText="学期" >
                <ItemStyle Width="40px" />
                </asp:BoundField>
            </Columns>
@@ -114,7 +114,7 @@
                    &nbsp;&nbsp;
                </div>
            </PagerTemplate>
-           <RowStyle Height="28px" />
+           <RowStyle Height="32px" />
        </asp:GridView>
     </div>
 </div>
@@ -136,18 +136,7 @@
     <div class="divinfo">
     <div class="divinfo1">姓名:</div>
     <div class="divinfo2"><asp:Label ID="sname" runat="server" ></asp:Label></div>
-    </div>    
-    <div class="divinfo">
-    <div class="divinfo1">表现:</div>
-    <div class="divinfo2">
-        <asp:HyperLink ID="sattitude" runat="server" 
-            NavigateUrl="~/Student/attituderank.aspx" Target="_blank" ToolTip="点击显示表现排行">[sattitude]</asp:HyperLink>
-        </div>
-    </div>
-    <div class="divinfo">
-    <div class="divinfo1">学分:</div>
-    <div class="divinfo2"><asp:Label ID="sscore" runat="server" ></asp:Label></div>
-    </div>
+    </div> 
     <div class="divinfo">
     <div class="divinfo1">组长:</div>
     <div class="divinfo2"><asp:Label ID="sleadername" runat="server" ></asp:Label></div>

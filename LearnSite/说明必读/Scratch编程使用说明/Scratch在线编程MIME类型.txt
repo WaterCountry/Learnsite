@@ -4,12 +4,11 @@
 
 .sb     application/octet-stream
 .sb2    application/octet-stream
+.sb3    application/octet-stream
 .po     text/plain
 .txt    text/plain
 .json   application/x-javascript
 .svg    image/svg+xml
 
 ---------------------------------
-编程时常见问题：
 
-绿旗运行程序时，舞台或角色从本地上传会发现失效，请点击停止按钮，才有效

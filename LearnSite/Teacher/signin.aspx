@@ -1,25 +1,25 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="signin.aspx.cs" Inherits="Teacher_signin" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_signin, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div  class="placehold">
         <div  class="chead">
-            签到选择：<asp:DropDownList ID="DDLgrade" runat="server" Font-Size="9pt" 
+            签到选择：<asp:DropDownList ID="DDLgrade" runat="server" 
             Width="50px" EnableTheming="True" AutoPostBack="True" 
                 onselectedindexchanged="DDLgrade_SelectedIndexChanged">
         </asp:DropDownList>
             年级 
-            <asp:DropDownList ID="DDLclass" runat="server" Font-Size="9pt" 
+            <asp:DropDownList ID="DDLclass" runat="server" 
             Width="50px" EnableTheming="True" AutoPostBack="True" 
                 onselectedindexchanged="DDLclass_SelectedIndexChanged">
         </asp:DropDownList>
             班级&nbsp;
             <asp:Button ID="BtnExcel" runat="server"  OnClick="BtnExcel_Click" 
-                Text="导出签到Excel"  SkinID="BtnNormal" ToolTip="将本学期本班签到以Excel表格导出" 
-                Width="100px" />
+                Text="导出签到Excel"  SkinID="BtnLong" ToolTip="将本学期本班签到以Excel表格导出" 
+                Width="120px" />
                     &nbsp;&nbsp;
             <asp:Button ID="BtnExcelNoSign" runat="server"  OnClick="BtnExcelNoSign_Click" 
-                Text="导出缺席Excel"  SkinID="BtnNormal" ToolTip="将本学期本班缺席以Excel表格导出" 
-                Width="100px" />
+                Text="导出缺席Excel"  SkinID="BtnLong" ToolTip="将本学期本班缺席以Excel表格导出" 
+                Width="120px" />
                     </div>
                     <div>
                     <div class="centerdiv">
@@ -35,7 +35,7 @@
                                 <asp:BoundField DataField="Qmonth" HeaderText="月份" />
                                 <asp:BoundField DataField="Qday" HeaderText="日份" />
                                 <asp:HyperLinkField DataNavigateUrlFields="Sgrade,Sclass,Qyear,Qmonth,Qday" 
-                                    DataNavigateUrlFormatString="SignShow.aspx?Sgrade={0}&amp;&amp;Sclass={1}&amp;&amp;Qyear={2}&amp;&amp;Qmonth={3}&amp;&amp;Qday={4}" 
+                                    DataNavigateUrlFormatString="signshow.aspx?sgrade={0}&amp;&amp;sclass={1}&amp;&amp;qyear={2}&amp;&amp;qmonth={3}&amp;&amp;qday={4}" 
                                     Text="详细" />
                             </Columns>
                             <PagerTemplate>

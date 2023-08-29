@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Stud.master" StylesheetTheme="Student"  AutoEventWireup="true" CodeFile="mychinese.aspx.cs" Inherits="Student_mychinese" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/student/Stud.master" stylesheettheme="Student" autoeventwireup="true" inherits="Student_mychinese, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cphs" Runat="Server">
- <link href="../Images/Fingering/finger.css" rel="stylesheet" type="text/css" />
- <script src="../Js/jquery.cookie.js" type="text/javascript"></script>
+ <link href="../images/fingering/finger.css" rel="stylesheet" type="text/css" />
+ <script src="../js/jquery.cookie.js" type="text/javascript"></script>
 <div id="student">
 <div class="left">
 <center>
@@ -13,7 +13,7 @@
                 RepeatDirection="Horizontal" RepeatLayout="Flow" CellSpacing="3">
                 <ItemTemplate>                    
                     <asp:Label ID="Lbtitle" runat="server" Text='<%# Eval("Ntitle") %>' CssClass="hand" ></asp:Label>
-                    <asp:Label ID="Lbid" runat="server" Text='<%# Eval("Nid") %>' Visible="false"></asp:Label>
+                    <asp:Label ID="Lbid" runat="server" Text='<%# Eval("nid") %>' Visible="false"></asp:Label>
                 </ItemTemplate>
             </asp:DataList>
 
@@ -31,8 +31,6 @@
         <br />
             <input id="InputWord" class="typewd" type="text" onpaste="return   false; " ondragenter="return   false;"tabindex="0" autocomplete="off" />
             <br />
-        <br />
-        <br />
         <br />
     </div>     
     <div id="keyboard">
@@ -79,15 +77,15 @@
 <div class="right">
     <div>
     <asp:HyperLink ID="HChinese" runat="server" 
-        ImageUrl="~/Images/py.png" NavigateUrl="~/Student/mychinese.aspx" ></asp:HyperLink> 
+        ImageUrl="~/images/py.png" NavigateUrl="~/student/mychinese.aspx" ></asp:HyperLink> 
     <asp:HyperLink ID="HkFinger" runat="server" 
-        ImageUrl="~/Images/en.png" NavigateUrl="~/Student/myfinger.aspx"></asp:HyperLink>        
+        ImageUrl="~/images/en.png" NavigateUrl="~/student/myfinger.aspx"></asp:HyperLink>        
     <asp:HyperLink ID="HTyper" runat="server" 
-        ImageUrl="~/Images/cn.png" NavigateUrl="~/Student/mytype.aspx" ></asp:HyperLink>       
+        ImageUrl="~/images/cn.png" NavigateUrl="~/student/mytype.aspx" ></asp:HyperLink>       
     </div>
     <br />
     <div id="oldspd" class="letter">
-        <img src="../Images/apple.gif"  alt=""/>我收集的所有苹果数：<span id="totalapples"></span>
+        <img src="../images/apple.gif"  alt=""/>收集的苹果数：<span id="totalapples"></span>
     </div> 
     <br />
     <div id="apples"  class="applecss"></div>
@@ -95,7 +93,7 @@
     <div id="msg"></div>
     <br />
     <asp:HyperLink ID="HLfinger" runat="server" 
-        NavigateUrl="~/Student/allchinese.aspx" Target="_blank" SkinID="HyperLink" 
+        NavigateUrl="~/student/allchinese.aspx" Target="_blank" SkinID="HyperLink" 
         Width="120px" CssClass="txtszcenter" Height="18px">拼音输入英雄榜</asp:HyperLink>
     <br /> <br />     
     <div id="debug">
@@ -103,8 +101,8 @@
     <br />
 </div>
 <br />
-    <script src="../Js/pydic.js" type="text/javascript"></script>
-    <script src="../Js/Chinese.js" type="text/javascript"></script>
+    <script src="../js/pydic.js" type="text/javascript"></script>
+    <script src="../js/Chinese.js" type="text/javascript"></script>
 </div>
 </asp:Content>
 

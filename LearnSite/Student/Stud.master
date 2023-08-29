@@ -1,59 +1,54 @@
-﻿<%@ Master Language="C#"   AutoEventWireup="true" CodeFile="Stud.master.cs" Inherits="Student_Stud" %>
+﻿<%@ master language="C#" autoeventwireup="true" inherits="Student_Stud, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-    <title></title>   
-    <link href="../App_Themes/Student/StyleSheet.css" rel="stylesheet" type="text/css" />
-    <script src="../Js/jquery-1.8.2.min.js" type="text/javascript"></script>        
-    <link href="../Js/tinybox.css" rel="stylesheet" type="text/css" />
-    <script src="../Js/tinybox.js" type="text/javascript"></script>
+    <title></title>
+    <link href="../js/css/font-awesome.min.css" rel="stylesheet" type="text/css" />   
+    <link href="../App_Themes/Student/StyleSheet.css?ver=621" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>        
+    <link href="../js/tinybox.css" rel="stylesheet" type="text/css" />
+    <script src="../js/tinybox.js" type="text/javascript"></script>
     <script type="text/javascript">
         function showShare() {
-            var urlat = "../Student/groupshare.aspx";
+            var urlat = "../student/groupshare.aspx";
             TINY.box.show({ iframe: urlat, boxid: 'frameless', width: 600, height: 400, fixed: false, maskopacity: 60, close: false })
         }   
     </script>
     </head>
-<body>
+<body class="ground">
     <form id="form1" runat="server">
-    <center>
       <div  class="studmasterhead">
-            <div  class="banner" >
-                <script src="../Js/road.js" type="text/javascript"></script>
-      	<script type="text/javascript" >
-      	    var first = "../";
-      	    ShowRoad(first);
-            </script> 
-                </div>
-                <center>
+            <div  class="banner" > 
+            </div>
             <div  class="menu">
             <ul class="nav">
-            <li ><a href="../Student/myinfo.aspx">我的首页</a></li>
-            <li ><a href="../Student/mycourse.aspx">我的学案</a></li>
-            <li ><a href="../Student/mywork.aspx">我的作品</a></li>
-            <li ><a href="../Student/mychinese.aspx">打字宝典</a></li>
-            <li ><a href="../Student/myquiz.aspx">常识测验</a></li>
-            <li ><a href="../Student/mycode.aspx">编程乐园</a></li>
-            <li ><a href="../Student/myfile.aspx">在线资源</a></li>
+            <li ><a href="../student/myinfo.aspx">我的学案</a></li>
+            <li ><span class="sp"></span></li>
+            <li ><a href="../student/mywork.aspx">我的作品</a></li>
+            <li ><span class="sp"></span></li>
+            <li ><a href="../student/myfinger.aspx">打字宝典</a></li>
+            <li ><span class="sp"></span></li>
+            <li ><a href="../student/myquiz.aspx">常识积累</a></li>
+            <li ><span class="sp"></span></li>
+            <li ><a href="../student/myfile.aspx">在线资源</a></li>
+            <li ><span class="sp"></span></li>
             <li ><a onclick="showShare()">我的网盘</a> </li>
-            </ul>            
+            </ul>             
             </div>
-            </center>
-      <div class="stu">
+      <div class="st">
             <center>
             <div class="placeauto" >
             <div  class="path"> 
             &nbsp;
             </div>
-        <asp:contentplaceholder id="Cphs" runat="server">
-        </asp:contentplaceholder>
-        </div>
-        </center>  
+            <asp:contentplaceholder id="Cphs" runat="server">
+            </asp:contentplaceholder>
+            </div>
+            </center>  
         </div>      
         </div>
-       </center>
         <br />
     </form>
 </body>

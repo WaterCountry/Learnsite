@@ -1,14 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="computer.aspx.cs" Inherits="Seat_computer" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Seat_computer, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>机房电脑布置图</title>
-    <script src="../Js/jquery-1.8.2.min.js" type="text/javascript"></script>
-    <script src="../Js/jquery-ui-1.8.24.custom.min.js" type="text/javascript"></script>
-    <script src="../Js/jquery.cookie.js" type="text/javascript"></script>
-    <link href="../Js/computer.css" rel="stylesheet" type="text/css" />
-    <script src="../Js/seatsave.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui-1.8.24.custom.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.cookie.js" type="text/javascript"></script>
+    <link href="../js/computer.css" rel="stylesheet" type="text/css" />
+    <script src="../js/seatsave.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
             $(init);

@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Student/Scm.master" StylesheetTheme="Student" Validaterequest="false" AutoEventWireup="true" CodeFile="summaryedit.aspx.cs" Inherits="Student_summaryedit" %>
+﻿<%@ page language="C#" masterpagefile="~/student/Scm.master" stylesheettheme="Student" validaterequest="false" autoeventwireup="true" inherits="Student_summaryedit, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cpcm" Runat="Server">
 <div  id="showcontent">
         <center>
-            <table style="border: 1px double #CADEFD;font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt; text-align: left;">
+            <table style="border: 1px double #CADEFD;font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt; text-align: left;">
                 <tr>
                     <td colspan="3" style="width: 660px">
                         学案名称：<asp:Label ID="Label1" runat="server"></asp:Label>
@@ -18,8 +18,8 @@
 		    var editor;
             var cid= <%=myCid() %>;
             var ty="Course";
-            var upjs= '../kindeditor/aspnet/upload_json.aspx?Cid='+cid+'&Ty='+ty;
-            var fmjs='../kindeditor/aspnet/file_manager_json.aspx?Cid='+cid+'&Ty='+ty;
+            var upjs= '../kindeditor/aspnet/upload_json.aspx?cid='+cid+'&Ty='+ty;
+            var fmjs='../kindeditor/aspnet/file_manager_json.aspx?cid='+cid+'&Ty='+ty;
 		    KindEditor.ready(function (K) {
 		        editor = K.create('textarea[name="textareaItem"]', {
 		            resizeType: 1,

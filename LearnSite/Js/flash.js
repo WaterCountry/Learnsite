@@ -1,5 +1,5 @@
 ﻿function ShowFlash() {
-    var url = "../Images/road.swf";
+    var url = "../images/road.swf";
     var Width = 640;
     var Height = 480;
     var wmode = 'transparent';

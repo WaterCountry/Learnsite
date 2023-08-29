@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="upgrade.aspx.cs" Inherits="UpGrade" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="UpGrade, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -17,7 +17,7 @@
         .style2
         {
             font-family: 宋体, Arial, Helvetica, sans-serif;
-            font-size: 9pt;
+            font-size: 11pt;
         }
         .style3
         {
@@ -53,11 +53,16 @@
                 onclick="Btnupgrade_Click" Height="24px" Width="100px" />
             <br />
             <br />
+            <asp:Button ID="BtnCreateTable" runat="server" onclick="BtnCreateTable_Click" 
+                Text="创建数据表" />
+            <br />
+            <br />
             <asp:Label ID="Labelmsg" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
             <br />
             <br />
-            <div style="margin: auto; width: 300px; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt;">            
-            <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" BackColor="#F7C2A6">
+            <div style="margin: auto; width: 300px; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt;">            
+            <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center" BackColor="#F7C2A6" 
+                    Visible="False">
                 <br />
                 数据库服务器名称：<asp:TextBox ID="TextBoxSqlServer" runat="server" 
                     BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Height="20px"></asp:TextBox>                
@@ -79,7 +84,7 @@
                 <br />
                 <br />
                 <asp:Button ID="Buttonedit" runat="server" Font-Size="9pt" Height="24px" 
-                    onclick="Buttonedit_Click" Text="修改" Width="100px" />
+                    onclick="Buttonedit_Click" Text="修改" Width="100px" Visible="False" />
                 <br />
                 <br />
             <br />

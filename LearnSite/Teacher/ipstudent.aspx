@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ipstudent.aspx.cs" Inherits="Teacher_ipstudent" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Teacher_ipstudent, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="text-align: center; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt;">    
+    <div style="text-align: center; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt;">    
         <br />
 &nbsp;
         本机IP<asp:Label ID="LabelIp" runat="server" Font-Bold="True"></asp:Label>

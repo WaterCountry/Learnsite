@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" StylesheetTheme="Teacher"  CodeFile="circlegroups.aspx.cs" Inherits="Teacher_circlegroups" %>
+﻿<%@ page language="C#" autoeventwireup="true" stylesheettheme="Teacher" inherits="Teacher_circlegroups, LearnSite" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -24,12 +24,12 @@
         </asp:DataList>
         <br />
         <asp:Label ID="Labelgid" runat="server" Visible="False"></asp:Label>
-        <asp:ImageButton ID="ImgBtnrefresh" runat="server" ImageUrl="~/Images/b.gif" 
+        <asp:ImageButton ID="ImgBtnrefresh" runat="server" ImageUrl="~/images/b.gif" 
             onclick="ImgBtnrefresh_Click" />
         <asp:Label ID="Labelpos" runat="server" Text="0" Visible="False"></asp:Label>
         <asp:Label ID="Labellastpos" runat="server" Text="0" Visible="False"></asp:Label>
                  <br />
-                <img alt="组长" src="../Images/gflag.gif" /><asp:Label 
+                <img alt="组长" src="../images/gflag.gif" /><asp:Label 
             ID="LabelSgtitle" runat="server" 
             Font-Bold="True" ForeColor="#0066FF" ></asp:Label>
 &nbsp;组长：<asp:Label 
@@ -54,12 +54,12 @@
                     </asp:DropDownList>
         <br />
         <br />
-        <asp:ImageButton ID="ImgBtnLeft" runat="server" ImageUrl="~/Images/left.png" 
+        <asp:ImageButton ID="ImgBtnLeft" runat="server" ImageUrl="~/images/left.png" 
             onclick="ImgBtnLeft_Click" Width="16px" />
             &nbsp;<asp:Button ID="BtnCicle" runat="server" onclick="BtnCicle_Click" 
             SkinID="BtnSmall" Text="播放" />
             &nbsp;<asp:ImageButton ID="ImgBtnright" runat="server" 
-            ImageUrl="~/Images/right.png" onclick="ImgBtnright_Click" />
+            ImageUrl="~/images/right.png" onclick="ImgBtnright_Click" />
 
         <script type ="text/javascript" >
             function myrefresh() {

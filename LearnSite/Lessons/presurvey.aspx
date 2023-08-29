@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Lessons/prescm.master"  StylesheetTheme="Student"  AutoEventWireup="true" CodeFile="presurvey.aspx.cs" Inherits="Lessons_presurvey" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/lessons/prescm.master" stylesheettheme="Student" autoeventwireup="true" inherits="Lessons_presurvey, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Ppcm" Runat="Server">
     <div id="student">
     <br />
-        <asp:ImageButton ID="Btnclock" runat="server" ImageUrl="~/Images/clock.gif"  Enabled="False" />
+        <asp:ImageButton ID="Btnclock" runat="server" ImageUrl="~/images/clock.gif"  Enabled="False" />
         <asp:Label runat="server" ID="Lbtitle" Font-Bold="True" Font-Size="16px"></asp:Label>
     <br />
     <br />
@@ -49,7 +49,7 @@
         <asp:Button ID="Btnshow" runat="server"  Text="查看结果" 
         BorderStyle="None" CssClass="buttonimg" />
     <br />
-        <script src="../Js/jquery-1.8.2.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>
     <script type="text/javascript" >
         function passrefresh() {
                 var oldt = document.getElementById("ctl00_Ppcm_Lbtime").value;

@@ -1,10 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher"
-    AutoEventWireup="true" CodeFile="softcategory.aspx.cs" Inherits="Teacher_softcategory" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_softcategory, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
     <div>
         <div class="centerdiv">
-            <div style="margin: auto; width: 700px; font-size:9pt; text-align:center">
+            <div style="margin: auto; width: 700px; font-size:11pt; text-align:center">
                 <br />
                 <strong>资源的分类设置</strong>：<br />
                 <br />
@@ -49,13 +48,13 @@
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
                                 <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" 
-                                    CommandName="Edit" ImageUrl="~/Images/e.gif" Text="编辑" />
+                                    CommandName="Edit" ImageUrl="~/images/e.gif" Text="编辑" />
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="True" 
-                                    CommandName="Update" ImageUrl="~/Images/u.gif" Text="更新" />
+                                    CommandName="Update" ImageUrl="~/images/u.gif" Text="更新" />
                                 &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" 
-                                    CommandName="Cancel" ImageUrl="~/Images/c.gif" Text="取消" />
+                                    CommandName="Cancel" ImageUrl="~/images/c.gif" Text="取消" />
                             </EditItemTemplate>
                             <ItemStyle Width="60px" />
                         </asp:TemplateField>

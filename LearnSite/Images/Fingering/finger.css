@@ -1,8 +1,4 @@
-﻿body
-{
-    background-color: #FEF9CD;
-}
-div{background-color: #FEF9CD;}
+﻿
 .hand
 {
     padding: 4px;
@@ -13,9 +9,8 @@ div{background-color: #FEF9CD;}
 .letter
 {
     font-family: Arial;
-    font-size: 9pt;
+    font-size: 11pt;
     text-align:center;
-    background-color: #D1E8CC;
     height: 18px;
     line-height: 18px;
     padding: 2px;
@@ -28,7 +23,7 @@ div{background-color: #FEF9CD;}
 {
     width: 200px;
     margin: 2px;
-    height: 120px;
+    height: 100px;
     font-family: 宋体, Arial, Helvetica, sans-serif;
     font-size: 12pt;
     padding: 6px;
@@ -43,6 +38,7 @@ div{background-color: #FEF9CD;}
     font-size: 28pt;
     text-align:center;
     font-weight: bold;
+    user-select:none;
 }
 .inputtxt
 {
@@ -69,6 +65,7 @@ div{background-color: #FEF9CD;}
     font-family: 宋体, Arial, Helvetica, sans-serif;
     font-size: 32pt;
     text-align: center;
+	font-weight: bold;
 }
 .typewd
 {
@@ -79,9 +76,12 @@ div{background-color: #FEF9CD;}
     margin: auto;
     background-color: #D1E8CC;
     text-align: center;
-    width: 600px;
+    width: 400px;
     font-weight: bold;
 }
+
+
+#keyhand{background-image:url(hand.png);width:483px;height:233px;}
 
 /*键盘总宽高*/
 #keyboard
@@ -92,7 +92,7 @@ div{background-color: #FEF9CD;}
     padding: 6px;
 }
 /*数字键字母键符号键*/
-.keyCom{background-image:url(keyCom.gif);width:32px;height:28px;background-repeat:no-repeat;float:left;
+.keyCom{background-image:url(keycom.gif);width:32px;height:28px;background-repeat:no-repeat;float:left;
 	font-family:Helvetica;font-size:14px;text-align:center;line-height:14px;padding-top:5px;}
 /*功能键*/
 .tab{width:42px;background:url(tab.gif) no-repeat;}

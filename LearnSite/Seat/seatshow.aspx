@@ -1,16 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="seatshow.aspx.cs" Inherits="Seat_seatshow" %>
-
-<%@ Register Assembly="Anthem" Namespace="Anthem" TagPrefix="anthem" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Seat_seatshow, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>机房电脑布置图</title>
-    <script src="../Js/jquery-1.8.2.min.js" type="text/javascript"></script>
-    <script src="../Js/jquery-ui-1.8.24.custom.min.js" type="text/javascript"></script>
-    <link href="../Js/computer.css" rel="stylesheet" type="text/css" />
-    <script src="../Js/seatToolTip.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui-1.8.24.custom.min.js" type="text/javascript"></script>
+    <link href="../js/computer.css" rel="stylesheet" type="text/css" />
+    <script src="../js/seatToolTip.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
             $(init);
@@ -101,7 +99,7 @@
         <center>
             <div class="nomenu">
                 <asp:ImageButton runat="server" ID="reflashStudent" 
-                    ImageUrl="~/Images/home.png" 
+                    ImageUrl="~/images/home.png" 
                     ToolTip="点我刷新" onclick="reflashStudent_Click" />
                 &nbsp;<asp:Label runat="server" ID="LabelTitle" Font-Bold="True">机房名称</asp:Label>
                 &nbsp;&nbsp;&nbsp;<label id="msg"></label></div>

@@ -1,12 +1,12 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="typer.aspx.cs" Inherits="Teacher_typer" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_typer, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div   class="placehold">        
         <div  class="cheadright">
-              <asp:Button ID="BtnTypeSet" runat="server"  Text="¥Ú◊÷…Ë÷√"  
+              <asp:Button ID="BtnTypeSet" runat="server"  Text="ÊâìÂ≠óËÆæÁΩÆ"  
                   onclick="BtnTypeSet_Click" SkinID="BtnNormal" />
         &nbsp;&nbsp;&nbsp;
-              <asp:Button ID="BtnAdd" runat="server"  Text="Œƒ’¬ÃÌº”"  onclick="BtnAdd_Click" SkinID="BtnNormal" />
+              <asp:Button ID="BtnAdd" runat="server"  Text="ÊñáÁ´†Ê∑ªÂä†"  onclick="BtnAdd_Click" SkinID="BtnNormal" />
         </div>
             <div  class="softdiv">
                 <asp:GridView ID="GVType" runat="server" AllowPaging="True" 
@@ -14,42 +14,42 @@
                     PageSize="20" Width="98%" onpageindexchanging="GVType_PageIndexChanging" 
                     onrowdatabound="GVType_RowDataBound" EnableModelValidation="True">
                     <Columns>
-                        <asp:BoundField HeaderText="–Ú∫≈" />
+                        <asp:BoundField HeaderText="Â∫èÂè∑" />
                         <asp:HyperLinkField DataNavigateUrlFields="Tid" 
-                            DataNavigateUrlFormatString="TypeShow.aspx?Tid={0}" DataTextField="Ttitle" 
-                            HeaderText="Œƒ’¬±ÍÃ‚">
+                            DataNavigateUrlFormatString="typeshow.aspx?tid={0}" DataTextField="Ttitle" 
+                            HeaderText="ÊñáÁ´†Ê†áÈ¢ò">
                         <ItemStyle HorizontalAlign="Left" />
                         </asp:HyperLinkField>
-                        <asp:BoundField DataField="Ttype" HeaderText="Œƒ’¬¿‡–Õ" />
-                        <asp:BoundField DataField="Tuse" HeaderText="Œƒ’¬∑∂Œß">
+                        <asp:BoundField DataField="Ttype" HeaderText="ÊñáÁ´†Á±ªÂûã" />
+                        <asp:BoundField DataField="Tuse" HeaderText="ÊñáÁ´†ËåÉÂõ¥">
                         <ControlStyle Width="30px" />
                         </asp:BoundField>
                         <asp:HyperLinkField DataNavigateUrlFields="Tid" 
-                            DataNavigateUrlFormatString="TypeEdit.aspx?Tid={0}" Text="±‡º≠">
+                            DataNavigateUrlFormatString="typeedit.aspx?tid={0}" Text="ÁºñËæë">
                         <ControlStyle Width="30px" />
                         </asp:HyperLinkField>
                         <asp:HyperLinkField DataNavigateUrlFields="Tid" 
-                            DataNavigateUrlFormatString="TypeDel.aspx?Tid={0}" Text="…æ≥˝" />
+                            DataNavigateUrlFormatString="typedel.aspx?tid={0}" Text="Âà†Èô§" />
                     </Columns>
                     <pagertemplate>
                         <div  class="pagediv">
-                            µ⁄<asp:Label ID="lblPageIndex" runat="server" 
+                            Á¨¨<asp:Label ID="lblPageIndex" runat="server" 
                                 text="<%# ((GridView)Container.Parent.Parent).PageIndex + 1  %>" />
-                            “≥  π≤<asp:Label ID="lblPageCount" runat="server" 
+                            È°µ  ÂÖ±<asp:Label ID="lblPageCount" runat="server" 
                                 text="<%# ((GridView)Container.Parent.Parent).PageCount  %>" />
-                            “≥ 
+                            È°µ 
                             <asp:LinkButton ID="btnFirst" runat="server" causesvalidation="False" 
                                 commandargument="First" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text=" ◊“≥" />
+                                ForeColor="Black" text="È¶ñÈ°µ" />
                             <asp:LinkButton ID="btnPrev" runat="server" causesvalidation="False" 
                                 commandargument="Prev" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text="…œ“ª“≥" />
+                                ForeColor="Black" text="‰∏ä‰∏ÄÈ°µ" />
                             <asp:LinkButton ID="btnNext" runat="server" causesvalidation="False" 
                                 commandargument="Next" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text="œ¬“ª“≥" />
+                                ForeColor="Black" text="‰∏ã‰∏ÄÈ°µ" />
                             <asp:LinkButton ID="btnLast" runat="server" causesvalidation="False" 
                                 commandargument="Last" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text="Œ≤“≥" />
+                                ForeColor="Black" text="Â∞æÈ°µ" />
                         </div>
                     </pagertemplate>
                 </asp:GridView>                
@@ -65,20 +65,20 @@
                     <asp:ListItem>400</asp:ListItem>
                     <asp:ListItem>500</asp:ListItem>
                 </asp:DropDownList>
-                “‘…œÀŸ∂»<asp:Button ID="ButtonClearThis" runat="server"  Text="«Â≥˝"   SkinID="BtnSmall" 
-                    onclick="ButtonClearThis_Click" ToolTip="«Â≥˝≥¨π˝÷∏∂®ÀŸ∂»µƒ÷–Œƒ¥Ú◊÷≥…º®" />
+                ‰ª•‰∏äÈÄüÂ∫¶<asp:Button ID="ButtonClearThis" runat="server"  Text="Ê∏ÖÈô§"   SkinID="BtnSmall" 
+                    onclick="ButtonClearThis_Click" ToolTip="Ê∏ÖÈô§Ë∂ÖËøáÊåáÂÆöÈÄüÂ∫¶ÁöÑ‰∏≠ÊñáÊâìÂ≠óÊàêÁª©" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <asp:Button ID="ButtonClearType" runat="server"  Text="«Â≥˝÷–Œƒ¥Ú◊÷≥…º®"   SkinID="BtnLong" 
-                    onclick="ButtonClearType_Click" Width="120px" />
+              <asp:Button ID="ButtonClearType" runat="server"  Text="Ê∏ÖÈô§‰∏≠ÊñáÊâìÂ≠óÊàêÁª©"   SkinID="BtnLong" 
+                    onclick="ButtonClearType_Click" Width="140px" />
                 &nbsp;&nbsp;
-              <asp:Button ID="ButtonClearFinger" runat="server"  Text="«Â≥˝÷∏∑®¥Ú◊÷≥…º®"   SkinID="BtnLong" 
-                    onclick="ButtonClearFinger_Click" Width="120px" />
+              <asp:Button ID="ButtonClearFinger" runat="server"  Text="Ê∏ÖÈô§ÊåáÊ≥ïÊâìÂ≠óÊàêÁª©"   SkinID="BtnLong" 
+                    onclick="ButtonClearFinger_Click" Width="140px" />
                 &nbsp;&nbsp;&nbsp;
                 <asp:HyperLink ID="HLprint" runat="server" 
-                    NavigateUrl="~/Teacher/printtyper.aspx" Target="_blank" Height="18px">≈≈––∞Ò¥Ú”°</asp:HyperLink>
+                    NavigateUrl="~/teacher/printtyper.aspx" Target="_blank" Height="18px">ÊéíË°åÊ¶úÊâìÂç∞</asp:HyperLink>
                 &nbsp;&nbsp;
                 <asp:HyperLink ID="HLfinger" runat="server" 
-                    NavigateUrl="~/en.aspx" Target="_blank" Height="18px">÷∏∑®”¢Œƒ◊÷µ‰</asp:HyperLink>
+                    NavigateUrl="~/en.aspx" Target="_blank" Height="18px">ÊåáÊ≥ïËã±ÊñáÂ≠óÂÖ∏</asp:HyperLink>
                 <br />
                 <br />
         </div>

@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Stud.master" StylesheetTheme="Student"  AutoEventWireup="true" CodeFile="myfinger.aspx.cs" Inherits="Student_myfinger" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/student/Stud.master" stylesheettheme="Student" autoeventwireup="true" inherits="Student_myfinger, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cphs" Runat="Server">
-    <link href="../Images/Fingering/finger.css" rel="stylesheet" type="text/css" />
+    <link href="../images/fingering/finger.css" rel="stylesheet" type="text/css" />
 <div id="student">
 <div class="left">
 <center>
@@ -13,8 +13,9 @@
         </div>
         <br />
         <input id="InputWord" type="text"  class="inputtxt"  onpaste= "return   false; "   ondragenter= "return   false;" tabindex="0"  autocomplete="off" />
-        <br />
+        <br /><br />
     </div> 
+	<div id="keyhand"></div>
     <div id="keyboard">
 <!--第一行-->
 	<div class="keyCom" id="keyDHSY">~<br />`</div><div class="keyCom" id="key1">!<br />1</div>
@@ -53,24 +54,24 @@
 	<div class="alt keyText">Alt</div><div class="space keyText" id="keyKG"></div>
 	<div class="alt keyText">Alt</div><div class="keymic keyText"></div><div class="ctrl keyText">Ctrl</div>
 </div>
-    <br />
 </center>
 </div>
 <div class="right">
     <div>
     <asp:HyperLink ID="HChinese" runat="server" 
-        ImageUrl="~/Images/py.png" NavigateUrl="~/Student/mychinese.aspx" ></asp:HyperLink> 
+        ImageUrl="~/images/py.png" NavigateUrl="~/student/mychinese.aspx" ></asp:HyperLink> 
     <asp:HyperLink ID="HkFinger" runat="server" 
-        ImageUrl="~/Images/en.png" NavigateUrl="~/Student/myfinger.aspx"></asp:HyperLink>        
+        ImageUrl="~/images/en.png" NavigateUrl="~/student/myfinger.aspx"></asp:HyperLink>        
     <asp:HyperLink ID="HTyper" runat="server" 
-        ImageUrl="~/Images/cn.png" NavigateUrl="~/Student/mytype.aspx" ></asp:HyperLink>       
+        ImageUrl="~/images/cn.png" NavigateUrl="~/student/mytype.aspx" ></asp:HyperLink>       
     </div>
     <br />选择级别：
     <select name="ls" id="levelselect"  onchange="changelevel()" 
         style="font-size: 9pt" >
-    <option value="0">小学英语</option>
-    <option  value="1" selected="selected">中考英语</option>
+    <option value="0" >小学英语</option>
+    <option  value="1">中考英语</option>
     <option value="2">高考英语</option>
+    <option value="3" selected="selected">编程英语</option>
     </select>
     <br />
     <div id="snum" style="display:none"><%=this.mysnum%></div>
@@ -90,20 +91,33 @@
     <br />
     <div id="msg"></div>
     <br />
-    <br />
     <asp:HyperLink ID="HLfinger" runat="server" 
-        NavigateUrl="~/Student/allfinger.aspx" Target="_self" SkinID="HyperLink" 
+        NavigateUrl="~/student/allfinger.aspx" Target="_self" SkinID="HyperLink" 
         Width="120px" CssClass="txtszcenter" Height="18px">英文输入英雄榜</asp:HyperLink>
-    <br />    
+    <br />
+    <div >
+    <br />
+    <asp:HyperLink ID="Hlbox" runat="server" 
+        NavigateUrl="~/sokoban/index.aspx" Target="_blank" SkinID="HyperLink" 
+        Width="120px" CssClass="txtszcenter" Height="18px" >推箱子游戏</asp:HyperLink>
+    <br /> 
+    <br />
+    <asp:HyperLink ID="HyperLink2" runat="server" 
+        NavigateUrl="~/ztype/index.html" Target="_blank" SkinID="HyperLink" 
+        Width="120px" CssClass="txtszcenter" Height="18px" >太空打字游戏</asp:HyperLink>
+    <br />  
+    </div>   
     <div id="victory" style=" display:none">
-    <img src="../Js/images/v.gif"  alt=""/>
+    <img src="../js/images/v.gif"  alt=""/>
     </div>
     <br />
 </div>
 <br />
-    <script src="../Js/jquery-1.8.2.min.js" type="text/javascript"></script>
-    <script src="../Js/Finger.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="../js/Finger.js" type="text/javascript"></script>
+
     <div id="tempdiv" style=" display:none"></div>
+
 </div>
 </asp:Content>
 

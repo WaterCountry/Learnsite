@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master"  StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="typechinese.aspx.cs" Inherits="Teacher_typechinese" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_typechinese, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div   class="placehold">        
@@ -20,18 +20,18 @@
                         <ItemStyle HorizontalAlign="Left" Width="60px" />
                         </asp:BoundField>
                         <asp:HyperLinkField DataNavigateUrlFields="Nid" 
-                            DataNavigateUrlFormatString="TypeChineseShow.aspx?Nid={0}" DataTextField="Ntitle" 
+                            DataNavigateUrlFormatString="typechineseshow.aspx?nid={0}" DataTextField="Ntitle" 
                             HeaderText="词语标题">
                         <HeaderStyle HorizontalAlign="Left" />
                         <ItemStyle HorizontalAlign="Left" />
                         </asp:HyperLinkField>
                         <asp:HyperLinkField DataNavigateUrlFields="Nid" 
-                            DataNavigateUrlFormatString="TypeChineseEdit.aspx?Nid={0}" Text="编辑">
+                            DataNavigateUrlFormatString="typechineseedit.aspx?nid={0}" Text="编辑">
                         <ControlStyle Width="30px" />
                         <ItemStyle Width="40px" />
                         </asp:HyperLinkField>
                         <asp:HyperLinkField DataNavigateUrlFields="Nid" 
-                            DataNavigateUrlFormatString="TypeChineseDel.aspx?Nid={0}" Text="删除" >
+                            DataNavigateUrlFormatString="typechinesedel.aspx?nid={0}" Text="删除" >
                         <ItemStyle Width="40px" />
                         </asp:HyperLinkField>
                     </Columns>

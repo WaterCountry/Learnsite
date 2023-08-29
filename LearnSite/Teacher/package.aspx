@@ -1,16 +1,16 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="package.aspx.cs" Inherits="Teacher_package" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_package, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div  class="placehold">
         <br />
         <br />
         <div  class="infomation">
-            <div  class="phead">—ß∞∏∞¸£®Package£©</div>
+            <div  class="phead">Â≠¶Ê°àÂåÖÔºàPackageÔºâ</div>
             <br />
-            —ß∞∏√˚≥∆£∫<asp:Label ID="LabelCtitle" runat="server"></asp:Label>
+            Â≠¶Ê°àÂêçÁß∞Ôºö<asp:Label ID="LabelCtitle" runat="server"></asp:Label>
             <br />
             <br />
-            —ß∞∏ID£∫<asp:Label ID="LabelCid" runat="server"></asp:Label>
+            Â≠¶Ê°àIDÔºö<asp:Label ID="LabelCid" runat="server"></asp:Label>
             <br />
             <br />
             <div class="packagediv">
@@ -22,16 +22,16 @@
                 <br />
                 <br />
                 <asp:Button ID="Btndown" runat="server" onclick="Btndown_Click" 
-                    SkinID="BtnSmall" Text="’‚¿Ôœ¬‘ÿ" ToolTip="µ„ª˜œ¬‘ÿ" />
+                    SkinID="BtnSmall" Text="ËøôÈáå‰∏ãËΩΩ" ToolTip="ÁÇπÂáª‰∏ãËΩΩ" />
                 <br />
                 <br />
                 <br />            
             </asp:Panel>
             </div>
             <br />
-                <asp:Button ID="BtnZip" runat="server"  Text="¥Ú∞¸" onclick="BtnZip_Click"  ToolTip="µ„ª˜ø™ º—ß∞∏¥Ú∞¸" SkinID="BtnNormal" />
+                <asp:Button ID="BtnZip" runat="server"  Text="ÊâìÂåÖ" onclick="BtnZip_Click"  ToolTip="ÁÇπÂáªÂºÄÂßãÂ≠¶Ê°àÊâìÂåÖ" SkinID="BtnNormal" />
                 &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Btnreturn" runat="server"  Text="∑µªÿ" onclick="Btnreturn_Click"  SkinID="BtnNormal" />
+                <asp:Button ID="Btnreturn" runat="server"  Text="ËøîÂõû" onclick="Btnreturn_Click"  SkinID="BtnNormal" />
                 <br />
             <br />
         <asp:Label ID="Labelmsg" runat="server"   SkinID="LabelMsgRed"></asp:Label>
@@ -39,7 +39,7 @@
             <br />
             <div style="width: 98%; margin: auto" >
                 <asp:DataList ID="Dlfilelist" runat="server" 
-                    RepeatColumns="2" RepeatDirection="Horizontal" Caption="±æ—ß∞∏ƒø¬ºƒ⁄◊ ‘¥¡–±Ì"  
+                    RepeatColumns="2" RepeatDirection="Horizontal" Caption="Êú¨Â≠¶Ê°àÁõÆÂΩïÂÜÖËµÑÊ∫êÂàóË°®"  
                 CaptionAlign="Left" CellPadding="3" CellSpacing="3" 
                     onitemdatabound="Dlfilelist_ItemDataBound" Width="100%" >
                     <ItemTemplate>
@@ -47,7 +47,7 @@
                             <asp:Label ID="Labelfid" runat="server" Text='<%# Eval("fid") %>' BackColor="#EEF0EF"></asp:Label>&nbsp;
                             <asp:HyperLink ID="HLfname" runat="server" Target="_blank" Text='<%# Eval("fname") %>' ></asp:HyperLink>&nbsp;                            
                             <asp:Label ID="Labelfsize" runat="server" Text='<%# Eval("fsize") %>' ></asp:Label>
-                            <asp:Label ID="Labelfread" runat="server" Text='<%#  Eval("fread") %>'  ToolTip=" «∑Ò÷ª∂¡£®T£∫÷ª∂¡ | F£∫ø…–¥£©"  ForeColor="#00A279"></asp:Label>
+                            <asp:Label ID="Labelfread" runat="server" Text='<%#  Eval("fread") %>'  ToolTip="ÊòØÂê¶Âè™ËØªÔºàTÔºöÂè™ËØª | FÔºöÂèØÂÜôÔºâ"  ForeColor="#00A279"></asp:Label>
                             <asp:Label ID="Labelurl" runat="server" Text='<%# Eval("furl") %>' Visible="false" ></asp:Label>                        
                         </div>
                     </ItemTemplate>

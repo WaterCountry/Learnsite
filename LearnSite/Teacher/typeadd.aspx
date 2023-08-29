@@ -1,13 +1,13 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master"  StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="typeadd.aspx.cs" Inherits="Teacher_typeadd" %>
+О╩©<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_typeadd, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div  class="placehold">
 <br />
     <div  class="typediv">
-        &nbsp; жпндндуб╠ЙлБё╨<asp:TextBox ID="Ttitle" runat="server"  Width="220px"  
+        &nbsp; Д╦╜Ф√┤Ф√┤Г╚═Ф═┤И╒≤О╪ <asp:TextBox ID="Ttitle" runat="server"  Width="220px"  
             SkinID="TextBoxNormal"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="BtnNoSet" runat="server" Text="гЕЁЩ╦Яй╫" OnClick="BtnNoSet_Click"  SkinID="BtnNormal"  ToolTip="о╣мЁочжф╨╨вжЁ╓╤хн╙210╦Ж" />
+        <asp:Button ID="BtnNoSet" runat="server" Text="Ф╦┘И≥╓Ф═╪Е╪▐" OnClick="BtnNoSet_Click"  SkinID="BtnNormal"  ToolTip="ГЁ╩Г╩÷И≥░Е┬╤Ф╠┴Е╜≈И∙©Е╨╕Д╦╨210Д╦╙" />
                 </div>
     <div  class="typediv">
         <asp:TextBox ID="Tcontent" runat="server" Height="180px" MaxLength="300" TextMode="MultiLine"
@@ -16,10 +16,10 @@
         <br />
      <div  class="typedivcenter">
          <br />
-              <asp:Button ID="BtnAdd" runat="server"  Text="лМ╪с" OnClick="BtnAdd_Click"  SkinID="BtnNormal" />&nbsp;&nbsp;&nbsp;&nbsp;
-              <asp:Button ID="Btnreturn" runat="server"  Text="╥╣╩ь" OnClick="Btnreturn_Click"  SkinID="BtnNormal" /><br />
+              <asp:Button ID="BtnAdd" runat="server"  Text="Ф╥╩Е┼═" OnClick="BtnAdd_Click"  SkinID="BtnNormal" />&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:Button ID="Btnreturn" runat="server"  Text="Х©■Е⌡·" OnClick="Btnreturn_Click"  SkinID="BtnNormal" /><br />
                <br />
-               <asp:Label ID="Labelmsg" runat="server">о╣мЁочжфндубЁ╓╤хн╙210╦Ж╨╨вжё╛лМ╪сй╠вт╤╞х╔©у╦Я╡╒╡ц╪Тё║</asp:Label>
+               <asp:Label ID="Labelmsg" runat="server">ГЁ╩Г╩÷И≥░Е┬╤Ф√┤Г╚═И∙©Е╨╕Д╦╨210Д╦╙Ф╠┴Е╜≈О╪▄Ф╥╩Е┼═Ф≈╤Х┤╙Е┼╗Е▌╩Г╘╨Ф═╪Е╧╤Хё│Е┴╙О╪│</asp:Label>
          <br />
          </div>
          </div>

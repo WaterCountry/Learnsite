@@ -1,0 +1,401 @@
+html{
+  height: 100%;	
+}
+body{
+  top:0px;
+  background-color: #454e4e;
+  margin: 0px;
+  overflow: hidden; 
+  font-size:16px;
+  height: 100%;
+}
+
+#editor{  
+  background-color: #252d30;
+}
+
+.btn{
+  border: 1px solid #e0dbcb; 
+  text-decoration: none;
+  background-color: #f1ebd4;
+}
+
+i {
+  padding: 4px;
+}
+
+.sp{
+  width: 10px;
+  display:inline-block;
+}
+
+.map{
+	margin:auto;	
+	opacity:0.9;
+	text-align:center;
+}
+
+.fullimg{
+    position: absolute;
+	opacity:0.1;
+	top:50px;
+	right:0px;  
+	z-index: 887;
+	//filter:invert(80%);
+}
+
+.mapimg{
+	max-height:240px;
+}
+
+.mapimg:hover{
+	//filter:invert(60%);
+}
+#done{
+  position: absolute;
+  top: 70px; 	
+  right:10px;
+  opacity:0.9;
+  display:none;
+}
+.tooltip{
+	position: fixed;
+	bottom:0px;
+	height:30px;
+	line-height:30px;
+	left:0px;
+	user-select: none;
+    z-index: 999;
+	width:100%;	
+	//background-color: #454e4e;
+}
+.keyword{	
+	margin:2px;
+	padding:2px;
+	color:#73878e;	
+    //border: 1px solid #354044;
+	cursor: hand;	
+}
+.keyword:hover{
+    background-color: #252d30;
+	cursor: hand;
+}
+
+.keyopen{	
+	margin:2px;
+	padding:2px;
+	color:#73878e;	
+}
+.keyopen:hover{
+	color:#ccc;	
+    background-color: #252d30;
+	cursor: hand;	
+}
+
+.keycolor{
+	color:#73878e;
+	border: 0px ;	
+	width:100px;
+    background-color: transparent;	
+}
+
+.keymodel{	
+	margin:2px;
+	padding:2px;
+	color:#73878e;	
+	font-size: 20px;
+}
+.keymodel:hover{
+	color:#ccc;	
+    background-color: #252d30;
+	cursor: hand;	
+}
+.keybox{	
+	margin:2px;
+	padding:2px;
+	color:#73878e;	
+	font-size: 18px;
+}
+.keybox:hover{
+	color:#ccc;	
+    background-color: #252d30;
+	cursor: hand;	
+}
+#colorbox{
+	position: fixed;
+	bottom:26px;
+	left:260px;
+	z-index:1000;
+	color:#000;	
+	display:none;
+	
+}
+.keyexample{	
+	margin:2px;
+	padding:2px;
+	color:#73878e;	
+	font-size: 18px;
+}
+.keyexample:hover{
+	color:#ccc;	
+    background-color: #252d30;
+	cursor: hand;	
+}
+#codexample{
+	position: fixed;
+	bottom:50px;
+	right:60px;
+	z-index:1000;	
+	display:none;
+	background-color: #252d30;	
+    border: 2px solid #354044;
+	margin:0px;
+}
+#codeplace{
+	padding:20px;
+	font:18px/normal 'Consolas', 'source-code-pro', monospace;
+	line-height:24px;
+	white-space:pre;
+	color:#73878e;
+}
+#codebutton{
+	text-align:right;
+	padding:10px;
+}
+.btncode{	
+	background-color:#252d30;	
+    border: 1px solid #354044;	
+	cursor:pointer;
+	padding:4px;
+	color:#73878e;
+}
+.btncode:hover{	
+	background-color:#354044;
+}
+
+#title{
+	border: 0px solid #e0dbcb; 
+	text-decoration: none;
+    background-color: #454e4e;
+	color:#ddd; 
+	font-size: 24px;
+	font-weight: bold;
+	line-height:24px;
+}
+.description {
+    width: 20%;
+    min-width: 450px;
+	padding:4px;
+	overflow-y:auto;
+	
+}
+#content{	
+	//min-width:360px;
+    z-index:999;
+    color: #ddd;
+	padding:4px;
+}
+
+#savemsg
+{
+  position: absolute;
+  bottom: 20px;
+  right: 60px;  
+  bottom: 30px;
+  z-index: 999;
+  color:#F85B10; 
+  font-size:20px; 
+}
+#result{
+  position: absolute;
+  right: 10px;
+  width:600px;
+  overflow: hidden;
+  z-index:888;
+}
+#output{ 
+  width:500px;
+  //height:600px;
+  height:calc(100vh - 168px);
+  font:12px/normal  'Consolas', 'source-code-pro', monospace;
+  margin: 0px;
+  line-height:150%; 
+  font-size: 24px;  
+  color:#ddd;
+  padding:20px;
+  
+}
+#cv{ 
+  position: absolute;
+  top:50px;
+  padding: 0px;  
+  font-size: 20px;
+  color: #ddd;
+  width:600px;
+  height:600px;
+  background-repeat:no-repeat;
+  z-index: 888;
+  pointer-events: none;
+}
+
+.input{
+	border:0px solid #999;
+	height:20px;
+    line-height:20px;
+	background-color: #333f42;
+	font-size:16px;
+	color: #ddd;
+}
+.input:focus{
+	outline: none;
+	border:0px solid #999;
+	height:20px;
+	background-color: #333f42;
+	font-size:16px;
+	color: #ddd;
+}
+
+
+#memory{
+	position:absolute;
+	right:20px;
+	bottom:60px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -128px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 999;
+	cursor:pointer;
+}
+#memory:hover {background-color: #3f4b4f;border-radius:16px;}
+
+#big{
+	position:absolute;
+	right:90px;
+	bottom:0px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -32px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 1000;
+	cursor:pointer;
+}
+#big:hover {background-color: #3f4b4f;border-radius:16px;}
+#small{
+	position:absolute;
+	right:30px;
+	bottom:0px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -64px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 1000;
+	cursor:pointer;
+}
+#small:hover {background-color: #3f4b4f;border-radius:16px;}
+
+#run{
+	position:absolute;
+	right:20px;
+	bottom:180px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -160px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 999;
+	cursor:pointer;
+}
+#run:hover {background-color: #3f4b4f;border-radius:16px;}
+
+#clear{
+	position:absolute;
+	right:30px;
+	bottom:60px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -96px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 999;
+	cursor:pointer;
+}
+#clear:hover {background-color: #3f4b4f;border-radius:16px;}
+
+
+.button {
+    background-color: transparent;
+    //font-weight: bold;
+    margin: 0 10px 0 10px;
+    padding: 6px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    color: #ddd;
+    border: 2px solid #6c787b;
+	border-radius:6px;
+}
+.button:hover {background-color: #293134;  color: #fce383}
+
+#sideby{
+	position:absolute;
+	right:30px;
+	top:10px;	
+    z-index: 999;
+    color: #333;	
+}
+
+
+.banner {
+	width:100%;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #454e4e;
+    color: #ccc;
+    box-shadow: 0px 2px 3px 2px rgba(2, 2, 2, 0.3);
+    user-select: none;
+}
+#title {
+    display: inline;
+}
+
+.main {
+    margin-top: 10px;
+    display: flex;
+    height: calc(100vh - 100px);
+}
+
+
+
+.left {
+    width: 60%;
+    min-width: 400px;
+	padding:4px;
+}
+
+.right {
+    width: 20%;
+    min-width: 601px;
+	margin-right:10px;
+	margin-left:10px;
+	        
+	background-color:#252d30;	 
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸#585858;*/
+::-webkit-scrollbar
+{
+	width: 10px;
+	height: 10px;
+	//background-color: #293134;
+}
+ 
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+	//background-color: #2f393c;
+}
+ 
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+	//background-color: #49565a;
+}

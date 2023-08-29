@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="mythware.aspx.cs" Inherits="Teacher_mythware" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_mythware, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
  <div   class="placehold">   
@@ -10,7 +10,7 @@
      <div style="margin: auto; border: 1px solid #EBEBEB; padding: 2px; width: 680px; background-color: #F8FEFC;">
          最新模型文件夹列表<asp:ImageButton 
              ID="ImgBtnDown" runat="server" 
-             ImageUrl="~/Images/down.gif" onclick="ImgBtnDown_Click" ToolTip="点击打包下载" 
+             ImageUrl="~/images/down.gif" onclick="ImgBtnDown_Click" ToolTip="点击打包下载" 
              style="width: 16px" />
          <br />
                 <asp:DataList ID="Dlfilelist" runat="server" 
@@ -52,8 +52,8 @@
          <br />
          <br />
          <br />
-         <asp:HyperLink ID="Hlkroom" runat="server" ImageUrl="~/Images/zoom.gif" 
-             NavigateUrl="~/Teacher/myseat.aspx" Target="_blank" ToolTip="机房视图预览">HyperLink</asp:HyperLink>
+         <asp:HyperLink ID="Hlkroom" runat="server" ImageUrl="~/images/zoom.gif" 
+             NavigateUrl="~/teacher/myseat.aspx" Target="_blank" ToolTip="机房视图预览">HyperLink</asp:HyperLink>
          电脑室名称：<asp:TextBox ID="TextBoxRoom" runat="server" 
              Width="60px"></asp:TextBox>
          <br />

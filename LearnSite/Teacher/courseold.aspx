@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master"  StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="courseold.aspx.cs" Inherits="Teacher_courseold" %>
-<%@ Register assembly="Anthem" namespace="Anthem" tagprefix="anthem" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_courseold, LearnSite" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div  >
         <div  class="chead">
-            &nbsp;学案仓库：<asp:DropDownList ID="DDLgrade" runat="server" Font-Size="9pt" 
+            &nbsp;学案仓库：<asp:DropDownList ID="DDLgrade" runat="server" 
             Width="60px" EnableTheming="True" AutoPostBack="True" 
                 onselectedindexchanged="DDLgrade_SelectedIndexChanged">
         </asp:DropDownList>
             年级&nbsp;
                     <asp:Label ID="Labelmsg" runat="server" Width="220px" Height="16px" 
                 Font-Bold="False"></asp:Label>
-                    &nbsp;<asp:DropDownList ID="DDLterm" runat="server" Font-Size="9pt" 
+                    &nbsp;<asp:DropDownList ID="DDLterm" runat="server" 
                     EnableTheming="True" AutoPostBack="True" 
             onselectedindexchanged="DDLterm_SelectedIndexChanged" 
                 ToolTip="选择要显示学案的学期，不改变后台默认学期设置">
@@ -24,12 +24,12 @@
                     </div>
                     <div >
                     <div class="centerdiv">
-                    <anthem:GridView ID="GVCourse" runat="server" AllowPaging="True"
+                    <asp:GridView ID="GVCourse" runat="server" AllowPaging="True"
                             AutoGenerateColumns="False"  DataKeyNames="Cid"  
                             PageSize="20" Width="100%"
                             onpageindexchanging="GVCourse_PageIndexChanging" 
                             onrowdatabound="GVCourse_RowDataBound" CellPadding="6" 
-                            EnableModelValidation="True" Font-Size="9pt" 
+                            EnableModelValidation="True" 
                             onrowcommand="GVCourse_RowCommand" ForeColor="#111111" GridLines="None" >
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
@@ -41,7 +41,7 @@
                                 <ControlStyle Width="20px" />
                                 </asp:BoundField>
                                 <asp:HyperLinkField DataNavigateUrlFields="Cid" 
-                                    DataNavigateUrlFormatString="~/Teacher/CourseShow.aspx?Cid={0}&amp;Cold=T" 
+                                    DataNavigateUrlFormatString="~/teacher/courseshow.aspx?cid={0}&amp;cold=T" 
                                     DataTextField="Ctitle" HeaderText="仓库学案" >
                                 <HeaderStyle HorizontalAlign="Left" />
                                 <ItemStyle HorizontalAlign="Left" />
@@ -62,8 +62,8 @@
                                     <ItemStyle HorizontalAlign="Left" />
                                 </asp:TemplateField>
                                 <asp:HyperLinkField DataNavigateUrlFields="Cid" 
-                                    DataNavigateUrlFormatString="~/teacher/CourseDel.aspx?Cid={0}" Text="删除">
-                                <ItemStyle Width="30px" />
+                                    DataNavigateUrlFormatString="~/teacher/coursedel.aspx?cid={0}" Text="删除">
+                                <ItemStyle Width="60px" />
                                 </asp:HyperLinkField>
                             </Columns>
                             <FooterStyle BackColor="#E7E7E7" Font-Bold="True" ForeColor="White" />
@@ -72,9 +72,9 @@
                             <pagertemplate>
                                 <div style="width:100%; height:13px; text-align:right">
                                     第<asp:Label ID="lblPageIndex" runat="server" 
-                                        text="<%# ((Anthem.GridView)Container.Parent.Parent).PageIndex + 1  %>" />
+                                        text="<%# ((GridView)Container.Parent.Parent).PageIndex + 1  %>" />
                                     页 共<asp:Label ID="lblPageCount" runat="server" 
-                                        text="<%# ((Anthem.GridView)Container.Parent.Parent).PageCount  %>" />
+                                        text="<%# ((GridView)Container.Parent.Parent).PageCount  %>" />
                                     页 
                                     <asp:LinkButton ID="btnFirst" runat="server" causesvalidation="False" 
                                         commandargument="First" commandname="Page" Font-Underline="False" 
@@ -92,7 +92,7 @@
                             </pagertemplate>
                             <RowStyle BackColor="#EFF5F0" />
                             <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                        </anthem:GridView>
+                        </asp:GridView>
                         </div>
                     </div>
                     <div style="height: 10px" ></div>

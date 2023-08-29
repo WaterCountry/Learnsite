@@ -1,17 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Lessons/prescm.master" StylesheetTheme="Student" Validaterequest="false" AutoEventWireup="true" CodeFile="pretopicdiscuss.aspx.cs" Inherits="Lessons_pretopicdiscuss" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/lessons/prescm.master" stylesheettheme="Student" validaterequest="false" autoeventwireup="true" inherits="Lessons_pretopicdiscuss, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Ppcm" Runat="Server">
  <div id="student">
 <div  id="topper"  style=" text-align: left; width: 600px;">
     <divstyle="text-align: left; width: 96%;">
-        <asp:ImageButton ID="Btnclock" runat="server" ImageUrl="~/Images/clock.gif"  Enabled="False" />
+        <asp:ImageButton ID="Btnclock" runat="server" ImageUrl="~/images/clock.gif"  Enabled="False" />
         <strong>&nbsp;学案名称</strong>：<asp:Label ID="Labelcourse" runat="server" 
             Font-Size="11pt"></asp:Label>
     <br />
         <asp:CheckBox ID="TcloseCheck" runat="server" Visible="False" />
     <br />
         <strong>
-        <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/topic.png" />
+        <asp:Image ID="Image2" runat="server" ImageUrl="~/images/topic.png" />
         &nbsp;讨论主题</strong>：<asp:Label ID="Labeltopic" runat="server" 
             Font-Size="11pt"></asp:Label>
     <br />
@@ -31,9 +31,9 @@
         </div>
         <div  class="topicright">
       <asp:imagebutton ID="ImageBtnFresh" runat="server" 
-            ImageUrl="~/Images/refresh2.gif" ToolTip="刷新贴子" />
+            ImageUrl="~/images/refresh2.gif" ToolTip="刷新贴子" />
       <asp:HyperLink ID="HLbottom" runat="server" BorderStyle="None" 
-             BorderWidth="0px" ImageUrl="~/Images/bottom.png" NavigateUrl="#bottom" 
+             BorderWidth="0px" ImageUrl="~/images/bottom.png" NavigateUrl="#bottom" 
             ToolTip="跳到底部"></asp:HyperLink>
             </div>
             </div>
@@ -47,9 +47,9 @@
         </div>
 <div  class="topicright">
         <asp:imagebutton ID="ImageBtnFreshtwo" runat="server" 
-            ImageUrl="~/Images/refresh2.gif"  ToolTip="刷新贴子" />
+            ImageUrl="~/images/refresh2.gif"  ToolTip="刷新贴子" />
      <asp:HyperLink ID="HLtop" runat="server" BorderStyle="None" BorderWidth="0px" 
-            ImageUrl="~/Images/top.png" NavigateUrl="#topper" ToolTip="跳到顶部"></asp:HyperLink>
+            ImageUrl="~/images/top.png" NavigateUrl="#topper" ToolTip="跳到顶部"></asp:HyperLink>
             </div>
       </div>
     <div style="width: 600px;">  

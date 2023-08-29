@@ -1,35 +1,35 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Manage.master.cs" Inherits="Manage" %>
+﻿<%@ master language="C#" autoeventwireup="true" inherits="Manage, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
     <link rel="stylesheet" type="text/css" href="../App_Themes/Teacher/StyleSheet.css" />
-    <script src="../Js/MenuCookie.js" type="text/javascript"></script>
+    <script src="../js/MenuCookie.js" type="text/javascript"></script>
 </head>
 <body>
     <form id="form1" runat="server">
     <div >
         <div class="mainhead" onclick="ShowMenu()">
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/images/LearnSite.gif" ToolTip="信息技术学习平台 LearnSite &#13;Powered By Asp.net+Sql2005+Js &#13;温州水乡设计编写"
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/images/learnsite.gif" ToolTip="信息技术学习平台 LearnSite &#13;Powered By Asp.net+Sql2005+Js &#13;温州水乡设计编写"
                 Height="24px" />
         </div>
         <div  class="mainarea">
             <div id="MenuDiv" class="mainleft">    
             <div id="navig">
             <ul id="navigul">
-            <li class="navmenu">系统管理</li>
-            <li class="navigli"><a href="../Manager/setting.aspx">系统设置</a></li>
-            <li class="navigli"><a href="../Manager/createroom.aspx">班级设置</a></li>
-            <li class="navigli"><a href="../Manager/teacher.aspx">教师管理</a></li>
-            <li class="navigli"><a href="../Manager/studentimport.aspx">新生导入</a></li>
-            <li class="navigli"><a href="../Manager/upgrade.aspx">学年升班</a></li>
-            <li class="navigli"><a href="../Manager/divide.aspx">重新分班</a></li>
-            <li class="navigli"><a href="../Manager/backup.aspx">数据备份</a></li>
-            <li class="navigli"><a href="../Manager/ClearOld.aspx">数据清理</a></li>
-            <li class="navigli"><a href="../Seat/house.aspx">机房布置</a></li>
-            <li class="navigli"><a href="../Manager/copygood.aspx">收藏推荐</a></li>
-            <li class="navigli"><a href="../Manager/index.aspx">系统退出</a></li>
+            <li class="navmenuhead"></li>
+            <li class="navigli"><a href="../manager/setting.aspx">系统设置</a></li>
+            <li class="navigli"><a href="../manager/createroom.aspx">班级设置</a></li>
+            <li class="navigli"><a href="../manager/teacher.aspx">教师管理</a></li>
+            <li class="navigli"><a href="../manager/studentimport.aspx">新生导入</a></li>
+            <li class="navigli"><a href="../manager/upgrade.aspx">学年升班</a></li>
+            <li class="navigli"><a href="../manager/divide.aspx">重新分班</a></li>
+            <li class="navigli"><a href="../manager/backup.aspx">数据备份</a></li>
+            <li class="navigli"><a href="../manager/clearold.aspx">数据清理</a></li>
+            <li class="navigli"><a href="../seat/house.aspx">机房布置</a></li>
+            <li class="navigli"><a href="../manager/copygood.aspx">收藏推荐</a></li>
+            <li class="navigli"><a href="../manager/index.aspx">系统退出</a></li>
             <li class="navmenu">            
             <div onclick="HideMenu()">
                 <asp:Label ID="LabelVer" runat="server" Font-Size="8pt"></asp:Label>

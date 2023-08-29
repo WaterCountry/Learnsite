@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Profile/Pf.master"  StylesheetTheme="Student"  AutoEventWireup="true" CodeFile="myphoto.aspx.cs" Inherits="Profile_myphoto" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/profile/Pf.master" stylesheettheme="Student" autoeventwireup="true" inherits="Profile_myphoto, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cstu" Runat="Server">
 <br />
 <center>
     <asp:Panel ID="Panel1" runat="server" Width="330px">
-        <asp:Image ID="Imageface" runat="server" />
+        <asp:Image ID="Imageface" runat="server"  style=" max-width:320px; max-height:640px;border-width:0px;"  />
         <br />
         <br />
         <asp:FileUpload ID="PhotoFileUpload" runat="server" Font-Size="9pt" 
@@ -17,7 +17,7 @@
         <br />
     </asp:Panel>
     <br />
-    说明：相片类型为jpg或gif格式图片，大小不超过1024KB,宽高不限制，过大则自动缩小为宽度320像素。
+    说明：相片类型为jpg、jpeg、png格式图片，大小不超过2048KB,宽高不限制，过大则自动缩小为宽度320像素。
     <br />
     <br />
 </center>

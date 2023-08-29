@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Profile/Pf.master"   StylesheetTheme="Student"  AutoEventWireup="true" CodeFile="myterm.aspx.cs" Inherits="Profile_myterm" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/profile/Pf.master" stylesheettheme="Student" autoeventwireup="true" inherits="Profile_myterm, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cstu" Runat="Server">
 <div>
@@ -17,7 +17,7 @@
                 </tr>
                 <tr>
                     <td rowspan="2" style="border: 1px solid #6699FF; width: 130px;">
-                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/term.png" />
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/term.png" />
                         <br />
                         <asp:Label ID="Label11" runat="server" Text='<%# Eval("Sname") %>'></asp:Label>
                         <br />

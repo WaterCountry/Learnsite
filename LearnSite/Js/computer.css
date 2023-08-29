@@ -29,7 +29,7 @@ body
     background-repeat: no-repeat;
     background-image: url('images/computer.gif');
     font-family: ËÎÌו, Arial, Helvetica, sans-serif;
-    font-size: 9pt;
+    font-size: 11pt;
     text-align: center;
     line-height: 36px;
 }
@@ -49,7 +49,7 @@ body
     padding: 2px;
     width: 760px; 
     font-family: ËÎÌו, Arial, Helvetica, sans-serif;
-    font-size: 9pt;
+    font-size: 11pt;
     overflow: hidden;
     text-align: left;
     background-color: #999999;
@@ -71,7 +71,7 @@ body
     padding: 2px;
     width: 760px;
     font-family: ËÎÌו, Arial, Helvetica, sans-serif;
-    font-size: 9pt;
+    font-size: 11pt;
     overflow: hidden;
     text-align: center;
     line-height: 24px;

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master"  StylesheetTheme="Teacher"  AutoEventWireup="true" CodeFile="termview.aspx.cs" Inherits="Teacher_termview" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_termview, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div  class="placehold"> 
@@ -16,13 +16,10 @@
             <br />
             <br />
           <asp:Button ID="BtnExcel" runat="server"  OnClick="BtnExcel_Click" 
-                Text="导出Excel"  SkinID="BtnSmall" ToolTip="将学生期末成绩以Excel表格导出" />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <asp:Button 
-                ID="Btnmerit" runat="server"  Text="综合评定"  OnClick="Btnmerit_Click" 
-                SkinID="BtnSmall" />
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                Text="导出Excel"  SkinID="BtnSmall" ToolTip="将学生期末成绩以Excel表格导出" />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
             <asp:Button ID="Btnshow" runat="server"  OnClick="Btnshow_Click" Text="成绩浏览"  
                 SkinID="BtnSmall" />
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <asp:Button ID="Btnback" runat="server"  Text="返回"  OnClick="Btnback_Click" SkinID="BtnSmall" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <asp:Button ID="Btnback" runat="server"  Text="返回"  OnClick="Btnback_Click" SkinID="BtnSmall" />
             <br />
             <asp:Label ID="Labelmsg" runat="server"  SkinID="LabelMsgRed" 
                 ></asp:Label>
@@ -38,7 +35,7 @@
                     <asp:BoundField DataField="Tgrade" HeaderText="年级" />
                     <asp:BoundField DataField="Tclass" HeaderText="班级" />
                     <asp:HyperLinkField DataNavigateUrlFields="Tnum,Tgrade,Tterm" 
-                        DataNavigateUrlFormatString="studentwork.aspx?Snum={0}&amp;Sgrade={1}&amp;Sterm={2}" 
+                        DataNavigateUrlFormatString="studentwork.aspx?snum={0}&amp;sgrade={1}&amp;sterm={2}" 
                         DataTextField="Tname" HeaderText="姓名" Target="_blank" />
                     <asp:BoundField DataField="Tscore" HeaderText="作品" />
                     <asp:BoundField DataField="Tgscore" HeaderText="小组" />

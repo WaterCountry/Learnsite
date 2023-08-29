@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#"  MasterPageFile="~/Manager/Manage.master" AutoEventWireup="true" CodeFile="house.aspx.cs" Inherits="Seat_house" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/manager/Manage.master" autoeventwireup="true" inherits="Seat_house, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div>
@@ -15,16 +15,16 @@
                     <Columns>
                         <asp:BoundField HeaderText="序号" />
                         <asp:BoundField DataField="Hname" HeaderText="机房名称" />
-                        <asp:HyperLinkField DataNavigateUrlFields="Hid" 
+                        <asp:HyperLinkField DataNavigateUrlFields="hid" 
                             DataNavigateUrlFormatString="computer.aspx?Hid={0}" HeaderText="电脑" 
                             Text="布置" Target="_blank" />
-                        <asp:HyperLinkField DataNavigateUrlFields="Hid" 
+                        <asp:HyperLinkField DataNavigateUrlFields="hid" 
                             DataNavigateUrlFormatString="ip.aspx?Hid={0}" HeaderText="IP表" 
                             Text="对应" Target="_blank" />
                         <asp:TemplateField ShowHeader="False" HeaderText="操作">
                             <ItemTemplate>
                                 <asp:LinkButton ID="LinkButtonDel" runat="server" CausesValidation="false" 
-                                CommandArgument='<%# Bind("Hid") %>' CommandName="Del" Text="删除"></asp:LinkButton>
+                                CommandArgument='<%# Bind("hid") %>' CommandName="Del" Text="删除"></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

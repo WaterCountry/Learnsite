@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master"  StylesheetTheme="Teacher"  AutoEventWireup="true" CodeFile="gauge.aspx.cs" Inherits="Teacher_gauge" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_gauge, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div>
 <div class="centerdiv">
-<div style=" margin: auto; width: 680px; font-size:9pt; text-align:center;">
+<div style=" margin: auto; width: 800px; font-size:11pt; text-align:center;">
                     <br />
                     <strong>自定义量化评价标准</strong><br />
                     <br />
@@ -13,29 +13,29 @@
                         EnableModelValidation="True" onrowdatabound="GVGauge_RowDataBound" >
                             <Columns>
                                 <asp:BoundField HeaderText="序号">
-                                <HeaderStyle Width="30px" />
+                                <HeaderStyle Width="40px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="Gtype" HeaderText="分类">
-                               <HeaderStyle Width="30px" />
+                               <HeaderStyle Width="40px" />
                                 </asp:BoundField>
                                 <asp:HyperLinkField DataNavigateUrlFields="Gid"  
-                                    DataNavigateUrlFormatString="~/Teacher/GaugeItem.aspx?Gid={0}" 
+                                    DataNavigateUrlFormatString="~/teacher/gaugeitem.aspx?gid={0}" 
                                     DataTextField="Gtitle" HeaderText="标题" >
                                 <HeaderStyle HorizontalAlign="Left" />
                                 <ItemStyle HorizontalAlign="Left" />
                                 </asp:HyperLinkField>
                                 <asp:BoundField DataField="Gcount" HeaderText="使用">
-                                <HeaderStyle Width="30px" />
+                                <HeaderStyle Width="40px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="Gdate" HeaderText="日期">
-                                <HeaderStyle Width="120px" />
+                                <HeaderStyle Width="160px" />
                                 </asp:BoundField>
                                 <asp:TemplateField  HeaderText="操作">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="BtnEdit" runat="server" CausesValidation="false" 
                                           CommandArgument='<%# Eval("Gid") %>' CommandName="Del" Text="删除"></asp:LinkButton>
                                     </ItemTemplate>
-                                    <HeaderStyle Width="30px" />
+                                    <HeaderStyle Width="40px" />
                                 </asp:TemplateField>
                             </Columns>                            
                         </asp:GridView>
@@ -47,12 +47,14 @@
                     &nbsp;量规标题：<asp:TextBox ID="TextBoxGtitle" runat="server" SkinID="TextBoxNormal" 
                         Width="300px"></asp:TextBox>
                     &nbsp;
-       <asp:Button ID="Btnadd" runat="server"  Text="添加量规"  onclick="Btnadd_Click" SkinID="BtnSmall" />                    
+       <asp:Button ID="Btnadd" runat="server"  Text="添加量规"  onclick="Btnadd_Click" SkinID="BtnNormal" />                    
                     <br />
                     </div>
                     <br />
  <br />
     ***评价标准使用后，将无法删除，请慎重填写！***<br />
+                    <br />
+                    ***当活动中未指定互评评价标准时，将自动选取相应作品类型中的第一条评价标准***<br />
 <br />
                         </div>
                         </div>

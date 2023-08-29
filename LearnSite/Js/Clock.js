@@ -1,6 +1,6 @@
 ﻿function ShowFlash()
 { 
-url="../Images/clock.swf";
+url="../images/clock.swf";
 var Width=120;
 var Height=120;
 var wmode='transparent';

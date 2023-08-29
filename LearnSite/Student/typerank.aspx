@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="typerank.aspx.cs" Inherits="Student_typerank" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Student_typerank, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -17,7 +17,7 @@
                     onitemdatabound="DataList_allc_ItemDataBound" RepeatColumns="12" 
                     RepeatDirection="Horizontal">
                     <ItemTemplate>
-                    <div style="margin: 2px; border: 1pt solid #EEEEEE; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt; background-color: #EBFCEF; text-align: center;">
+                    <div style="margin: 2px; border: 1pt solid #EEEEEE; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt; background-color: #EBFCEF; text-align: center;">
                         <asp:Image ID="allcImage1" runat="server"   Height="80px" Width="80px" /><br />
                         <asp:Label ID="allcLabelsname" runat="server" Text='<%# Eval("Sname") %>'></asp:Label><br />
                         <asp:Label ID="allcLabelpsnum" runat="server" Text='<%# Eval("Psnum") %>' Visible="false"></asp:Label>
@@ -36,7 +36,7 @@
                     onitemdatabound="DataList_li_ItemDataBound" RepeatColumns="12" 
                     RepeatDirection="Horizontal">
                     <ItemTemplate>
-                    <div style="margin: 2px; border: 1pt solid #EEEEEE; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt; background-color: #EBFCEF; text-align: center;">
+                    <div style="margin: 2px; border: 1pt solid #EEEEEE; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt; background-color: #EBFCEF; text-align: center;">
                         <asp:Image ID="Image1" runat="server"    Height="80px" Width="80px"   /><br />
                         <asp:Label ID="Labelsname" runat="server" Text='<%# Eval("Sname") %>'></asp:Label><br />
                         <asp:Label ID="Labelpsnum" runat="server" Text='<%# Eval("Psnum") %>' Visible="false"></asp:Label>
@@ -57,7 +57,7 @@
                     onitemdatabound="DataList_enall_ItemDataBound" RepeatColumns="12" 
                     RepeatDirection="Horizontal">
                     <ItemTemplate>
-                    <div style="margin: 2px; border: 1pt solid #EEEEEE; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt; background-color: #EBFCEF; text-align: center;">
+                    <div style="margin: 2px; border: 1pt solid #EEEEEE; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt; background-color: #EBFCEF; text-align: center;">
                         <asp:Image ID="lenImage1" runat="server"    Height="80px" Width="80px"  /><br />
                         <asp:Label ID="lenLabelsname" runat="server" Text='<%# Eval("Sname") %>'></asp:Label><br />
                         <asp:Label ID="lenLabelpsnum" runat="server" Text='<%# Eval("Psnum") %>' Visible="false"></asp:Label>
@@ -76,7 +76,7 @@
                     onitemdatabound="DataList_enli_ItemDataBound" RepeatColumns="12" 
                     RepeatDirection="Horizontal">
                     <ItemTemplate>
-                    <div style="margin: 2px; border: 1pt solid #EEEEEE; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt; background-color: #EBFCEF; text-align: center;">
+                    <div style="margin: 2px; border: 1pt solid #EEEEEE; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt; background-color: #EBFCEF; text-align: center;">
                         <asp:Image ID="enImage1" runat="server"    Height="80px" Width="80px"  /><br />
                         <asp:Label ID="enLabelsname" runat="server" Text='<%# Eval("Sname") %>'></asp:Label><br />
                         <asp:Label ID="enLabelpsnum" runat="server" Text='<%# Eval("Psnum") %>' Visible="false"></asp:Label>

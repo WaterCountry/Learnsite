@@ -1,29 +1,29 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Manager/Manage.master"  StylesheetTheme="Teacher"  AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="Manager_index" %>
+ï»¿<%@ page title="" language="C#" masterpagefile="~/manager/Manage.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Manager_index, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div class="manageplace" >
-    <div style=" margin: auto; border: 1px solid #E0E0E0; width: 480px; ">
+    <div style=" margin: auto; border: 1px solid #E0E0E0; width: 712px; ">
         <div style="background-color: #EEEEEE; height: 18px;">
-        ÏµÍ³ËµÃ÷</div>
+        ç³»ç»Ÿè¯´æ˜</div>
         <br />
-        <div style="padding: 6px; margin: auto; width: 431px; text-align: left; background-color: #FAFAFA; ">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ±¾ÏµÍ³ÊÇÔÚÔ­À´ITMS1.0µÄ»ù±¾ÉÏÖØĞÂ±àĞ´¶ø³É¡£Êı¾İ¿â½á¹¹ÓÅ»¯£¬´úÂë»ùÓÚ<br />
+        <div style="padding: 6px; margin: auto; width: 582px; text-align: left; background-color: #FAFAFA; ">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; æœ¬ç³»ç»Ÿæ˜¯åœ¨åŸæ¥ITMS1.0çš„åŸºæœ¬ä¸Šé‡æ–°ç¼–å†™è€Œæˆã€‚æ•°æ®åº“ç»“æ„ä¼˜åŒ–ï¼Œä»£ç åŸºäº<br />
             <br />
-            Èı²ã¼Ü¹¹Ô­Àí±àĞ´£¬¿ÉÀ©Õ¹ĞÔÇ¿¡£ÏµÍ³·ÖÈıÖÖ½ÇÉ«µÇÂ¼£ºÑ§Éú¡¢½ÌÊ¦¡¢¹ÜÀíÔ±¡£<br />
+            ä¸‰å±‚æ¶æ„åŸç†ç¼–å†™ï¼Œå¯æ‰©å±•æ€§å¼ºã€‚ç³»ç»Ÿåˆ†ä¸‰ç§è§’è‰²ç™»å½•ï¼šå­¦ç”Ÿã€æ•™å¸ˆã€ç®¡ç†å‘˜ã€‚<br />
             &nbsp;&nbsp;&nbsp;
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ½ÌÊ¦Æ½Ì¨¹¦ÄÜ£ºÑ§°¸¹ÜÀí¡¢Ñ§Éú¹ÜÀí¡¢×÷Æ·¹ÜÀí¡¢Ç©µ½¹ÜÀí¡¢ÍøÒ³¹ÜÀí¡¢´ò<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; æ•™å¸ˆå¹³å°åŠŸèƒ½ï¼šå­¦æ¡ˆç®¡ç†ã€å­¦ç”Ÿç®¡ç†ã€ä½œå“ç®¡ç†ã€ç­¾åˆ°ç®¡ç†ã€ç½‘é¡µç®¡ç†ã€æ‰“<br />
             <br />
-            ×Ö¹ÜÀí¡¢×ÊÔ´¹ÜÀíÆß´ó¹¦ÄÜ¡£<br />
+            å­—ç®¡ç†ã€èµ„æºç®¡ç†ä¸ƒå¤§åŠŸèƒ½ã€‚<br />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ¹ÜÀíºóÌ¨¹¦ÄÜ£ºÏµÍ³ÉèÖÃ¡¢½ÌÊ¦¹ÜÀí¡¢°à¼¶ÉèÖÃ¡¢ĞÂÉúµ¼Èë¡¢¿Õ¼äÉú³É¡¢Ñ§Äê<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ç®¡ç†åå°åŠŸèƒ½ï¼šç³»ç»Ÿè®¾ç½®ã€æ•™å¸ˆç®¡ç†ã€ç­çº§è®¾ç½®ã€æ–°ç”Ÿå¯¼å…¥ã€ç©ºé—´ç”Ÿæˆã€å­¦å¹´<br />
             <br />
-            Éı°àÆßÏî¡£<br />
+            å‡ç­ä¸ƒé¡¹ã€‚<br />
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ÀúÊ·°æ±¾£ºITMS1.0¡ª&gt;Magnet2.2¡ª&gt;LearnSite1.100¡ª&gt;LearnSite1.2.1.8<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; å†å²ç‰ˆæœ¬ï¼šITMS1.0â€”&gt;Magnet2.2â€”&gt;LearnSite1.100â€”&gt;LearnSite1.3.3.3<br />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            2009Äê8ÔÂ&nbsp;&nbsp; ÎÂÖİË®Ïç<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            2009å¹´8æœˆâ€”â€”2021å¹´11æœˆ&nbsp;&nbsp; æ¸©å·æ°´ä¹¡<br />
         </div>
         <br />
         </div>
@@ -31,7 +31,7 @@
     <br />
                     <asp:Button ID="Btnlogout" runat="server" BackColor="#E6E6E6" 
                         BorderColor="#D4D4D4" BorderWidth="1px" Font-Names="Arial" 
-                        Font-Size="9pt" Text="ÏµÍ³ÍË³ö" Width="80px" 
+                        Font-Size="11pt" Text="ç³»ç»Ÿé€€å‡º" Width="120px" 
             onclick="Btnlogout_Click" />
        
     <br />
@@ -39,22 +39,22 @@
     <br />
        
     <br />
-    <asp:TextBox ID="TextBox1" runat="server"  SkinID="TextBoxindex" ReadOnly="true" Width="80px">²Ù×÷Á÷³ÌÍ¼£º</asp:TextBox>
+    <asp:TextBox ID="TextBox1" runat="server"  SkinID="TextBoxindex" ReadOnly="true" Width="80px">æ“ä½œæµç¨‹å›¾ï¼š</asp:TextBox>
     <asp:TextBox ID="TextBox3" runat="server"  SkinId="TextBoxaa"
-        ReadOnly="True" Width="56px">°à¼¶ÉèÖÃ</asp:TextBox>
-    <asp:TextBox ID="TextBox7" runat="server"  SkinId="TextBoxbb"  ReadOnly="True" Width="22px">¡ú</asp:TextBox>
-    <asp:TextBox ID="TextBox2" runat="server"  SkinId="TextBoxaa" ReadOnly="True" Width="56px">½ÌÊ¦¹ÜÀí</asp:TextBox>
-    <asp:TextBox ID="TextBox8" runat="server"  SkinId="TextBoxbb"  ReadOnly="True" Width="22px">¡ú</asp:TextBox>
-    <asp:TextBox ID="TextBox4" runat="server"  SkinId="TextBoxaa" ReadOnly="True" Width="56px">ĞÂÉúµ¼Èë</asp:TextBox>
-    <asp:TextBox ID="TextBox9" runat="server" SkinId="TextBoxbb"  ReadOnly="True" Width="22px">¡ú</asp:TextBox>
-    <asp:TextBox ID="TextBox5" runat="server"  SkinId="TextBoxaa"  ReadOnly="True" Width="56px">¿Õ¼äÉú³É</asp:TextBox>
+        ReadOnly="True" Width="56px">ç­çº§è®¾ç½®</asp:TextBox>
+    <asp:TextBox ID="TextBox7" runat="server"  SkinId="TextBoxbb"  ReadOnly="True" Width="22px">â†’</asp:TextBox>
+    <asp:TextBox ID="TextBox2" runat="server"  SkinId="TextBoxaa" ReadOnly="True" Width="56px">æ•™å¸ˆç®¡ç†</asp:TextBox>
+    <asp:TextBox ID="TextBox8" runat="server"  SkinId="TextBoxbb"  ReadOnly="True" Width="22px">â†’</asp:TextBox>
+    <asp:TextBox ID="TextBox4" runat="server"  SkinId="TextBoxaa" ReadOnly="True" Width="56px">æ–°ç”Ÿå¯¼å…¥</asp:TextBox>
+    <asp:TextBox ID="TextBox9" runat="server" SkinId="TextBoxbb"  ReadOnly="True" Width="22px">â†’</asp:TextBox>
+    <asp:TextBox ID="TextBox5" runat="server"  SkinId="TextBoxaa"  ReadOnly="True" Width="56px">ç©ºé—´ç”Ÿæˆ</asp:TextBox>
     <br />
     <br />
-    <b>¹ÜÀíÔ±</b>£º´´½¨È«Ğ£ÍêÕû°à¼¶ÁĞ±í-&gt;Ìí¼Ó½ÌÊ¦²¢¸ø½ÌÊ¦Ñ¡ÔñÖ¸¶¨µÄ°à¼¶-&gt;Ê¹ÓÃÑ§ÉúexcelÄ£°åµ¼ÈëĞÂÉú<br />
+    <b>ç®¡ç†å‘˜</b>ï¼šåˆ›å»ºå…¨æ ¡å®Œæ•´ç­çº§åˆ—è¡¨-&gt;æ·»åŠ æ•™å¸ˆå¹¶ç»™æ•™å¸ˆé€‰æ‹©æŒ‡å®šçš„ç­çº§-&gt;ä½¿ç”¨å­¦ç”Ÿexcelæ¨¡æ¿å¯¼å…¥æ–°ç”Ÿ<br />
     <br />
-    <b>½ÌÊ¦</b>£º½ÌÊ¦Æ½Ì¨µÇÂ¼-&gt;±¸¿Î(Ê¹ÓÃ»î¶¯¡¢µ÷²é¡¢ÌÖÂÛÍê³ÉÑ§°¸Éè¼Æ)-&gt;ÉÏ¿Î(²é¿´Ç©µ½¡¢²é¿´×÷Æ·µÈÇé¿ö)-&gt;ÆÀ¼Û-&gt;·´Ë¼<br />
+    <b>æ•™å¸ˆ</b>ï¼šæ•™å¸ˆå¹³å°ç™»å½•-&gt;å¤‡è¯¾(ä½¿ç”¨æ´»åŠ¨ã€è°ƒæŸ¥ã€è®¨è®ºå®Œæˆå­¦æ¡ˆè®¾è®¡)-&gt;ä¸Šè¯¾(æŸ¥çœ‹ç­¾åˆ°ã€æŸ¥çœ‹ä½œå“ç­‰æƒ…å†µ)-&gt;è¯„ä»·-&gt;åæ€<br />
     <br />
-    <b>Ñ§Éú</b>£ºÑ§ÉúÆ½Ì¨µÇÂ¼-&gt;ä¯ÀÀµ±Ç°Ñ§°¸-&gt;Íê³Éµ¼Ñ§¼°×¼±¸²¿·Ö-&gt;Íê³É¿ÎÌÃ»î¶¯¡¢µ÷²é¡¢ÌÖÂÛµÈ-&gt;×÷Æ·Õ¹Ê¾-&gt;Ê¦Éú»¥¶¯Ğ¡½á<br />
+    <b>å­¦ç”Ÿ</b>ï¼šå­¦ç”Ÿå¹³å°ç™»å½•-&gt;æµè§ˆå½“å‰å­¦æ¡ˆ-&gt;å®Œæˆå¯¼å­¦åŠå‡†å¤‡éƒ¨åˆ†-&gt;å®Œæˆè¯¾å ‚æ´»åŠ¨ã€è°ƒæŸ¥ã€è®¨è®ºç­‰-&gt;ä½œå“å±•ç¤º-&gt;å¸ˆç”Ÿäº’åŠ¨å°ç»“<br />
     <br />
        
 </div>

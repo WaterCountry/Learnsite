@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="printtyper.aspx.cs" Inherits="Teacher_printtyper" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Teacher_printtyper, LearnSite" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -7,7 +7,7 @@
 <body>
     <form id="form1" runat="server">
     <div style="padding: 0px; text-align: center; margin: 0px;">
-    <div style="margin: 0px; padding: 0px; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt;
+    <div style="margin: 0px; padding: 0px; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt;
     border-bottom-style: dotted; border-width: 2px; border-color: #C0C0C0; background-color: #E8F3FF">
         排行榜打印选择：<asp:DropDownList 
             ID="DDLtype" runat="server" 
@@ -41,7 +41,7 @@
             BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px" Font-Size="9pt" 
             Text="显示效果" ToolTip="点击显示" onclick="Btnbrowse_Click" Height="18px" />
 &nbsp;&nbsp;
-        <input id="BtnPrintView" style="border: 1px solid #E0E0E0; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt; background-color: #ECF5FF; width: 68px; height: 18px;" 
+        <input id="BtnPrintView" style="border: 1px solid #E0E0E0; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt; background-color: #ECF5FF; width: 68px; height: 18px;" 
             type="button" value="打印" onclick="preview()" /></div>
     <div style="margin: auto; width: 600px">
     <!--startprint-->

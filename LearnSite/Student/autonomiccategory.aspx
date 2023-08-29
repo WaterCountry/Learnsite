@@ -1,23 +1,23 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  StylesheetTheme="Student" CodeFile="autonomiccategory.aspx.cs" Inherits="Student_autonomiccategory" %>
+﻿<%@ page language="C#" autoeventwireup="true" stylesheettheme="Student" inherits="Student_autonomiccategory, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
     <title></title>   
-    <link href="../App_Themes/Student/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/student/StyleSheet.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
-        .divcate{margin:auto; padding: 2px; background-color: #E0ECFE; font-size: 9pt; font-weight: bold; text-align: left; height: 24px; width:360px;}
-        .licss{font-size: 9pt; height:30px; width:360px; text-align: left; border-width: 1px; border-bottom-style: dashed; border-color: #CCCCCC}
-        .licss1{font-size: 9pt; height:24px; width:98%; text-align: left; border-width: 1px; border-bottom-style: dashed; border-color: #CCCCCC}
-        .licss2{font-size: 9pt; height:24px; width:98%; text-align: left; border-width: 1px; border-bottom-style: dashed; border-color: #CCCCCC; background-color:#eeeeee}
+        .divcate{margin:auto; padding: 2px; background-color: #E0ECFE; font-size: 11pt; font-weight: bold; text-align: left; height: 24px; width:360px;}
+        .licss{font-size: 11pt; height:30px; width:360px; text-align: left; border-width: 1px; border-bottom-style: dashed; border-color: #CCCCCC}
+        .licss1{font-size: 11pt; height:24px; width:98%; text-align: left; border-width: 1px; border-bottom-style: dashed; border-color: #CCCCCC}
+        .licss2{font-size: 11pt; height:24px; width:98%; text-align: left; border-width: 1px; border-bottom-style: dashed; border-color: #CCCCCC; background-color:#eeeeee}
     </style>
     </head>
 <body>
     <form id="form1" runat="server">
     <center>
       <div  class="studmasterhead">
-            <div  class="banner" > <img alt="" src="../Images/autonomic.gif" /></div>
+            <div  class="banner" > <img alt="" src="../images/autonomic.gif" /></div>
              <div class="path"></div>
       <div id="student">
 <div class="left">
@@ -54,7 +54,7 @@
             </asp:TemplateField>
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:Image ID="Imagegood" runat="server" ImageUrl="~/Images/new_none.gif" />
+                    <asp:Image ID="Imagegood" runat="server" ImageUrl="~/images/new_none.gif" />
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField Visible="False">
@@ -98,7 +98,7 @@
     </div>
     <br />
     <asp:HyperLink ID="HyperLink1" runat="server" CssClass="txts20center" 
-        Height="20px" NavigateUrl="~/Student/autonomic.aspx" SkinID="HyperLinkGray" 
+        Height="20px" NavigateUrl="~/student/autonomic.aspx" SkinID="HyperLinkGray" 
         Width="80px" Target="_self">在线资源</asp:HyperLink>
     <br />
     <br />

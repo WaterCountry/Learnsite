@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Manager/Manage.master"  StylesheetTheme="Teacher"  AutoEventWireup="true" CodeFile="divide.aspx.cs" Inherits="Manager_divide" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/manager/Manage.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Manager_divide, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div class="manageplace" >
-    <div style=" margin: auto; border: 1px solid #E0E0E0; width: 380px; ">
+    <div style=" margin: auto; border: 1px solid #E0E0E0; width: 500px; ">
         <div style="background-color: #EEEEEE; height: 18px;">
             分班说明</div>
         <br />
-        <div style="margin: auto; width: 335px; text-align: left; background-color: #EEEEEE;">
+        <div style="margin: auto; width: 480px; text-align: left; background-color: #EEEEEE;">
         &nbsp;&nbsp;&nbsp;&nbsp; 
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp; 1、请在新学期学年升班后再进行操作。<br />
@@ -15,17 +15,11 @@
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp; 3、进行分班操作后，用所教班级的教师账号进行确认。<br />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp; 4、学校所提供的重新分班表格中可能有新的插班生，<br />
-            <br />
-&nbsp;&nbsp;&nbsp;&nbsp; 需要教师在上课前，在教师平台的学生管理中添加。<br />
+&nbsp;&nbsp;&nbsp;&nbsp; 4、学校所提供的重新分班表格中可能有新的插班生，需要教师在上课前，在教师平台的学生管理中添加。<br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp; 5、在您分班操作前，请注意做好备份！<br />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp; 6、平台分班是根据上传的学生的班级替换原班级，<br />
-            <br />
-&nbsp;&nbsp;&nbsp;&nbsp; 请注意同姓名学生，不对同姓名学生进行分班。<br />
-            <br />
-&nbsp;&nbsp;&nbsp;&nbsp; 如果年级和班级格式错误，请处理Excel中年级班级格式<br />
+&nbsp;&nbsp;&nbsp;&nbsp; 6、平台分班是根据上传的学生的班级替换原班级，请注意同姓名学生，不对同姓名学生进行分班。如果年级和班级格式错误，请处理Excel中年级班级格式。<br />
 &nbsp;<br />
             <br />
         </div>

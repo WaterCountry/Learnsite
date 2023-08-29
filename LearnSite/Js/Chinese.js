@@ -50,11 +50,11 @@ function presskey() {
 function showKey(wordKeyObj) {
     var ww = document.getElementById(oldwordKeyObj);
     if (ww != null) {
-        ww.style.backgroundImage = "url(../Images/Fingering/" + picKey + ")";
+        ww.style.backgroundImage = "url(../images/Fingering/" + picKey + ")";
     }
     var aa = document.getElementById(wordKeyObj);
     if (aa != null) {
-        aa.style.backgroundImage = "url(../Images/Fingering/" + picWord + ")";
+        aa.style.backgroundImage = "url(../images/Fingering/" + picWord + ")";
     }
     oldwordKeyObj = wordKeyObj;
 }
@@ -176,15 +176,7 @@ function SaveMspd() {
 function passsecond() {
     lastsecond++; //秒计时
     if (chinaright > 0 && lastsecond > 20) {
-        var testspeed = parseInt(chinaright) * 60 / lastsecond;
-        if (testspeed < 200)
-            SaveMspd(); //如果收集到苹果且打字时间大于20秒，才自动保存；
-        else {
-            chinaright = 0;
-            lastsecond = 0; //读秒清零
-            $('#apples').html("");
-            alert("你刷苹果的速度太快了！");
-        }
+        SaveMspd(); //如果收集到苹果且打字时间大于20秒，才自动保存；
     }
     if (lastsecond > 20)
         lastsecond = 0;

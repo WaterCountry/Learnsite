@@ -1,76 +1,58 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Manager/Manage.master" AutoEventWireup="true" CodeFile="setting.aspx.cs" Inherits="Manager_setting" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/manager/Manage.master" autoeventwireup="true" inherits="Manager_setting, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div class="manageplace" >
         <div class="settingdiv">
-            <div style="background-color: #EEEEEE; height: 18px;">��ǰ����</div>
+            <div style="background-color: #EEEEEE; height: 18px;">当前设置</div>
             <br />
             <div  class="setting" >
             <br />
-                    &nbsp;��վ�������ã�<asp:TextBox ID="TextBoxsite" runat="server" BorderColor="#CCCCCC" 
+                    &nbsp;网站名称设置：<asp:TextBox ID="TextBoxsite" runat="server" BorderColor="#CCCCCC" 
                 BorderStyle="Solid" BorderWidth="1px" Width="200px"></asp:TextBox>
-&nbsp;<asp:Button ID="Buttonsite" runat="server" Font-Size="9pt" Height="20px" Text="�޸�" 
+&nbsp;<asp:Button ID="Buttonsite" runat="server" Font-Size="9pt" Height="20px" Text="修改" 
                BorderColor="Silver" BorderStyle="Solid"  BorderWidth="1px"   BackColor="#E8E8E8"  
                onclick="Buttonsite_Click" />
                 <br />
                 <br />
-                &nbsp;ѧ����¼��ʽ��<asp:DropDownList ID="DDLLoginMode" runat="server" Font-Size="9pt" 
+                &nbsp;学生登录方式：<asp:DropDownList ID="DDLLoginMode" runat="server" Font-Size="9pt" 
                     EnableTheming="True" AutoPostBack="True" 
-            onselectedindexchanged="DDLLoginMode_SelectedIndexChanged" ToolTip="ѡ��ѧ����¼��ʽ">
-                <asp:ListItem Value="0">��������</asp:ListItem>
-                <asp:ListItem Value="1">�༶����</asp:ListItem>
+            onselectedindexchanged="DDLLoginMode_SelectedIndexChanged" ToolTip="选择学生登录方式">
+                <asp:ListItem Value="0">个人密码</asp:ListItem>
+                <asp:ListItem Value="1">班级密码</asp:ListItem>
         </asp:DropDownList>
                 <br />
                 <br />
-                &nbsp;�˺ŵ�¼���ƣ�<asp:CheckBox ID="CheckBoxSingleLogin" runat="server" AutoPostBack="True" 
+                &nbsp;账号登录限制：<asp:CheckBox ID="CheckBoxSingleLogin" runat="server" AutoPostBack="True" 
                         Font-Size="9pt" oncheckedchanged="CheckBoxSingleLogin_CheckedChanged" 
-                    Text="�Ƿ�����һ���˺�ֻ����һ̨���Ե�¼ƽ̨" ToolTip="˵����ѡ����һ��ѧ���˺Ų����ڶ�̨���Ե�¼ͬ��ƽ̨��" />
+                    Text="是否设置一个账号只能在一台电脑登录平台" ToolTip="说明：选中则一个学生账号不能在多台电脑登录同个平台！" />
                 <br />
                 <br />
-                    &nbsp;��ǰѧ�����ã�<asp:DropDownList ID="DDLterm" runat="server" Font-Size="9pt" 
+                    &nbsp;当前学期设置：<asp:DropDownList ID="DDLterm" runat="server" Font-Size="9pt" 
                     EnableTheming="True" AutoPostBack="True" 
-            onselectedindexchanged="DDLterm_SelectedIndexChanged" ToolTip="ѡ��ǰѧ��">
-                <asp:ListItem Value="1">��һѧ��</asp:ListItem>
-                <asp:ListItem Value="2">�ڶ�ѧ��</asp:ListItem>
+            onselectedindexchanged="DDLterm_SelectedIndexChanged" ToolTip="选择当前学期">
+                <asp:ListItem Value="1">第一学期</asp:ListItem>
+                <asp:ListItem Value="2">第二学期</asp:ListItem>
         </asp:DropDownList>
             <br />
             <br />
-                &nbsp;��Դ�������ƣ�<asp:CheckBox ID="CheckBoxDownCan" runat="server" AutoPostBack="True" 
-                        Font-Size="9pt" oncheckedchanged="CheckBoxDownCan_CheckedChanged" Text="�Ƿ���������" />
+                &nbsp;资源下载限制：<asp:CheckBox ID="CheckBoxDownCan" runat="server" AutoPostBack="True" 
+                        Font-Size="9pt" oncheckedchanged="CheckBoxDownCan_CheckedChanged" Text="是否限制下载" />
                 <br />
                 <br />
-                &nbsp;��Դ����ʱ�䣺<asp:DropDownList ID="DDLDownTime" runat="server" AutoPostBack="True" Font-Size="9pt" 
+                &nbsp;资源下载时间：<asp:DropDownList ID="DDLDownTime" runat="server" AutoPostBack="True" Font-Size="9pt" 
                         onselectedindexchanged="DDLDownTime_SelectedIndexChanged">
-                        <asp:ListItem Value="10">10����</asp:ListItem>
-                        <asp:ListItem Value="20">20����</asp:ListItem>
-                        <asp:ListItem Value="30">30����</asp:ListItem>
-                        <asp:ListItem Value="40">40����</asp:ListItem>
-                        <asp:ListItem Value="50">50����</asp:ListItem>
-                        <asp:ListItem Value="60">60����</asp:ListItem>
+                        <asp:ListItem Value="10">10分钟</asp:ListItem>
+                        <asp:ListItem Value="20">20分钟</asp:ListItem>
+                        <asp:ListItem Value="30">30分钟</asp:ListItem>
+                        <asp:ListItem Value="40">40分钟</asp:ListItem>
+                        <asp:ListItem Value="50">50分钟</asp:ListItem>
+                        <asp:ListItem Value="60">60分钟</asp:ListItem>
                     </asp:DropDownList>
-                ֮�������<br />
+                之后可下载<br />
             <br />
-                &nbsp;ѧ����ҳͶƱ��<asp:CheckBox ID="CheckBoxweblimit" runat="server" Text="�Ƿ�����ͶƱ" 
-                    oncheckedchanged="CheckBoxweblimit_CheckedChanged" AutoPostBack="True" />
-            <br />
-            <br />
-            &nbsp;��ҳ�������ͣ�<asp:TextBox ID="TextBoxtype" runat="server" BorderColor="#CCCCCC" 
-                BorderStyle="Solid" BorderWidth="1px" Width="200px" ToolTip="������������ҳ�������ͣ��ָ���&quot;|&quot;"></asp:TextBox>
-&nbsp;<asp:Button ID="Buttontype" runat="server" Font-Size="9pt" Height="20px" Text="�޸�" 
-               BorderColor="Silver" BorderStyle="Solid"  BorderWidth="1px"   BackColor="#E8E8E8" 
-                    onclick="Buttontype_Click" ToolTip="ע��ǰ�󶼲��ӷָ���&quot;|&quot;" />
-            <br />
-            <br />
-            &nbsp;��ҳĿ¼���ƣ�<asp:TextBox ID="TextBoxdir" runat="server" BorderColor="#CCCCCC" 
-                BorderStyle="Solid" BorderWidth="1px" Width="200px" ToolTip="���������ϴ�����ҳĿ¼���ƣ��ָ���&quot;|&quot;"></asp:TextBox>
-&nbsp;<asp:Button ID="Buttondir" runat="server" Font-Size="9pt" Height="20px" Text="�޸�" 
-               BorderColor="Silver" BorderStyle="Solid"  BorderWidth="1px"   BackColor="#E8E8E8" 
-                    onclick="Buttondir_Click" ToolTip="ע��ǰ�󶼲��ӷָ���&quot;|&quot;" />
-            <br />
-            <br />
-                &nbsp;��Ʒ�鿴ʱ�䣺<asp:DropDownList ID="DDLworkdowntime" runat="server" Font-Size="9pt" 
+                &nbsp;作品查看时间：<asp:DropDownList ID="DDLworkdowntime" runat="server" Font-Size="9pt" 
                     EnableTheming="True" AutoPostBack="True" 
-            onselectedindexchanged="DDLworkdowntime_SelectedIndexChanged" ToolTip="ѡ��鿴����">
+            onselectedindexchanged="DDLworkdowntime_SelectedIndexChanged" ToolTip="选择查看天数">
                 <asp:ListItem>0</asp:ListItem>
                 <asp:ListItem>1</asp:ListItem>
                     <asp:ListItem>2</asp:ListItem>
@@ -85,64 +67,44 @@
                     <asp:ListItem>11</asp:ListItem>
                     <asp:ListItem>12</asp:ListItem>
         </asp:DropDownList>
-                �����Բ鿴<br />
+                天后可以查看<br />
                 <br />
-                &nbsp;��Ʒ�ύ���ƣ�<asp:CheckBox ID="CheckBoxWorkIp" runat="server" AutoPostBack="True" 
+                &nbsp;作品提交限制：<asp:CheckBox ID="CheckBoxWorkIp" runat="server" AutoPostBack="True" 
                         Font-Size="9pt" oncheckedchanged="CheckBoxWorkIp_CheckedChanged" 
-                    Text="�Ƿ��ͬ����Ʒ�ύ����Ip����" ToolTip="ͬ��һ��Ip�����ύһ����Ʒ" />
+                    Text="是否对同班作品提交进行Ip限制" ToolTip="同班一个Ip限制提交一份作品" />
                 <br />
                 <br />
-                &nbsp;CookiesʧЧ���ã�<asp:DropDownList ID="DDLCookiesPeriod" runat="server" 
+                &nbsp;Cookies失效设置：<asp:DropDownList ID="DDLCookiesPeriod" runat="server" 
                     AutoPostBack="True" Font-Size="9pt" 
                         onselectedindexchanged="DDLCookiesPeriod_SelectedIndexChanged">
-                        <asp:ListItem Value="0">�ر�ʧЧ</asp:ListItem>
-                        <asp:ListItem Value="1">45����</asp:ListItem>
-                        <asp:ListItem Value="2">1Сʱ</asp:ListItem>
-                        <asp:ListItem Value="3">3Сʱ</asp:ListItem>
-                        <asp:ListItem Value="4">5Сʱ</asp:ListItem>
-                        <asp:ListItem Value="5">����</asp:ListItem>
+                        <asp:ListItem Value="0">关闭失效</asp:ListItem>
+                        <asp:ListItem Value="1">45分钟</asp:ListItem>
+                        <asp:ListItem Value="2">1小时</asp:ListItem>
+                        <asp:ListItem Value="3">3小时</asp:ListItem>
+                        <asp:ListItem Value="4">5小时</asp:ListItem>
+                        <asp:ListItem Value="5">永久</asp:ListItem>
                     </asp:DropDownList>
                 <br />
                 <br />
-                <div>
-&nbsp;Cookiesǰ׺���ã�<asp:Label ID="LabelCookiesFix" runat="server" Width="160px" 
-                    BorderColor="#E1E1E1" BorderWidth="1px"></asp:Label>
-                &nbsp;<asp:Button ID="ButtonFix" runat="server" Font-Size="9pt" Height="20px" Text="����" 
-               BorderColor="Silver" BorderStyle="Solid"  BorderWidth="1px"   
-                    BackColor="#E8E8E8" onclick="ButtonFix_Click"  />
-                <br />
-                </div>
-                <br />
-                &nbsp;&nbsp;ȫ��ѧ���ջ����أ�<asp:Button ID="Btnpublish" runat="server" Font-Size="9pt" 
-                    Height="20px" Text="һ���ջ�" 
+                &nbsp;&nbsp;全部学案收回隐藏：<asp:Button ID="Btnpublish" runat="server" Font-Size="9pt" 
+                    Height="20px" Text="一键收回" 
                BorderColor="Silver" BorderStyle="Solid"  BorderWidth="1px"   BackColor="#E8E8E8" 
-                    onclick="Btnpublish_Click" ToolTip="�ջص�ѧ��ֻ����ѧ�����治��ʾ����ʦ��������ʾ���������óɷ���״̬" 
+                    onclick="Btnpublish_Click" ToolTip="收回的学案只是在学生界面不显示，教师界面仍显示并可再设置成发布状态" 
                     Width="80px" />
                 <br />
                 <br />
-                &nbsp;��Ʒ�ϴ��ؼ�ѡ��<asp:DropDownList ID="DDLUploadMode" runat="server" 
+                &nbsp;作品上传控件选择：<asp:DropDownList ID="DDLUploadMode" runat="server" 
                     AutoPostBack="True" Font-Size="9pt" 
                     onselectedindexchanged="DDLUploadMode_SelectedIndexChanged">
-                    <asp:ListItem Value="0">Swfupload�ϴ��ؼ�</asp:ListItem>
-                    <asp:ListItem Value="1">��ͨ��ˢ�·�ʽ�ϴ�</asp:ListItem>
+                    <asp:ListItem Value="0">普通无刷新方式上传</asp:ListItem>
+                    <asp:ListItem Value="1">Plupload方式上传</asp:ListItem>
                     </asp:DropDownList>
                 <br />
                 <br />
-&nbsp;ftp����˿ں����ã�<asp:DropDownList ID="DDLftpport" runat="server" Font-Size="9pt" 
-                    EnableTheming="True" AutoPostBack="True" 
-            onselectedindexchanged="DDLftpport_SelectedIndexChanged" Width="50px">
-                <asp:ListItem Selected="True">21</asp:ListItem>
-                <asp:ListItem>22</asp:ListItem>
-                    <asp:ListItem>23</asp:ListItem>
-                    <asp:ListItem>24</asp:ListItem>
-                    <asp:ListItem>25</asp:ListItem>
-        </asp:DropDownList>
-                <br />
-                <br />
-&nbsp;��ʦƽ̨��¼���ƣ�<asp:CheckBox ID="CheckBoxLogin" runat="server" 
-                    oncheckedchanged="CheckBoxLogin_CheckedChanged" Text="����Ϊ��������ͬ���β��ܵ�¼" 
+&nbsp;教师平台登录限制：<asp:CheckBox ID="CheckBoxLogin" runat="server" 
+                    oncheckedchanged="CheckBoxLogin_CheckedChanged" Text="限制为跟服务器同网段才能登录" 
                     AutoPostBack="True" />
-                <asp:Image ID="ImageLogin" runat="server" ImageUrl="~/Images/green.gif" />
+                <asp:Image ID="ImageLogin" runat="server" ImageUrl="~/images/green.gif" />
                 <br />
                 <br />
                 </div>

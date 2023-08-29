@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher"  Validaterequest="false"  AutoEventWireup="true" CodeFile="softedit.aspx.cs" Inherits="Teacher_softedit" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" validaterequest="false" autoeventwireup="true" inherits="Teacher_softedit, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
   <div   class="placehold">
@@ -14,6 +14,7 @@
             <asp:ListItem>资料</asp:ListItem>
             <asp:ListItem>软件</asp:ListItem>
             <asp:ListItem>游戏</asp:ListItem>
+            <asp:ListItem>课程</asp:ListItem>
         </asp:DropDownList>
         &nbsp;学分限制：<asp:DropDownList ID="DDLopen" runat="server" Font-Size="9pt">
             <asp:ListItem Value="10">A</asp:ListItem>
@@ -32,8 +33,8 @@
 		    var editor;
             var cid= '-1';
             var ty="Soft";
-            var upjs= '../kindeditor/aspnet/upload_json.aspx?Cid='+cid+'&Ty='+ty;
-            var fmjs='../kindeditor/aspnet/file_manager_json.aspx?Cid='+cid+'&Ty='+ty;
+            var upjs= '../kindeditor/aspnet/upload_json.aspx?cid='+cid+'&ty='+ty;
+            var fmjs='../kindeditor/aspnet/file_manager_json.aspx?cid='+cid+'&ty='+ty;
             KindEditor.ready(function (K) {
                 editor = K.create('textarea[name="ctl00$Content$mcontent"]', {
 		            resizeType: 1,

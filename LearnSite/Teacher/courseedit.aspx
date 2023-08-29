@@ -1,28 +1,28 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" Validaterequest="false" AutoEventWireup="true" CodeFile="courseedit.aspx.cs" Inherits="Teacher_courseedit" %>
+ï»¿<%@ page validaterequest="false" title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_courseedit, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div  class="cplace">
     <div class="cleft">
-        &nbsp;Ñ§°¸Ãû³Æ£º<asp:TextBox ID="Texttitle" runat="server"  Width="436px"  
+        &nbsp;å­¦æ¡ˆåç§°ï¼š<asp:TextBox ID="Texttitle" runat="server"  Width="436px"  
             SkinID="TextBoxNormal"></asp:TextBox>
         </div>
     <div  class="cleft">
-        &nbsp;Ñ§°¸·ÖÀà£º<asp:DropDownList ID="DDLclass" runat="server" Width="100px" 
+        &nbsp;å­¦æ¡ˆåˆ†ç±»ï¼š<asp:DropDownList ID="DDLclass" runat="server" Width="100px" 
             Font-Size="9pt">
             </asp:DropDownList></div>
     <div  class="cleft">
-        &nbsp;ÊÚ¿ÎÄê¼¶£º<asp:DropDownList ID="DDLcobj" runat="server" 
+        &nbsp;æŽˆè¯¾å¹´çº§ï¼š<asp:DropDownList ID="DDLcobj" runat="server" 
             Font-Size="9pt" Width="40px">
                 </asp:DropDownList>        
-         &nbsp; &nbsp; µÚ<asp:DropDownList ID="DDLCterm" runat="server" 
+         &nbsp; &nbsp; ç¬¬<asp:DropDownList ID="DDLCterm" runat="server" 
             Font-Names="Arial" Font-Size="8pt" Width="40px">
             <asp:ListItem>1</asp:ListItem>
             <asp:ListItem Selected="True">2</asp:ListItem>
         </asp:DropDownList>
-        Ñ§ÆÚ&nbsp;&nbsp; µÚ<asp:DropDownList ID="DDLCks" runat="server" Font-Size="8pt"
+        å­¦æœŸ&nbsp;&nbsp; ç¬¬<asp:DropDownList ID="DDLCks" runat="server" Font-Size="8pt"
             Width="40px" Font-Names="Arial">       
-        </asp:DropDownList>¿Î½Ú&nbsp;&nbsp;<asp:CheckBox ID="CheckPublish" runat="server" Text="ÊÇ·ñ·¢²¼"  Checked="True" />
-        &nbsp;
+        </asp:DropDownList>è¯¾èŠ‚&nbsp;&nbsp;<asp:CheckBox ID="CheckPublish" runat="server" Text="æ˜¯å¦å‘å¸ƒ"  Checked="True" />
+        &nbsp; <asp:HyperLink ID="HLbanner" runat="server" Target="_blank">å­¦æ¡ˆæ¨ªå¹…</asp:HyperLink><asp:FileUpload ID="Fupload" runat="server" Font-Size="10pt" />
         </div>
     <div >
     <script charset="utf-8" src="../kindeditor/kindeditor-min.js"></script>
@@ -31,8 +31,8 @@
 		    var editor;
             var cid= <%=myCid() %>;
             var ty="Course";
-            var upjs= '../kindeditor/aspnet/upload_json.aspx?Cid='+cid+'&Ty='+ty;
-            var fmjs='../kindeditor/aspnet/file_manager_json.aspx?Cid='+cid+'&Ty='+ty;
+            var upjs= '../kindeditor/aspnet/upload_json.aspx?cid='+cid+'&ty='+ty;
+            var fmjs='../kindeditor/aspnet/file_manager_json.aspx?cid='+cid+'&ty='+ty;
 		    KindEditor.ready(function (K) {
 		        editor = K.create('textarea[name="ctl00$Content$mcontent"]', {
 		            resizeType: 1,
@@ -50,9 +50,9 @@
      <div  class="placehold">
                <asp:Label ID="Labelmsg" runat="server" ></asp:Label>
          <br />
-              <asp:Button ID="Btnedit" runat="server"  Text="È·¶¨" onclick="Btnedit_Click"  SkinID="BtnNormal"  />
+              <asp:Button ID="Btnedit" runat="server"  Text="ç¡®å®š" onclick="Btnedit_Click"  SkinID="BtnNormal"  />
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <asp:Button ID="Btnreturn" runat="server"  Text="·µ»Ø" onclick="Btnreturn_Click"  
+              <asp:Button ID="Btnreturn" runat="server"  Text="è¿”å›ž" onclick="Btnreturn_Click"  
                    SkinID="BtnNormal"  />
                <br />
                <br />

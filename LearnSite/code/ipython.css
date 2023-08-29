@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'Fira Code';
+  src: url('fonts/FiraCode-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+body{		
+	background-color:#293134;
+}
+.container {
+    margin: auto;
+}
+.button {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #333;
+    opacity:0.6 ;
+}
+
+.cvdiv{	
+    top: 60px;
+    right: 50px;
+    z-index: 888;	
+    //background-color: #6c787b;
+	
+    background-color: #29313300;
+    padding: 4px 20px;
+    position: fixed;
+    box-shadow: 2px 2px 2px #333;
+	width:600px;
+	height:600px;
+    background: url(../code/grid.png) ;
+}
+
+.button:hover {
+    background-color: #768b75; /* Green */
+    color: #fff;
+}
+#editor {
+    min-height: 30px;
+    padding: 20px;
+	position: absolute;
+	top:  0px;
+	bottom: 20px;
+    overflow-y:scroll;
+	left:0px;
+	right:0px;
+	color:#666;
+	font-family: "Arial","Microsoft YaHei";
+	font-size:22px;	
+	background-color:#293134;
+}
+
+.divprog{	
+	margin:0px;
+	padding:4px;	
+	padding-top:10px;
+	color:#ccc;
+	//user-select: none;
+	font-family: 'Fira Code',Arial,'宋体';
+	//font-size:20px;
+	//border-top:3px solid #21282c;
+}
+.divpass{		
+	color:#61b063;
+	text-align:right;
+}
+.divwrong{		
+	color:#b06161;
+	text-align:right;
+}
+.ace_gutter-cell {
+    visibility: hidden;
+    padding-left: 0;
+    padding-right: 30px;	
+	
+}
+
+.in-gutter::before {
+    content: "";
+}
+
+.in-gutter::after {
+    content: ">>> ";
+    position: absolute;
+    right: 0;
+}
+
+.in-gutter::before {
+    position: absolute;
+    left: 5px;
+    padding: 0;
+}
+
+.in-gutter {
+    padding-left: 48px;
+    visibility: visible;
+    display: block;
+    color: #699867;
+	font-weight: bold;
+}
+
+.out-gutter {
+    color: crimson;
+}
+.ace_gutter {
+    font-size: 20px;
+}
+.ace_gutter-cell:not(:first-child):after {
+    content: "...:";
+    visibility: visible;
+    position: absolute;
+    right: 0;
+    color: #364347;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸#585858;*/
+::-webkit-scrollbar
+{
+	width: 10px;
+	height: 10px;
+	background-color: #293134;
+}
+ 
+ 
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+	background-color: #49565a;
+}

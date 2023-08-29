@@ -1,32 +1,32 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="termscores.aspx.cs" Inherits="Teacher_termscores" %>
+ï»¿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_termscores, LearnSite" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div  class="placehold"> 
         <div  >        
-           Äê¼¶<asp:DropDownList ID="DDLgrade" runat="server" 
+           å¹´çº§<asp:DropDownList ID="DDLgrade" runat="server" 
                 Font-Size="9pt" Width="50px" 
                 onselectedindexchanged="DDLgrade_SelectedIndexChanged" AutoPostBack="True"> </asp:DropDownList>
-            °à¼¶<asp:DropDownList ID="DDLclass" runat="server" Font-Size="9pt" 
+            ç­çº§<asp:DropDownList ID="DDLclass" runat="server" Font-Size="9pt" 
                 Width="50px" AutoPostBack="True" 
                 onselectedindexchanged="DDLclass_SelectedIndexChanged">
-            </asp:DropDownList>&nbsp;µÚ<asp:Label ID="Lbterm" runat="server"></asp:Label>
-            Ñ§ÆÚ&nbsp;
+            </asp:DropDownList>&nbsp;ç¬¬<asp:Label ID="Lbterm" runat="server"></asp:Label>
+            å­¦æœŸ&nbsp;
             <asp:Button   ID="BtnScoresNo" runat="server"  OnClick="BtnScoresNo_Click" 
-                Text=" Î´ÆÀÉèÖÃC"  SkinID="BtnNormal" ToolTip="Ëù½Ì°à¼¶Î´ÆÀ×÷Æ·È«²¿ÉèÖÃÎªC£¬¼´·ÖÖµ6" />
+                Text=" æœªè¯„è®¾ç½®C"  SkinID="BtnNormal" ToolTip="æ‰€æ•™ç­çº§æœªè¯„ä½œå“å…¨éƒ¨è®¾ç½®ä¸ºCï¼Œå³åˆ†å€¼6" />
             &nbsp;&nbsp;
             <asp:Button   ID="BtnScores" runat="server"  OnClick="BtnScore_Click" 
-                Text="×Ü·ÖÕÛËã"  SkinID="BtnSmall" ToolTip="ÏÈÍ³¼Æ×Ü·Ö£¬ÔÙµÃ³öÕÛËã×Ü·Ö" />
+                Text="æ€»åˆ†æŠ˜ç®—"  SkinID="BtnNormal" ToolTip="å…ˆç»Ÿè®¡æ€»åˆ†ï¼Œå†å¾—å‡ºæŠ˜ç®—æ€»åˆ†" />
             &nbsp;&nbsp; 
-            <asp:Button ID="Btnape" runat="server"  onclick="Btnape_Click" Text="ÆÚÄ©×ÜÆÀ" 
-                SkinID="BtnSmall" />
+            <asp:Button ID="Btnape" runat="server"  onclick="Btnape_Click" Text="æœŸæœ«æ€»è¯„" 
+                SkinID="BtnNormal" />
 &nbsp;&nbsp;
             <asp:Button ID="BtnExcel" runat="server"  OnClick="BtnExcel_Click" 
-                Text="µ¼³öExcel"  SkinID="BtnSmall" ToolTip="½«Ñ§ÉúÆÚÄ©³É¼¨ÒÔExcel±í¸ñµ¼³ö" />&nbsp;&nbsp;<asp:Button 
-                ID="Btntermview" runat="server"  Text="Ñ§ÆÚ²éÑ¯"  OnClick="Btntermview_Click" 
-                SkinID="BtnSmall" />
-            &nbsp;&nbsp;<asp:Button ID="Btnback" runat="server"  Text="·µ»Ø"  OnClick="Btnback_Click" SkinID="BtnSmall" />
+                Text="å¯¼å‡ºExcel"  SkinID="BtnNormal" ToolTip="å°†å­¦ç”ŸæœŸæœ«æˆç»©ä»¥Excelè¡¨æ ¼å¯¼å‡º" />&nbsp;&nbsp;<asp:Button 
+                ID="Btntermview" runat="server"  Text="å­¦æœŸæŸ¥è¯¢"  OnClick="Btntermview_Click" 
+                SkinID="BtnNormal" />
+            &nbsp;&nbsp;<asp:Button ID="Btnback" runat="server"  Text="è¿”å›ž"  OnClick="Btnback_Click" SkinID="BtnNormal" />
             <br />
             <br />
-            ×Ü·ÖÕÛËãÉèÖÃ== ×÷Æ·+Ð¡×é+ÌÖÂÛ+±íµ¥£º<asp:DropDownList ID="DDLwork" runat="server" Font-Size="9pt" 
+            æ€»åˆ†æŠ˜ç®—è®¾ç½®== ä½œå“+å°ç»„+è®¨è®º+è¡¨å•+æµ‹è¯„ ï¼š<asp:DropDownList ID="DDLwork" runat="server" Font-Size="9pt" 
                 Width="50px">
                 <asp:ListItem Selected="True">100</asp:ListItem>
                 <asp:ListItem>90</asp:ListItem>
@@ -39,7 +39,7 @@
                 <asp:ListItem>20</asp:ListItem>
                 <asp:ListItem>10</asp:ListItem>
                 <asp:ListItem>0</asp:ListItem>
-            </asp:DropDownList>&nbsp;µ÷²é£º<asp:DropDownList ID="DDLsurvey" runat="server" Font-Size="9pt" 
+            </asp:DropDownList>&nbsp;è°ƒæŸ¥ï¼š<asp:DropDownList ID="DDLsurvey" runat="server" Font-Size="9pt" 
                 Width="50px">
                 <asp:ListItem Selected="True">100</asp:ListItem>
                 <asp:ListItem>90</asp:ListItem>
@@ -52,20 +52,7 @@
                 <asp:ListItem>20</asp:ListItem>
                 <asp:ListItem>10</asp:ListItem>
                 <asp:ListItem>0</asp:ListItem>
-            </asp:DropDownList>ÍøÒ³£º<asp:DropDownList ID="DDLweb" runat="server" 
-                Font-Size="9pt" Width="50px">
-                <asp:ListItem>100</asp:ListItem>
-                <asp:ListItem>90</asp:ListItem>
-                <asp:ListItem>80</asp:ListItem>
-                <asp:ListItem>70</asp:ListItem>
-                <asp:ListItem>60</asp:ListItem>
-                <asp:ListItem>50</asp:ListItem>
-                <asp:ListItem>40</asp:ListItem>
-                <asp:ListItem>30</asp:ListItem>
-                <asp:ListItem>20</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
-                <asp:ListItem Selected="True">0</asp:ListItem>
-            </asp:DropDownList>²âÑé£º<asp:DropDownList ID="DDLquiz" runat="server" 
+            </asp:DropDownList>&nbsp;æµ‹éªŒï¼š<asp:DropDownList ID="DDLquiz" runat="server" 
                 Font-Size="9pt" Width="50px">
                 <asp:ListItem>100</asp:ListItem>
                 <asp:ListItem>90</asp:ListItem>
@@ -78,7 +65,7 @@
                 <asp:ListItem Selected="True">20</asp:ListItem>
                 <asp:ListItem>10</asp:ListItem>
                 <asp:ListItem>0</asp:ListItem>
-            </asp:DropDownList>ÖÐÎÄ£º<asp:DropDownList ID="DDLtyper" runat="server" 
+            </asp:DropDownList>ä¸­è‹±æ–‡ï¼š<asp:DropDownList ID="DDLtyper" runat="server" 
                 Font-Size="9pt" Width="50px">
                 <asp:ListItem>100</asp:ListItem>
                 <asp:ListItem>90</asp:ListItem>
@@ -92,7 +79,7 @@
                 <asp:ListItem Selected="True">10</asp:ListItem>
                 <asp:ListItem>0</asp:ListItem>
             </asp:DropDownList>
-            ±íÏÖ£º<asp:DropDownList ID="DDLattitude" runat="server" 
+            è¡¨çŽ°ï¼š<asp:DropDownList ID="DDLattitude" runat="server" 
                 Font-Size="9pt" Width="50px">
                 <asp:ListItem Selected="True">100</asp:ListItem>
                 <asp:ListItem>90</asp:ListItem>
@@ -109,7 +96,7 @@
             &nbsp;&nbsp;
             <br />
             <br />
-            ÆÚÄ©×ÜÆÀÃ¿¸ö°à¼¶µÄAPE±ÈÀýÉèÖÃ=== AÕ¼£º<asp:DropDownList ID="DDLA" runat="server" Font-Size="9pt" 
+            æœŸæœ«æ€»è¯„æ¯ä¸ªç­çº§çš„APEæ¯”ä¾‹è®¾ç½®=== Aå ï¼š<asp:DropDownList ID="DDLA" runat="server" Font-Size="9pt" 
                 Width="50px">
                 <asp:ListItem>100</asp:ListItem>
                 <asp:ListItem>90</asp:ListItem>
@@ -118,19 +105,21 @@
                 <asp:ListItem>60</asp:ListItem>
                 <asp:ListItem Selected="True">50</asp:ListItem>
                 <asp:ListItem>40</asp:ListItem>
+                <asp:ListItem>35</asp:ListItem>
                 <asp:ListItem>30</asp:ListItem>
                 <asp:ListItem>20</asp:ListItem>
                 <asp:ListItem>10</asp:ListItem>
-            </asp:DropDownList>&nbsp;&nbsp;¡¡¡¡×Ü·ÖÔÚ°Ù·ÖÖ®<asp:DropDownList ID="DDLE" runat="server" Font-Size="9pt" 
+            </asp:DropDownList>&nbsp;&nbsp;ã€€ã€€æ€»åˆ†åœ¨ç™¾åˆ†ä¹‹<asp:DropDownList ID="DDLE" runat="server" Font-Size="9pt" 
                 Width="50px">
                 <asp:ListItem>50</asp:ListItem>
                 <asp:ListItem>40</asp:ListItem>
-                <asp:ListItem Selected="True">30</asp:ListItem>
+                <asp:ListItem>30</asp:ListItem>
                 <asp:ListItem>20</asp:ListItem>
                 <asp:ListItem>10</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
+                <asp:ListItem Selected="True">5</asp:ListItem>
+                <asp:ListItem>0</asp:ListItem>
             </asp:DropDownList>
-            &nbsp;ÒÔÏÂ×Ô¶¯ÆÀ£Å<br />
+            &nbsp;ä»¥ä¸‹è‡ªåŠ¨è¯„ï¼¥<br />
             <asp:Label ID="Labelmsg" runat="server"  SkinID="LabelMsgRed" 
                 ></asp:Label>
             </div>
@@ -138,25 +127,26 @@
                  DataKeyNames="Sid"  SkinID="GVmission" OnRowDataBound="GVCourse_RowDataBound"
                 PageSize="25" Width="98%" EnableModelValidation="True" >
                 <Columns>
-                    <asp:BoundField HeaderText="±àºÅ" />
-                    <asp:BoundField DataField="Snum" HeaderText="Ñ§ºÅ" />
-                    <asp:BoundField DataField="Sgradeclass" HeaderText="°à¼¶" />
+                    <asp:BoundField HeaderText="ç¼–å·" />
+                    <asp:BoundField DataField="Snum" HeaderText="å­¦å·" />
+                    <asp:BoundField DataField="Sgradeclass" HeaderText="ç­çº§" />
                     <asp:HyperLinkField DataNavigateUrlFields="Snum" 
-                        DataNavigateUrlFormatString="studentwork.aspx?Snum={0}" DataTextField="Sname" 
-                        HeaderText="ÐÕÃû" Target="_blank"  />
-                    <asp:BoundField DataField="Sscore" HeaderText="×÷Æ·" />
-                    <asp:BoundField DataField="Sgscore" HeaderText="Ð¡×é" />
-                    <asp:BoundField DataField="Spscore" HeaderText="ÌÖÂÛ" />
-                    <asp:BoundField DataField="Stxtform" HeaderText="±íµ¥" />
-                    <asp:BoundField DataField="Svscore" HeaderText="µ÷²é" />
-                    <asp:BoundField DataField="Swscore" HeaderText="ÍøÒ³" />
-                    <asp:BoundField DataField="Squiz" HeaderText="²âÑé" />
-                    <asp:BoundField DataField="Schinese" HeaderText="Æ´Òô" />
-                    <asp:BoundField DataField="Sfscore" HeaderText="Ó¢Óï" />
-                    <asp:BoundField DataField="Stscore" HeaderText="ÖÐÎÄ" />
-                    <asp:BoundField DataField="Sattitude" HeaderText="±íÏÖ" />
-                    <asp:BoundField DataField="Sallscore" HeaderText="×Ü·Ö" />
-                    <asp:BoundField DataField="Sape" HeaderText="ÆÀ¶¨" />
+                        DataNavigateUrlFormatString="studentwork.aspx?snum={0}" DataTextField="Sname" 
+                        HeaderText="å§“å" Target="_blank"  />
+                    <asp:BoundField DataField="Sscore" HeaderText="ä½œå“" />
+                    <asp:BoundField DataField="Sgscore" HeaderText="å°ç»„" />
+                    <asp:BoundField DataField="Spscore" HeaderText="è®¨è®º" />
+                    <asp:BoundField DataField="Stxtform" HeaderText="è¡¨å•" />
+                    <asp:BoundField DataField="Svscore" HeaderText="è°ƒæŸ¥" />
+                    <asp:BoundField DataField="Squiz" HeaderText="æµ‹éªŒ" />
+                    <asp:BoundField DataField="Schinese" HeaderText="æ‹¼éŸ³" />
+                    <asp:BoundField DataField="Sfscore" HeaderText="è‹±è¯­" />
+                    <asp:BoundField DataField="Stscore" HeaderText="ä¸­æ–‡" />
+                    <asp:BoundField DataField="Sidle" HeaderText="æµ‹è¯„" />
+                    <asp:BoundField DataField="Sattitude" HeaderText="è¡¨çŽ°" />
+                    <asp:BoundField DataField="Sallscore" HeaderText="æ€»åˆ†" />
+                    <asp:BoundField DataField="Sape" HeaderText="è¯„å®š" />
+                    <asp:BoundField DataField="Stenscore" HeaderText="è¯„å®š" />
                 </Columns>
             </asp:GridView>
             <br />

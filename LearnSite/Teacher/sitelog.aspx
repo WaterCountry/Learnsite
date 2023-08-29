@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="sitelog.aspx.cs" Inherits="Teacher_sitelog" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Teacher_sitelog, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -18,7 +18,7 @@
 <body>
     <form id="form1" runat="server">
     <div style="text-align: center;">    
-        <img alt="" src="../Images/inquiry.png" /><strong>网站运行异常信息记录列表</strong>：<br />
+        <img alt="" src="../images/inquiry.png" /><strong>网站运行异常信息记录列表</strong>：<br />
         <br />
 &nbsp;<asp:Label ID="Labelmsg" runat="server"></asp:Label>
         <br />

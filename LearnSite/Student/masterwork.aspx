@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Stud.master"  StylesheetTheme="Student"  AutoEventWireup="true" CodeFile="masterwork.aspx.cs" Inherits="Student_masterwork" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/student/Stud.master" stylesheettheme="Student" autoeventwireup="true" inherits="Student_masterwork, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cphs" Runat="Server">
 <div id="showcontent">
@@ -43,7 +43,7 @@
         学期<br />
     <asp:GridView ID="GVcourse" runat="server" AutoGenerateColumns="False" 
         CellPadding="2" SkinID="GridViewMission" Width="99%" 
-        DataKeyNames="Cid" CellSpacing="3" EnableModelValidation="True" 
+        DataKeyNames="cid" CellSpacing="3" EnableModelValidation="True" 
             onrowdatabound="GVcourse_RowDataBound">
              <Columns>
                  <asp:BoundField DataField="Cks" HeaderText="◆">
@@ -51,14 +51,14 @@
                  </asp:BoundField>
                  <asp:TemplateField HeaderText="课节名称" >
                      <ItemTemplate>
-                         <asp:HyperLink ID="HyperLink1" runat="server"  ToolTip='<%# Eval("Ctitle") %>' ></asp:HyperLink>
+                         <asp:HyperLink ID="HyperLink1" runat="server"  ToolTip='<%# Eval("ctitle") %>' CssClass="shorttitle"  ></asp:HyperLink>
                      </ItemTemplate>
                      <HeaderStyle HorizontalAlign="Left" />
                      <ItemStyle  HorizontalAlign="Left" />
                  </asp:TemplateField>
                  <asp:TemplateField Visible="False">
                      <ItemTemplate>
-                         <asp:Label ID="LabelCid" runat="server" Text='<%# Bind("Cid") %>'></asp:Label>
+                         <asp:Label ID="LabelCid" runat="server" Text='<%# Bind("cid") %>'></asp:Label>
                      </ItemTemplate>
                  </asp:TemplateField>
              </Columns>

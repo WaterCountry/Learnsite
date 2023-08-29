@@ -1,17 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" Validaterequest="false"  AutoEventWireup="true" CodeFile="programedit.aspx.cs" Inherits="Teacher_programedit" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" validaterequest="false" autoeventwireup="true" inherits="Teacher_programedit, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div  class="cplace">
     <div  class="cleft">
-        &nbsp;&nbsp;&nbsp;&nbsp;Scratch编程主题：<asp:TextBox ID="Texttitle" runat="server"  SkinID="TextBoxNormal" 
+        编程主题：<asp:TextBox ID="Texttitle" runat="server"  SkinID="TextBoxNormal" 
             Width="200px" ></asp:TextBox>
         <asp:CheckBox ID="CheckPublish" runat="server" Text="是否发布"  Checked="True" />
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        编程实例：<asp:FileUpload ID="Fupload" runat="server" Font-Size="9pt" />
-        &nbsp;&nbsp;
-        <asp:HyperLink ID="HlExample" runat="server" Target="_blank">[HlExample]</asp:HyperLink>&nbsp;&nbsp;
-        <asp:CheckBox ID="CheckMicoWorld" runat="server" Text="微界面"  Checked="False" 
-            ToolTip="指Scratch编程界面不显示脚本模块" />
+        &nbsp;
+        实例：<asp:HyperLink ID="HlExample" runat="server" Target="_blank">[HlExample]</asp:HyperLink>
+        <asp:FileUpload ID="Fupload" runat="server" Font-Size="9pt" />        
+        <asp:CheckBox ID="CheckMicoWorld" runat="server" Text="作品继承"  Checked="False" 
+            ToolTip="加载最近的积木编程作品，适合项目学习"  />
         </div> 
         <div  >
         <script charset="utf-8" src="../kindeditor/kindeditor-min.js"></script>
@@ -20,8 +19,8 @@
 		    var editor;
             var cid= <%=myCid() %>;
             var ty="Course";
-            var upjs= '../kindeditor/aspnet/upload_json.aspx?Cid='+cid+'&Ty='+ty;
-            var fmjs='../kindeditor/aspnet/file_manager_json.aspx?Cid='+cid+'&Ty='+ty;
+            var upjs= '../kindeditor/aspnet/upload_json.aspx?cid='+cid+'&ty='+ty;
+            var fmjs='../kindeditor/aspnet/file_manager_json.aspx?cid='+cid+'&ty='+ty;
 		    KindEditor.ready(function (K) {
 		        editor = K.create('textarea[name="ctl00$Content$mcontent"]', {
 		            resizeType: 1,

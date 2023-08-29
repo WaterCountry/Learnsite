@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="computers.aspx.cs" Inherits="Teacher_computers" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_computers, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div   class="placehold">        
@@ -20,7 +20,7 @@
                     <Columns>
                         <asp:BoundField HeaderText="序号" />
                         <asp:HyperLinkField DataNavigateUrlFields="Pip" 
-                            DataNavigateUrlFormatString="ipstudent.aspx?Qip={0}" DataTextField="Pip" 
+                            DataNavigateUrlFormatString="ipstudent.aspx?qip={0}" DataTextField="Pip" 
                             HeaderText="IP地址" Target="_blank" />
                         <asp:TemplateField HeaderText="计算机名">
                             <ItemTemplate>
@@ -32,12 +32,14 @@
                                 <asp:Label ID="Label2" runat="server" Text='<%# Bind("Pm") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:BoundField DataField="Pnum" HeaderText="分配学号" />
+                        <asp:BoundField DataField="Pon" HeaderText="是否登录" Visible="False" />
                         <asp:CheckBoxField DataField="Plock" HeaderText="绑定状态" />
                         <asp:TemplateField ShowHeader="False">                            
                             <ItemTemplate>
                                 <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="false" 
                                     CommandArgument='<%# Eval("Pid") %>' CommandName="Lock" 
-                                    ImageUrl="~/Images/lock.png" Text="按钮" ToolTip="更新锁定状态" />
+                                    ImageUrl="~/images/lock.png" Text="按钮" ToolTip="更新锁定状态" />
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="Pdate" HeaderText="更新日期">
@@ -62,14 +64,22 @@
         <asp:Button ID="BtnOnlock" runat="server" 
             SkinID="BtnNormal" Text="全体绑定" onclick="BtnOnlock_Click"  />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="BtnAssign" runat="server" 
+            SkinID="BtnNormal" Text="自动分配" onclick="BtnAssign_Click" 
+            ToolTip="培训时用，先获取所有学生机IP，然后点自动分配学号" Visible="False"  />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="BtnClear" runat="server" SkinID="BtnNormal" Text="清除分配"  
+            ToolTip="清除分配的学号" onclick="BtnClear_Click" Visible="False"  />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="BtnRefresh" runat="server" 
             SkinID="BtnNormal" Text="刷新" onclick="BtnRefresh_Click"  />
+        &nbsp;&nbsp;&nbsp;
         <br />
         <br />
         <span style="color: #5189FF">说明：解除绑定后，学生登录更新记录就会自动绑定</span> &nbsp;&nbsp;
         <asp:CheckBox ID="CheckBoxhostname" runat="server" AutoPostBack="True" 
                         Font-Size="9pt" oncheckedchanged="CheckBoxhostname_CheckedChanged" 
-                    Text="是否自动获取主机名" ToolTip="同网段获取正常，如果跨网段请关闭并导入主机名和IP绑定表格" />
+                    Text="自动获取主机名" ToolTip="同网段获取正常，如果跨网段请关闭并导入主机名和IP绑定表格" />
                 <br />
         <div style="border: 1px solid #E3E3E3; margin: auto; padding: 2px; width: 500px; background-color: #F7F7F7;">
             <strong>采用手工导入主机名与IP对应表</strong>

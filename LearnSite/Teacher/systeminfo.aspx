@@ -1,57 +1,54 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" enableViewStateMac="false" CodeFile="systeminfo.aspx.cs" Inherits="Teacher_systeminfo" %>
+ï»¿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" enableviewstatemac="false" inherits="Teacher_systeminfo, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div  class="placehold">
     <center>
         <br />
-        <table style="border: 1px solid #D8D8D8; width: 300px; font-size: 9pt;font-family: ËÎÌå, Arial, Helvetica, sans-serif;" 
+        <table style="border: 1px solid #D8D8D8; width: 300px; " 
             cellpadding="5" cellspacing="0">
             <tr>
                 <td style="background-color: #E6E6E6; font-weight: bold;" colspan="2" 
                     align="center">
-                    <asp:HyperLink ID="HlSearching" runat="server" 
-                        ImageUrl="~/Workshow/image/zoom.gif" NavigateUrl="~/Workshow/search.aspx" 
-                        Target="_blank"></asp:HyperLink>
-                    ÍøÕ¾·ÖÎöÍ³¼Æ</td>
+                    ç½‘ç«™åˆ†æžç»Ÿè®¡</td>
             </tr>
             <tr>
                 <td style="width: 120px">
-                    Ñ§°¸×ÜÊý£º</td>
+                    å­¦æ¡ˆæ€»æ•°ï¼š</td>
                 <td>
                     <asp:Label ID="Label15" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td style="width: 120px">
-                    ×÷Æ·×ÜÊý£º</td>
+                    ä½œå“æ€»æ•°ï¼š</td>
                 <td>
                     <asp:Label ID="Label16" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td style="width: 120px">
-                    Ñ§Éú×ÜÊý£º</td>
+                    å­¦ç”Ÿæ€»æ•°ï¼š</td>
                 <td>
                     <asp:Label ID="Label17" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td style="width: 120px">
-                    Ç©µ½´ÎÊý£º</td>
+                    ç­¾åˆ°æ¬¡æ•°ï¼š</td>
                 <td>
                     <asp:Label ID="Label18" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td style="width: 120px">
-                    ´ò×Ö´ÎÊý£º</td>
+                    æ‰“å­—æ¬¡æ•°ï¼š</td>
                 <td>
                     <asp:Label ID="Label19" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td style="width: 120px">
-                    ×ÊÔ´×ÜÊý£º</td>
+                    èµ„æºæ€»æ•°ï¼š</td>
                 <td>
                     <asp:Label ID="Label20" runat="server"></asp:Label>
                 </td>
@@ -59,131 +56,132 @@
         </table>
         <br />
        &nbsp;<asp:HyperLink ID="HLcomputer" runat="server" 
-            NavigateUrl="~/Teacher/computers.aspx" CssClass="HyperlinkLong" 
-            EnableTheming="False" EnableViewState="False">»úÆ÷ÃûIP¶ÔÓ¦±í</asp:HyperLink>
+            NavigateUrl="~/teacher/computers.aspx" CssClass="HyperlinkLong" 
+            EnableTheming="False" EnableViewState="False">æœºå™¨åIPå¯¹åº”è¡¨</asp:HyperLink>
         &nbsp;&nbsp;
         <asp:HyperLink ID="HLmythware" runat="server" 
-            NavigateUrl="~/Teacher/mythware.aspx" CssClass="HyperlinkLong" 
-            EnableTheming="False" EnableViewState="False">¼«Óò°à¼¶Ä£ÐÍ</asp:HyperLink>
+            NavigateUrl="~/teacher/mythware.aspx" CssClass="HyperlinkLong" 
+            EnableTheming="False" EnableViewState="False">æžåŸŸç­çº§æ¨¡åž‹</asp:HyperLink>
         <br />
         <br />
-<table style="border: 1px solid #D8D8D8; font-size: 9pt; width: 600px;  text-align: left; font-family: ËÎÌå, Arial, Helvetica, sans-serif; " 
+<table style="border: 1px solid #D8D8D8;  width: 800px;  text-align: left;  " 
             cellpadding="4" cellspacing="0">
             <tr>
                 <td style="font-weight: bold; color: black; height: 16px; background-color: #E6E6E6; text-align: center;" 
                     colspan="4">
-                    ·þÎñÆ÷×´Ì¬</td>
+                    <asp:Label ID="Labelcomputer" runat="server" ></asp:Label>
+                    æœåŠ¡å™¨çŠ¶æ€</td>
             </tr>
             <tr>
-                <td style="width: 90px" >
-                    ·þÎñÆ÷IP£º</td>
-                <td style="width: 189px" >
+                <td style="width: 115px" >
+                    æœåŠ¡å™¨IPï¼š</td>
+                <td style="width: 262px" >
                     <asp:Label ID="Label1" runat="server"></asp:Label>
-                <asp:Image ID="ImageLogin" runat="server" ImageUrl="~/Images/green.gif" />
+                <asp:Image ID="ImageLogin" runat="server" ImageUrl="~/images/green.gif" />
                 </td>
-                <td style="width: 116px" >
-                    .NETÒýÇæ°æ±¾£º</td>
+                <td style="width: 158px" >
+                    .NETå¼•æ“Žç‰ˆæœ¬ï¼š</td>
                 <td >
                     <asp:Label ID="Label8" runat="server" ></asp:Label>
                                 </td>
             </tr>
             <tr>
-                <td style="width: 90px" >
-                    ·þÎñÆ÷Ãû³Æ£º</td>
-                <td style="width: 189px" >
+                <td style="width: 115px" >
+                    æœåŠ¡å™¨åç§°ï¼š</td>
+                <td style="width: 262px" >
                     <asp:Label ID="Label2" runat="server"></asp:Label>
                 </td>
-                <td style="width: 116px" >
-                    ½Å±¾³¬Ê±Ê±¼ä£º</td>
+                <td style="width: 158px" >
+                    è„šæœ¬è¶…æ—¶æ—¶é—´ï¼š</td>
                 <td >
                     <asp:Label ID="Label9" runat="server" ></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td style="width: 90px" >
-                    ²Ù×÷ÏµÍ³£º</td>
-                <td style="width: 189px" >
+                <td style="width: 115px" >
+                    æ“ä½œç³»ç»Ÿï¼š</td>
+                <td style="width: 262px" >
                     <asp:Label ID="Label3" runat="server" ></asp:Label>
                 </td>
-                <td style="width: 116px" >
-                    ¿ª»úÔËÐÐÊ±³¤£º</td>
+                <td style="width: 158px" >
+                    å¼€æœºè¿è¡Œæ—¶é•¿ï¼š</td>
                 <td >
                     <asp:Label ID="Label10" runat="server" ></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td style="width: 90px" >
-                    CPUÊý£º</td>
-                <td style="width: 189px" >
+                <td style="width: 115px" >
+                    CPUæ•°ï¼š</td>
+                <td style="width: 262px" >
                     <asp:Label ID="Label4" runat="server" ></asp:Label>
                 </td>
-                <td style="width: 116px" >
-                    ½ø³Ì¿ªÊ¼Ê±¼ä£º</td>
+                <td style="width: 158px" >
+                    è¿›ç¨‹å¼€å§‹æ—¶é—´ï¼š</td>
                 <td >
                     <asp:Label ID="Label11" runat="server" ></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td style="width: 90px" >
-                    CPUÀàÐÍ</td>
-                <td style="width: 189px" >
+                <td style="width: 115px" >
+                    CPUç±»åž‹</td>
+                <td style="width: 262px" >
                     <asp:Label ID="Label5" runat="server" ></asp:Label>
                 </td>
-                <td style="width: 116px" >
-                    AspNetÄÚ´æÕ¼ÓÃ£º</td>
+                <td style="width: 158px" >
+                    AspNetå†…å­˜å ç”¨ï¼š</td>
                 <td >
                     <asp:Label ID="Label12" runat="server" ></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td style="width: 90px" >
-                    ÐÅÏ¢·þÎñÈí¼þ£º</td>
-                <td style="width: 189px" >
+                <td style="width: 115px" >
+                    ä¿¡æ¯æœåŠ¡è½¯ä»¶ï¼š</td>
+                <td style="width: 262px" >
                     <asp:Label ID="Label7" runat="server" ></asp:Label>
                 </td>
-                <td style="width: 116px" >
-                    AspNet CPUÊ±¼ä£º</td>
+                <td style="width: 158px" >
+                    AspNet CPUæ—¶é—´ï¼š</td>
                 <td >
                     <asp:Label ID="Label13" runat="server" ></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td style="width: 90px" >
-                    ·þÎñÆ÷ÇøÓòÓïÑÔ</td>
-                <td style="width: 189px" >
+                <td style="width: 115px" >
+                    æœåŠ¡å™¨åŒºåŸŸè¯­è¨€</td>
+                <td style="width: 262px" >
                     <asp:Label ID="Label21" runat="server" ></asp:Label>
                 </td>
-                <td style="width: 116px" >
-                    AspNetµ±Ç°Ïß³ÌÊý£º</td>
+                <td style="width: 158px" >
+                    AspNetå½“å‰çº¿ç¨‹æ•°ï¼š</td>
                 <td >
                     <asp:Label ID="Label14" runat="server" ></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td style="width: 90px" >
-                    ÍøÕ¾Æ½Ì¨°æ±¾£º</td>
-                <td style="width: 189px" >
+                <td style="width: 115px" >
+                    ç½‘ç«™å¹³å°ç‰ˆæœ¬ï¼š</td>
+                <td style="width: 262px" >
                     <asp:Label ID="Label6" runat="server" ></asp:Label>
                 </td>
-                <td style="width: 116px" >
-                    Session×ÜÊý£º</td>
+                <td style="width: 158px" >
+                    Sessionæ€»æ•°ï¼š</td>
                 <td >
                     <asp:Label ID="Label22" runat="server" ></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td style="width: 90px" >
-                    È«¾Ö±äÁ¿Êý£º</td>
-                <td style="width: 189px" >
+                <td style="width: 115px" >
+                    å…¨å±€å˜é‡æ•°ï¼š</td>
+                <td style="width: 262px" >
                     <asp:Label ID="Label23" runat="server" ></asp:Label>
                 </td>
-                <td style="width: 116px" >
-                    ÍøÕ¾Òì³£¼ÇÂ¼£º</td>
+                <td style="width: 158px" >
+                    ç½‘ç«™å¼‚å¸¸è®°å½•ï¼š</td>
                 <td >
         <asp:HyperLink ID="HLsitelog" runat="server" 
-            NavigateUrl="~/Teacher/sitelog.aspx" BorderStyle="None" EnableTheming="False" 
+            NavigateUrl="~/teacher/sitelog.aspx" BorderStyle="None" EnableTheming="False" 
                         EnableViewState="False"  Font-Underline="False" 
-                        ForeColor="Black" Target="_blank" ToolTip="Çë¼°Ê±ÏòÎÂÖÝË®Ïç»Ø¸´ÐÞÕý£¡">²éÑ¯</asp:HyperLink>
+                        ForeColor="Black" Target="_blank" ToolTip="è¯·åŠæ—¶å‘æ¸©å·žæ°´ä¹¡å›žå¤ä¿®æ­£ï¼">æŸ¥è¯¢</asp:HyperLink>
                 </td>
             </tr>
             </table>

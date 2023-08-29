@@ -1,18 +1,16 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Stud.master"  StylesheetTheme="Student" AutoEventWireup="true" CodeFile="quizstart.aspx.cs" Inherits="Student_quizstart" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/student/Stud.master" stylesheettheme="Student" autoeventwireup="true" inherits="Student_quizstart, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cphs" Runat="Server">
 <div id="student">
 <div class="left">
             <div style="background-color: #FFFFFF">
             <div>
-            <div style="text-align: left; background-color: #DBEBEE">µ•—°Ã‚£∫</div>
-                <center>
+            <div style="text-align: left; background-color: #DBEBEE">ÂçïÈÄâÈ¢òÔºö</div>
+
                 <asp:DataList ID="DataListonly" runat="server" DataKeyField="Qid" 
-                    RepeatColumns="1" >
+                    RepeatColumns="1"  width="100%">
                     <ItemTemplate>
-                        <div>
-                        <div class="quizone" onmouseover="this.style.backgroundColor='#F8DFC9'"  onmouseout="this.style.backgroundColor='' " 
-                                style="padding: 2px; margin: auto; border-bottom-style: dashed; border-bottom-width: 1px; border-bottom-color: #B0B0B0; ">
+                        <div class="quizone">
                             <div class="quizleftnum">
                                 <asp:Label ID="Labelnum" Text='<%# Container.ItemIndex + 1%> ' runat="server" ></asp:Label>
                                 </div>
@@ -34,20 +32,17 @@
                                     <asp:ListItem>D</asp:ListItem>
                                 </asp:RadioButtonList>
                             </div>
-                          </div>
                         </div>
                     </ItemTemplate>
                 </asp:DataList>
-                </center>
             </div>
             <div>
-            <div style="text-align: left; background-color: #DFEAE0">∂‡—°Ã‚£∫</div>
-            <center>
+            <div style="text-align: left; background-color: #DFEAE0">Â§öÈÄâÈ¢òÔºö</div>
+
                 <asp:DataList ID="DataListmore" runat="server" DataKeyField="Qid" 
-                    RepeatColumns="1">
+                    RepeatColumns="1" width="100%">
                     <ItemTemplate>
-                        <div>
-                            <div class="quizone" onmouseover="this.style.backgroundColor='#F8DFC9'"   onmouseout="this.style.backgroundColor='' " >
+                            <div class="quizone" >
                                 <div class="quizleftnum">
                                     <asp:Label ID="Labelnumm" runat="server" Text="<%# Container.ItemIndex + 1%> "></asp:Label>
                                 </div>
@@ -70,21 +65,18 @@
                                         <asp:ListItem>D</asp:ListItem>
                                     </asp:CheckBoxList>
                                 </div>
-                            </div>
-                            <br />
                         </div>
                     </ItemTemplate>
                 </asp:DataList> 
-            </center> 
+
             </div>
             <div>
-            <div style="text-align: left; background-color: #E3EADF">≈–∂œÃ‚£∫</div>
-            <center>
+            <div style="text-align: left; background-color: #E3EADF">Âà§Êñ≠È¢òÔºö</div>
+
             <asp:DataList ID="DataListjudge" runat="server" DataKeyField="Qid" 
-                    RepeatColumns="1" >
+                    RepeatColumns="1"  width="100%">
                     <ItemTemplate>
-                        <div>
-                            <div class="quizone" onmouseover="this.style.backgroundColor='#F8DFC9'"   onmouseout="this.style.backgroundColor='' " style="padding: 2px; margin: auto; border-bottom-style: dashed; border-bottom-width: 1px; border-bottom-color: #B0B0B0;">
+                            <div class="quizone" >
                                 <div class="quizleftnum">
                                     <asp:Label ID="Labelnumj" runat="server" Text="<%# Container.ItemIndex + 1%> "></asp:Label>
                                 </div>
@@ -101,21 +93,19 @@
                                 <div class="quizleftup">
                                     <asp:RadioButtonList ID="RBLjudge" runat="server" RepeatDirection="Horizontal" 
                                         Visible="True" >
-                                    <asp:ListItem>∂‘</asp:ListItem>
-                                    <asp:ListItem>¥Ì</asp:ListItem>
+                                    <asp:ListItem>ÂØπ</asp:ListItem>
+                                    <asp:ListItem>Èîô</asp:ListItem>
                                     </asp:RadioButtonList>
                                 </div>
-                            </div>
-                            <br />
                         </div>
                     </ItemTemplate>
                 </asp:DataList>
-            </center>
+
             </div>
             </div>
             <br />            
                 <asp:Button ID="Btnquiz" runat="server" OnClick="Btnquiz_Click"
-                    Text="Ã·Ωª≥…º®" CausesValidation="False" CssClass="buttonimg" 
+                    Text="Êèê‰∫§ÊàêÁª©" CausesValidation="False" CssClass="buttonimg" 
                 BorderStyle="None"/>
             <br />
             <br />
@@ -124,17 +114,17 @@
 <div class="right">  
 <center>  
     <div class="quizresult">
-        <br />
         <input id="TextTime"  class="quiztime" type="text"  maxlength="30" readonly="readOnly"  name="TypeText7"  />
+        <br />
         <br />
         <div class="quizmyscore">
         <br />
         <div class="quizmyhead">
-        Œ“µƒ≥…º®µ•
+        ÊàëÁöÑÊàêÁª©Âçï
         </div><br />
         
         <br />
-        ±æ¥Œ≤‚—È◊‹µ√∑÷£∫<asp:Label ID="Labelallscore" runat="server"></asp:Label>
+        Êú¨Ê¨°ÊµãÈ™åÊÄªÂæóÂàÜÔºö<asp:Label ID="Labelallscore" runat="server"></asp:Label>
         <br />
         <br />
         </div>
@@ -144,8 +134,8 @@
         <br />
     
     <asp:HyperLink ID="HLanswer" runat="server"  Width="80px" 
-            NavigateUrl="~/Student/quizview.aspx" Enabled="False" 
-            Visible="False" CssClass="buttonimg" Target="_blank">≤Èø¥¥∞∏</asp:HyperLink>   
+            NavigateUrl="~/student/quizview.aspx" Enabled="False" 
+            Visible="False" CssClass="buttonimg" Target="_blank">Êü•ÁúãÁ≠îÊ°à</asp:HyperLink>   
         <br />
         <div id="showscope"  runat="server" 
             style="text-align: left; margin: auto; width: 90%;"></div>
@@ -159,6 +149,6 @@
     </div>
 <br />
 </div>
-<script src="../Js/QuizClock.js" type="text/javascript"></script>
+<script src="../js/QuizClock.js" type="text/javascript"></script>
 </asp:Content>
 

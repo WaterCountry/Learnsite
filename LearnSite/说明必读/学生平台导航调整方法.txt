@@ -1,0 +1,21 @@
+1、使用记事本打开student目录下的Stud.master
+            <li ><a href="../Student/myinfo.aspx">我的首页</a></li>
+            <li ><a href="../Student/mycourse.aspx">我的学案</a></li>
+            <li ><a href="../Student/mywork.aspx">我的作品</a></li>
+            <li ><a href="../Student/myfinger.aspx">打字宝典</a></li>
+            <li ><a href="../Student/myquiz.aspx">常识测验</a></li>
+            <li ><a href="../Student/mycode.aspx">编程乐园</a></li>
+            <li ><a href="../Student/myfile.aspx">在线资源</a></li>
+            <li ><a onclick="showShare()">我的网盘</a> </li>
+
+2、删除相应的链接，保留如下
+            <li ><a href="../Student/myinfo.aspx">我的首页</a></li>
+            <li ><a href="../Student/mycourse.aspx">我的学案</a></li>
+            <li ><a href="../Student/mywork.aspx">我的作品</a></li>
+            <li ><a href="../Student/myfinger.aspx">打字宝典</a></li>
+
+3、打开App_Themes\Student目录下的样式StyleSheet.css第90行处
+
+.nav li {float:left; width:100px;  display:inline; padding:0px; margin:0px 4px 0px 4px; text-align:center;}
+修改栏目宽度为
+.nav li {float:left; width:200px;  display:inline; padding:0px; margin:0px 4px 0px 4px; text-align:center;}

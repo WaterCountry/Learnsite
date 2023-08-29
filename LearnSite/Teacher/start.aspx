@@ -1,72 +1,89 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="start.aspx.cs" Inherits="Teacher_start" %>
-<%@ Register assembly="Anthem" namespace="Anthem" tagprefix="anthem" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_start, LearnSite" %>
+
+<%@ Register Assembly="Anthem" Namespace="Anthem" TagPrefix="anthem" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div  class="placehold" >
     <div  class="startdiv">
-        …œøŒ—°‘Ò<asp:DropDownList ID="DDLgrade" 
+        ‰∏äËØæÈÄâÊã©<asp:DropDownList ID="DDLgrade" 
             runat="server" Font-Size="9pt" 
             Width="40px" EnableTheming="True" AutoPostBack="True" 
             onselectedindexchanged="DDLgrade_SelectedIndexChanged">
         </asp:DropDownList>
-        ƒÍº∂<asp:DropDownList ID="DDLclass" runat="server" Font-Size="9pt" Width="40px" 
+        Âπ¥Á∫ß<asp:DropDownList ID="DDLclass" runat="server" Font-Size="9pt" Width="40px" 
             AutoPostBack="True" onselectedindexchanged="DDLclass_SelectedIndexChanged">
         </asp:DropDownList>
-        ∞‡ <asp:DropDownList ID="DDLCid" runat="server" Font-Size="9pt" Width="180px" 
+        Áè≠ <asp:DropDownList ID="DDLCid" runat="server" Font-Size="9pt" Width="180px" 
             AutoPostBack="True" onselectedindexchanged="DDLCid_SelectedIndexChanged">
         </asp:DropDownList>
-        &nbsp;<asp:Button ID="Btnset" runat="server" Text="ø™ º…œøŒ"  SkinID="BtnSmall"
-            onclick="Btnset_Click" ToolTip="…Ë÷√…œøŒ∞‡º∂µ«¬º√‹¬Î" BackColor="#9BCBFF" />
-            &nbsp;<asp:Button ID="Btnstudent" runat="server" Text="ƒ£ƒ‚—ß…˙"  
-            SkinID="BtnSmall" ToolTip="ƒ£ƒ‚±æ∞‡º∂—ß…˙Ω«…´µ«¬º—ß…˙∆ΩÃ®" 
+        &nbsp; <asp:Button ID="Btnset" runat="server" Text="ÂºÄÂßã‰∏äËØæ"  SkinID="BtnNormal"
+            onclick="Btnset_Click" ToolTip="ËÆæÁΩÆ‰∏äËØæÁè≠Á∫ßÁôªÂΩïÂØÜÁ†Å" BackColor="#9BCBFF"  />
+            &nbsp;&nbsp; <asp:Button ID="Btnstudent" runat="server" Text="Ê®°ÊãüÂ≠¶Áîü"  
+            SkinID="BtnNormal" ToolTip="Ê®°ÊãüÊú¨Áè≠Á∫ßÂ≠¶ÁîüËßíËâ≤ÁôªÂΩïÂ≠¶ÁîüÂπ≥Âè∞" 
             onclick="Btnstudent_Click" Enabled="False" BackColor="#9BCBFF" />
-                    <asp:TextBox ID="TBpwd" runat="server"  ReadOnly="True" Width="50px" 
-            Height="16px"  SkinID="TextBoxNum" CssClass="textcenter18" 
-            BackColor="#E1FCE0" Font-Size="9pt"></asp:TextBox>
-        &nbsp;<asp:HyperLink ID="HLworkshow" runat="server" BorderStyle="None" 
+                    &nbsp;&nbsp;
+                    <asp:TextBox ID="TBpwd" runat="server"  ReadOnly="True" Width="60px" 
+             SkinID="TextBoxNum"  BackColor="#E1FCE0" Height="20px" ></asp:TextBox>
+        &nbsp;&nbsp;<asp:HyperLink ID="HLrate" runat="server" BorderStyle="None" 
             CssClass="textcenter20" Font-Underline="False" Target="_blank" 
-            Height="20px">◊˜∆∑’π æ</asp:HyperLink>
+            Height="20px">Â≠¶‰π†ËøõÂ∫¶</asp:HyperLink>
+        &nbsp;&nbsp;<asp:HyperLink ID="HLworkshow" runat="server" BorderStyle="None" 
+            CssClass="textcenter20" Font-Underline="False" Target="_blank" 
+            Height="20px">‰ΩúÂìÅÂ±ïÁ§∫</asp:HyperLink>
+                    &nbsp;
                     &nbsp;<asp:HyperLink ID="HLtotal" runat="server" BorderStyle="None" 
             CssClass="textcenter20" Font-Underline="False" Target="_blank" 
-            Height="20px">ª„◊‹±Ì</asp:HyperLink>
-                    </div>    
+            Height="20px">Â≠¶‰π†Ê±áÊÄª</asp:HyperLink>
+    </div>     
+    <div  class="startdiv">
+        <br />
+        <asp:DataList ID="DataListMenu" runat="server" RepeatLayout="Flow" 
+            RepeatDirection="Horizontal"  onitemdatabound="DataListMenu_ItemDataBound" 
+            DataKeyField="Lid" onitemcommand="DataListMenu_ItemCommand">
+            <ItemTemplate>
+                <asp:ImageButton ID="imgBtn" runat="server"  ImageUrl='<%# Eval("Limgurl") %>'  CommandArgument="Lid"   CommandName="P" />
+                <asp:Label ID="lableTitle" runat="server" Text='<%# Eval("Ltitle") %>'></asp:Label>
+                <asp:CheckBox ID="CheckBoxShow" Checked='<%# Eval("Lshow") %>' runat="server" Visible="false" />
+            </ItemTemplate>
+        </asp:DataList>
+    </div>   
     <div  class="startdiv">
         <br />
      <div  >
         &nbsp;<asp:Label ID="Labelnocolor" runat="server" 
              BackColor="#E8E8E8" Width="12px" 
-             Height="12px" EnableViewState="False" ToolTip="√ª”–◊˜∆∑"></asp:Label>
+             Height="12px" EnableViewState="False" ToolTip="Ê≤°Êúâ‰ΩúÂìÅ"></asp:Label>
          &nbsp; 
          <asp:Label ID="Labelone" runat="server" BackColor="#B1D2FE" Width="12px" 
-             Height="12px" EnableViewState="False" ToolTip="µ•∏ˆ◊˜∆∑"></asp:Label>
+             Height="12px" EnableViewState="False" ToolTip="Âçï‰∏™‰ΩúÂìÅ"></asp:Label>
 &nbsp;
         <asp:Label ID="Labeltwo" runat="server" BackColor="#4F98FB" Width="12px" 
-             Height="12px" EnableViewState="False" ToolTip="¡Ω∏ˆ◊˜∆∑"></asp:Label>
+             Height="12px" EnableViewState="False" ToolTip="‰∏§‰∏™‰ΩúÂìÅ"></asp:Label>
 &nbsp;
         <asp:Label ID="Labelthree" runat="server" BackColor="#CDE7CF" Width="12px" 
-             Height="12px" EnableViewState="False" ToolTip="»˝∏ˆ◊˜∆∑"></asp:Label>
+             Height="12px" EnableViewState="False" ToolTip="‰∏â‰∏™‰ΩúÂìÅ"></asp:Label>
              &nbsp;
         <asp:Label ID="Labelfour" runat="server" BackColor="#9BC47D" Width="12px" 
-             Height="12px" EnableViewState="False" ToolTip="Àƒ∏ˆ◊˜∆∑"></asp:Label>
+             Height="12px" EnableViewState="False" ToolTip="Âõõ‰∏™‰ΩúÂìÅ"></asp:Label>
              &nbsp;
         <asp:Label ID="Labelmore" runat="server" BackColor="#BCADE4" Width="12px" 
-             Height="12px" EnableViewState="False" ToolTip="∂‡∏ˆ◊˜∆∑"></asp:Label>
+             Height="12px" EnableViewState="False" ToolTip="Â§ö‰∏™‰ΩúÂìÅ"></asp:Label>
          &nbsp;<asp:Label ID="Labelcount" runat="server" Width="290px" 
              Font-Names="Arial" Font-Size="9pt" EnableViewState="False"></asp:Label>
-         ΩÒÃÏ“—«©µΩ«Èøˆ£∫<asp:Label ID="Labelsigin" runat="server" Width="60px"></asp:Label>Œª
+         ‰ªäÂ§©Â∑≤Á≠æÂà∞ÊÉÖÂÜµÔºö<asp:Label ID="Labelsigin" runat="server" Width="60px"></asp:Label>‰Ωç
 </div>
         <br />
-        <anthem:DataList ID="DLonline" runat="server" RepeatColumns="8" onitemdatabound="DLonline_ItemDataBound" 
+        <asp:DataList ID="DLonline" runat="server" RepeatColumns="8" onitemdatabound="DLonline_ItemDataBound" 
             DataKeyField="Qid" onitemcommand="DLonline_ItemCommand"  RepeatDirection="Vertical" HorizontalAlign="Center">
                     <ItemTemplate>
                         <div  class="divonline">
                             <div><asp:Label ID="Labelqnum"  runat="server"  Text='<%# Eval("Qnum") %>' Font-Size="8pt" ></asp:Label></div>  
                             <div><asp:Label ID="HyperSname" runat="server" Text='<%# Eval("Qname") %>' CssClass="labelname"></asp:Label>
                             </div> 
-                            <div><asp:Label ID="LabelQmachine" runat="server"  Text='<%# Eval("QmachineShort") %>'  Font-Size="8pt" ></asp:Label>
+                            <div><asp:Label ID="LabelQmachine" runat="server"  Text='<%# Eval("QmachineShort") %>'  Font-Size="8pt"  Visible="false" ></asp:Label>
                             </div>                            
                             <div><asp:HyperLink ID="Groupflag" runat="server" >g</asp:HyperLink>
-                            <asp:Label ID="Labelcolor" runat="server" Text='<%# Eval("Qgscore") %>' ToolTip='<%# "◊È∆¿”Ô£∫"+Eval("Qgroup") %>'   CssClass="groupscore"></asp:Label>
-                            <asp:LinkButton ID="Lunlock" runat="server" CommandArgument="Qid" CommandName="UnLock" ToolTip="µ•ª˜÷¥––£∫»√∏√—ß…˙÷ÿ–¬µ«¬º£°" CssClass="lockbtn"></asp:LinkButton>
+                            <asp:Label ID="Labelcolor" runat="server" Text='<%# Eval("Qgscore") %>' ToolTip='<%# "ÁªÑËØÑËØ≠Ôºö"+Eval("Qgroup") %>'   CssClass="groupscore"></asp:Label>
+                            <asp:LinkButton ID="Lunlock" runat="server" CommandArgument="Qid" CommandName="UnLock" ToolTip="ÂçïÂáªÊâßË°åÔºöËÆ©ËØ•Â≠¶ÁîüÈáçÊñ∞ÁôªÂΩïÔºÅ" CssClass="lockbtn"></asp:LinkButton>
                             <div>                            
                             <asp:Label ID="Labelwork" runat="server" Text='<%# Eval("Qwork") %>' Visible="false" ></asp:Label>
                             <asp:Label ID="Labelattitude" runat="server" Text='<%# Eval("Qattitude") %>' Visible="false" ></asp:Label>
@@ -76,44 +93,52 @@
                             <asp:Label ID="LabelSgtitle" runat="server" Text='<%# Eval("Sgtitle") %>' Visible="false" ></asp:Label>
                         </div>
                     </ItemTemplate>
-                </anthem:DataList>   
+                </asp:DataList>   
         <br />
-        <asp:RadioButtonList ID="RBsort" runat="server" AutoPostBack="True" 
+        <anthem:RadioButtonList ID="RBsort" runat="server" AutoPostBack="True" 
             Font-Size="9pt" onselectedindexchanged="RBsort_SelectedIndexChanged" 
             RepeatDirection="Horizontal" RepeatLayout="Flow">
             <Items>
-                <asp:ListItem Value="3">ª˙∑ø ”Õº</asp:ListItem>
-            <asp:ListItem Value="0">÷˜ª˙≈≈–Ú</asp:ListItem>
-            <asp:ListItem Value="1" Selected="True">—ß∫≈≈≈–Ú</asp:ListItem>
-            <asp:ListItem Value="2">–°◊È≈≈–Ú</asp:ListItem>
+                <asp:ListItem Value="3">Êú∫ÊàøËßÜÂõæ</asp:ListItem>
+            <asp:ListItem Value="0">‰∏ªÊú∫ÊéíÂ∫è</asp:ListItem>
+            <asp:ListItem Value="1" Selected="True">Â≠¶Âè∑ÊéíÂ∫è</asp:ListItem>
+            <asp:ListItem Value="2">Â∞èÁªÑÊéíÂ∫è</asp:ListItem>
             </Items>
-        </asp:RadioButtonList>&nbsp;
-     <asp:CheckBox ID="CheckBoxScratch" runat="server" 
-            Text="±‡≥Ãøÿ÷∆" AutoPostBack="True" 
-            ToolTip="Ã· æ£∫±‡≥Ãø™πÿøÿ÷∆£¨—°÷–±Ì æø…“‘Ω¯»Î±‡≥Ã“≥√Ê" 
+        </anthem:RadioButtonList>&nbsp;
+     <anthem:CheckBox ID="CheckBoxScratch" runat="server" 
+            Text="ÁºñÁ®ãÊéßÂà∂" AutoPostBack="True" 
+            ToolTip="ÊèêÁ§∫ÔºöÁºñÁ®ãÂºÄÂÖ≥ÊéßÂà∂ÔºåÈÄâ‰∏≠Ë°®Á§∫ÂèØ‰ª•ËøõÂÖ•ÁºñÁ®ãÈ°µÈù¢" 
             oncheckedchanged="CheckBoxScratch_CheckedChanged" />
-     <asp:CheckBox ID="CheckBoxRgauge" runat="server" 
-            Text="◊˜∆∑ª•∆¿" AutoPostBack="True" 
+     <anthem:CheckBox ID="CheckBoxRgauge" runat="server" 
+            Text="‰ΩúÂìÅ‰∫íËØÑ" AutoPostBack="True" 
             oncheckedchanged="CheckBoxRgauge_CheckedChanged" 
-            ToolTip="Ã· æ£∫◊˜∆∑ª•∆¿øÿ÷∆£¨—°÷–±Ì æø™∆Ù" />
-        <asp:CheckBox ID="CheckBoxip" runat="server" 
-            Text="IPÀ¯∂®µ«¬º" AutoPostBack="True" 
+            ToolTip="ÊèêÁ§∫Ôºö‰ΩúÂìÅ‰∫íËØÑÊéßÂà∂ÔºåÈÄâ‰∏≠Ë°®Á§∫ÂºÄÂêØ" />
+        <anthem:CheckBox ID="CheckBoxip" runat="server" 
+            Text="IPÈîÅÂÆöÁôªÂΩï" AutoPostBack="True" 
             oncheckedchanged="CheckBoxip_CheckedChanged" 
-            ToolTip="Ã· æ£∫∏˘æ›…œ¥Œµ«¬ºµƒIPΩ¯––À¯∂®µ«¬º" />
-     <asp:CheckBox ID="CheckBoxOpen" runat="server" 
-            Text="øÏÀŸƒ£ Ω" AutoPostBack="True" 
+            ToolTip="ÊèêÁ§∫ÔºöÊ†πÊçÆ‰∏äÊ¨°ÁôªÂΩïÁöÑIPËøõË°åÈîÅÂÆöÁôªÂΩï" />
+     <anthem:CheckBox ID="CheckBoxPass" runat="server" 
+            Text="ÈóØÂÖ≥Ê®°Âºè" AutoPostBack="True" 
+            oncheckedchanged="CheckBoxPass_CheckedChanged" 
+            ToolTip="ÊèêÁ§∫ÔºöÂΩìÂâçÂ≠¶Ê°àÊ¥ªÂä®‰æùÊ¨°ÂÆåÊàêÂêéËß£ÈîÅ‰∏ã‰∏Ä‰∏™Ê¥ªÂä®ÔºÅ" />
+     <anthem:CheckBox ID="CheckBoxOpen" runat="server" 
+            Text="Âø´ÈÄüÊ®°Âºè" AutoPostBack="True" 
             oncheckedchanged="CheckBoxOpen_CheckedChanged" 
-            ToolTip="Ã· æ£∫±æ∞‡—ß…˙µ«¬º∫Û£¨÷±Ω”Ω¯»Îµ±«∞—ß∞∏—ß∞∏µº∫Ω£°" />
-        <asp:CheckBox ID="CheckBoxPwd" runat="server" 
-            Text="∞‡º∂√‹¬Î" AutoPostBack="True" 
+            ToolTip="ÊèêÁ§∫ÔºöÊú¨Áè≠Â≠¶ÁîüÁôªÂΩïÂêéÔºåÁõ¥Êé•ËøõÂÖ•ÂΩìÂâçÂ≠¶Ê°àÂ≠¶Ê°àÂØºËà™ÔºÅ" />
+        <anthem:CheckBox ID="CheckBoxPwd" runat="server" 
+            Text="Áè≠Á∫ßÂØÜÁ†Å" AutoPostBack="True" 
             oncheckedchanged="CheckBoxPwd_CheckedChanged" 
-            ToolTip="Ã· æ£∫—°÷–±Ì æπ´ø™œ‘ æ∞‡º∂√‹¬Î£¨Œ¥—°±Ì æ“˛≤ÿ∞‡º∂√‹¬Î£°" />
+            ToolTip="ÊèêÁ§∫ÔºöÈÄâ‰∏≠Ë°®Á§∫ÂÖ¨ÂºÄÊòæÁ§∫Áè≠Á∫ßÂØÜÁ†ÅÔºåÊú™ÈÄâË°®Á§∫ÈöêËóèÁè≠Á∫ßÂØÜÁ†ÅÔºÅ" />
+        <anthem:CheckBox ID="CheckBoxLogin" runat="server" 
+            Text="‰∏™‰∫∫Ê®°Âºè" AutoPostBack="True" 
+            ToolTip="ÊèêÁ§∫ÔºöÈÄâ‰∏≠Ë°®Á§∫ÂÖÅËÆ∏Êú¨Áè≠ÂçïÁã¨‰∏™‰∫∫Ê®°ÂºèÁôªÂΩïÔºåÊú™ÈÄâË°®Á§∫‰ΩøÁî®ÂêéÂè∞Áªü‰∏ÄÊ®°ÂºèÁôªÂΩïÔºÅ" 
+            oncheckedchanged="CheckBoxLogin_CheckedChanged" />
      </div>
         <div  class="startdiv">
             <br />
             <asp:Label ID="Label2" runat="server" Width="450px" Height="16px" 
                 ForeColor="White" ></asp:Label>
-            ΩÒÃÏŒ¥«©µΩ«Èøˆ£∫<asp:Label ID="Labelsigno" runat="server" Width="60px"></asp:Label>Œª
+            ‰ªäÂ§©Êú™Á≠æÂà∞ÊÉÖÂÜµÔºö<asp:Label ID="Labelsigno" runat="server" Width="60px"></asp:Label>‰Ωç
             <br />
             <br />
         <asp:DataList ID="DLnotline" runat="server" RepeatColumns="8" 
@@ -125,7 +150,7 @@
                             <div><asp:Label ID="lbQname" runat="server" Text='<%# Eval("Sname") %>' CssClass="labelname"></asp:Label>                            
                              </div>  
                             <div>
-                            <asp:Label ID="LabelSscore" runat="server" Text='<%# Eval("Sscore") %>' Font-Size="8pt" Width="66px" ToolTip="◊‹—ß∑÷"></asp:Label>
+                            <asp:Label ID="LabelSscore" runat="server" Text='<%# Eval("Sscore") %>' Font-Size="8pt" Width="66px" ToolTip="ÊÄªÂ≠¶ÂàÜ"></asp:Label>
                             </div>
                         </div>
                     </ItemTemplate>
@@ -136,28 +161,28 @@
         <asp:DropDownList ID="DDLhouse" runat="server" Font-Size="9pt" Width="100px" 
             AutoPostBack="True" onselectedindexchanged="DDLhouse_SelectedIndexChanged">
         </asp:DropDownList>
-        <asp:HyperLink ID="HyperLinkSeat" runat="server" Target="_blank" >◊˘Œª±Ì</asp:HyperLink>
+        <asp:HyperLink ID="HyperLinkSeat" runat="server" Target="_blank" >Â∫ß‰ΩçË°®</asp:HyperLink>
         &nbsp;
         &nbsp;&nbsp; <asp:ImageButton ID="Btnrefresh" runat="server" onclick="Btnrefresh_Click" Enabled="False"
-            ImageUrl="~/Images/refresh.gif" />
+            ImageUrl="~/images/refresh.gif" />
         &nbsp;&nbsp;<asp:CheckBox ID="CheckBoxShare" runat="server" 
-            Text="Õ¯≈Ãø™πÿ" AutoPostBack="True" 
+            Text="ÁΩëÁõòÂºÄÂÖ≥" AutoPostBack="True" 
             oncheckedchanged="CheckBoxShare_CheckedChanged" 
-            ToolTip="Ã· æ£∫—°÷–±Ì æÕ¯≈Ã∆Ù”√£¨Œ¥—°±Ì æÕ¯≈ÃΩ˚”√£°" />
+            ToolTip="ÊèêÁ§∫ÔºöÈÄâ‰∏≠Ë°®Á§∫ÁΩëÁõòÂêØÁî®ÔºåÊú™ÈÄâË°®Á§∫ÁΩëÁõòÁ¶ÅÁî®ÔºÅ" />
        <asp:CheckBox ID="CheckBoxGroupShare" runat="server" 
-            Text="–°◊ÈÕ¯≈Ã" AutoPostBack="True" 
+            Text="Â∞èÁªÑÁΩëÁõò" AutoPostBack="True" 
             oncheckedchanged="CheckBoxGroupShare_CheckedChanged" 
-            ToolTip="Ã· æ£∫—°÷–±Ì æ–°◊ÈÕ¯≈Ã∆Ù”√£®«∞Ã·Œ™«∞√ÊµƒÕ¯≈Ãø™πÿ∆Ù”√£©£¨Œ¥—°±Ì æ–°◊ÈÕ¯≈ÃΩ˚”√£°" />
+            ToolTip="ÊèêÁ§∫ÔºöÈÄâ‰∏≠Ë°®Á§∫Â∞èÁªÑÁΩëÁõòÂêØÁî®ÔºàÂâçÊèê‰∏∫ÂâçÈù¢ÁöÑÁΩëÁõòÂºÄÂÖ≥ÂêØÁî®ÔºâÔºåÊú™ÈÄâË°®Á§∫Â∞èÁªÑÁΩëÁõòÁ¶ÅÁî®ÔºÅ" />
         &nbsp;&nbsp; <asp:HyperLink ID="HylkDiskstu" runat="server" 
-            ImageUrl="~/Images/disksmallstu.gif" Target="_blank" 
-            ToolTip="≤Èø¥—ß…˙Õ¯≈Ã¥Êµµ«Èøˆ"></asp:HyperLink>
+            ImageUrl="~/images/disksmallstu.gif" Target="_blank" 
+            ToolTip="Êü•ÁúãÂ≠¶ÁîüÁΩëÁõòÂ≠òÊ°£ÊÉÖÂÜµ"></asp:HyperLink>
         &nbsp;&nbsp; <asp:HyperLink ID="HylkDiskGroup" runat="server" 
-            ImageUrl="~/Images/disksmall.gif" Target="_blank" ToolTip="≤Èø¥–°◊ÈÕ¯≈Ã¥Êµµ«Èøˆ"></asp:HyperLink>
+            ImageUrl="~/images/disksmall.gif" Target="_blank" ToolTip="Êü•ÁúãÂ∞èÁªÑÁΩëÁõòÂ≠òÊ°£ÊÉÖÂÜµ"></asp:HyperLink>
         <br />     
         <div  class="startdiv">
         <div style="margin:auto; text-align:left; position: relative;">           
-            “——ß—ß∞∏£∫<br />
-            <asp:DataList ID="DLdonekc" runat="server" ForeColor="Black" RepeatColumns="20" 
+            Â∑≤Â≠¶Â≠¶Ê°àÔºö<br />
+            <asp:DataList ID="DLdonekc" runat="server" ForeColor="Black"
                     RepeatDirection="Horizontal" RepeatLayout="Flow" CellPadding="0"  
                 CellSpacing="0" DataKeyField="Cid" 
                 onitemdatabound="DLdonekc_ItemDataBound" >
@@ -165,12 +190,12 @@
                     <div class="doneksdiv"> 
                         <div><asp:HyperLink ID="ks" runat="server"  Text='<%# Eval("Cks") %>' 
                          ToolTip='<%# Eval("Ctitle") %>' CssClass="donekc"></asp:HyperLink></div>
-                        <div><asp:Label ID="wk" runat="server" ToolTip="◊˜∆∑◊‹ ˝"></asp:Label></div>
+                        <div><asp:Label ID="wk" runat="server" ToolTip="‰ΩúÂìÅÊÄªÊï∞"></asp:Label></div>
                         </div>
                     </ItemTemplate>
                 </asp:DataList>
-            <br /><br /><br />Œ¥—ß—ß∞∏£∫<br />
-            <asp:DataList ID="DLnewkc" runat="server" ForeColor="Black" RepeatColumns="20" 
+            <br /><br />Êú™Â≠¶Â≠¶Ê°àÔºö<br />
+            <asp:DataList ID="DLnewkc" runat="server" ForeColor="Black" 
                     RepeatDirection="Horizontal" RepeatLayout="Flow" CellPadding="0"  
                 CellSpacing="0" onitemdatabound="DLnewkc_ItemDataBound" 
                 onitemcommand="DLnewkc_ItemCommand" DataKeyField="Cid" >
@@ -180,7 +205,7 @@
                          ToolTip='<%# Eval("Ctitle") %>' CssClass="newkc"></asp:HyperLink></div>
                         <div><asp:CheckBox ID="Ck" runat="server" Checked='<%# Eval("Cpublish") %>' Enabled="False" /></div>
                             <div> <asp:ImageButton runat="server"  ID="PubSet" 
-                             CommandArgument="Cid" CommandName="P" ImageUrl="~/Images/cardsmall.gif" /><br />
+                             CommandArgument="Cid" CommandName="P" ImageUrl="~/images/cardsmall.gif" /><br />
                             </div>
                             </div>
                     </ItemTemplate>
@@ -189,35 +214,36 @@
         </div>       
         <br />
         <br />
-        <div class="startdiv"> 
-        <asp:Button ID="BtnaAllQuit" runat="server" Text="»´∞‡œ¬œﬂ"  SkinID="BtnSmall"
+        <div class="startdiv">
+         <br />
+        <asp:Button ID="BtnaAllQuit" runat="server" Text="ÂÖ®Áè≠‰∏ãÁ∫ø"  SkinID="BtnSmall"
             onclick="BtnaAllQuit_Click" Visible="False" EnableViewState="False" />
         <br />
         <asp:Label ID="LabelToday" runat="server" Font-Size="9pt" 
-            ToolTip="*∑˛ŒÒ∆˜»’∆⁄–£◊º£∫◊˜∆∑°¢«©µΩ»’∆⁄“‘¥ÀŒ™◊º*" Font-Bold="False"  ></asp:Label>
+            ToolTip="*ÊúçÂä°Âô®Êó•ÊúüÊ†°ÂáÜÔºö‰ΩúÂìÅ„ÄÅÁ≠æÂà∞Êó•Êúü‰ª•Ê≠§‰∏∫ÂáÜ*" Font-Bold="False"  ></asp:Label>
         <br />
         </div>
-        <script src="../Js/jquery-1.8.2.min.js" type="text/javascript"></script>
-        <link href="../Js/tooltip.css" rel="stylesheet" type="text/css" />
-        <script src="../Js/spanToolTip.js" type="text/javascript"></script>
-        <link href="../Js/tinybox.css" rel="stylesheet" type="text/css" />
-        <script src="../Js/tinybox.js" type="text/javascript"></script>
+        <script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>
+        <link href="../js/tooltip.css" rel="stylesheet" type="text/css" />
+        <script src="../js/spanToolTip.js" type="text/javascript"></script>
+        <link href="../js/tinybox.css" rel="stylesheet" type="text/css" />
+        <script src="../js/tinybox.js" type="text/javascript"></script>
         <script type ="text/javascript" >
             function myrefresh() {
                 document.getElementById("<%= Btnrefresh.ClientID %>").click();
             }
-            setTimeout("myrefresh()", 120000); //÷∏∂®120√ÎÀ¢–¬“ª¥Œ            
+            setTimeout("myrefresh()", 120000); //ÊåáÂÆö120ÁßíÂà∑Êñ∞‰∏ÄÊ¨°            
 
              function notsg(n, g, m) {
-                var urlsg ="../Teacher/NotSign.aspx?Nnum=" +n + "&Ngrade=" +g + "&Qname=" + m;
+                var urlsg ="../teacher/notsign.aspx?nnum=" +n + "&ngrade=" +g + "&qname=" + m;
                 TINY.box.show({ iframe: urlsg, boxid: 'frameless', width: 360, height: 260, fixed: false, maskopacity: 60, close:false })
             }
             function attitude(q, m, a,c) {
-                var urlat = "../Teacher/attitude.aspx?Qid=" + q + "&Qname=" + m + "&Qattitude=" + a + "&Qcid=" + c;
-                TINY.box.show({ iframe: urlat, boxid: 'frameless', width: 360, height: 300, fixed: false, maskopacity: 60, close:false })
+                var urlat = "../teacher/attitude.aspx?qid=" + q + "&qname=" + m + "&qattitude=" + a + "&qcid=" + c;
+                TINY.box.show({ iframe: urlat, boxid: 'frameless', width: 360, height: 320, fixed: false, maskopacity: 60, close:false })
             }
             function attitudegroup(g, m, q, c) {
-                var urlat = "../Teacher/attitudegroup.aspx?Sg=" + g + "&Ld=" + m + "&Qd=" + q + "&Qcid=" + c;
+                var urlat = "../teacher/attitudegroup.aspx?sg=" + g + "&ld=" + m + "&qd=" + q + "&qcid=" + c;
                 TINY.box.show({ iframe: urlat, boxid: 'frameless', width: 360, height: 200, fixed: false, maskopacity: 60, close:false })
             }
         </script>

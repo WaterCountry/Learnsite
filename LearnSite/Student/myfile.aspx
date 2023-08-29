@@ -1,20 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Stud.master" StylesheetTheme="Student" AutoEventWireup="true" CodeFile="myfile.aspx.cs" Inherits="Student_myfile" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/student/Stud.master" stylesheettheme="Student" autoeventwireup="true" inherits="Student_myfile, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cphs" Runat="Server">
     <div id="student">
 <div class="left">
-<div class="ccontent">
       <asp:GridView ID="GVSoft" runat="server" AllowPaging="True" 
           AutoGenerateColumns="False" 
           OnPageIndexChanging="GVSoft_PageIndexChanging" 
           OnRowDataBound="GVSoft_RowDataBound" Width="100%" SkinID="GridViewInfo" 
-          PageSize="15" EnableModelValidation="True" CellPadding="3">
+          PageSize="20" EnableModelValidation="True" CellPadding="3">
           <AlternatingRowStyle BorderStyle="None" />
           <Columns>
               <asp:BoundField HeaderText="序号" />
               <asp:BoundField DataField="Fclass" HeaderText="属性" />
-              <asp:HyperLinkField DataNavigateUrlFields="Fid" 
-                  DataNavigateUrlFormatString="downfile.aspx?Fid={0}" HeaderText="标题" 
+              <asp:HyperLinkField DataNavigateUrlFields="fid" 
+                  DataNavigateUrlFormatString="downfile.aspx?fid={0}" HeaderText="标题" 
                   DataTextField="Ftitle">
                   <HeaderStyle HorizontalAlign="Left" />
               <ItemStyle Width="280px" HorizontalAlign="Left" />
@@ -48,28 +47,30 @@
               </div>
           </pagertemplate>
           <RowStyle Height="30px" />
-      </asp:GridView><br /><br /> 
-</div>        
+      </asp:GridView><br /><br />        
 </div>
 <div class="right">
-    <div>    
-        <img src="../Images/soft.png" style="width: 160px; height: 80px" /></div> 
-    <div>
+    <div >
         <asp:GridView ID="GVcategory" runat="server" AutoGenerateColumns="False" 
             CellPadding="6" CellSpacing="3" EnableModelValidation="True" 
             HorizontalAlign="Center" ShowHeader="False" 
-            SkinID="GridViewMission" Width="160px" DataKeyNames="Yid" 
+            SkinID="GridViewMission" Width="100%" DataKeyNames="yid" 
             onrowdatabound="GVcategory_RowDataBound">
             <Columns>
-                <asp:HyperLinkField DataNavigateUrlFields="Yid" 
-                    DataNavigateUrlFormatString="~/Student/myfile.aspx?Yid={0}" 
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <img src="../images/book.gif" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:HyperLinkField DataNavigateUrlFields="yid" 
+                    DataNavigateUrlFormatString="~/student/myfile.aspx?yid={0}" 
                     DataTextField="Ytitle" Target="_self" >
                 <ItemStyle HorizontalAlign="Left" />
                 </asp:HyperLinkField>
             </Columns>
             <RowStyle BackColor="#CEDFEA" Height="30px" />
         </asp:GridView>
-        <br />
+        <img src="../images/soft.png" style="width: 160px; height: 80px; text-align:center;" /><br />
         <br /></div>
 </div>   
 <br />

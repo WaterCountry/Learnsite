@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>队列</title>
+		<style type="text/css">
+			body{
+				background-color:Gainsboro;
+			}
+			h2{
+				text-align:center;
+			}
+			.boxvar{
+				width:80px;
+				height:80px;
+				margin:auto;
+				background-color: Gainsboro;
+				//border: 1px solid #333;
+				text-align:center;
+				font-size:30px;
+				line-height:110px;
+				font-weight:bold;
+				cursor:pointer;
+				background-image: url(img/duck.png);
+			}
+			.box{
+				//border: 1px solid #333;
+				width:80px;
+				height:80px;
+				//background-color: LightSkyBlue;
+				font-weight:bold;
+				cursor:pointer;
+				font-size:30px;
+				line-height:110px;
+				text-align:center;
+				background-image: url(img/duck.png);
+			}
+			.magazine {
+				//height:80px;				
+				//background-color: gray;
+			}
+			.stack{
+				width:600px;
+				height:80px;
+				background-image: url(img/river.png);
+				margin:auto;
+			}
+			.counter{
+				display: flex;
+			}
+			.main{
+				min-width:1000px;
+			}
+			.left{	
+				float:left;
+				width:50%;
+			}
+			.right{
+				float:right;
+				width:50%;
+			}
+			.divsk{			
+			}
+			.link{
+				margin:auto;
+				height:30px;
+			}
+			.btnlink{
+				border: 1px solid #333;
+				text-decoration: none;
+				margin:10px;
+				padding: 3px 10px 2px 10px;			
+			}
+			.btnlink:hover{	
+				background-color:#eee;			
+			}
+			.btn{
+				height:40px;
+				width:100px;
+				line-height:40px;
+				font-size:22px;
+			}
+		</style>
+		<script src="jquery.min.js" type="text/javascript">			
+		</script>			    
+	</head>
+	<body>
+	<div class="link">
+		<a class="btnlink" href="index.html">首页</a>
+		<a class="btnlink" href="array.html">数组列表</a>
+		<a class="btnlink" href="sort.html">排序算法</a>
+		<a class="btnlink" href="stack.html">入栈出栈</a>
+		<a class="btnlink" href="queue.html">队列</a>
+		<hr>
+	</div>
+	<h2>入队出队</h2>
+	<div class="magazine">
+	<div class="stack">			
+			<div class="counter">
+			</div>
+	</div>
+	</div>
+	<br>
+	<div class="main">
+		<div class="left">		
+			<div class="divsk">
+				<center>
+				<input id="pushdata" class="btn" type="button" value="入队"/>	
+				</center>
+			</div>	
+			<br>			
+			<div id="datain">
+			</div>
+		</div>
+		
+		<div  class="right">		
+			<div class="divsk">
+				<center>
+				<input id="popdata" class="btn" type="button" value="出队"/>	
+				</center>
+			</div>	
+			<br>			
+			<div id="dataout">
+			</div>
+		</div>
+		<audio id="audio" controls="controls"  hidden="true" ></audio>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var datalist=[1,2,3,4,5]
+			var stacklist=new Array();
+			var numlist=new Array();
+			var datacount=datalist.length;
+			var curcount=0;
+			var divstr="";
+			var divid="";
+			for (var i=0;i<datacount;i++){
+				divid="imgin"+i;
+				divstr='<div class="boxvar" id="'+divid+'"  >'+datalist[i]+'</div>';
+				$('#datain').append(divstr);
+			}
+			var ix=0;
+			
+			$("#pushdata").click(function(){
+				if(ix<datacount){
+					var getdata=datalist[ix];
+					console.log(getdata);
+					divid="img"+ix;					
+					var nodediv=$('<div></div>');
+					nodediv.attr('id',divid);
+					nodediv.addClass('box');
+					nodediv.text(getdata);	
+					stacklist.push(getdata);
+					
+					$('.counter').prepend(nodediv);	
+					numlist.push(ix);//数据标签
+					console.log(stacklist);
+					
+					var divin="#imgin"+ix;
+					$(divin).css('color','#ccc');
+					$(divin).css('background-image','url(img/ducknone.png)');
+					ix=ix+1;
+					curcount=ix;
+					voice("up");
+				}
+			});
+			
+			$("#popdata").click(function(){			
+				var popcount=stacklist.length;
+				if(popcount>0){
+					var popdata=stacklist.shift();
+					var popnum=numlist.shift();
+					divid="#img"+popnum;					
+					$(divid).remove();					
+					divid="imgin"+popnum;
+					divstr='<div class="boxvar" id="'+divid+'"  >'+popdata+'</div>';
+					$('#dataout').prepend(divstr);	
+					voice("down");
+				}
+			});
+			
+
+		})
+			
+			
+		function voice(n) {
+			var audio = document.getElementById("audio");
+			switch(n){
+				case 'down':
+					audio.src = 'audio/pickdown.mp3';
+					break;
+				case 'up':
+					audio.src = 'audio/pickup.mp3';
+					break;
+				case 'right':
+					audio.src = 'audio/right.mp3';
+					break;
+				case 'wrong':
+					audio.src = 'audio/wrong.mp3';
+					break;
+				case 'click':
+					audio.src = 'audio/click.mp3';
+					break;
+				case 'move':
+					audio.src = 'audio/move.mp3';
+					break;
+			}
+			var playPromise = audio.play();
+
+            if (playPromise) {
+                playPromise.then(() => {
+                    // 音频加载成功
+                    // 音频的播放需要耗时
+                    setTimeout(() => {
+                        // 后续操作
+                        //console.log("play.");
+                    }, audio.duration * 200); // audio.duration 为音频的时长单位为秒
+
+                }).catch((e) => {
+                    // 音频加载失败
+                });
+            }	
+		}
+			
+		</script>
+			
+	</body>
+	
+</html>

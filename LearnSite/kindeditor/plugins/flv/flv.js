@@ -27,22 +27,12 @@ KindEditor.plugin('flv', function (K) {
 				'<input type="button" class="ke-button-common ke-button" name="viewServer" value="' + lang.viewServer + '" />',
 				'</span>',
 				'</div>',
-            //width
-				'<div class="ke-dialog-row">',
-				'<label for="keWidth" style="width:60px;">' + lang.width + '</label>',
-				'<input type="text" id="keWidth" class="ke-input-text ke-input-number" name="width" value="800" maxlength="4" />',
-				'</div>',
-            //height
-				'<div class="ke-dialog-row">',
-				'<label for="keHeight" style="width:60px;">' + lang.height + '</label>',
-				'<input type="text" id="keHeight" class="ke-input-text ke-input-number" name="height" value="600" maxlength="4" />',
-				'</div>',			
             //密码观看
                 '<div class="ke-dialog-row">',
                 '<label style="width:60px;">密码</label>',
-                '<input type="text" id="kePassword" class="ke-input-text ke-input-number" name="password" value="666" maxlength="3" />',                
+                '<input type="text" id="kePassword" class="ke-input-text ke-input-number" name="password" value="" maxlength="3" />',
                 '<label style="width:20px;"></label>',
-                '<input type="checkbox" id="keAutostart" name="autostart" value="" />隐藏',
+                '<input type="checkbox" id="keAutostart" name="autostart" value="" checked="checked" />隐藏',
                 '</div>',
             //mp4,flv格式
 				'<div class="ke-dialog-row">',
@@ -60,58 +50,42 @@ KindEditor.plugin('flv', function (K) {
                 yesBtn: {
                     name: self.lang('yes'),
                     click: function (e) {
-                        var url = K.trim(urlBox.val()),
-							width = widthBox.val(),
-							height = heightBox.val();
+                        var url = K.trim(urlBox.val());
                         if (url == 'http://' || K.invalidUrl(url)) {
                             alert(self.lang('invalidUrl'));
                             urlBox[0].focus();
                             return;
                         }
-                        if (!/^\d*$/.test(width)) {
-                            alert(self.lang('invalidWidth'));
-                            widthBox[0].focus();
-                            return;
-                        }
-                        if (!/^\d*$/.test(height)) {
-                            alert(self.lang('invalidHeight'));
-                            heightBox[0].focus();
-                            return;
-                        }
                         var tody = new Date();
                         var haomiao = tody.getMilliseconds();
                         var divplayer = "player" + haomiao;
-                        var srcjs = "../kindeditor/plugins/ckplayer/ckplayer.js";
-                        var swfplayer = "../kindeditor/plugins/ckplayer/ckplayer.swf";
-						var autohide=autostartBox[0].checked ? 'none' : 'block';
-                        var password=passwordBox.val();
-                        var lock=false;
-                        if (autostartBox[0].checked &&password!="") {lock=true;}
-                        var flvicon="../kindeditor/themes/default/flvshow.gif";
-                        if(lock) flvicon="../kindeditor/themes/default/flvlock.gif";
+                        var srcjs = "../kindeditor/plugins/video/video.js";
+                        var autohide = autostartBox[0].checked ? 'none' : 'block';
+                        var password = passwordBox.val();
+                        var lock = false;
+                        if (autostartBox[0].checked && password != "") { lock = true; }
+                        var flvicon = "../kindeditor/themes/default/flvshow.gif";
+                        if (lock) flvicon = "../kindeditor/themes/default/flvlock.gif";
 
                         var html = [
-					    '<img  id="showhide' + haomiao + '" src="'+flvicon+'" alt="显示/隐藏视频" />\r\n',
-                        '<div id="divarea'+haomiao+'" style="background-color:#666666;display:'+ autohide + ';width:' + width + 'px;height:' + height + 'px;" >\r\n',
-                        '<a id="' + divplayer + '"></a>\r\n',
+						'<link rel="stylesheet" href="../kindeditor/plugins/video/video-js.css" />',
+					    '<img  id="showhide' + haomiao + '" src="' + flvicon + '" alt="显示/隐藏视频" />\r\n',
+                        '<div id="divarea' + haomiao + '" style="display:' + autohide + ';" >\r\n',
 						'<script  type="text/javascript">$(document).ready(function () {\r\n',
-                        'var setpwd'+haomiao+'="'+password+'";\r\n',
-                        'var lockkey='+lock+';\r\n',
-						'$("#showhide'+haomiao+'").click(function () {\r\n',
+                        'var setpwd' + haomiao + '="' + password + '";\r\n',
+                        'var lockkey=' + lock + ';\r\n',
+						'$("#showhide' + haomiao + '").click(function () {\r\n',
 						'if(lockkey){',
                         'var getpwd=prompt("请输入密码","");\r\n',
-                        'if(setpwd'+haomiao+'==getpwd) {$("#divarea'+haomiao+'").toggle();lockkey=false}\r\n',
-                        '}else{$("#divarea'+haomiao+'").toggle();}',
+                        'if(setpwd' + haomiao + '==getpwd) {$("#divarea' + haomiao + '").toggle();lockkey=false}\r\n',
+                        '}else{$("#divarea' + haomiao + '").toggle();}',
                         ' });});',
-                        '</script>\r\n',							
-						'<script type="text/javascript" src="' + srcjs + '"></script>\r\n',
-                        '<script  type="text/javascript">\r\n',
-                        'var flashvars={\r\n',
-						    'f:"' + url + '",\r\n',
-                            'c:0,b:1 \r\n',
-							'};\r\n',
-							'CKobject.embedSWF("' + swfplayer + '","' + divplayer + '","ckplayer_' + divplayer + '","' + width + '","' + height + '",flashvars);\r\n',
-                        '</script></div>\r\n<br/>'
+                        '</script>\r\n',
+                        '<script type="text/javascript" src="' + srcjs + '"></script>\r\n',
+                        '<div id="' + divplayer + '" >',
+						' <video  class="video-js vjs-big-play-centered" preload="auto" controls="" data-setup="{}" ><source type="video/mp4" src="' + url + '"></video>',
+						'</div>',
+                        '</div><br>\r\n'
 						].join('');
                         //alert(html);
                         self.insertHtml(html).hideDialog().focus();
@@ -121,8 +95,6 @@ KindEditor.plugin('flv', function (K) {
 			div = dialog.div,
 			urlBox = K('[name="url"]', div),
 			viewServerBtn = K('[name="viewServer"]', div),
-			widthBox = K('[name="width"]', div),
-			heightBox = K('[name="height"]', div),
 			autostartBox = K('[name="autostart"]', div);
             passwordBox = K('[name="password"]', div);
             urlBox.val('http://');

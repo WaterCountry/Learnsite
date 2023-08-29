@@ -1,14 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher"
-    AutoEventWireup="true" ValidateRequest="false" CodeFile="surveyitem.aspx.cs"
-    Inherits="Survey_surveyitem" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" validaterequest="false" inherits="Survey_surveyitem, LearnSite" %>
+
+<%@ Register assembly="Anthem" namespace="Anthem" tagprefix="anthem" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
     <div>
         <div class="centerdiv">
-            <div style="margin: auto; width: 600px;">
+            <div style="margin: auto; width: 800px;">
                 <br />
                 <div style="margin: auto; text-align: left;">
-                    <b>调查题目：</b><asp:Label ID="LabelQtitle" runat="server"></asp:Label>
+                    <asp:Label ID="LabelQtitle" runat="server"></asp:Label>
                 </div>
                 <br />
                 <asp:GridView ID="GVSurveyItem" runat="server" SkinID="GridViewInfo" AutoGenerateColumns="False"
@@ -55,15 +55,15 @@
                     <HeaderStyle HorizontalAlign="Left" />
                 </asp:GridView>
                 <br />
-                <div style="margin: auto; width: 550px;">
+                <div style="margin: auto; width: 600px;">
                     <script charset="utf-8" src="../kindeditor/kindeditor-min.js"></script>
                     <script charset="utf-8" src="../kindeditor/lang/zh_CN.js"></script>
                     <script>
 		    var editor;
             var cid= <%=myCid() %>;
             var ty="Course";
-            var upjs= '../kindeditor/aspnet/upload_json.aspx?Cid='+cid+'&Ty='+ty;
-            var fmjs='../kindeditor/aspnet/file_manager_json.aspx?Cid='+cid+'&Ty='+ty;
+            var upjs= '../kindeditor/aspnet/upload_json.aspx?cid='+cid+'&ty='+ty;
+            var fmjs='../kindeditor/aspnet/file_manager_json.aspx?cid='+cid+'&ty='+ty;
 		    KindEditor.ready(function (K) {
 		        editor = K.create('textarea[name="ctl00$Content$mcontent"]', {
 		            resizeType: 1,
@@ -78,10 +78,10 @@
 		        });
 		    });
                     </script>
-                    <br />
                     选项描述：<asp:Label ID="LabelMid" runat="server" Font-Bold="True" Visible="False"></asp:Label>
+                    <asp:CheckBox ID="QBlack" runat="server" Text="是否填空" Enabled="False" />
                     <br />
-                    <textarea id="mcontent" runat="server" style="width: 500px; height: 150px"></textarea><br />
+                    <textarea id="mcontent" runat="server" style="width: 600px; height: 150px"></textarea>
                     <br />
                     分值<asp:DropDownList ID="DDLscore" runat="server" Font-Size="9pt">
                         <asp:ListItem>1</asp:ListItem>

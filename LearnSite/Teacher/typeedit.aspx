@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" Validaterequest="false" AutoEventWireup="true" CodeFile="typeedit.aspx.cs" Inherits="Teacher_typeedit" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" validaterequest="false" autoeventwireup="true" inherits="Teacher_typeedit, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div   class="placehold">
 <br />
     <div  class="typedivhead">
-        &nbsp; 文章标题：<asp:TextBox ID="Ttitle" runat="server"  Width="220px"  SkinID="TextBoxNormal"></asp:TextBox>
+        &nbsp; 文章标题：<asp:TextBox ID="Ttitle" runat="server"  Width="200px"  SkinID="TextBoxNormal"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="Ttitle" Font-Size="9pt" Width="10px"></asp:RequiredFieldValidator>
         文章用途：<asp:DropDownList ID="DDLuse" runat="server" Font-Size="9pt"
             Width="71px" Font-Names="Arial">

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="shareview.aspx.cs" Inherits="Teacher_shareview" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Teacher_shareview, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,7 +8,7 @@
 </head>
 <body style=" margin:0px;">
     <form id="form1" runat="server">
-    <div style="text-align: center; font-size: 9pt;">
+    <div style="text-align: center; font-size: 11pt;">
     <div>
         <asp:GridView ID="GVdisk" runat="server" AutoGenerateColumns="False" 
             BorderColor="#EEEEEE" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" 

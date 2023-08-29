@@ -1,0 +1,482 @@
+@font-face {
+  font-family: 'Fira Code';
+  src: url('fonts/FiraCode-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+body{		
+	background-color:#252d30;
+	color: #ddd;
+    margin: auto;
+	overflow: hidden; 	
+}
+.container {
+    margin: auto;
+}
+
+#title {
+    display: inline;
+}
+
+.main {
+    margin-top: 10px;
+    display: flex;
+    height: calc(100vh - 100px);
+}
+.banner {
+	width:100%;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ccc;
+    box-shadow: 0px 2px 3px 2px rgba(2, 2, 2, 0.3);
+    user-select: none;
+}
+.description {
+    width: 20%;
+    min-width: 450px;
+	padding:4px;
+	overflow-y:auto;
+}
+
+.left {
+    width: 40%;
+    min-width: 400px;
+	padding:4px;
+}
+
+.right {
+    width: 20%;
+    min-width: 601px;	
+}
+
+#done{
+  position: absolute;
+  top: 70px; 	
+  right:10px;
+  opacity:0.9;
+  display:none;
+}
+.map{
+	margin:auto;	
+	opacity:0.9;
+	text-align:center;
+}
+.mapimg{
+	max-height:240px;
+}
+.map:hover{	
+    //filter:invert(100%);
+}
+.maplock{
+    position: fixed;
+	right: 60px;
+	top:80px;
+    z-index: 999;
+	height:160px;
+	margin:auto;
+	text-align:center;	
+	opacity:0.8;	
+}
+.tooltip{
+	position: fixed;
+	bottom:0px;
+	height:30px;
+	line-height:30px;
+	background:#353f42;
+	left:0px;
+	user-select: none;	
+    z-index: 1000;
+	width:100%;
+}
+.keyword{	
+	margin:4px;
+	padding:2px;
+	color:#56676b;	
+}
+.keyword:hover{
+    background-color: #252d30;
+	cursor: hand;	
+}
+.keyopen{	
+	margin:4px;
+	padding:2px;
+	color:#56676b;	
+}
+.keyopen:hover{
+	color:#ccc;	
+	cursor: hand;	
+}
+.keycolor{
+	color:#73878e;
+	border: 0px ;	
+	width:100px;
+    background-color: transparent;	
+}
+.keymodel{	
+	margin:4px;
+	padding:2px;
+	color:#56676b;	
+	font-size: 20px;
+}
+.keymodel:hover{
+	color:#ccc;	
+	cursor: hand;	
+}
+.keybox{	
+	margin:2px;
+	padding:2px;
+	color:#73878e;	
+	font-size: 18px;
+}
+.keybox:hover{
+	color:#ccc;	
+    background-color: #252d30;
+	cursor: hand;	
+}
+#colorbox{
+	position: fixed;
+	bottom:26px;
+	left:260px;
+	z-index:1000;
+	color:#000;	
+	display:none;
+	
+}
+.keyexample{	
+	margin:2px;
+	padding:2px;
+	color:#73878e;	
+	font-size: 18px;
+}
+.keyexample:hover{
+	color:#ccc;	
+    background-color: #252d30;
+	cursor: hand;	
+}
+#codexample{
+	position: fixed;
+	bottom:50px;
+	right:650px;
+	z-index:1000;	
+	display:none;
+	background-color: #252d30;	
+    border: 2px solid #354044;
+	margin:0px;
+}
+#codeplace{
+	padding:10px;
+	font:20px/normal 'Consolas', 'source-code-pro', monospace;
+	line-height:24px;
+	white-space:pre;
+	color:#73878e;
+}
+#codebutton{
+	text-align:right;
+	padding:10px;
+}
+.btncode{	
+	background-color:#252d30;	
+    border: 1px solid #354044;	
+	cursor:pointer;
+	padding:4px;
+	color:#73878e;
+}
+.btncode:hover{	
+	background-color:#354044;
+}
+#btnshow {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 380px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #333;
+    opacity:0.9 ;
+	cursor:pointer;	
+    font-size: 18px;
+}
+#btnshow:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+
+#btnreturn {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;   
+    opacity:0.9 ;
+	cursor:pointer;	
+    font-size: 18px;
+}
+#btnreturn:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+#btnupload {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 176px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    opacity:0.9 ;
+	cursor:pointer;	
+    font-size: 18px;
+}
+#btnupload:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+#btnsave {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 190px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+    opacity:0.9 ;
+	cursor:pointer;	
+    font-size: 18px;
+}
+#btnsave:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+
+#btnerase {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 290px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+	cursor:pointer;	
+    opacity:0.9 ;
+    font-size: 18px;
+}
+#btnerase:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+#btnclear {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 460px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+	cursor:pointer;	
+    font-size: 18px;
+}
+#btnclear:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+
+
+#btnrun {
+    background-color: #565b55;
+    position: fixed;
+    top: 20px;
+    right: 330px;
+    z-index: 999;
+    color: #ccc;
+    padding: 4px 20px;
+    text-align: center;
+    text-decoration: none;
+	cursor:pointer;	
+    font-size: 18px;
+}
+#btnrun:hover{
+	background-color: #5f8c40;
+    color: #fff;
+}
+
+#title{    
+	position: fixed;
+    top: 20px;
+    right: 425px;
+    border: 0px solid #e0dbcb; 
+    text-decoration: none;
+    background: #transparent;
+    color:#999; 
+	font-size: 18px;
+	background-color: #3f4b4f;
+	line-height:24px;
+	height:29px;
+}
+#savemsg
+{
+  position: fixed;  
+  bottom: 36px;
+  right:50px;
+  z-index:999;
+  color:#F85B10; 
+  font-size:20px;  
+}
+.cvdiv{	
+    top: 70px;
+    right: 10px;
+    z-index:888;	
+    background-color: #484f51;
+    position: fixed;
+	width:602px;
+	height:600px;
+    background: url(../code/grididle.png) ;
+    pointer-events: none;
+}
+
+#content{ 
+    top: 70px;	
+    z-index:999;
+    background-color: #515759;
+    padding: 10px;
+	opacity:0.9;
+}
+
+.button:hover {
+    background-color: #768b75; /* Green */
+    color: #fff;
+}
+#editor {
+	background-color:#252d30;
+    min-width: 500px;
+}
+
+#big{
+	position:absolute;
+	right:90px;
+	bottom:0px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -32px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 1000;
+	cursor:pointer;
+}
+#big:hover {background-color: #3f4b4f;border-radius:16px;}
+#small{
+	position:absolute;
+	right:30px;
+	bottom:0px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -64px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 1000;
+	cursor:pointer;
+}
+#small:hover {background-color: #3f4b4f;border-radius:16px;}
+#run{
+	position:absolute;
+	right:16px;
+	bottom:180px;
+	background:transparent url(../code/sprites.png) no-repeat scroll -160px -0px ; 
+	width: 32px;
+	height: 32px;	
+    z-index: 999;
+	cursor:pointer;
+}
+#run:hover {background-color: #3f4b4f;border-radius:16px;}
+
+.divprog{	
+	margin:0px;
+	padding:2px;	
+	color:#666;
+	font-family: "Arial","Microsoft YaHei";
+	user-select: none;
+	//font-family: 'Fira Code',Arial,'宋体';
+	font-size:20px;
+}
+.divpass{		
+	color:#61b063;
+	text-align:right;
+}
+.divwrong{		
+	color:#b06161;
+	text-align:right;
+}
+.ace_gutter-cell {
+    visibility: hidden;
+    padding-left: 0;
+    padding-right: 30px;	
+}
+
+.in-gutter::before {
+    content: "";
+}
+
+.in-gutter::after {
+    content: ">>> ";
+    position: absolute;
+    right: 0;
+}
+
+.in-gutter::before {
+    position: absolute;
+    left: 5px;
+    padding: 0;
+}
+
+.in-gutter {
+    padding-left: 48px;
+    visibility: visible;
+    display: block;
+    color: #699867;
+	font-weight: bold;
+}
+
+.out-gutter {
+    color: crimson;
+}
+.ace_gutter {
+    font-size: 22px;
+}
+.ace_gutter-cell:not(:first-child):after {
+    content: "...:";
+    visibility: visible;
+    position: absolute;
+    right: 0;
+    color: #3d4b50;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸#585858;*/
+::-webkit-scrollbar
+{
+	width: 10px;
+	height: 10px;
+	background-color: #252d30;
+}
+ 
+ 
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+	background-color: #303A3F;
+}
+

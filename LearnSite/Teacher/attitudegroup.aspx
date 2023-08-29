@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" StylesheetTheme="Teacher" ValidateRequest="false"  AutoEventWireup="true" CodeFile="attitudegroup.aspx.cs" Inherits="Teacher_attitudegroup" %>
+﻿<%@ page title="" language="C#" stylesheettheme="Teacher" validaterequest="false" autoeventwireup="true" inherits="Teacher_attitudegroup, LearnSite" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -6,7 +6,7 @@
     <title></title> 
     <style type="text/css">
     .by{margin:0px}
-    .phold{margin: auto; width:360px; text-align: center;font-size: 9pt;font-family: Arial;}
+    .phold{margin: auto; width:360px; text-align: center;font-size: 11pt;font-family: Arial;}
     .hearder{ background-color: #939CA2;height: 18px;text-align: center;line-height: 18px;}
     </style>
 </head>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="studentshow.aspx.cs" Inherits="Teacher_studentshow" %>
+﻿<%@ page title="" language="C#" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_studentshow, LearnSite" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,7 +13,7 @@
     <asp:Repeater ID="Repeater1" runat="server">   
     <ItemTemplate>   	
     <div class="teacherdiv">
-    <table width="100%" style="border-right: WhiteSmoke 1px solid; border-top: WhiteSmoke 1px solid; border-left: WhiteSmoke 1px solid; border-bottom: WhiteSmoke 1px solid; text-align: left; font-size: 9pt;">
+    <table width="100%" style="border-right: WhiteSmoke 1px solid; border-top: WhiteSmoke 1px solid; border-left: WhiteSmoke 1px solid; border-bottom: WhiteSmoke 1px solid; text-align: left; font-size: 11pt;">
             <tr>                                        
                 <td style="width: 160px; height: 22px ">
                     姓名：<%#Eval("Sname")%>

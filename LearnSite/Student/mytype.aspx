@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Stud.master"  StylesheetTheme="Student" AutoEventWireup="true" CodeFile="mytype.aspx.cs" Inherits="Student_mytype" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/student/Stud.master" stylesheettheme="Student" autoeventwireup="true" inherits="Student_mytype, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cphs" Runat="Server">
-    <link href="../Js/Typer.css" rel="stylesheet" type="text/css" />
+    <link href="../js/Typer.css" rel="stylesheet" type="text/css" />
 <div id="student">
 <div class="left">
 <center>
@@ -18,8 +18,8 @@
                     RepeatDirection="Horizontal" RepeatLayout="Flow" CellPadding="0" CellSpacing="0">
                     <ItemTemplate>
                         <asp:HyperLink ID="id" runat="server"   Height="14px" BackColor="#EEEEEE"
-                            NavigateUrl='<%# "mytype.aspx?Tid="+Eval("Tid") %>' 
-                            Text='<%# Eval("Tid") %>'  ToolTip='<%# Eval("Ttitle") %>' 
+                            NavigateUrl='<%# "mytype.aspx?Tid="+Eval("tid") %>' 
+                            Text='<%# Eval("tid") %>'  ToolTip='<%# Eval("Ttitle") %>' 
                             Font-Underline="False" ForeColor="#333333"></asp:HyperLink>
                     </ItemTemplate>
                 </asp:DataList>
@@ -58,15 +58,15 @@
 <center>
     <div>
     <asp:HyperLink ID="HChinese" runat="server" 
-        ImageUrl="~/Images/py.png" NavigateUrl="~/Student/mychinese.aspx" ></asp:HyperLink> 
+        ImageUrl="~/images/py.png" NavigateUrl="~/student/mychinese.aspx" ></asp:HyperLink> 
     <asp:HyperLink ID="HkFinger" runat="server" 
-        ImageUrl="~/Images/en.png" NavigateUrl="~/Student/myfinger.aspx"></asp:HyperLink>        
+        ImageUrl="~/images/en.png" NavigateUrl="~/student/myfinger.aspx"></asp:HyperLink>        
     <asp:HyperLink ID="HTyper" runat="server" 
-        ImageUrl="~/Images/cn.png" NavigateUrl="~/Student/mytype.aspx" ></asp:HyperLink>       
+        ImageUrl="~/images/cn.png" NavigateUrl="~/student/mytype.aspx" ></asp:HyperLink>       
     </div>
     <br />
 <div>
-    <script src="../Js/Backcolor.js" type="text/javascript"></script>
+    <script src="../js/Backcolor.js" type="text/javascript"></script>
     <script type="text/javascript"> WriteBg();</script>
 </div>
     <asp:GridView ID="GVTyper" runat="server" AllowPaging="True"  Caption="中文输入英雄榜" CellPadding="2"         
@@ -78,9 +78,6 @@
             <ItemStyle HorizontalAlign="Left" />
             </asp:BoundField>
             <asp:BoundField DataField="Pscore" HeaderText="速度">
-            <ItemStyle HorizontalAlign="Left" />
-            </asp:BoundField>
-            <asp:BoundField DataField="Ptid" HeaderText="文章">
             <ItemStyle HorizontalAlign="Left" />
             </asp:BoundField>
             <asp:BoundField DataField="Ptype" HeaderText="次数" />
@@ -106,7 +103,7 @@
     <br />
     
     <asp:HyperLink ID="HyperLink1" runat="server"  Width="120px" SkinID="HyperLink" 
-        Height="18px" NavigateUrl="~/Student/alltyper.aspx" CssClass="txtszcenter" 
+        Height="18px" NavigateUrl="~/student/alltyper.aspx" CssClass="txtszcenter" 
         Target="_self">中文输入英雄榜</asp:HyperLink>   
     <br />
     <br />
@@ -118,9 +115,9 @@
 </div>
 <br />
 </div>
-    <script src="../Js/jquery-1.8.2.min.js" type="text/javascript"></script>
-    <script src="../Js/Typer.js" type="text/javascript"></script>
-    <script src="../Js/pydic.js" type="text/javascript"></script>
-    <script src="../Js/wbdic.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="../js/Typer.js" type="text/javascript"></script>
+    <script src="../js/pydic.js" type="text/javascript"></script>
+    <script src="../js/wbdic.js" type="text/javascript"></script>
 </asp:Content>
 

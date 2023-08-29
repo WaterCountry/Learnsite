@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>pdf</title>
+
+<script src="../code/pdfobject.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+     var options = {
+                height: "550px",
+                pdfOpenParams: {view: 'FitV', page: '0' },
+                name:"mans",
+                fallbackLink: "<p>您的浏览器暂不支持此pdf，请下载最新的浏览器</p>"
+            };
+    PDFObject.embed("../code/test.pdf", "#example1",options);
+  </script>
+<body>
+    <p id="example1"></p>
+</body>
+
+

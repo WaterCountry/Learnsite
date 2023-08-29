@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head >  
+  <title>Python拼图编程</title>
+  <meta charset="UTF-8">
+<link href="../code/block.css" rel="stylesheet" type="text/css" />
+<link href="../code/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui-1.8.24.custom.min.js" type="text/javascript"></script>
+<script src="../code/build/src/ace.js" type="text/javascript"></script>
+<script src="../code/build/src/ext-language_tools.js" type="text/javascript"></script>
+<script src="../code/skulpt.min.js?ver=20211202" type="text/javascript"></script>
+<script src="../code/skulpt-stdlib.js" type="text/javascript"></script>
+</head>
+<body>
+<div>
+<div class="banner">
+	 <i class="fa fa-codepen" ></i> <a id="title" >Python拼图编程</a>
+</div>
+<div id="main">
+<div id="left">
+</div>
+<div id="right"></div>
+</div>
+
+
+<div id="result">
+<div id="savemsg"></div>
+<pre id="output" ></pre>
+<div id="cv" ></div>
+</div>
+<audio id="audio" controls="controls"  hidden="true" ></audio>
+<div  id="sideby">
+<button  onclick="runit()" class="button"  >
+<i class="fa fa-play-circle" aria-hidden="true"></i> 运行</button>&nbsp;&nbsp;
+<span class="sp"></span>
+<button  onclick="savecode()" class="button"  >
+<i class="fa fa-save" aria-hidden="true"></i> 保存</button>&nbsp;&nbsp;
+<span class="sp"></span>
+<button  onclick="returnurl()" class="button">
+<i class="fa fa-reply" aria-hidden="true"></i> 返回</button>
+</div>
+	<script type="text/javascript" >
+		const  example=[
+		"print('密码解锁')\n",		
+		"while True:\n",
+		"    pwd = input('请输入密码：')\n",
+		"    if pwd=='abc123':\n",
+		"        print('正确')\n",
+		"        break\n",
+		"    else:\n",
+		"        print('错误')\n",
+		"        continue"
+		];		
+		
+		const  example4=[
+		"title='精彩的编程世界'\n",
+		"print(title)\n",
+		"name = input('请输入您的姓名：')\n",
+		"print('欢迎您',name)\n"
+		];
+	   	const  example2=[
+		"print('猜年龄')\n",
+		"n = input('请输入年龄：')\n",
+		"n = int(n)\n",
+		"if n>12:\n",
+		"	print('你猜大了！')\n",
+		"elif n==12:\n",
+		"	print('你猜中了！')\n",
+		"else:\n",
+		"	print('你猜小了！')"
+		];
+	                                     
+		var exacode=example.join("");
+		
+	    var editor = ace.edit("right", {
+	        theme: "ace/theme/chrome",
+	        mode: "ace/mode/python"
+	    });
+	    editor.setFontSize(26);
+	    editor.focus();
+		editor.setReadOnly(true);
+
+	    var snum = "2022";
+	    var id = "222";
+	    var fpage = "#";
+	    var codefile = ""; //定义字典
+
+	    var sessionkey = "htmlcode" + snum + "-" + id;
+
+	    function savesession() {
+	        var codestr = editor.getValue();
+	        if (codestr != null && codestr != "") {
+	            sessionStorage.setItem(sessionkey, codestr);
+
+	        }
+	    }
+	    function getsession() {
+	        var codestr = sessionStorage.getItem(sessionkey);
+	        if (codestr != null && codestr != "") {
+	            editor.setValue(codestr, 1);
+	        }
+	    }
+	    document.onkeyup = keyUp;
+	    function keyUp() {
+	        savesession();
+	    }
+
+
+        function returnurl() {
+            if (confirm('确定要返回吗？记得先保存。') == true) {
+                sessionStorage.clear(); //返回后清除，防止污染
+                window.location.href = fpage;
+            }
+        }
+        
+
+        $(function () {
+		
+			arrayblock();
+		
+            init();
+			
+            function init() {
+                $('.brick').draggable({ opacity: 0.2, helper: 'original', grid: [2, 2],
+                    containment: "#left", snap: true, snapTolerance: 16,
+                    drag: function (event, ui) {
+                        var offset = $(this).offset();
+                        var l = offset.left;
+                        var t = offset.top;						
+                    },
+					stop: function (event, ui) {
+						blocktocode();
+						voiceplay();
+					}
+
+                });
+                $(".brick").css("cursor", "move");
+            }
+			
+			
+        });
+
+		var minleft=360;
+		function blocktocode(){
+			var $block=$('.brick');		
+			var codestr="";
+			var dict={};
+			var posi={};
+			console.clear();
+			console.log("拖放后：");
+			$block.each(function(i){
+				var lpos=$(this).offset().left;
+				if(lpos<30){
+					lpos=4;
+				}
+				else if(lpos>=30&&lpos<80){
+					lpos=60;
+				}				
+				else if(lpos>=80&&lpos<160){
+					lpos=120;
+				}				
+				else if(lpos>=160&&lpos<220){
+					lpos=180;
+				}				
+				else if(lpos>=220&&lpos<280){
+					lpos=240;
+				}				
+				else if(lpos>=280&&lpos<340){
+					lpos=300;
+				}
+				else{
+					lpos=360;
+				}				
+				$(this).offset({left:lpos});
+				if(lpos<minleft){
+					minleft=lpos;
+				}
+				
+				var tpos=$(this).offset().top;
+				dict[tpos]=$(this).text();
+				console.log("左",lpos,"上",tpos);
+				//console.log($(this).text());
+				posi[tpos]=lpos;
+			})
+			
+			//console.log(dict);
+			//console.log(dict);
+			var res = Object.keys(dict).sort((a,b)=>a-b);
+			for (var key in res){
+				var newlpos=posi[res[key]];
+				var linecode=tabnum(newlpos)+dict[res[key]]+"\n";			
+				codestr=codestr+linecode;
+				//console.log(res[key]);
+			}
+			console.log(posi);
+			console.log(codestr);	
+			editor.setValue(codestr, 1);
+			$('#result').hide();
+		}
+		
+		function tabnum(newlpos){
+			var n=parseInt((newlpos-minleft)/50);
+			var str="";
+			for(var i=0;i<n;i++){
+				str=str+"\t";
+			}
+			return str;
+		}
+		
+		function arrayblock(){
+			var blockplace=document.getElementById("left");
+			example.sort(function () {
+				return Math.random() - 0.5
+			})
+			
+			for(var i=0;i<example.length;i++){
+				var span=document.createElement("span");
+				span.innerText=example[i].trim();
+				span.className="brick";
+				var mytop=60+i*40;
+				span.style.top=mytop+"px";
+				
+				span.style.backgroundColor="#76A9DC";	
+				if(example[i].indexOf("print")!=-1){
+					span.style.backgroundColor="#95CA97";				
+				}
+				//默认方块为蓝色#76A9DC，如果为输出设置为绿#95CA97，如果为输入设置为红#DDA3C1
+				if(example[i].indexOf("input")!=-1){
+					span.style.backgroundColor="#DDA3C1";				
+				}				
+				
+				blockplace.appendChild(span);			
+			}		
+		
+			var $block=$('.brick');		
+			var dict={};
+			var lefthead=244;
+			var myleft=0;
+			$block.each(function(i){				
+				myleft=lefthead;
+				$(this).offset({left:myleft});
+				var lpos=$(this).offset().left;
+				var tpos=$(this).offset().top;
+				
+				dict[tpos]=$(this).text();
+				console.log("左",lpos,"上",tpos);
+			})
+			$('#result').hide();//隐藏输出控制台
+		}
+		
+		
+		function blockRandom(){
+			var $block=$('.brick');		
+			var codestr="";
+			var dict={};
+			var posi={};
+			var rand={};
+			console.clear();
+			console.log(example);
+			console.log(exacode);
+			console.log("初始值：");
+			$block.each(function(i){
+				var tpos=$(this).offset().top;
+				dict[tpos]=$(this).text();
+				console.log(tpos);
+			})
+			console.log(dict);
+			console.log("随机后：");
+			var res = Object.keys(dict).sort(randomsort);
+			console.log(res);
+			for (var key in res){
+				codestr=codestr+dict[res[key]]+"\n";
+				rand[key]=res[key];
+			}
+			
+			console.log("新位置：",rand);
+			$block.each(function(i){
+				var txt=dict[rand[i]];
+				$(this).text(txt);
+			})
+			
+			//console.log(codestr);		    
+			editor.setValue(codestr, 1);
+			$('#result').hide();		
+		}
+		$("#left").click(function(){
+		  $("#result").slideUp();
+		});
+		$("#title").click(function(){
+		  $("#result").slideToggle();
+		});
+		function randomsort(a, b) {
+		  return Math.random()>.5 ? -1 : 1; //通过随机产生0到1的数，然后判断是否大于0.5从而影响排序，产生随机性的效果。
+		}
+	
+
+var mypre = document.getElementById("output");
+var result = document.getElementById("result");
+var savemsg = document.getElementById("savemsg");
+function outf(text) {
+    mypre.innerHTML = mypre.innerHTML + text;
+}
+function builtinRead(x) {
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+            throw "File not found: '" + x + "'";
+    return Sk.builtinFiles["files"][x];
+}
+
+function myfun() {
+	return new Promise(function(resolve,reject){		
+		var myinput=document.createElement("input");
+		myinput.setAttribute("type","text");
+		myinput.setAttribute("class","input");
+		mypre.appendChild(myinput);
+		myinput.focus();
+        result.onclick=function(){
+            myinput.focus();
+        }
+
+		myinput.onkeypress =function() {
+             if (event.keyCode == 13)
+             {
+				var argv=myinput.value;	
+				console.log(argv);
+				mypre.removeChild(myinput);
+                mypre.innerHTML= mypre.innerHTML+argv+" \n";				
+                resolve(argv);
+             }
+         }
+      })
+}	
+function runit() {
+	$('#result').show();
+    var prog = editor.getValue();
+	if(prog!=null&&prog!=""){
+		mypre.innerHTML = '';
+		output.innerHTML = '';
+		savemsg.innerHTML='';
+		Sk.pre = "output";		
+		Sk.configure({ output: outf, read: builtinRead,execLimit: 600000, __future__: Sk.python3, inputfun: myfun});
+
+		(Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'cv';
+		Sk.TurtleGraphics.width=cv.clientWidth;
+		Sk.TurtleGraphics.height=cv.clientHeight;
+		var dateBegin = new Date();
+
+		var myPromise = Sk.misceval.asyncToPromise(function() {
+			return Sk.importMainWithBody("<stdin>", false, prog, true);
+		});
+	 
+		myPromise.then(function(mod) {
+			var dateEnd = new Date();
+			var dateDiff = (dateEnd.getTime() - dateBegin.getTime())/1000;
+			var spendtime='耗时'+dateDiff+"秒"
+			console.log(spendtime);			
+			
+			msgerror="";
+			console.log('运行成功!');
+			savemsg.innerHTML = spendtime;
+			codetoarray(prog);
+		},
+		function(err) {	
+			pass=-1;//如果异常，标志为-1
+			var msg=err.toString();
+			console.log(msg);
+			if(msg.indexOf("TimeLimitError")>0){
+				msg="运行超时！";
+			}
+			savemsg.innerHTML = msg;
+			msgerror=msg;
+		});
+	}	
+	else{
+		savemsg.innerHTML= "当前没有代码，无法运行！";
+	}
+	
+}
+	
+	function voiceplay(){
+		var audio = document.getElementById("audio");
+		audio.src = '../code/adsorb.ogg';
+		audio.play();
+	}
+		
+	function codetoarray(str){
+		var codearray=str.split("\n");
+		console.log("读取编辑器内容");
+		console.log(codearray);
+		for(c in codearray){
+			console.log(codearray[c]);
+		}
+		
+		for(c in codearray){
+			console.log(codearray[c].trim());
+		}
+	}	
+	</script>
+
+    </div>
+</body>
+</html>

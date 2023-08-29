@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="typeshow.aspx.cs" Inherits="Teacher_typeshow" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_typeshow, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <br />
@@ -6,10 +6,10 @@
 
     <asp:Repeater ID="Repeater1" runat="server">   
     <ItemTemplate>   
-    <div style="width: 600px; font-size: 9pt;  border: whitesmoke 1px solid;  "> 	
+    <div style="width: 600px; font-size: 11pt;  border: whitesmoke 1px solid;  "> 	
     <div  style="height: 20px;;font-size: 12pt; font-family: 宋体;font-weight: bold ;background-color: whitesmoke ; text-align:center"><%#Eval("Ttitle")%></div>    
         <br />
-        <div style="   font-size: 9pt; font-family:Arial;">
+        <div style="   font-size: 11pt; font-family:Arial;">
         <table width="600px"  >
 			<tr>			
 			<td style="width: 200px; height: 22px; text-align:center">			
@@ -18,7 +18,7 @@
 			<td style="width: 200px; height: 22px; text-align:center">文章类型：<%#Eval("Ttype")%></td>
 			<td style="width: 200px; height:22px; text-align:right">文章用途：<%#Eval("Tuse")%>  &nbsp;&nbsp; 
             <asp:ImageButton ID="BtnEdit" runat="server" ToolTip="点击修改" 
-            ImageUrl="~/Images/edit.gif" onclick="BtnEdit_Click"  style="width: 16px" />
+            ImageUrl="~/images/edit.gif" onclick="BtnEdit_Click"  style="width: 16px" />
 			</td>
 			</tr>
 		</table>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="mysurveyrank.aspx.cs" Inherits="Student_mysurveyrank" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Student_mysurveyrank, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -16,7 +16,7 @@
 <body>
 <form id="form1" runat="server">
 <div>
-<div style=" text-align: center;">
+<center>
 <br />
 <asp:Label ID="Labeltitle" runat="server" Font-Bold="True" Font-Size="12pt" 
         ForeColor="#273F4B"></asp:Label>
@@ -51,7 +51,7 @@
                 <br />
                 <br />
         <br />
-    </div>
+</center>
 </div>
 </form>
 </body>

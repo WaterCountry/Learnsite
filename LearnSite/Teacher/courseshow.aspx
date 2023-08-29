@@ -1,45 +1,58 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" Validaterequest="false"  AutoEventWireup="true" CodeFile="courseshow.aspx.cs" Inherits="Teacher_courseshow" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" validaterequest="false" autoeventwireup="true" inherits="Teacher_courseshow, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
-<div  class="courseshow">
-    <br />  	
+<div  class="courseshow">	
     <asp:Label ID="LabelCtitle" runat="server"  CssClass="coursetitle"></asp:Label><br /><br />
     <div class="courseother">
-                 »’∆⁄£∫[<asp:Label ID="LabelCdate"  runat="server" ></asp:Label>]
-			     ¿‡–Õ£∫[<asp:Label ID="LabelCclass"  runat="server" ></asp:Label>]&nbsp;   
-                 ƒÍº∂£∫[<asp:Label ID="LabelCobj"  runat="server" ></asp:Label>]&nbsp;
-                 µ⁄[<asp:Label ID="LabelCterm"  runat="server" ></asp:Label>]—ß∆⁄&nbsp;
-                 [øŒΩ⁄£∫<asp:Label ID="LabelCks"  runat="server" ></asp:Label>]	&nbsp;	
-                 <asp:ImageButton ID="BtnEdit" runat="server" ToolTip="µ„ª˜–ﬁ∏ƒ" 
-                     ImageUrl="~/Images/edit.gif" onclick="BtnEdit_Click" />
-    </div>    
-    <br />
+					 <asp:Image ID="Imagebanner" runat="server" Height="20px" ToolTip="Ê®™ÂπÖÂõæÁâá"  />
+                 <asp:Label ID="LabelCdate"  runat="server" ></asp:Label>&nbsp;
+			     <asp:Label ID="LabelCclass"  runat="server" ></asp:Label>Á±ªÂûã&nbsp;   
+                 <asp:Label ID="LabelCobj"  runat="server" ></asp:Label>Âπ¥Á∫ß&nbsp;
+                 Á¨¨<asp:Label ID="LabelCterm"  runat="server" ></asp:Label>Â≠¶Êúü&nbsp;
+                 Á¨¨<asp:Label ID="LabelCks"  runat="server" ></asp:Label>ËØæ&nbsp;	
+                 <asp:ImageButton ID="BtnEdit" runat="server" ToolTip="ÁÇπÂáª‰øÆÊîπ" 
+                     ImageUrl="~/images/edit.gif" onclick="BtnEdit_Click" />
+    </div>   
     <br /> 
-<div class="courseother" style="width: 700px">
-<div style="margin: auto; width: 700px;">
-         <asp:LinkButton ID="LinkBtnAdd" runat="server"  SkinID="LinkBtn"
-          OnClick="LinkBtnAdd_Click" BackColor="#9BCBFF" >ÃÌº”ªÓ∂Ø</asp:LinkButton>
-             &nbsp;&nbsp;&nbsp; &nbsp;
-         <asp:LinkButton ID="LinkBtnAddTopic" runat="server"  SkinID="LinkBtn"
-          OnClick="LinkBtnAddTopic_Click" BackColor="#9BCBFF" >ÃÌº”Ã÷¬€</asp:LinkButton>
-             &nbsp;&nbsp; &nbsp;&nbsp;
-         <asp:LinkButton ID="LinkBtnAddSurvey" runat="server"  SkinID="LinkBtn"
-          OnClick="LinkBtnAddSurvey_Click" BackColor="#9BCBFF" >ÃÌº”µ˜≤È</asp:LinkButton>
+<div class="courseother" style="width: 1080px">
+<div style="margin: auto; width: 1080px;">
+         <asp:LinkButton ID="LinkBtnAdd" runat="server"  
+          OnClick="LinkBtnAdd_Click" CssClass="button24" >Ê∑ªÂä†Ê¥ªÂä®</asp:LinkButton>
              &nbsp;
-             &nbsp; &nbsp;
-         <asp:LinkButton ID="LinkBtnAddTxtForm" runat="server"  SkinID="LinkBtn"
-          OnClick="LinkBtnAddTxtForm_Click" BackColor="#9BCBFF" >ÃÌº”±Ìµ•</asp:LinkButton>
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <asp:LinkButton ID="LinkBtnProgram" runat="server"  SkinID="LinkBtn"
-          OnClick="LinkBtnProgram_Click" BackColor="#9BCBFF" >ÃÌº”±‡≥Ã</asp:LinkButton>
-             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-         <asp:LinkButton ID="LinkBtnReturn" runat="server" SkinID="LinkBtn"  
-             OnClick="LinkBtnReturn_Click" BackColor="#9BCBFF" >∑µªÿ</asp:LinkButton>
+         <asp:LinkButton ID="LinkBtnAddTopic" runat="server" 
+          OnClick="LinkBtnAddTopic_Click" CssClass="button24" >Ê∑ªÂä†ËÆ®ËÆ∫</asp:LinkButton>
+             &nbsp; 
+         <asp:LinkButton ID="LinkBtnAddSurvey" runat="server"  
+          OnClick="LinkBtnAddSurvey_Click" CssClass="button24" >Ê∑ªÂä†Ë∞ÉÊü•</asp:LinkButton>
+             &nbsp; 
+         <asp:LinkButton ID="LinkBtnAddTxtForm" runat="server"  
+          OnClick="LinkBtnAddTxtForm_Click" CssClass="button24" >Ê∑ªÂä†Â°´Ë°®</asp:LinkButton>
+             &nbsp;
+          <asp:LinkButton ID="LinkBtnProgram" runat="server"  
+          OnClick="LinkBtnProgram_Click" CssClass="button24" >ÁßØÊú®ÁºñÁ®ã</asp:LinkButton>
+             &nbsp;
+          <asp:LinkButton ID="LinkBtnPython" runat="server"  
+          OnClick="LinkBtnPython_Click" CssClass="button24" >PythonÁºñÁ®ã</asp:LinkButton>
+             &nbsp;
+          <asp:LinkButton ID="LinkBtnConsole" runat="server"  
+          OnClick="LinkBtnConsole_Click" CssClass="button24" >PythonÊµãËØÑ</asp:LinkButton>
+             &nbsp;
+          <asp:LinkButton ID="LinkButtonGraph" runat="server"  
+          OnClick="LinkBtnGraph_Click" CssClass="button24" >ÊµÅÁ®ãÂõæ</asp:LinkButton>
+             &nbsp;
+          <asp:LinkButton ID="LinkButtonPixel" runat="server"  
+          CssClass="button24" onclick="LinkButtonPixel_Click" >ÂÉèÁ¥†Áîª</asp:LinkButton>
+             &nbsp;
+          <asp:LinkButton ID="LinkButtonHtml" runat="server"  
+          CssClass="button24" onclick="LinkButtonHtml_Click" >HtmlÁΩëÈ°µ</asp:LinkButton>
+             &nbsp;
+         <asp:LinkButton ID="LinkBtnReturn" runat="server" 
+             OnClick="LinkBtnReturn_Click" CssClass="button24" >ËøîÂõû</asp:LinkButton>
          </div>
 
              <br />
 
-         <asp:GridView ID="GVlistmenu" runat="server"  Width="600px"  SkinID="GVmission" 
+         <asp:GridView ID="GVlistmenu" runat="server"  Width="860px"  SkinID="GVmission" 
              CellPadding="6" AutoGenerateColumns="False" 
              EnableModelValidation="True" HorizontalAlign="Center" 
         onrowcommand="GVlistmenu_RowCommand" 
@@ -60,62 +73,63 @@
                          <asp:Label ID="LabelLtype" runat="server" Text='<%# Bind("Ltype") %>'></asp:Label>
                      </ItemTemplate>
                  </asp:TemplateField>
-                 <asp:TemplateField HeaderText="–Ú∫≈">
+                 <asp:TemplateField HeaderText="Â∫èÂè∑">
                      <ItemTemplate>
                          <asp:Label ID="LabelLsort" runat="server" Text='<%# Bind("Lsort") %>'></asp:Label>
                      </ItemTemplate>
-                     <ItemStyle Width="50px" />
+                     <ItemStyle Width="40px" />
                  </asp:TemplateField>
-                 <asp:TemplateField HeaderText="¿‡–Õ">
+                 <asp:TemplateField HeaderText="Á±ªÂûã">
                      <ItemTemplate>
+                         <asp:Image ID="Image4" runat="server" ImageUrl="~/images/new_none.gif" />
                          <asp:Label ID="Label4" runat="server"></asp:Label>
                      </ItemTemplate>
-                     <ItemStyle Width="50px" />
+                     <HeaderStyle HorizontalAlign="Left" />
+                     <ItemStyle Width="100px" HorizontalAlign="Left" />
                  </asp:TemplateField>
-                 <asp:TemplateField HeaderText="µº∫Ω¿∏ƒø">
+                 <asp:TemplateField HeaderText="ÂØºËà™Ê†èÁõÆ">
                      <ItemTemplate>
                          <asp:HyperLink ID="HlLtitle" runat="server" NavigateUrl="" 
                              Text='<%# Eval("Ltitle") %>'></asp:HyperLink>
                      </ItemTemplate>
+                     <HeaderStyle HorizontalAlign="Left" />
+                     <ItemStyle HorizontalAlign="Left" />
                  </asp:TemplateField>
                  <asp:TemplateField ShowHeader="False">
                     <ItemTemplate>
                         <asp:LinkButton ID="ImageBtnTop" runat="server" CausesValidation="False" 
                             CommandName="Top"  CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'
-                            Text="…œ" ToolTip="œÚ…œ“∆" Font-Underline="False"></asp:LinkButton>
+                            Text="‰∏ä" ToolTip="Âêë‰∏äÁßª" Font-Underline="False"></asp:LinkButton>
                     </ItemTemplate>
-                     <ItemStyle Width="16px" />
+                     <ItemStyle Width="20px" />
                 </asp:TemplateField>
                 <asp:TemplateField ShowHeader="False">
                     <ItemTemplate>
                         <asp:LinkButton ID="ImageBtnBottom" runat="server" CausesValidation="False" 
                             CommandName="Bottom"  CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'
-                            Text="œ¬" ToolTip="œÚœ¬“∆" Font-Underline="False"></asp:LinkButton>
+                            Text="‰∏ã" ToolTip="Âêë‰∏ãÁßª" Font-Underline="False"></asp:LinkButton>
                     </ItemTemplate>
-                    <ItemStyle Width="16px" />
+                    <ItemStyle Width="20px" />
                 </asp:TemplateField>
-                 <asp:TemplateField HeaderText="∑¢≤º" ShowHeader="False">
+                 <asp:TemplateField HeaderText="ÂèëÂ∏É" ShowHeader="False">
                      <ItemTemplate>
                          <asp:LinkButton ID="LinkBtnShow" runat="server" CausesValidation="false" 
                              CommandName="P" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'
-                             Text='<%# Eval("lshow") %>' ToolTip="Trueœ‘ æ£¨False“˛≤ÿ"></asp:LinkButton>
+                             Text='<%# Eval("lshow") %>' ToolTip="TrueÊòæÁ§∫ÔºåFalseÈöêËóè"></asp:LinkButton>
                      </ItemTemplate>
-                     <ItemStyle Width="50px" />
+                     <ItemStyle Width="60px" />
                  </asp:TemplateField>
-                 <asp:TemplateField HeaderText="≤Ÿ◊˜" ShowHeader="False">
+                 <asp:TemplateField HeaderText="Êìç‰Ωú" ShowHeader="False">
                      <ItemTemplate>
                          <asp:LinkButton ID="LinkBtnDel" runat="server" CausesValidation="false" 
                              CommandName="D"  CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'
-                             Text="…æ≥˝"  ToolTip="«Î»œ’Ê»∑∂® «∑Ò…æ≥˝£¨≤ªø…ª÷∏¥£°"></asp:LinkButton>
+                             Text="Âà†Èô§"  ToolTip="ËØ∑ËÆ§ÁúüÁ°ÆÂÆöÊòØÂê¶Âà†Èô§Ôºå‰∏çÂèØÊÅ¢Â§çÔºÅ"></asp:LinkButton>
                      </ItemTemplate>
                      <ItemStyle Width="50px" />
                  </asp:TemplateField>
              </Columns>
              <RowStyle Height="32px" />
-         </asp:GridView>
-         <div>
-            <br />
-         </div>       
+         </asp:GridView>      
          </div>
          <div  id="Ccontent" class="coursecontent" runat ="server">   
     </div>

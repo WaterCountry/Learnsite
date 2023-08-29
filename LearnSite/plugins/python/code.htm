@@ -1,0 +1,133 @@
+﻿<style type="text/css" media="screen">
+    #editor {
+        height:80vh;
+        width:600px;
+	    background-color:  #fef8e4;
+    }
+    #console {
+		height:80vh;
+        width:500px;
+		font-size: 20px;
+		background-color:#333;
+		color:#ddd;
+	}
+	#turtle-canvas-wrapper{
+		position:absolute;
+		top:300px;
+		z-index:999;
+	}
+</style>
+
+<script src="../code/build/src/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="../code/build/src/ext-language_tools.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/brython/brython.js"></script>
+<script type="text/javascript" src="../js/brython/brython_stdlib.js"></script>
+<script src="../code/jquery.min.js" type="text/javascript"></script>
+
+<script type="text/python3" id="tests_editor">
+from browser import document as doc, window
+from browser import html
+
+import sys
+import time
+import binascii
+
+import tb as traceback
+import javascript
+
+from browser import document as doc, window, alert, bind, html
+from browser.widgets import dialog
+
+has_ace = True
+
+editor = window.ace.edit("editor")
+editor.setTheme("ace/theme/textmate")
+editor.session.setMode("ace/mode/python")
+editor.focus()
+
+editor.setOptions({
+ 'enableLiveAutocompletion': True,
+ 'highlightActiveLine': False,
+ 'highlightSelectedWord': True,
+ 'fontSize':22
+})
+
+class cOutput:
+    encoding = 'utf-8'
+
+    def __init__(self):
+        self.cons = doc["console"]
+        self.buf = ''
+
+    def write(self, data):
+        self.buf += str(data)
+
+    def flush(self):
+        self.cons.value += self.buf
+        self.buf = ''
+
+    def __len__(self):
+        return len(self.buf)
+
+if "console" in doc:
+    cOut = cOutput()
+    sys.stdout = cOut
+    sys.stderr = cOut
+
+def to_str(xx):
+    return str(xx)
+
+output = ''
+
+def show_console(ev):
+    doc["console"].value = output
+    doc["console"].cols = 60
+
+# load a Python script
+def load_script(evt):
+    _name = evt.target.value + '?foo=%s' % time.time()
+    editor.setValue(open(_name).read())
+
+# run a script, in global namespace if in_globals is True
+def run(*args):
+    global output
+    doc["console"].value = ''
+    src = editor.getValue()
+
+    t0 = time.perf_counter()
+    try:
+        ns = {'__name__':'__main__'}
+        exec(src, ns)
+        state = 1
+    except Exception as exc:
+        traceback.print_exc(file=sys.stderr)
+        state = 0
+    sys.stdout.flush()
+    output = doc["console"].value
+
+    #print('\n<completed in %6.2f ms>' % ((time.perf_counter() - t0) * 1000.0))
+    return state
+
+doc['run'].bind('click',lambda *args: run())
+</script>
+<script type="text/javascript">
+    window.onload = function () {
+        brython();
+        var cf = "#code#";
+        var codefile = decodeURIComponent(window.atob(cf));
+        var editor = ace.edit("editor");
+        editor.setValue(codefile,1);
+    };
+</script> 
+<button id="run"  type="button">运行代码</button><br>
+<table>
+<tr>
+<td >
+	<textarea id="console" autocomplete="off"></textarea>
+</td>
+<td >
+	<div id="editor"></div>
+</td>
+</tr>
+</table>
+

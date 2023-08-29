@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master"  StylesheetTheme="Teacher"  AutoEventWireup="true" CodeFile="softview.aspx.cs" Inherits="Teacher_softview" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_softview, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div class="left">
         <br />
         <asp:Label ID="Labeltitle" runat="server" 
-        Width="550px" CssClass="textcenter" Height="24px" BackColor="#E0E7FE" 
+        Width="800px" CssClass="textcenter" Height="24px" BackColor="#E0E7FE" 
             BorderColor="#CAD6FD" BorderStyle="Solid" BorderWidth="1px"></asp:Label>
         <br />
         <div style="padding: 2px; margin: auto; border-bottom-style: dashed; border-width: 1px; border-color: #CCCCCC">资源：<asp:Label ID="Labelclass" runat="server"  SkinID="LabelFileShow"></asp:Label>
@@ -15,10 +15,10 @@
     学分：<asp:Label ID="Labelopen" runat="server"  ></asp:Label>
             &nbsp;
             <asp:ImageButton ID="BtnEdit" runat="server" ToolTip="点击修改" 
-            ImageUrl="~/Images/edit.gif" onclick="BtnEdit_Click" 
+            ImageUrl="~/images/edit.gif" onclick="BtnEdit_Click" 
            style="width: 16px" />
         &nbsp;&nbsp;&nbsp;&nbsp; <asp:ImageButton ID="BtnReturnSmall" runat="server" ToolTip="返回" 
-            ImageUrl="~/Images/return.gif" onclick="BtnReturnSmall_Click" 
+            ImageUrl="~/images/return.gif" onclick="BtnReturnSmall_Click" 
            style="width: 16px" />
         </div>
         <br />
@@ -32,7 +32,8 @@
             </div>
         </center>
         <br />
-        <asp:Image ID="ImageDown" runat="server" ImageUrl="~/Images/down1.gif" />
+        <div>
+        <asp:Image ID="ImageDown" runat="server" ImageUrl="~/images/down1.gif" />
         <asp:LinkButton ID="LBtnfile" runat="server" 
         OnClick="LBtnfile_Click" Font-Underline="False" 
         BorderColor="#7DBF80" BorderStyle="Dashed" BorderWidth="1px" 
@@ -46,6 +47,7 @@
         <br />
         <br />
         <br />
+        </div>
     </div>
 </asp:Content>
 

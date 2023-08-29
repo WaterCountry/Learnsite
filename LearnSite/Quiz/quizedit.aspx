@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" Validaterequest="false" AutoEventWireup="true" CodeFile="quizedit.aspx.cs" Inherits="Quiz_quizedit" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" validaterequest="false" autoeventwireup="true" inherits="Quiz_quizedit, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div   class="placehold">
@@ -45,7 +45,7 @@
 		        });
 		    });
 		</script>
-    <textarea  id ="mcontent" runat ="server" style="width: 700px; height:350px;" ></textarea>  
+    <textarea  id ="mcontent" runat ="server" style="width: 720px; height:350px;" ></textarea>  
 <br />              
     </div>
     <div class="quizleft">

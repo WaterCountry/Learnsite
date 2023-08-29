@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="en.aspx.cs" Inherits="en" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="en, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -18,13 +18,14 @@
         <br />
         <strong>指法练习——字典重新设置</strong><br />
         <br />
-        <div style="margin: auto; border-width: 1px; border-color: #333333; font-size: 9pt; border-top-style: dashed; background-color: #EEF2F2; width: 500px;">
+        <div style="margin: auto; border-width: 1px; border-color: #333333; font-size: 11pt; border-top-style: dashed; background-color: #EEF2F2; width: 500px;">
         <br />
         根目录下的en.xls中Elevel表示英语级别说明：<br />
             <br />
             0 表示小学英语<br />
             1 表示初中英语<br />
             2 表示高中英语<br />
+            3 表示编程英语<br />
             <br />
             <span class="style1">可以自己根据需要修改或添加en.xls中的Elevel值</span><br class="style1" />
             <span class="style1">并在myfinger.aspx中下拉列表框中做相应的级别值</span><br />

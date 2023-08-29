@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="Teacher_index" %>
+ï»¿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_index, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div  class="placehold">
@@ -10,20 +10,20 @@
         <br />
         <div  class="indexdiv">
             <div  class="phead">
-                ½ÌÊ¦µÇÂ¼</div>
+                æ•™å¸ˆç™»å½•</div>
             <br />
             <br />
             <br />
-                    ÕËºÅ£º<asp:TextBox ID="Textname" runat="server"  Width="120px"  SkinID="TextBoxNormal"></asp:TextBox>
+                    è´¦å·ï¼š<asp:TextBox ID="Textname" runat="server"  Width="120px"  SkinID="TextBoxNormal"></asp:TextBox>
                     <br />
                     <br />
-                    ÃÜÂë£º<asp:TextBox ID="Textpwd" runat="server"  TextMode="Password" Width="120px" SkinID="TextBoxNormal"></asp:TextBox>
+                    å¯†ç ï¼š<asp:TextBox ID="Textpwd" runat="server"  TextMode="Password" Width="120px" SkinID="TextBoxNormal"></asp:TextBox>
                     <br />
                     <br />
                     <asp:Label ID="Labelmsg" runat="server" SkinID="LabelMsgRed" Width="178px"></asp:Label>
                     <br />
                     <br />
-                    <asp:Button ID="Btnlogin" runat="server"  Text="µÇÂ¼"  SkinID="BtnNormal" onclick="Btnlogin_Click" />
+                    <asp:Button ID="Btnlogin" runat="server"  Text="ç™»å½•"  SkinID="BtnNormal" onclick="Btnlogin_Click" />
                     </div>
         <br />
 <script type="text/javascript">
@@ -39,9 +39,17 @@
         return result;
     }
     if (!CookieEnable()) {
-        alert("¶Ô²»Æğ£¬ÄúµÄä¯ÀÀÆ÷µÄCookie¹¦ÄÜ±»½ûÓÃ£¬Çë¿ªÆô\n\n ¿ªÆô·½·¨£ºIE---¹¤¾ß---InternetÑ¡Ïî---ÒşË½---ÖĞ");
+        alert("å¯¹ä¸èµ·ï¼Œæ‚¨çš„æµè§ˆå™¨çš„CookieåŠŸèƒ½è¢«ç¦ç”¨ï¼Œè¯·å¼€å¯\n\n å¼€å¯æ–¹æ³•ï¼šIE---å·¥å…·---Interneté€‰é¡¹---éšç§---ä¸­");
     }
 </script>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         </center>
 </div>

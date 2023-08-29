@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Stud.master" StylesheetTheme="Student" AutoEventWireup="true" CodeFile="allfinger.aspx.cs" Inherits="Student_allfinger" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/student/Stud.master" stylesheettheme="Student" autoeventwireup="true" inherits="Student_allfinger, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cphs" Runat="Server">
 <div id="student">
@@ -57,7 +57,7 @@
                 </asp:GridView>
                         <br />
                         <asp:HyperLink ID="HLtyperank" runat="server" Font-Bold="True" 
-                            Font-Size="Larger" ForeColor="Black" NavigateUrl="~/Student/typerank.aspx" 
+                            Font-Size="Larger" ForeColor="Black" NavigateUrl="~/student/typerank.aspx" 
                             Target="_blank">打字擂台榜</asp:HyperLink>
                         <br />
                         <br />

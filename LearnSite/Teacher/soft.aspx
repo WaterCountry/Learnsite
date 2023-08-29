@@ -1,20 +1,20 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="soft.aspx.cs" Inherits="Teacher_soft" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_soft, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div  class="placehold">        
             <div>
-            ◊ ‘¥∑÷¿‡£∫<asp:DropDownList ID="ddlcategory" runat="server" AutoPostBack="True" 
+            ËµÑÊ∫êÂàÜÁ±ªÔºö<asp:DropDownList ID="ddlcategory" runat="server" AutoPostBack="True" 
                     onselectedindexchanged="ddlcategory_SelectedIndexChanged">
         </asp:DropDownList>
                     <asp:Label ID="Label1" runat="server" Width="400px"></asp:Label>
                     <asp:HyperLink ID="Hlkadd" runat="server" CssClass="HyperlinkNormal" 
-                    NavigateUrl="~/Teacher/softadd.aspx" Target="_self">◊ ‘¥ÃÌº”</asp:HyperLink>
+                    NavigateUrl="~/teacher/softadd.aspx" Target="_self">ËµÑÊ∫êÊ∑ªÂä†</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:HyperLink ID="Hlkcategory" runat="server" CssClass="HyperlinkNormal" 
-                    NavigateUrl="~/Teacher/softcategory.aspx" Target="_self">∑÷¿‡…Ë÷√</asp:HyperLink>
+                    NavigateUrl="~/teacher/softcategory.aspx" Target="_self">ÂàÜÁ±ªËÆæÁΩÆ</asp:HyperLink>
                     &nbsp;&nbsp;&nbsp;
                 <asp:HyperLink ID="Hlkcgscore" runat="server" CssClass="HyperlinkNormal" 
-                    NavigateUrl="~/Teacher/softnomic.aspx" Target="_blank">◊‘—ß∆¿º€</asp:HyperLink>
+                    NavigateUrl="~/teacher/softnomic.aspx" Target="_blank">Ëá™Â≠¶ËØÑ‰ª∑</asp:HyperLink>
                     </div>
             <div class="softdiv">
                 <asp:GridView ID="GVSource" runat="server" AllowPaging="True" 
@@ -24,48 +24,48 @@
                     onrowdatabound="GVSource_RowDataBound" EnableModelValidation="True" 
                     onrowcommand="GVSource_RowCommand">
                     <Columns>
-                        <asp:BoundField HeaderText="–Ú∫≈" />
-                        <asp:BoundField DataField="Fclass" HeaderText=" Ù–‘" />
+                        <asp:BoundField HeaderText="Â∫èÂè∑" />
+                        <asp:BoundField DataField="Fclass" HeaderText="Â±ûÊÄß" />
                         <asp:HyperLinkField DataNavigateUrlFields="Fid" 
-                            DataNavigateUrlFormatString="~/Teacher/softview.aspx?Fid={0}" 
-                            DataTextField="Ftitle" HeaderText="±ÍÃ‚" />
-                        <asp:BoundField DataField="Ffiletype" HeaderText="∏Ò Ω" />
-                        <asp:BoundField DataField="Fhit" HeaderText="¥Œ ˝" />
-                        <asp:BoundField DataField="Fopen" HeaderText="—ß∑÷" />
-                        <asp:HyperLinkField DataNavigateUrlFields="Furl" HeaderText="œ¬‘ÿ" Text="µ„ª˜" 
+                            DataNavigateUrlFormatString="~/teacher/softview.aspx?fid={0}" 
+                            DataTextField="Ftitle" HeaderText="Ê†áÈ¢ò" />
+                        <asp:BoundField DataField="Ffiletype" HeaderText="Ê†ºÂºè" />
+                        <asp:BoundField DataField="Fhit" HeaderText="Ê¨°Êï∞" />
+                        <asp:BoundField DataField="Fopen" HeaderText="Â≠¶ÂàÜ" />
+                        <asp:HyperLinkField DataNavigateUrlFields="Furl" HeaderText="‰∏ãËΩΩ" Text="ÁÇπÂáª" 
                             Target="_blank" />
-                        <asp:CheckBoxField DataField="Fhide" HeaderText="“˛≤ÿ" ReadOnly="True" />
+                        <asp:CheckBoxField DataField="Fhide" HeaderText="ÈöêËóè" ReadOnly="True" />
                         <asp:TemplateField ShowHeader="False">
                     <ItemTemplate>
                         <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" 
                             CommandArgument='<%# Eval("Fid") %>' CommandName="Change" 
-                            ImageUrl="~/Images/refresh.gif" Text="∏¸–¬" ToolTip="∑¢≤º£∫ŒﬁªÚ“˛≤ÿ£∫°Ã" />
+                            ImageUrl="~/images/refresh.gif" Text="Êõ¥Êñ∞" ToolTip="ÂèëÂ∏ÉÔºöÊó†ÊàñÈöêËóèÔºö‚àö" />
                     </ItemTemplate>
                 </asp:TemplateField>
-                        <asp:BoundField DataField="Fdate" HeaderText="»’∆⁄" />
+                        <asp:BoundField DataField="Fdate" HeaderText="Êó•Êúü" />
                         <asp:HyperLinkField DataNavigateUrlFields="Fid,Furl" 
-                            DataNavigateUrlFormatString="~/Teacher/SoftDel.aspx?Fid={0}&amp;&amp;Furl={1}" 
-                            Text="…æ≥˝" />
+                            DataNavigateUrlFormatString="~/teacher/softdel.aspx?fid={0}&amp;&amp;furl={1}" 
+                            Text="Âà†Èô§" />
                     </Columns>
                     <pagertemplate>
                         <div  class="pagediv">
-                            µ⁄<asp:Label ID="lblPageIndex" runat="server" 
+                            Á¨¨<asp:Label ID="lblPageIndex" runat="server" 
                                 text="<%# ((GridView)Container.Parent.Parent).PageIndex + 1  %>" />
-                            “≥  π≤<asp:Label ID="lblPageCount" runat="server" 
+                            È°µ  ÂÖ±<asp:Label ID="lblPageCount" runat="server" 
                                 text="<%# ((GridView)Container.Parent.Parent).PageCount  %>" />
-                            “≥ 
+                            È°µ 
                             <asp:LinkButton ID="btnFirst" runat="server" causesvalidation="False" 
                                 commandargument="First" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text=" ◊“≥" />
+                                ForeColor="Black" text="È¶ñÈ°µ" />
                             <asp:LinkButton ID="btnPrev" runat="server" causesvalidation="False" 
                                 commandargument="Prev" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text="…œ“ª“≥" />
+                                ForeColor="Black" text="‰∏ä‰∏ÄÈ°µ" />
                             <asp:LinkButton ID="btnNext" runat="server" causesvalidation="False" 
                                 commandargument="Next" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text="œ¬“ª“≥" />
+                                ForeColor="Black" text="‰∏ã‰∏ÄÈ°µ" />
                             <asp:LinkButton ID="btnLast" runat="server" causesvalidation="False" 
                                 commandargument="Last" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text="Œ≤“≥" />
+                                ForeColor="Black" text="Â∞æÈ°µ" />
                         </div>
                     </pagertemplate>
                 </asp:GridView>

@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Stud.master"  StylesheetTheme="Student" AutoEventWireup="true" CodeFile="myquiz.aspx.cs" Inherits="Student_myquiz" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/student/Stud.master" stylesheettheme="Student" autoeventwireup="true" inherits="Student_myquiz, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cphs" Runat="Server">
     <div id="student">
@@ -8,32 +8,32 @@
         <asp:GridView ID="GridViewgrade" runat="server" AllowPaging="True" Width="100%"  
         SkinID="GridViewInfo" AutoGenerateColumns="False" PageSize="20" 
         onpageindexchanging="GridViewgrade_PageIndexChanging" 
-        onrowdatabound="GridViewgrade_RowDataBound" Caption="ƒÍº∂≥…º®∞Ò">
+        onrowdatabound="GridViewgrade_RowDataBound" Caption="Âπ¥Á∫ßÊàêÁª©Ê¶ú">
                     <Columns>
-                        <asp:BoundField HeaderText="±‡∫≈" />
-                        <asp:BoundField DataField="Sgradeclass" HeaderText="∞‡º∂" />
-                        <asp:BoundField DataField="Sname" HeaderText="–’√˚" />
-                        <asp:BoundField DataField="Squiz" HeaderText="—ß∑÷" />
+                        <asp:BoundField HeaderText="ÁºñÂè∑" />
+                        <asp:BoundField DataField="Sgradeclass" HeaderText="Áè≠Á∫ß" />
+                        <asp:BoundField DataField="Sname" HeaderText="ÂßìÂêç" />
+                        <asp:BoundField DataField="Squiz" HeaderText="Â≠¶ÂàÜ" />
                     </Columns>
                     <PagerTemplate>
                         <div class="pagediv">
-                            µ⁄<asp:Label ID="lblPageIndex" runat="server" ForeColor="Black" 
+                            Á¨¨<asp:Label ID="lblPageIndex" runat="server" ForeColor="Black" 
                                 Text="<%# ((GridView)Container.Parent.Parent).PageIndex + 1 %>"></asp:Label>
-                            “≥ π≤<asp:Label ID="lblPageCount" runat="server" ForeColor="Black" 
+                            È°µ ÂÖ±<asp:Label ID="lblPageCount" runat="server" ForeColor="Black" 
                                 Text="<%# ((GridView)Container.Parent.Parent).PageCount %>"></asp:Label>
-                            “≥ 
+                            È°µ 
                             <asp:LinkButton ID="btnFirst" runat="server" CausesValidation="False" 
                                 CommandArgument="First" CommandName="Page" Font-Underline="False" 
-                                ForeColor="Black" Text=" ◊“≥"></asp:LinkButton>
+                                ForeColor="Black" Text="È¶ñÈ°µ"></asp:LinkButton>
                             <asp:LinkButton ID="btnPrev" runat="server" CausesValidation="False" 
                                 CommandArgument="Prev" CommandName="Page" Font-Underline="False" 
-                                ForeColor="Black" Text="…œ“ª“≥"></asp:LinkButton>
+                                ForeColor="Black" Text="‰∏ä‰∏ÄÈ°µ"></asp:LinkButton>
                             <asp:LinkButton ID="btnNext" runat="server" CausesValidation="False" 
                                 CommandArgument="Next" CommandName="Page" Font-Underline="False" 
-                                ForeColor="Black" Text="œ¬“ª“≥"></asp:LinkButton>
+                                ForeColor="Black" Text="‰∏ã‰∏ÄÈ°µ"></asp:LinkButton>
                             <asp:LinkButton ID="btnLast" runat="server" CausesValidation="False" 
                                 CommandArgument="Last" CommandName="Page" Font-Underline="False" 
-                                ForeColor="Black" Text="Œ≤“≥"></asp:LinkButton>
+                                ForeColor="Black" Text="Â∞æÈ°µ"></asp:LinkButton>
                             &nbsp;&nbsp;
                         </div>
                     </PagerTemplate>
@@ -46,32 +46,32 @@
         <asp:GridView ID="GridViewclass" runat="server" AllowPaging="True" Width="100%"  
         SkinID="GridViewInfo" AutoGenerateColumns="False" PageSize="20" 
         onpageindexchanging="GridViewclass_PageIndexChanging" 
-        onrowdatabound="GridViewclass_RowDataBound" Caption="∞‡º∂≥…º®∞Ò">
+        onrowdatabound="GridViewclass_RowDataBound" Caption="Áè≠Á∫ßÊàêÁª©Ê¶ú">
                     <Columns>
-                        <asp:BoundField HeaderText="±‡∫≈" />
-                        <asp:BoundField DataField="Sgradeclass" HeaderText="∞‡º∂" />
-                        <asp:BoundField DataField="Sname" HeaderText="–’√˚" />
-                        <asp:BoundField DataField="Squiz" HeaderText="—ß∑÷" />
+                        <asp:BoundField HeaderText="ÁºñÂè∑" />
+                        <asp:BoundField DataField="Sgradeclass" HeaderText="Áè≠Á∫ß" />
+                        <asp:BoundField DataField="Sname" HeaderText="ÂßìÂêç" />
+                        <asp:BoundField DataField="Squiz" HeaderText="Â≠¶ÂàÜ" />
                     </Columns>
                     <PagerTemplate>
                         <div class="pagediv">
-                            µ⁄<asp:Label ID="lblPageIndex" runat="server" ForeColor="Black" 
+                            Á¨¨<asp:Label ID="lblPageIndex" runat="server" ForeColor="Black" 
                                 Text="<%# ((GridView)Container.Parent.Parent).PageIndex + 1 %>"></asp:Label>
-                            “≥ π≤<asp:Label ID="lblPageCount" runat="server" ForeColor="Black" 
+                            È°µ ÂÖ±<asp:Label ID="lblPageCount" runat="server" ForeColor="Black" 
                                 Text="<%# ((GridView)Container.Parent.Parent).PageCount %>"></asp:Label>
-                            “≥ 
+                            È°µ 
                             <asp:LinkButton ID="btnFirst" runat="server" CausesValidation="False" 
                                 CommandArgument="First" CommandName="Page" Font-Underline="False" 
-                                ForeColor="Black" Text=" ◊“≥"></asp:LinkButton>
+                                ForeColor="Black" Text="È¶ñÈ°µ"></asp:LinkButton>
                             <asp:LinkButton ID="btnPrev" runat="server" CausesValidation="False" 
                                 CommandArgument="Prev" CommandName="Page" Font-Underline="False" 
-                                ForeColor="Black" Text="…œ“ª“≥"></asp:LinkButton>
+                                ForeColor="Black" Text="‰∏ä‰∏ÄÈ°µ"></asp:LinkButton>
                             <asp:LinkButton ID="btnNext" runat="server" CausesValidation="False" 
                                 CommandArgument="Next" CommandName="Page" Font-Underline="False" 
-                                ForeColor="Black" Text="œ¬“ª“≥"></asp:LinkButton>
+                                ForeColor="Black" Text="‰∏ã‰∏ÄÈ°µ"></asp:LinkButton>
                             <asp:LinkButton ID="btnLast" runat="server" CausesValidation="False" 
                                 CommandArgument="Last" CommandName="Page" Font-Underline="False" 
-                                ForeColor="Black" Text="Œ≤“≥"></asp:LinkButton>
+                                ForeColor="Black" Text="Â∞æÈ°µ"></asp:LinkButton>
                             &nbsp;&nbsp;
                         </div>
                     </PagerTemplate>
@@ -85,30 +85,30 @@
 <div>
     
     <asp:GridView ID="GVmyScore" runat="server" AllowPaging="True"  
-        Caption="Œ“µƒ≤‚—Èº«¬º" CellPadding="2"         
+        Caption="ÊàëÁöÑÊµãÈ™åËÆ∞ÂΩï" CellPadding="2"         
         onpageindexchanging="GVmyScore_PageIndexChanging"
         OnRowDataBound="GVmyScore_RowDataBound" Width="90%" SkinID="GridViewInfo" 
         AutoGenerateColumns="False" EnableModelValidation="True">
         <Columns>
-            <asp:BoundField HeaderText="»’∆⁄" DataField="Rdate" />
-            <asp:HyperLinkField DataNavigateUrlFields="Rid" 
+            <asp:BoundField HeaderText="Êó•Êúü" DataField="Rdate" />
+            <asp:HyperLinkField DataNavigateUrlFields="rid" 
                 DataNavigateUrlFormatString="quizview.aspx?Rid={0}" Target="_blank" 
-                DataTextField="Rscore" HeaderText="≥…º®"  />
+                DataTextField="Rscore" HeaderText="ÊàêÁª©"  />
         </Columns>
         <PagerTemplate>
             <div style="color: black;  text-align:center">
             <asp:LinkButton ID="btnFirst" runat="server" CausesValidation="False" 
                     CommandArgument="First" CommandName="Page" Font-Underline="False" 
-                    ForeColor="Black" Text=" ◊“≥"></asp:LinkButton>
+                    ForeColor="Black" Text="È¶ñÈ°µ"></asp:LinkButton>
                 <asp:LinkButton ID="btnPrev" runat="server" CausesValidation="False" 
                     CommandArgument="Prev" CommandName="Page" Font-Underline="False" 
-                    ForeColor="Black" Text="…œ“≥"></asp:LinkButton>
+                    ForeColor="Black" Text="‰∏äÈ°µ"></asp:LinkButton>
                 <asp:LinkButton ID="btnNext" runat="server" CausesValidation="False" 
                     CommandArgument="Next" CommandName="Page" Font-Underline="False" 
-                    ForeColor="Black" Text="œ¬“≥"></asp:LinkButton>
+                    ForeColor="Black" Text="‰∏ãÈ°µ"></asp:LinkButton>
                 <asp:LinkButton ID="btnLast" runat="server" CausesValidation="False" 
                     CommandArgument="Last" CommandName="Page" Font-Underline="False" 
-                    ForeColor="Black" Text="Œ≤“≥"></asp:LinkButton>               
+                    ForeColor="Black" Text="Â∞æÈ°µ"></asp:LinkButton>               
             </div>
         </PagerTemplate>
         <PagerStyle Font-Size="9pt" />
@@ -119,7 +119,7 @@
     <div class="quizresult">
         <br /> 
         <div class="quizinfo">
-            <div  class="quizhead">Œ“µƒ≤‚—È∆Ωæ˘≥…º®</div>
+            <div  class="quizhead">ÊàëÁöÑÊµãÈ™åÂπ≥ÂùáÊàêÁª©</div>
                 <br />
                 <asp:Label ID="LabelSquiz" runat="server" ></asp:Label>
                 <br />
@@ -127,8 +127,7 @@
                 </div>      
         <br />
                 <asp:Button ID="Btnquiz" runat="server" OnClick="Btnquiz_Click"
-                    Text="ø™ º≤‚—È" Width="80px" CausesValidation="False" 
-            CssClass="buttonimg" Font-Bold="False" BorderStyle="None"/>
+                    Text="ÂºÄÂßãÊµãÈ™å" Width="80px"  CssClass="buttonimg" Font-Bold="False" BorderStyle="None" />
                 <br />
         <br />
         <asp:Label ID="Labelmsg" runat="server" Font-Size="9pt"></asp:Label>
@@ -139,8 +138,8 @@
         <br />
         <br />
         <asp:HyperLink ID="HyperLink1" runat="server" 
-            NavigateUrl="~/Student/quizrank.aspx" Target="_blank" SkinID="HyperLink" 
-            Width="120px" CssClass="txtszcenter" Height="18px">ΩÒÃÏ≤‚—È≈≈––∞Ò</asp:HyperLink>
+            NavigateUrl="~/student/quizrank.aspx" Target="_blank" SkinID="HyperLink" 
+            Width="120px" CssClass="txtszcenter" Height="18px">‰ªäÂ§©ÊµãÈ™åÊéíË°åÊ¶ú</asp:HyperLink>
         <br />
         <br />
         <br />

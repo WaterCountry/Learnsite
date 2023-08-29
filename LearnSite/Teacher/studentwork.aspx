@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="studentwork.aspx.cs" Inherits="Teacher_studentwork" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Teacher_studentwork, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,15 +8,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="text-align: center; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt;">    
+    <div style="text-align: center; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt;">    
         <br />
         学号：<asp:Label ID="LabelSnum" runat="server"></asp:Label>
 &nbsp;姓名：<asp:Label ID="LabelSname" runat="server"></asp:Label>
 &nbsp;作品总分：<asp:Label ID="LabelWscore" runat="server"></asp:Label>
 &nbsp;
-        本学期作品列表&nbsp; 
-        <asp:HyperLink ID="HlkCircle" runat="server" ForeColor="Blue" 
-             Target="_blank">展播预览</asp:HyperLink>
+        本学期作品列表
         <br />
         <br />
         <div style="margin: auto; width: 98%;">

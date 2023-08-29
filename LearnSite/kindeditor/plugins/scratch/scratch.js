@@ -51,6 +51,8 @@ KindEditor.plugin('scratch', function (K) {
                         var url = K.trim(urlBox.val()),
 							width = widthBox.val(),
 							height = heightBox.val();
+                        var pos = url.lastIndexOf("/");
+                        var filename = url.substr(pos + 1);
                         if (url == 'http://' || K.invalidUrl(url)) {
                             alert(self.lang('invalidUrl'));
                             urlBox[0].focus();
@@ -68,28 +70,30 @@ KindEditor.plugin('scratch', function (K) {
                         }
                         var tody = new Date();
                         var haomiao = tody.getMilliseconds();
-                        var scratchplayer = "PlayerOnly" + haomiao;
-                        var srcjs = "../Plugins/scratch/swfobject.js";
+                        var scratchplayer = "scratchplayer";
                         var html = [
-						'<br/><div style="text-align: center">\r\n',
-                        '<div id="' + scratchplayer + '" style="margin: auto;background:#666666;width:482px;height:400px">Scratch<br/>\r\n',
-                        '<script type="text/javascript" src="' + srcjs + '"></script>\r\n',
-                        '<script type="text/javascript">\r\n',
-                        'var fwidth = 482;\r\n',
-                        ' var fheight = 400;\r\n ',
-                         'installPlayer("../Plugins/scratch/Scratch.swf", "' + scratchplayer + '");\r\n',
-                        'function installPlayer(swfName, swfID) {\r\n',
-                         'var flashvars = {\r\n',
-                         'project: "' + url + '?version=3"};\r\n',
-                         ' var params = {\r\n',
-                        'allowScriptAccess:"always",\r\n',
-                        'allowFullScreen: true\r\n',
-                        '};\r\n',
-                        'var attributes = {};\r\n',
-                         'swfobject.embedSWF(swfName, swfID, fwidth, fheight, "10.0", false, flashvars, params, attributes);\r\n',
-                        '}\r\n',
-                        '</script>\r\n',
-                        '</div></div><br/><br/>\r\n'
+							'<br/><div style="text-align: center">\r\n',
+							'<div id="' + scratchplayer + '" style="margin: auto;border:1px solid #eee;width:495px;height:400px;">\r\n',
+                            ' <script>\r\n',
+                            '  window.scratchConfig = {\r\n',
+                            '      handleVmInitialized: (vm) => {\r\n',
+                            '        window.vm = vm       \r\n',
+                            '      },\r\n',
+                            '     handleProjectLoaded:() => {\r\n',
+                            '     },\r\n',
+                            '     handleDefaultProjectLoaded:() => {\r\n',
+                            '		window.scratch.setProjectName("default")\r\n',
+                            '         window.scratch.loadProject("' + url + '", () => { \r\n',
+                            '         })\r\n',
+                            '      },\r\n',
+                            '   }\r\n',
+                            ' </script>\r\n',
+                            ' <div id="scratch" >\r\n',
+							filename,
+                            ' </div>\r\n',
+                            '<script type="text/javascript" src="../scratch/lib.min.js"></script>\r\n',
+                            '<script type="text/javascript" src="../scratch/chunks/player.js"></script>\r\n',
+                            '</div></div><br/><br/>\r\n'
 						].join('');
                         //alert(html);
                         self.insertHtml(html).hideDialog().focus();

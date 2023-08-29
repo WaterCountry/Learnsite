@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="programing.aspx.cs" Inherits="Student_programing" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Student_programing, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <script src="../Js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>
     <script src="../Statics/swfobject.js" type="text/javascript"></script>
     <script type="text/javascript">
         window.onbeforeunload = function () { return "您确定要关闭页面吗？记得先保存作品!"; }
@@ -63,12 +63,12 @@
     </style>
 </head>
 <body>
-    <div style="text-align: right; position: absolute; right: 50px; top: 3px; font-size: 9pt;
+    <div style="text-align: right; position: absolute; right: 50px; top: 3px; font-size: 11pt;
         z-index: 2;">
         <div id="barbtn">
         <span id="uploading" style="color:#fff; font-weight:bold;"></span>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <img id="bill" src="../Images/program.png" alt="学习单" />
+            <img id="bill" src="../images/bill.png" alt="学习单" />
             &nbsp;&nbsp;&nbsp;&nbsp;
             <button id="savebtn">
                 立即保存</button>
@@ -78,8 +78,9 @@
         </div>
     </div>
     <div id="scratch">
-        <p>
-            <a href="http://www.adobe.com/go/getflashplayer">Get Adobe Flash player</a></p>
+    <object classid="clsid27CDB6E-AE6D-11cf-96B8-444553540000">
+     <embed width="360" height="360" type="application/x-shockwave-flash"></embed>
+    </object>
     </div>
     <div id="mcontext" style="display: none; background: #fff; overflow-y: auto; overflow-x: hidden;
         position: absolute; width: 500px; max-height: 710px; min-height: 220px; z-index: 999;

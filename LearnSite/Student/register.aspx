@@ -1,22 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  StylesheetTheme="Student" CodeFile="register.aspx.cs" Inherits="Student_register" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<%@ page language="C#" autoeventwireup="true" stylesheettheme="Student" inherits="Student_register, LearnSite" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
     <title>新学员注册</title>   
-    <link href="../App_Themes/Student/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/student/StyleSheet.css" rel="stylesheet" type="text/css" />
     </head>
-<body>
+<body class="ground">
     <form id="form1" runat="server">
     <center>
       <div  class="studmasterhead">
-            <div  class="banner" >
-                <script src="../Js/road.js" type="text/javascript"></script>
-      	<script type="text/javascript" >
-      	    var first = "../";
-      	    ShowRoad(first);
-            </script> 
+            <div  class="banner" > 
                 </div>
                 <center>
             <div  class="menu">            
@@ -24,13 +17,13 @@
             </center>
             <center>
             <div class="placeauto" >
-            <div class="stu">
+            <div > 
             <div  class="path">&nbsp;
             <div>
-            <br /><br />
-                <div style="border: 1px solid #C5D6FE; line-height: 20px; font-size: 9pt; font-family: 宋体, Arial, Helvetica, sans-serif; background-color: #E1EAFF; width: 300px;">
-                   <div style="background-color: #C5D6FE">
-                    <strong>新学员注册</strong><br />
+            <br /><br /><br /><br /><br />
+                <div class="indexdiv">
+                   <div class="indexhead" >
+                    新学员注册
                     </div>
                     <br />
             年级选择：<asp:DropDownList 
@@ -53,24 +46,24 @@
                     <br />
                     <asp:Label ID="labelmsg" runat="server" SkinID="LabelMsgRed"></asp:Label>
                     <br />
+                    <br />
+                    <br />
+                    <br />
                     <asp:Button ID="BtnRegister" runat="server" onclick="BtnRegister_Click" Text="确定" 
-                    BorderStyle="None" BackColor="#B1C9FE" Font-Size="9pt" Height="20px" 
-                        Width="80px" />
+                    CssClass="buttonimg" Height="24px"  Width="80px" />
                     &nbsp;
                     <asp:Button ID="BtnReturn" runat="server" onclick="BtnReturn_Click" Text="返回" 
-                    BorderStyle="None" BackColor="#B1C9FE" Font-Size="9pt" Height="20px" 
-                        Width="80px" />
+                    CssClass="buttonimg" Height="24px"  Width="80px" />
                     <br />
                     <br />
                 </div>
             </div>
             <div>
                 <br />
-                <br />
             <br />
             <br />
-            <div style="font-size: 9pt; color: #137DCC;">
-                <img src="../Images/topicnormal.png" />友情提示：请选择老师指定的年级和班级进行注册，以免错班而无法处理！</div>
+            <div style="font-size: 11pt; color: #137DCC;">
+                <img src="../images/topicnormal.png" />友情提示：请选择老师指定的年级和班级进行注册，以免错班而无法处理！</div>
             </div>
             </div>
         </div>             

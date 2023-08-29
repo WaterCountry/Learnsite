@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Stud.master" StylesheetTheme="Student"
-    AutoEventWireup="true" CodeFile="downfile.aspx.cs" Inherits="Student_downfile" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/student/Stud.master" stylesheettheme="Student" autoeventwireup="true" inherits="Student_downfile, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cphs" runat="Server">
     <div id="student">
@@ -33,7 +32,7 @@
             <br />
             <asp:Label ID="Labelmsg" runat="server"></asp:Label>
             <br />
-            <asp:Image ID="ImageDown" runat="server" ImageUrl="~/Images/down1.gif" />
+            <asp:Image ID="ImageDown" runat="server" ImageUrl="~/images/down1.gif" />
             <asp:LinkButton ID="LBtnfile" runat="server" OnClick="LBtnfile_Click" Visible="False"
                 Font-Underline="False" BorderColor="#7DBF80" BorderStyle="Dashed" BorderWidth="1px"
                 CssClass="txtszcenter" Height="18px" BackColor="#E2F3E3" Width="80px">点击下载</asp:LinkButton>
@@ -51,7 +50,7 @@
                     <Columns>
                         <asp:TemplateField HeaderText="标题">
                             <ItemTemplate>
-                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("Fid", "downfile.aspx?Fid={0}") %>'
+                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("fid", "downfile.aspx?Fid={0}") %>'
                                     Text='<%# strcut( Eval("Ftitle").ToString()) %>' ToolTip='<%# Eval("Ftitle")%>'>
                                 </asp:HyperLink>
                             </ItemTemplate>
@@ -86,7 +85,7 @@
                     <link href="../kindeditor/themes/me/me.css" rel="stylesheet" type="text/css" />
                     <script type="text/javascript" charset="utf-8" src="../kindeditor/kindeditor-min.js"></script>
                     <script type="text/javascript" charset="utf-8" src="../kindeditor/lang/zh_CN.js"></script>
-                    <div id="swfu_container" style="margin: 0px 10px;">
+                    <div id="swfu_container" style="margin: 0px 30px;">
                         <div style="text-align: center; margin: auto">
                             <script type="text/javascript">
                                 KindEditor.ready(function (K) {
@@ -110,10 +109,8 @@
                                         uploadbutton.submit();
                                     });
                                 });
-                            </script>
-                            <div style="text-align: center">
-                                <input type="button" id="uploadButton" value="作品保存" style="text-align: center" />
-                            </div>
+                            </script>                            
+                                <input type="button" id="uploadButton" value="作品保存" />                   
                         </div>
                     </div>
                 </asp:Panel>
@@ -121,17 +118,17 @@
                 <br />                
                 <br />
                 <br />
-                <asp:HyperLink ID="Hltonomic" runat="server" ImageUrl="~/Images/nomic.gif" NavigateUrl="~/Student/autonomic.aspx"
+                <asp:HyperLink ID="Hltonomic" runat="server" ImageUrl="~/images/nomic.gif" NavigateUrl="~/student/autonomic.aspx"
                     Target="_blank" BorderStyle="None">作品园</asp:HyperLink>
                 <br />
                 <br />
             </div>
             <div>
-                <link href="../Js/tinybox.css" rel="stylesheet" type="text/css" />
-                <script src="../Js/tinybox.js" type="text/javascript"></script>
+                <link href="../js/tinybox.css" rel="stylesheet" type="text/css" />
+                <script src="../js/tinybox.js" type="text/javascript"></script>
                 <script type="text/javascript">
                     function showShare() {
-                        var urlat = "../Student/groupshare.aspx";
+                        var urlat = "../student/groupshare.aspx";
                         TINY.box.show({ iframe: urlat, boxid: 'frameless', width: 600, height: 400, fixed: false, maskopacity: 60, close: true })
                     }   
                 </script>

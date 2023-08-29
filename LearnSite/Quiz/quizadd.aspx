@@ -1,29 +1,29 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" Validaterequest="false"  AutoEventWireup="true" CodeFile="quizadd.aspx.cs" Inherits="Quiz_quizadd" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" validaterequest="false" autoeventwireup="true" inherits="Quiz_quizadd, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div   class="placehold">
     <div  class="quizleft">
         &nbsp;
-        —°‘ÒÃ‚–Õ£∫<asp:DropDownList ID="DDLqtype" runat="server" AutoPostBack="True" 
+        ÈÄâÊã©È¢òÂûãÔºö<asp:DropDownList ID="DDLqtype" runat="server" AutoPostBack="True" 
             Font-Size="9pt" onselectedindexchanged="DDLqtype_SelectedIndexChanged">
-            <asp:ListItem Selected="True" Value="0">µ•—°Ã‚</asp:ListItem>
-            <asp:ListItem Value="1">∂‡—°Ã‚</asp:ListItem>
-            <asp:ListItem Value="2">≈–∂œÃ‚</asp:ListItem>
+            <asp:ListItem Selected="True" Value="0">ÂçïÈÄâÈ¢ò</asp:ListItem>
+            <asp:ListItem Value="1">Â§öÈÄâÈ¢ò</asp:ListItem>
+            <asp:ListItem Value="2">Âà§Êñ≠È¢ò</asp:ListItem>
         </asp:DropDownList>
         &nbsp;&nbsp;
-        —ß∞∏¿‡–Õ£∫<asp:DropDownList ID="DDLclass" runat="server" Width="100px" 
+        Â≠¶Ê°àÁ±ªÂûãÔºö<asp:DropDownList ID="DDLclass" runat="server" Width="100px" 
             Font-Size="9pt">
             </asp:DropDownList>
             &nbsp;
         
-        ∑÷÷µ£∫<asp:DropDownList ID="DDLqscore" runat="server" 
+        ÂàÜÂÄºÔºö<asp:DropDownList ID="DDLqscore" runat="server" 
                 Font-Size="9pt">
-            <asp:ListItem Value="1">1∑÷</asp:ListItem>
-            <asp:ListItem Selected="True" Value="2">2∑÷</asp:ListItem>
-            <asp:ListItem Value="3">3∑÷</asp:ListItem>
-            <asp:ListItem Value="4">4∑÷</asp:ListItem>
-            <asp:ListItem Value="5">5∑÷</asp:ListItem>
-            <asp:ListItem Value="6">6∑÷</asp:ListItem>
+            <asp:ListItem Value="1">1ÂàÜ</asp:ListItem>
+            <asp:ListItem Selected="True" Value="2">2ÂàÜ</asp:ListItem>
+            <asp:ListItem Value="3">3ÂàÜ</asp:ListItem>
+            <asp:ListItem Value="4">4ÂàÜ</asp:ListItem>
+            <asp:ListItem Value="5">5ÂàÜ</asp:ListItem>
+            <asp:ListItem Value="6">6ÂàÜ</asp:ListItem>
             </asp:DropDownList>
     </div>
     <div   class="quizdiv" >
@@ -45,13 +45,13 @@
 		        });
 		    });
 		</script>
-    <textarea  name="textareaItem" style="width: 700px; height:200px;" ></textarea>
+    <textarea  name="textareaItem" style="width: 720px; height:200px;" ></textarea>
 <br />              
     </div>
     <div class="quizleft">
     <div class="quizleft2">
         <br />
-               ¥∞∏£∫</div>
+               Á≠îÊ°àÔºö</div>
     <div class="quizright2">
     <asp:RadioButtonList ID="RBLselect" runat="server" 
             RepeatDirection="Horizontal" Visible="True" Height="35px">
@@ -69,15 +69,15 @@
         </asp:CheckBoxList>
         <asp:RadioButtonList ID="RBLjudge" runat="server" RepeatDirection="Horizontal" 
             Visible="False" Height="35px">
-            <asp:ListItem Selected="True">∂‘</asp:ListItem>
-            <asp:ListItem>¥Ì</asp:ListItem>
+            <asp:ListItem Selected="True">ÂØπ</asp:ListItem>
+            <asp:ListItem>Èîô</asp:ListItem>
         </asp:RadioButtonList>
         </div>
     </div> <br />
         <div class="quizleft">
             <div class="quizleft2">
                 <br />
-                ∑÷Œˆ£∫</div>
+                ÂàÜÊûêÔºö</div>
             <div class="quizright2">
                      <asp:TextBox ID="TextBoxqanalyze" runat="server" Width="500px"  
                          SkinID="TextBoxNormal" Height="20px" ></asp:TextBox>
@@ -85,10 +85,10 @@
     </div>
      <div  class="quizdiv">
               &nbsp;<br /><br />
-              <asp:Button ID="Btnadd" runat="server"  Text="ÃÌº”" OnClick="Btnadd_Click"  
+              <asp:Button ID="Btnadd" runat="server"  Text="Ê∑ªÂä†" OnClick="Btnadd_Click"  
                   SkinID="BtnNormal" />
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <asp:Button ID="Btnreturn" runat="server"  Text="∑µªÿ" OnClick="Btnreturn_Click"  
+              <asp:Button ID="Btnreturn" runat="server"  Text="ËøîÂõû" OnClick="Btnreturn_Click"  
                   SkinID="BtnNormal" />
                <br />
               <br />

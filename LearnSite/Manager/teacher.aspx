@@ -1,52 +1,52 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Manager/Manage.master" AutoEventWireup="true" CodeFile="teacher.aspx.cs" Inherits="Manager_teacher" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/manager/Manage.master" autoeventwireup="true" inherits="Manager_teacher, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div class="manageplace" >
-        ΩÃ ¶π‹¿Ì<br />
+        ÊïôÂ∏àÁÆ°ÁêÜ<br />
         <div  class="teachermg">
                     <asp:Button ID="Btnadd" runat="server" BackColor="#E6E6E6" 
                         BorderColor="#D4D4D4" BorderWidth="1px" Font-Names="Arial" 
-                Font-Size="9pt" Text="ΩÃ ¶ÃÌº”" Width="70px" Height="20px" onclick="Btnadd_Click" />
+                Font-Size="11pt" Text="ÊïôÂ∏àÊ∑ªÂä†" Width="80px" Height="24px" onclick="Btnadd_Click" />
                     </div>
                  <div class="teacherdiv">
                 <asp:GridView ID="GVTeacher" runat="server" 
                     AutoGenerateColumns="False" BorderColor="#E7E7E7" BorderStyle="Solid" 
-                    BorderWidth="1px" CellPadding="3" Font-Size="9pt" GridLines="None" Width="100%" 
+                    BorderWidth="1px" CellPadding="3" Font-Size="11pt" GridLines="None" Width="100%" 
                     onpageindexchanging="GVTeacher_PageIndexChanging" 
                     onrowdatabound="GVTeacher_RowDataBound" EnableModelValidation="True" 
                             onrowcommand="GVTeacher_RowCommand">
                     <Columns>
-                        <asp:BoundField HeaderText="–Ú∫≈" />
-                        <asp:BoundField DataField="Hname" HeaderText="’À∫≈" />
-                        <asp:BoundField DataField="Hnick" HeaderText="Í«≥∆" />
-                        <asp:BoundField DataField="Hpwd" HeaderText="√‹¬Î" />
-                        <asp:TemplateField HeaderText="»®œﬁ">
+                        <asp:BoundField HeaderText="Â∫èÂè∑" />
+                        <asp:BoundField DataField="Hname" HeaderText="Ë¥¶Âè∑" />
+                        <asp:BoundField DataField="Hnick" HeaderText="ÊòµÁß∞" />
+                        <asp:BoundField DataField="Hpwd" HeaderText="ÂØÜÁ†Å" />
+                        <asp:TemplateField HeaderText="ÊùÉÈôê">
                             <ItemTemplate>
                                 <asp:Label ID="LabelHpermiss" runat="server" Text='<%# Bind("Hpermiss") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="Hnote" HeaderText="±∏◊¢" />
-                        <asp:BoundField DataField="Hcount" HeaderText="—ß∞∏ ˝" />
-                        <asp:TemplateField HeaderText="∞‡º∂">
+                        <asp:BoundField DataField="Hnote" HeaderText="Â§áÊ≥®" />
+                        <asp:BoundField DataField="Hcount" HeaderText="Â≠¶Ê°àÊï∞" />
+                        <asp:TemplateField HeaderText="Áè≠Á∫ß">
                             <ItemTemplate>
                                 <asp:HyperLink ID="HyperLinkRoom" runat="server" 
-                                    NavigateUrl='<%# Eval("Hid", "roomselect.aspx?Hid={0}") %>' Text="—°‘Ò"></asp:HyperLink>
+                                    NavigateUrl='<%# Eval("hid", "roomselect.aspx?hid={0}") %>' Text="ÈÄâÊã©"></asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:HyperLinkField DataNavigateUrlFields="Hid" 
-                            DataNavigateUrlFormatString="teacheredit.aspx?Hid={0}" 
-                            Text="–ﬁ∏ƒ" HeaderText="≤Ÿ◊˜" />
+                        <asp:HyperLinkField DataNavigateUrlFields="hid" 
+                            DataNavigateUrlFormatString="teacheredit.aspx?hid={0}" 
+                            Text="‰øÆÊîπ" HeaderText="Êìç‰Ωú" />
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
                                 <asp:LinkButton ID="LinkButtonDel" runat="server" CausesValidation="false" 
-                                    CommandName="D" Text="…æ≥˝" CommandArgument='<%# Bind("Hid") %>' ToolTip="»Áπ˚…æ≥˝∫ÛœÎª÷∏¥£¨«Î ÷∂Ø‘⁄ ˝æ›ø‚Teacher±ÌΩ´∏√’À∫≈µƒ…æ≥˝±Í÷æ÷ÿ÷√Œ™false£°"></asp:LinkButton>
+                                    CommandName="D" Text="Âà†Èô§" CommandArgument='<%# Bind("hid") %>' ToolTip="Â¶ÇÊûúÂà†Èô§ÂêéÊÉ≥ÊÅ¢Â§çÔºåËØ∑ÊâãÂä®Âú®Êï∞ÊçÆÂ∫ìTeacherË°®Â∞ÜËØ•Ë¥¶Âè∑ÁöÑÂà†Èô§Ê†áÂøóÈáçÁΩÆ‰∏∫falseÔºÅ"></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
-                    <RowStyle BorderStyle="None" Font-Names="Arial" Font-Size="9pt" 
+                    <RowStyle BorderStyle="None" Font-Names="Arial" Font-Size="11pt" 
                         ForeColor="Black" Height="24px" />
                     <HeaderStyle BackColor="#939CA2" Font-Bold="False" Font-Names="Arial" 
-                        Font-Size="9pt" Height="24px" />
+                        Font-Size="11pt" Height="24px" />
                     <AlternatingRowStyle BackColor="#E7E7E7" />
                 </asp:GridView>
                 </div>

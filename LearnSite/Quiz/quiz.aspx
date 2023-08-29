@@ -1,25 +1,25 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="quiz.aspx.cs" Inherits="Quiz_quiz" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Quiz_quiz, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div   class="placehold">
     <div  class="quizleft">
         &nbsp;
         <asp:DropDownList ID="DDLqtype" runat="server" 
-            Font-Size="9pt" ToolTip="Ã‚–Õ">
-            <asp:ListItem Selected="True" Value="0">µ•—°Ã‚</asp:ListItem>
-            <asp:ListItem Value="1">∂‡—°Ã‚</asp:ListItem>
-            <asp:ListItem Value="2">≈–∂œÃ‚</asp:ListItem>
+            Font-Size="9pt" ToolTip="È¢òÂûã">
+            <asp:ListItem Selected="True" Value="0">ÂçïÈÄâÈ¢ò</asp:ListItem>
+            <asp:ListItem Value="1">Â§öÈÄâÈ¢ò</asp:ListItem>
+            <asp:ListItem Value="2">Âà§Êñ≠È¢ò</asp:ListItem>
         </asp:DropDownList>
         &nbsp;&nbsp;<asp:DropDownList ID="DDLclass" runat="server" Width="100px" 
-            Font-Size="9pt" ToolTip="—ß∞∏¿‡–Õ">
+            Font-Size="9pt" ToolTip="Â≠¶Ê°àÁ±ªÂûã">
             </asp:DropDownList>
             &nbsp;
-    <asp:Button ID="Btnlist" runat="server"  Text="‰Ø¿¿"  onclick="Btnlist_Click"  
+    <asp:Button ID="Btnlist" runat="server"  Text="ÊµèËßà"  onclick="Btnlist_Click"  
             SkinID="BtnNormal" />  
 
     &nbsp;<asp:Label ID="Label1" runat="server" Width="180px"></asp:Label>
-&nbsp;<asp:Button ID="Btnadd" runat="server"  Text="ÃÌº” ‘Ã‚"  onclick="Btnadd_Click"  SkinID="BtnNormal" />  &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Btngradeset" runat="server"  Text="≤‚—È…Ë÷√"  
+&nbsp;<asp:Button ID="Btnadd" runat="server"  Text="Ê∑ªÂä†ËØïÈ¢ò"  onclick="Btnadd_Click"  SkinID="BtnNormal" />  &nbsp;&nbsp;&nbsp;
+    <asp:Button ID="Btngradeset" runat="server"  Text="ÊµãÈ™åËÆæÁΩÆ"  
             onclick="Btngradeset_Click"  SkinID="BtnNormal" />  &nbsp;&nbsp;
     </div>
     <div >            
@@ -30,14 +30,14 @@
                             TabIndex="1" CellPadding="3" GridLines="Horizontal" 
                         EnableModelValidation="True" HorizontalAlign="Center">
                             <Columns>
-                                <asp:BoundField HeaderText="–Ú∫≈" HeaderStyle-Width="28px">
-<HeaderStyle Width="28px"></HeaderStyle>
+                                <asp:BoundField HeaderText="Â∫èÂè∑" HeaderStyle-Width="32px">
+<HeaderStyle Width="32px"></HeaderStyle>
                                 </asp:BoundField>
-                                <asp:HyperLinkField DataNavigateUrlFields="Qid"  DataNavigateUrlFormatString="~/Quiz/quizedit.aspx?Qid={0}" 
-                                    Text="±‡º≠" >
+                                <asp:HyperLinkField DataNavigateUrlFields="Qid"  DataNavigateUrlFormatString="~/quiz/quizedit.aspx?Qid={0}" 
+                                    Text="ÁºñËæë" >
                                 <ItemStyle Width="30px" />
                                 </asp:HyperLinkField>
-                                <asp:TemplateField HeaderText=" ‘Ã‚">
+                                <asp:TemplateField HeaderText="ËØïÈ¢ò">
                                     <ItemTemplate>
                                     <div style="overflow:hidden; width: 500px">
                                     <asp:Label ID="Labelquestion" runat="server" Text='<%# HttpUtility.HtmlDecode(DataBinder.Eval(Container.DataItem,"Question").ToString()) %>'></asp:Label>
@@ -45,52 +45,52 @@
                                     </ItemTemplate>
                                     <ItemStyle Font-Size="9pt" HorizontalAlign="Left" />
                                 </asp:TemplateField>
-                                <asp:BoundField DataField="Qclass" HeaderText="¿‡–Õ" />
-                                <asp:BoundField DataField="Qscore" HeaderText="∑÷÷µ" />
-                                <asp:BoundField DataField="Qanswer" HeaderText="¥∞∏" />
-                                <asp:TemplateField HeaderText="∑÷Œˆ">
+                                <asp:BoundField DataField="Qclass" HeaderText="Á±ªÂûã" />
+                                <asp:BoundField DataField="Qscore" HeaderText="ÂàÜÂÄº" />
+                                <asp:BoundField DataField="Qanswer" HeaderText="Á≠îÊ°à" />
+                                <asp:TemplateField HeaderText="ÂàÜÊûê">
                                     <ItemTemplate>
-                                        <asp:Label ID="Labelqanalyze" runat="server" Text='Ã· æ' ToolTip='<%# Bind("Qanalyze") %>'></asp:Label>
+                                        <asp:Label ID="Labelqanalyze" runat="server" Text='ÊèêÁ§∫' ToolTip='<%# Bind("Qanalyze") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField DataField="Qaccuracy" HeaderText="’˝»∑" />
-                                <asp:ButtonField Text="…æ≥˝" CommandName="Del" >
+                                <asp:BoundField DataField="Qaccuracy" HeaderText="Ê≠£Á°Æ" />
+                                <asp:ButtonField Text="Âà†Èô§" CommandName="Del" >
                                 <ItemStyle Width="40px" />
                                 </asp:ButtonField>
                             </Columns>
                             <pagertemplate>
                                 <div style="width:100%; height:13px; text-align:right">
-                                    µ⁄<asp:Label ID="lblPageIndex" runat="server" 
+                                    Á¨¨<asp:Label ID="lblPageIndex" runat="server" 
                                         text="<%# ((GridView)Container.Parent.Parent).PageIndex + 1  %>" />
-                                    “≥ π≤<asp:Label ID="lblPageCount" runat="server" 
+                                    È°µ ÂÖ±<asp:Label ID="lblPageCount" runat="server" 
                                         text="<%# ((GridView)Container.Parent.Parent).PageCount  %>" />
-                                    “≥ 
+                                    È°µ 
                                     <asp:LinkButton ID="btnFirst" runat="server" causesvalidation="False" 
                                         commandargument="First" commandname="Page" Font-Underline="False" 
-                                        ForeColor="Black" text=" ◊“≥" />
+                                        ForeColor="Black" text="È¶ñÈ°µ" />
                                     <asp:LinkButton ID="btnPrev" runat="server" causesvalidation="False" 
                                         commandargument="Prev" commandname="Page" Font-Underline="False" 
-                                        ForeColor="Black" text="…œ“ª“≥" />
+                                        ForeColor="Black" text="‰∏ä‰∏ÄÈ°µ" />
                                     <asp:LinkButton ID="btnNext" runat="server" causesvalidation="False" 
                                         commandargument="Next" commandname="Page" Font-Underline="False" 
-                                        ForeColor="Black" text="œ¬“ª“≥" />
+                                        ForeColor="Black" text="‰∏ã‰∏ÄÈ°µ" />
                                     <asp:LinkButton ID="btnLast" runat="server" causesvalidation="False" 
                                         commandargument="Last" commandname="Page" Font-Underline="False" 
-                                        ForeColor="Black" text="Œ≤“≥" />
+                                        ForeColor="Black" text="Â∞æÈ°µ" />
                                 </div>
                             </pagertemplate>
                         </asp:GridView>
                     <br />
                     <div >
                         &nbsp;
-                        <asp:HyperLink ID="HlkQuizxml" runat="server" Font-Size="9pt"> ‘Ã‚∞¸œ¬‘ÿ</asp:HyperLink>
-                        &nbsp;<asp:Button ID="Btnexport"  runat="server"  Text="…˙≥… ‘Ã‚∞¸" 
-                            SkinID="BtnNormal" TabIndex="2" onclick="Btnexport_Click" /> &nbsp;<asp:Label 
+                        <asp:HyperLink ID="HlkQuizxml" runat="server" Font-Size="9pt">ËØïÈ¢òÂåÖ‰∏ãËΩΩ</asp:HyperLink>
+                        &nbsp;<asp:Button ID="Btnexport"  runat="server"  Text="ÁîüÊàêËØïÈ¢òÂåÖ" 
+                            SkinID="BtnLong" TabIndex="2" onclick="Btnexport_Click" /> &nbsp;<asp:Label 
                             ID="Labelmsg" runat="server" Font-Size="9pt" Width="160px" ForeColor="Red"></asp:Label>
 &nbsp;<asp:FileUpload ID="FileUploadquiz" runat="server" Font-Size="9pt" />
 &nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="Btnimport"  runat="server"  Text="µº»Î ‘Ã‚∞¸"  onclick="Btnimport_Click" 
-                            SkinID="BtnNormal" TabIndex="2" />                    
+                    <asp:Button ID="Btnimport"  runat="server"  Text="ÂØºÂÖ•ËØïÈ¢òÂåÖ"  onclick="Btnimport_Click" 
+                            SkinID="BtnLong" TabIndex="2" />                    
                     &nbsp;&nbsp;                
                     </div>                  
                     <br />

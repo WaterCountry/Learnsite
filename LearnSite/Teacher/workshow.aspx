@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#"  StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="workshow.aspx.cs" Inherits="Teacher_workshow" %>
-<%@ Register assembly="Anthem" namespace="Anthem" tagprefix="anthem" %>
+﻿<%@ page language="C#" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_workshow, LearnSite" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,7 +12,7 @@
     <div style="background-color: #9DA9B0; width: 100%;">         
             <asp:Image ID="Imagelogo" runat="server" ImageUrl="~/images/learnsite.gif"  ToolTip = "信息技术学习平台 LearnSite &#13;Powered By Asp.net2.0+Sql2005Express &#13;温州水乡设计编写" Height="24px" />
     </div> 
-    <div style="width: 800px; height: auto; margin: auto">            
+    <div style="width: 980px; height: auto; margin: auto">            
             <div  class="placehold">
 <br />
       <div  class="divcenter">
@@ -38,7 +38,10 @@
              Height="11px"></asp:Label>
            评价等级&nbsp;
           作品总数：<asp:Label ID="Labelcounts" runat="server"></asp:Label>
-          &nbsp;<asp:Button ID="BtnA" runat="server"  Text="一键评A"  SkinID="BtnSmall" 
+          &nbsp;
+          <asp:ImageButton ID="BtnCheck" runat="server" onclick="BtnCheck_Click" 
+              ImageUrl="~/images/python.png" ToolTip="将本班自动得分Python作品全部设置为已评" />
+          &nbsp;&nbsp;<asp:Button ID="BtnA" runat="server"  Text="一键评A"  SkinID="BtnSmall" 
               onclick="BtnA_Click" ToolTip="将本班该活动未评的作品，全部评为A"  />
           &nbsp;
     <asp:Button ID="BtnB" runat="server"  Text="一键评B"  SkinID="BtnSmall" 
@@ -46,6 +49,9 @@
          &nbsp;
     <asp:Button ID="BtnCk" runat="server"  Text="一键已评"  SkinID="BtnSmall" 
               onclick="BtnCk_Click" ToolTip="不用给分的作品，一健全评为０"  />  
+         &nbsp;
+    <asp:Button ID="BtnWp" runat="server"  Text="一键未评"  SkinID="BtnSmall" 
+              onclick="BtnWp_Click" ToolTip="所有作品一键未评"  />  
           &nbsp;<asp:HyperLink ID="HLautoplay" runat="server"  Target="_blank" 
               ToolTip="个人作品自动展播" >[HLautoplay]</asp:HyperLink>                        
           &nbsp;<asp:HyperLink ID="HLgroupplay" runat="server"  Target="_blank" 
@@ -55,10 +61,10 @@
       <asp:Image ID="ImageType" runat="server" />
       &nbsp;<asp:Label ID="Labelmsg" runat="server"></asp:Label>
           &nbsp;<asp:ImageButton ID="ImgBtnFlasherror" runat="server" 
-              ImageUrl="~/Images/flasherror.png" onclick="ImgBtnFlasherror_Click" 
+              ImageUrl="~/images/flasherror.png" onclick="ImgBtnFlasherror_Click" 
               ToolTip="Office文档转换异常标志清除重新转换" />
           &nbsp;   
-        <anthem:RadioButtonList ID="RBsort" runat="server" AutoPostBack="True" 
+        <asp:RadioButtonList ID="RBsort" runat="server" AutoPostBack="True" 
             Font-Size="9pt" onselectedindexchanged="RBsort_SelectedIndexChanged" 
             RepeatDirection="Horizontal" RepeatLayout="Flow">
             <Items>
@@ -68,14 +74,14 @@
                 <asp:ListItem Value="3">小组排序</asp:ListItem>
                 <asp:ListItem Value="4">投票排序</asp:ListItem>
             </Items>
-        </anthem:RadioButtonList>
+        </asp:RadioButtonList>
 
           <br />
       </div>               
                 <br />  
                  <div  class="divcenter">
                  <center>
-                <anthem:DataList ID="DataListworks" runat="server" RepeatDirection="Horizontal" 
+                <asp:DataList ID="DataListworks" runat="server" RepeatDirection="Horizontal" 
                     RepeatColumns="8" DataKeyField="Wid" CellPadding="2" 
         onitemdatabound="DataListworks_ItemDataBound" 
         onitemcommand="DataListworks_ItemCommand" CellSpacing="2">
@@ -84,16 +90,14 @@
                             <div>
                             <asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Eval("Sname") %>' 
                                  ToolTip='<%# HttpUtility.HtmlDecode(  Eval("Wself").ToString()) %>' Target="_blank" CssClass="workname"></asp:HyperLink>
-                            <anthem:CheckBox ID="CB" runat="server" Checked='<%# Eval("Wcheck") %>' 
+                            <asp:CheckBox ID="CB" runat="server" Checked='<%# Eval("Wcheck") %>' 
                                 EnableTheming="True" ToolTip="评价状态：取消则评分为0并可重新提交，选中则初始评分为0并不可重新提交" 
                                     oncheckedchanged="CB_CheckedChanged"  AutoPostBack="True" BorderStyle="None" />
                             </div>
                             <div>
-                            <asp:Label ID="Wv" runat="server" Text='<%# Eval("Wvote") %>' ToolTip="票数" ></asp:Label>&nbsp;
                             <asp:Label ID="Wf" runat="server" Text='<%# Eval("Wfscore") %>' ToolTip="互评" ></asp:Label>&nbsp;
                             <asp:Label ID="Wl" runat="server" Text='<%# Eval("Wlscore") %>' ToolTip="组评" ForeColor="#0066FF"></asp:Label>&nbsp;
-                            <asp:Label ID="Wd" runat="server" Text='<%# Eval("Wdscore") %>' ToolTip="加分" ForeColor="#0066FF"></asp:Label>
-                            <asp:HyperLink ID="Hlflash" runat="server" Height="12px" Target="_blank" ImageUrl="~/Images/flashview.png" ToolTip="Flash格式预览" Visible="False"></asp:HyperLink>
+                            <asp:HyperLink ID="Hlflash" runat="server" Height="12px" Target="_blank" ImageUrl="~/images/flashview.png" ToolTip="Flash格式预览" Visible="False"></asp:HyperLink>
                             </div>
                             <div >
                                 <asp:LinkButton ID="LG" runat="server"
@@ -119,10 +123,10 @@
                             <asp:Label ID="Labelwlemotion" runat="server" Text='<%# Eval("Wlemotion") %>' Visible="False"></asp:Label>
                             </div>
                     </ItemTemplate>
-                </anthem:DataList>
+                </asp:DataList>
     <br />
     <br />
-                <anthem:DataList ID="DataListgroup" runat="server" RepeatDirection="Horizontal" 
+                <asp:DataList ID="DataListgroup" runat="server" RepeatDirection="Horizontal" 
                     RepeatColumns="6" DataKeyField="Gid" CellPadding="2" 
         CellSpacing="2" onitemcommand="DataListgroup_ItemCommand" 
         onitemdatabound="DataListgroup_ItemDataBound" Caption="小组作品">
@@ -133,7 +137,7 @@
                              ToolTip='<%# Eval("Gnote") %>' Target="_blank" CssClass="groupname"></asp:HyperLink>
                             </div>
                             <asp:Label ID="Wvg" runat="server" Text='<%# Eval("Gvote") %>' ToolTip="票数" ></asp:Label>                            
-                            <anthem:CheckBox ID="CBg" runat="server" AutoPostBack="True" BorderStyle="None" 
+                            <asp:CheckBox ID="CBg" runat="server" AutoPostBack="True" BorderStyle="None" 
                                 Checked='<%# Eval("Gcheck") %>' EnableTheming="True" 
                                 oncheckedchanged="CBg_CheckedChanged" 
                                 ToolTip="评价状态：取消则评分为0并可重新提交，选中则初始评分为0并不可重新提交" />
@@ -167,14 +171,12 @@
                             <asp:Label ID="Labelgid" runat="server" Text='<%# Eval("Gid") %>' Visible="False"></asp:Label>
                             </div>
                     </ItemTemplate>
-                </anthem:DataList>
+                </asp:DataList>
                 </center>
                 </div>
     <asp:ImageButton ID="Btnreflash" runat="server"  
-        ImageUrl="~/Images/refresh.gif"   onclick="Btnreflash_Click" />
+        ImageUrl="~/images/refresh.gif"   onclick="Btnreflash_Click" />
     <br />
-    <br />
-    <asp:Button ID="Btnreturn" runat="server"  Text="关闭"  SkinID="BtnSmall"  />
     <br />
     <script type ="text/javascript" >
         function myrefresh() {

@@ -1,32 +1,66 @@
-﻿body
+﻿html{
+height:100%;
+width:100%;
+}
+body
 {
     padding: 0px;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 12pt;
     font-family: 宋体, Arial, Helvetica, sans-serif;
 }
+.ground
+{
+    background-image: url('ground.jpg');
+	background-size:cover; 
+}
+
+::-webkit-scrollbar { /* display: none;  Chrome Safari */  }
+
 table {border-collapse:collapse;}
+.st
+{
+	overflow:hidden;
+	height: 100%;
+	margin:auto;
+	width:100%;/* linux下必须设置宽度，否则错位  */
+}
 .stu
 {
-    background-color: #FFFFFF;
+	overflow:hidden;
+	height: 100%;
+	margin:auto;
+	width:100%;/* linux下必须设置宽度，否则错位  */
 }
+.textbox{
+	height:24px;
+	line-height:24px;
+    font-size: 12pt;
+	background-color:#FCECC2;
+    border-width: 1px;
+	border-color:#C8C8C8;	
+		
+}
+
 .buttonimg
 {
     border-width: 0px;
     background-position: center;
-    background-image: url('btn.gif');
+    background-image: url('btn.png');
     background-repeat: no-repeat;
     width: 80px;
-    height: 18px;
-    line-height: 18px;
+    height: 24px;
+    line-height: 24px;
     text-align: center;
-    font-size: 9pt;
+    font-size: 12pt
 }
 .buttonnone
 {
+    border-width: 1px;
+    border-color: #CCCCCC;
     width: 80px;
-    height: 18px;
-    background-color: #FFFFFF;
+    height: 20px;
+    background-color: transparent;
 }
 *
 {
@@ -56,15 +90,20 @@ a:active
     text-decoration: none;
 } /*点击激活链接*/
 
+.shorttitle
+{
+    text-overflow:ellipsis; 
+}
+
 .banner
 {
     padding: 0px;
     margin: 0px;
     border-width: 0px;
-    width: 100%;
     height: 100px;
-    text-align: center;
     overflow: hidden;
+    background-image: url('road.jpg');
+    background-repeat: no-repeat;
 }
 .logo1
 {
@@ -82,35 +121,35 @@ a:active
 {
     background-color: #C5D6FE;
     font-family: Arial;
+	display:flex;
+	min-width:1200px;
 }
+.sp{ padding-right:80px;}
 
-.nav {width:900px;  margin:0px;text-align:center;background-color: #C5D6FE;height:30px;}
-.nav li {float:left; width:100px;  display:inline; padding:0px; margin:0px 4px 0px 4px; text-align:center;}
+.nav {  margin:auto;height:32px;text-align:center; font-size:15pt;font-weight: bold;}
+.nav li {float:left; display:inline; padding:0px; margin:0px 4px 0px 4px; text-align:center;}
 .nav li a {display:block; padding:4px 0px 0px 4px; color:#000;  text-decoration:none;}
-.nav li a:hover {color:#F7F7F7; background-color:#79A0FD;}
+.nav li a:hover {color:#FFF; background-color:#79A0FD;}
 
-li.home {background:url(../../Images/lesson.png) top left no-repeat;}
-li.mission {background:url(../../Images/mission.png) top left no-repeat;}
-li.survey {background:url(../../Images/survey.png) top left no-repeat;}
-li.topic {background:url(../../Images/topic.png) top left no-repeat;}
-li.inquiry {background:url(../../Images/inquiry.png) top left no-repeat;}
-li.return {background:url(../../Images/return.png) top left no-repeat;}
+li.home {background:url(../../images/lesson.png) top left no-repeat;}
+li.mission {background:url(../../images/mission.png) top left no-repeat;}
+li.survey {background:url(../../images/survey.png) top left no-repeat;}
+li.topic {background:url(../../images/topic.png) top left no-repeat;}
+li.inquiry {background:url(../../images/inquiry.png) top left no-repeat;}
+li.return {background:url(../../images/return.png) top left no-repeat;}
 
 .foot
 {
-    font-size: 9pt;
+    font-size: 12pt
     font-family: Arial;
-    width: 980px;
 }
 .path
 {
     margin:auto;
-    width: 980px;
     height: 12px;
 }
 .studmasterhead
 {
-    width: 980px;
     text-align: left;
     margin: auto;
     padding-top: 0px;
@@ -121,40 +160,33 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 }
 .bg
 {
-    background-image: url('bg.jpg');
+    background-image: url('bg.png');
     background-repeat: no-repeat;
     width: 100%;
-    height: 500px;
+    height: 550px;
 }
 .indexdiv
 {
     margin: auto;
-    width: 258px;
+    width: 300px;
+    height: 240px;
+    background-image: url('login.png');
+    background-repeat: no-repeat;
 }
 .pfdiv
 {
     border: 1px solid #E8E8E8;
     margin: auto;
-    width: 258px;
+    width: 300px;
 }
 .indexhead
 {
     border-width: 0px;
-    background-color: #C5D6FE;
-    height: 20px;
-    line-height: 20px;
+    height: 24px;
+    line-height: 24px;
 }
-.indexheader
-{
-    border-width: 0px;
-    background-image: url('head.gif');
-    height: 20px;
-    line-height: 20px;
-}
-.indexlogin
-{
-    background-image: url('login.jpg');
-}
+
+
 .indexsql
 {
     margin: auto;
@@ -164,25 +196,34 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 #student
 {
     margin: auto;
-    width: 980px;
     font-family: Arial;
-    font-size: 9pt;
+    font-size: 11pt;    
+	text-align:center;
 }
 
 .left
 {
     float: left;
-    width: 805px;
+	width:79%;
     text-align: center;
     overflow: hidden;
 }
 .right
 {
     float: right;
-    width: 170px;
+	width:20%;
     text-align: center;
     overflow: hidden;
 }
+
+
+.ImagePass
+{
+	position:fixed;
+	left:70%;
+	top:240px;
+}
+
 .show
 {
     border: 1px solid lightsteelblue;
@@ -190,7 +231,7 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
     height: 60px;
     vertical-align: middle;
     background-color: #E9F1FE;
-    font-size: 9pt;
+    font-size: 12pt
     font-family: Arial;
 }
 .centerdiv
@@ -206,17 +247,17 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 }
 .pagediv
 {
-    font-size: 9pt;
+    font-size: 11pt
     width: 100%;
     color: black;
-    height: 13px;
+    height: 20px;
     text-align: right;
 }
 .onlinediv
 {
     border: 1px solid #ABC1EB;
     vertical-align: middle;
-    width: 70px;
+    width: 80px;
     height: 38px;
     text-align: center;
 }
@@ -251,9 +292,8 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 .divinfo
 {
     margin:auto; 
-    height:24px;
-    width:150px;
-    border: 1px solid #FFFFFF;
+    height:30px;
+    width:160px;
 }
 .divinfo1
 {
@@ -262,15 +302,15 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
     width: 60px;
     text-align: center;
     background-color: #C0D6E4;
-    height: 16px;
+    height: 20px;
 }
 
 .divinfo2
 {
     border: 1px solid #ABC1EB;
     float: left;
-    height: 16px;
-    width: 80px;
+    height: 20px;
+    width: 90px;
 }
 
 .divvote
@@ -318,7 +358,7 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
     border: 1px solid gainsboro;
     width: 50px;
     background-color: #D9E1F0;
-    font-size: 9pt;
+    font-size: 11pt
     height: 16px;
 }
 .text1
@@ -387,36 +427,46 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 #showcontent
 {
     margin:auto;
-    width: 980px;
     font-family: Arial;
-    font-size: 9pt;
+    font-size: 12pt;
+	padding:10px;
+	min-width:1056px;
 }
 .coursetitle
 {
     height: 20px;
-    font-size: 12pt;
+    font-size: 16pt;
     font-family: Arial;
     font-weight: bold;
 }
 .descriptioncontent
 {
-    margin: auto;
-    width: 980px;
+    margin: 20px;
     text-align: left;
-    font-family: Arial;
     line-height:1.5;
-    padding: 2px 2px 2px 2px;
-    font-size: 14px;
+	word-wrap:break-word;
+}
+.taskcontent
+{
+    margin: 10px;
+    text-align: left;
+    line-height:1.5;
+	word-wrap:break-word;
+}
+.sidebar
+{
+   width:200px;
+   top:180px;
+   right:10px;
+   position:fixed;
+   z-index:100;
+   background:url("sidebg.png") 0 0 repeat;
 }
 .coursecontent
 {
-    margin: auto;
-    width: 800px;
     text-align: left;
-    font-family: Arial;
     line-height:1.5;
-    padding: 2px 2px 2px 2px;
-    font-size: 14px;
+    padding: 20px;
 }
 .ccontent
 {
@@ -430,19 +480,18 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 }
 .missiontitle
 {
-    font-size: 12pt;
+    font-size: 16pt;
     font-family: 宋体, Arial, Helvetica, sans-serif;
     font-weight: bold;
     border-bottom-style: dashed;
     border-bottom-width: 1px;
     border-bottom-color: #D5D5D5;
-    padding-bottom: 2px;
+    padding-bottom: 20px;
+	text-align:center;
 }
 .courseother
 {
     padding: 2px;
-    font-size: 9pt;
-    font-family: Arial;
 }
 .divnull
 {
@@ -455,7 +504,7 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 }
 .ruletabel
 {
-    font-size: 9pt;
+    font-size: 11pt
     width: 500px;
 }
 .rulehead
@@ -478,30 +527,33 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 .quizscoreheight
 {
     float: left;
-    width: 400px;
+    width: 50%;
 }
 .quizone
 {
-    overflow: auto;
-    width: 580px;
-    text-align: center;
-    padding: 2px;
-    margin: auto;
-    border-bottom-style: dashed;
-    border-bottom-width: 1px;
-    border-bottom-color: #B0B0B0;
+    display:flex;
+    padding: 10px;
+    margin: auto;    
 }
+.quizone:hover{
+	background-color:#F8DFC9;
+}
+
 .quizleftnum
 {
     float: left;
     width: 30px;
+    text-align: center;
+	line-height:24px;
 }
+
 .quizleftquestion
 {
     float: left;
-    width: 360px;
+    width: 80%;
     text-align: left;
-    vertical-align: top;
+	line-height:24px;	
+    padding-left: 10px;
 }
 .quizleftanswer
 {
@@ -511,8 +563,7 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 .quizleftup
 {
     float: right;
-    width: 140px;
-    vertical-align: top;
+    width: 20%;
 }
 .quizresult
 {
@@ -523,14 +574,12 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 {
     margin:auto;
     border: 0px;
-    width: 70px;
     height: 26px;
 }
 .quizmyscore
 {
     margin:auto;
     width: 98%;
-    background-color: #F8DFC9;
     border: 1px solid #E6E8E8;
 }
 .quizinfo
@@ -543,27 +592,25 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 {
     border: 1px solid #ABC1EB;
     text-align: center;
-    background-color: #C0D6E4;
 }
 .quiztime
 {
     margin:auto;
-    border: 1px solid #E6E8E8;
-    width: 70px;
-    background-color: #F8DFC9;
-    font-size: 9pt;
+    border: none;
+    font-size: 11pt;	
+	background:transparent;
     font-family: Arial;
     text-align: center;
 }
 .divquizscore
 {
     margin:auto; 
-    width: 390px;
+    width: 90%;
 }
 .uploaddiv
 {
     font-family: Arial;
-    font-size: 9pt;
+    font-size: 11pt
     width: 160px;
     margin: auto;
     text-align: center;
@@ -583,7 +630,7 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
     background-color: #F2DFC1;
     border: 1px solid #E9C794;
     font-family: Arial;
-    font-size: 9pt;
+    font-size: 11pt
 }
 .txtszcenter
 {
@@ -613,13 +660,13 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 .topicleft
 {
     float: left;
-    width: 300px;
+    width: 400px;
     height: 12px;
 }
 .topicright
 {
     float: right;
-    width: 240px;
+    width: 300px;
     text-align: right;
 }
 .topichead
@@ -641,7 +688,7 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
     white-space: normal;
     display: block;
     line-height: 20px;
-    width: 720px;
+    width: 820px;
     background-color: #FFFFDD;
 }
 .topicagree
@@ -665,14 +712,15 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
 .leftmaster
 {
     float: left;
-    width: 790px;
+    width: 1200px;
     text-align: center;
     overflow: hidden;
 }
 .rightmaster
 {
-    float: right;
-    width: 180px;
+	position:fixed;
+    right:0px;
+    width: 240px;
     text-align: center;
     overflow: hidden;
 }
@@ -682,9 +730,9 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
     padding: 0px;
     width: 80px;
     height: 20px;
-    background-image: url('../../Images/share.gif');
+    background-image: url('../../images/share.gif');
     background-repeat: no-repeat;
-    font-size: 9pt;
+    font-size: 11pt
     line-height: 20px;
 }
 .nomicdisk
@@ -694,26 +742,32 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
     padding: 0px;
     width: 100px;
     height: 22px;
-    background-image: url('../../Images/nomicdisk.gif');
+    background-image: url('../../images/nomicdisk.gif');
     background-repeat: no-repeat;
-    font-size: 9pt;
+    font-size: 11pt
     line-height: 22px;
 }      
 .textbox
 {
-    overflow-y: auto;
-    word-wrap: break-word;
-    word-break: break-all;
-    background-color: #E6FFE6;
-    height: 80px;
+    background-color: #FBF4D5;
+	border: 1px dashed #ccc;
+} 
+.textbox:hover
+{
+	border: 1px dashed #999;
 } 
 .textlabel
 {
-    background-color:#E6FFE6; height:20px;width:80px;
+    background-color:#FBF4D5; height:20px;width:80px;
+	border: 1px dashed #ccc;
+}
+.textlabel:hover
+{
+	border: 1px dashed #999;
 }
 .onlinename
 {
-    font-size: 9pt;
+    font-size: 11pt
     font-family: 宋体, Arial, Helvetica, sans-serif;
     text-decoration: none;
     height: 18px;
@@ -728,6 +782,14 @@ li.return {background:url(../../Images/return.png) top left no-repeat;}
     font-size: 8pt;
     width: 40px;
 }
-.timg { border:0px;width:240px; height:180px;border-radius: 16px;  } a:hover img{filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6}
-.divindex{margin: auto;overflow: hidden;font-size: 9pt;font-family: Arial, Helvetica, sans-serif;}
+.timg { border: 1px solid #ddd;width:220px; height:180px;border-radius: 24px;  } a:hover img{filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6}
+.divindex{margin: auto;overflow: hidden;}
 .thumbbox{width:24.9%;float:left;}
+.text-center{font-size: 10pt;color: #666;font-family: Arial;}
+.txtblank
+{ 
+  border: 1px dashed #ddd;
+  background-color:#FBF4D5;
+  margin:20px;
+  height:24px;
+}

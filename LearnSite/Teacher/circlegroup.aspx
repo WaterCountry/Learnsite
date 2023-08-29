@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" StylesheetTheme="Teacher"  CodeFile="circlegroup.aspx.cs" Inherits="Teacher_circlegroup" %>
+﻿<%@ page language="C#" autoeventwireup="true" stylesheettheme="Teacher" inherits="Teacher_circlegroup, LearnSite" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -27,7 +27,7 @@
                 <div>
                       <asp:Label ID="LabelSid" runat="server" Text='<%# Eval("Sid") %>' Visible="false" ></asp:Label>
                       <asp:Label ID="LabelSnum" runat="server" Text='<%# Eval("Snum") %>' Visible="false" ></asp:Label>
-                      <asp:Image ID="ImageFlag" runat="server" ImageUrl="~/Images/gflag.gif" />
+                      <asp:Image ID="ImageFlag" runat="server" ImageUrl="~/images/gflag.gif" />
                       <asp:Label ID="LabelLeader" runat="server" Text='<%# Eval("Sname") %>' Font-Bold="True"></asp:Label>
                     &nbsp;<asp:Label ID="LabelGstus" runat="server" Width="60%"></asp:Label>
                     &nbsp;<asp:DropDownList ID="DDLGscores" runat="server" AutoPostBack="True"  

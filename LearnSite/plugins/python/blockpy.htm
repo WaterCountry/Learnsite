@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head >  
+  <title>Python Blockly 积木编程</title>
+  <meta charset="UTF-8">
+	<link href="../code/blockpy/blockpy.css" rel="stylesheet" type="text/css" />
+	<link href="../code/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>
+	<script src="../js/jquery-ui-1.8.24.custom.min.js" type="text/javascript"></script>
+	<script src="../code/build/src/ace.js" type="text/javascript"></script>
+	<script src="../code/build/src/ext-language_tools.js" type="text/javascript"></script>
+	<script src="../code/skulpt.min.js?ver=20211202" type="text/javascript"></script>
+	<script src="../code/skulpt-stdlib.js" type="text/javascript"></script>
+    <script src="../code/blockpy/blockly_compressed.js"></script>
+    <script src="../code/blockpy/blocks_compressed.js"></script>
+    <script src="../code/blockpy/python_compressed.js"></script>
+    <script src="../code/blockpy/msg/en.js"></script>
+  <script src="../code/blockpy/storage.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+<div>
+
+<div id="main">
+<div id="left">
+<div id="blocklyDiv" style="height: 90vh; width: 100wh;"></div>
+</div>
+<div id="right">
+	<div id="editor"></div>
+</div>
+</div>
+
+
+<div id="result">
+<div id="savemsg"></div>
+<pre id="output" ></pre>
+</div>
+<div id="cv" ></div>
+<audio id="audio" controls="controls"  hidden="true" ></audio>
+<div  style="position:absolute;right:20px;top:120px;">
+<a  onclick="runit()" class="button"  >
+<i class="fa fa-play-circle" aria-hidden="true"></i> 运行</a>
+</div>
+
+<xml  id="toolbox" style="display: none">
+ <category name="编程" colour="#5b80a5">
+	<block type="py_start"></block>
+	<block type="py_assign"></block> 
+	<block type="py_input"></block>
+	<block type="py_print"></block>
+
+	<block type="py_text"></block> 
+    <block type="math_number">
+		<field name="NUM">0</field>
+    </block>
+	<block type="py_range"></block>
+	<block type="py_data"></block>  
+	<block type="logic_boolean">
+      <field name="BOOL">TRUE</field>
+    </block>  
+    <block type="controls_if"></block>
+	<block type="py_for"></block>
+	<block type="py_while"></block>
+	<block type="py_break"></block>
+  </category>	
+  <category name="绘图" colour="#a55b80" > 
+    <block type="py_import"></block>   
+    <block type="turtle_move"></block> 
+    <block type="turtle_turn"></block>	
+    <block type="turtle_circle"></block> 
+    <block type="turtle_pensize"></block> 
+    <block type="turtle_pen"></block> 
+    <block type="turtle_fill"></block> 
+    <block type="turtle_color"></block>
+    <block type="turtle_goto"></block>
+    <block type="turtle_fun"></block>
+    <block type="turtle_write"></block> 
+    <block type="turtle_sleep"></block> 
+  </category>	
+</xml>
+
+
+<script>
+	var snum = "2022";
+	var id = "222";
+	var fpage = "#";
+	var cf = "#codefile#"; //定义字典
+
+	var sessionkey = "htmlcode" + snum + "-" + id;
+		
+	var options = { 
+		toolbox : document.getElementById('toolbox'), 
+		media : '../code/blockpy/media/',
+		trashcan : true,  
+		grid : {spacing : 20,length : 4,colour : '#ddd', snap : true}, 
+		zoom : {
+			controls : true, startScale : 1.0,maxScale : 3,minScale : 1,scaleSpeed : 1.2
+		}
+	};
+
+    this.Workspace = Blockly.inject('blocklyDiv',options );
+		
+	function myUpdateFunction(event) {
+      var codestr = Blockly.Python.workspaceToCode(this.Workspace);    // 将工作区代码块生成代码
+	  editor.session.setValue(codestr);
+      //console.log(codestr);    // 控制台显示生成的代码
+	}
+	this.Workspace.addChangeListener(myUpdateFunction);   // 监听工作区改变事件	
+
+	$(document).ready(function () {			
+		BlocklyStorage.restoreBlocks(this.Workspace); //从本地存储中恢复
+	});
+	
+                                   		
+	    var editor = ace.edit("editor", {
+	        theme: "ace/theme/chrome",
+	        mode: "ace/mode/python"
+	    });
+	    editor.setFontSize(24);
+	    //editor.focus();
+		editor.setReadOnly(true);
+		//editor.blur();
+
+        function returnurl() {
+            if (confirm('确定要返回吗？记得先保存。') == true) {
+                sessionStorage.clear(); //返回后清除，防止污染
+                window.location.href = fpage;
+            }
+        }
+        
+		$("#result").hide();
+		$("#left").click(function(){
+		  $("#result").slideUp();
+		});
+		$("#title").click(function(){
+		  $("#result").slideToggle();
+		});
+		function randomsort(a, b) {
+		  return Math.random()>.5 ? -1 : 1; //通过随机产生0到1的数，然后判断是否大于0.5从而影响排序，产生随机性的效果。
+		}
+	
+
+var mypre = document.getElementById("output");
+var result = document.getElementById("result");
+var savemsg = document.getElementById("savemsg");
+function outf(text) {
+    mypre.innerHTML = mypre.innerHTML + text;
+}
+function builtinRead(x) {
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+            throw "File not found: '" + x + "'";
+    return Sk.builtinFiles["files"][x];
+}
+
+function myfun() {
+	return new Promise(function(resolve,reject){		
+		var myinput=document.createElement("input");
+		myinput.setAttribute("type","text");
+		myinput.setAttribute("class","input");
+		mypre.appendChild(myinput);
+		myinput.focus();
+        result.onclick=function(){
+            myinput.focus();
+        }
+
+		myinput.onkeypress =function() {
+             if (event.keyCode == 13)
+             {
+				var argv=myinput.value;	
+				console.log(argv);
+				mypre.removeChild(myinput);
+                mypre.innerHTML= mypre.innerHTML+argv+" \n";				
+                resolve(argv);
+             }
+         }
+      })
+}
+
+
+function runit() {
+	$('#result').show();
+    var prog = editor.getValue();
+	if(prog!=null&&prog!=""){
+		mypre.innerHTML = '';
+		output.innerHTML = '';
+		savemsg.innerHTML='';
+		Sk.pre = "output";		
+		Sk.configure({ output: outf, read: builtinRead,execLimit: 600000, __future__: Sk.python3, inputfun: myfun});
+
+		(Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'cv';
+		Sk.TurtleGraphics.width=cv.clientWidth;
+		Sk.TurtleGraphics.height=cv.clientHeight;
+		var dateBegin = new Date();
+
+		var myPromise = Sk.misceval.asyncToPromise(function() {
+			return Sk.importMainWithBody("<stdin>", false, prog, true);
+		});
+	 
+		myPromise.then(function(mod) {
+			var dateEnd = new Date();
+			var dateDiff = (dateEnd.getTime() - dateBegin.getTime())/1000;
+			var spendtime='耗时'+dateDiff+"秒"
+			console.log(spendtime);			
+			
+			msgerror="";
+			console.log('运行成功!');
+			savemsg.innerHTML = spendtime;
+			
+		},
+		function(err) {	
+			pass=-1;//如果异常，标志为-1
+			var msg=err.toString();
+			console.log(msg);
+			if(msg.indexOf("TimeLimitError")>0){
+				msg="运行超时！";
+			}
+			savemsg.innerHTML = msg;
+			msgerror=msg;
+		});
+	}	
+	else{
+		savemsg.innerHTML= "当前没有代码，无法运行！";
+	}
+	
+}
+	
+	function voiceplay(){
+		var audio = document.getElementById("audio");
+		audio.src = '../code/adsorb.ogg';
+		audio.play();
+	}
+		
+
+	</script>
+
+    </div>
+</body>
+</html>

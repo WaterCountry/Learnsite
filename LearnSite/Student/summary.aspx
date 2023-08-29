@@ -1,14 +1,14 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Student/Scm.master"  AutoEventWireup="true" CodeFile="summary.aspx.cs" Inherits="Student_summary" %>
+﻿<%@ page language="C#" masterpagefile="~/student/Scm.master" autoeventwireup="true" inherits="Student_summary, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cpcm" Runat="Server">
     <div  id="showcontent">
         <center>
-            <table style="border: 1px double #CADEFD; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt; text-align: left;">
+            <table style="border: 1px double #CADEFD; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt; text-align: left;">
                 <tr>
                     <td colspan="3" style="width: 660px">
                         <strong>学案名称</strong>：<asp:Label ID="Label1" runat="server"></asp:Label>
                         <asp:ImageButton ID="BtnEdit" runat="server" ToolTip="提示" 
-                       ImageUrl="~/Images/edit.gif" onclick="BtnEdit_Click" style="width: 16px" 
+                       ImageUrl="~/images/edit.gif" onclick="BtnEdit_Click" style="width: 16px" 
                             Enabled="False" />
                     </td>
                 </tr>

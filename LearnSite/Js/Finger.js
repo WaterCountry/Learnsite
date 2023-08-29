@@ -2,8 +2,8 @@
 var oldwordKeyObj; //上次字符键对象
 var downKeyWord; //按下键值转成的字符
 var downKeyObj; //按下的键对像
-var picWord="keyCom2.gif"; //要打键的图
-var picKey = "keyCom.gif"; //键正常状态图
+var picWord="keycom2.gif"; //要打键的图
+var picKey = "keycom.gif"; //键正常状态图
 var picErr = ""; //键错误图
 var wordright = 0; //单词正确数
 var letterright = 0; //字母正确数
@@ -37,6 +37,11 @@ var victoryshow = 0;
 var elevel = $('#levelselect').val();//取英文类别
 NewWords(); //获取该类别字典
 
+var handshow=true;
+if(handshow){
+	$('#keyhand').show();
+	$('#keyboard').hide();
+}
 function nextword() {
     if (ewords != null) {
         if (order == 0) {
@@ -51,6 +56,7 @@ function nextword() {
             pword = ewords[enext];
             pmeaning = emeanings[enext];
         }
+		pword=pword.replace(/</g, "&lt;");
         $('#TextWord').html(pword);
         var changemeaning = GetMeaning(pmeaning);
         $('#Meanword').html(changemeaning);
@@ -60,6 +66,7 @@ function nextword() {
         var ktk = TypeWord.substr(eposition, 1);
         dkObj = "key" + ktk.toUpperCase();
         showKey(dkObj);
+		
     }
 }
 
@@ -107,6 +114,12 @@ function passsecond() {
     window.setTimeout("passsecond()", 1000); //秒定时
 }
 
+function voice() {
+    var audio = document.createElement("audio");
+    audio.src = '../code/magic.ogg';
+    audio.play();
+}
+
 $('#InputWord').keyup(function () {
     var iword = $(this).val();
     var il = iword.length;
@@ -131,18 +144,27 @@ $('#InputWord').keyup(function () {
             $('#wnum').html("单词数：" + wordright);
             nextword();
             $(this).val("");
+			voice();
+			if(handshow){
+				$('#keyhand').hide();		
+				$('#keyboard').show();
+			}
+			handshow=false;
         }
         else {
             var redword = "";
             var iright = 0;
             for (var i = 0; i < il; i++) {
-                if (iword.substr(i, 1) == TypeWord.substr(i, 1)) {
+				var twd=TypeWord.substr(i, 1);
+				var shtwd=twd;
+				
+                if (iword.substr(i, 1) == twd ) {
                     iright = i;
-                    redword = redword + TypeWord.substr(i, 1); //对的话加上这个字符
+                    redword = redword + shtwd; //对的话加上这个字符
                 }
                 else {
-                    letterwrong++;
-                    redword = redword + '<span class=\"wrongchar\">' + TypeWord.substr(i, 1) + '</span>'; //错的话加上这个变红字符
+                    letterwrong++;					
+                    redword = redword + '<span class=\"wrongchar\">' + shtwd + '</span>'; //错的话加上这个变红字符
                 }
             }
             $('#TextWord').html(redword + TypeWord.substr(il, TypeLengh));
@@ -166,11 +188,11 @@ function presskey() {
 function showKey(wordKeyObj) {
     var ww = document.getElementById(oldwordKeyObj);
     if (ww != null) {
-        ww.style.backgroundImage = "url(../Images/Fingering/" + picKey + ")";
+        ww.style.backgroundImage = "url(../images/fingering/" + picKey + ")";
     }
     var aa = document.getElementById(wordKeyObj);
     if (aa != null) {
-        aa.style.backgroundImage = "url(../Images/Fingering/" + picWord + ")";
+        aa.style.backgroundImage = "url(../images/fingering/" + picWord + ")";
     }
     oldwordKeyObj = wordKeyObj;
 }
@@ -207,21 +229,26 @@ function NewWords() {
 
 //自动保存成绩
 function SaveMspd() {
-    var saveurl = ipurl + "/SaveHandler.ashx?Mysnum=" + mysnum + "&Myspd=" + mspd;
+    var saveurl = ipurl + "/SaveHandler.ashx";
+    var formData = new FormData();
+    formData.append('mspd', mspd);
     $.ajax({
-        type: "Get",
         url: saveurl,
-        dataType: "html",
-        success: function (data) {
-            if (data > 0) {
-                $('#msg').html("我的最快速度：" + mspd + "个/分<br/>" + "自动保存：" + realsc + "次");
-            }
-            else {
-                if (mysnum != "")
-                    $('#msg').html("自动保存无效，成绩比原来低！");
-            }
+        type: 'POST',
+        cache: false,
+        data: formData,
+        processData: false,
+        contentType: false
+    }).done(function (res) {
+        if (data > 0) {
+            $('#msg').html("我的最快速度：" + mspd + "个/分<br/>" + "自动保存：" + realsc + "次");
+        }
+        else {
+            if (mysnum != "")
+                $('#msg').html("自动保存无效，成绩比原来低！");
         }
     });
+
 }
 
 

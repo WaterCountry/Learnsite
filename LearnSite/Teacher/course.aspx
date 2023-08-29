@@ -1,89 +1,91 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master"   StylesheetTheme="Teacher" AutoEventWireup="true"  CodeFile="course.aspx.cs" Inherits="Teacher_course" %>
-<%@ Register assembly="Anthem" namespace="Anthem" tagprefix="anthem" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_course, LearnSite" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
     <div  >
         <div  class="chead">
-            &nbsp;—ß∞∏—°‘Ò£∫<asp:DropDownList ID="DDLgrade" runat="server" Font-Size="9pt" 
+            &nbsp;Â≠¶Ê°àÈÄâÊã©Ôºö<asp:DropDownList ID="DDLgrade" runat="server" 
             Width="60px" EnableTheming="True" AutoPostBack="True" 
                 onselectedindexchanged="DDLgrade_SelectedIndexChanged">
         </asp:DropDownList>
-            ƒÍº∂&nbsp;
+            Âπ¥Á∫ß&nbsp;
                     <asp:Label ID="Labelmsg" runat="server" Width="220px" Height="16px"></asp:Label>
-                    &nbsp;<asp:DropDownList ID="DDLterm" runat="server" Font-Size="9pt" 
+                    &nbsp;<asp:DropDownList ID="DDLterm" runat="server" 
                     EnableTheming="True" AutoPostBack="True" 
             onselectedindexchanged="DDLterm_SelectedIndexChanged" 
-                ToolTip="—°‘Ò“™œ‘ æ—ß∞∏µƒ—ß∆⁄£¨≤ª∏ƒ±‰∫ÛÃ®ƒ¨»œ—ß∆⁄…Ë÷√">
-                <asp:ListItem Value="1">µ⁄“ª—ß∆⁄</asp:ListItem>
-                <asp:ListItem Value="2">µ⁄∂˛—ß∆⁄</asp:ListItem>
+                ToolTip="ÈÄâÊã©Ë¶ÅÊòæÁ§∫Â≠¶Ê°àÁöÑÂ≠¶ÊúüÔºå‰∏çÊîπÂèòÂêéÂè∞ÈªòËÆ§Â≠¶ÊúüËÆæÁΩÆ">
+                <asp:ListItem Value="1">Á¨¨‰∏ÄÂ≠¶Êúü</asp:ListItem>
+                <asp:ListItem Value="2">Á¨¨‰∫åÂ≠¶Êúü</asp:ListItem>
         </asp:DropDownList>
             &nbsp;
                     <asp:Label ID="Labelspace" runat="server" Width="120px" Height="16px"></asp:Label>
-                    <asp:Button ID="Btnadd" runat="server"  Text="ÃÌº”—ß∞∏"  onclick="Btnadd_Click" SkinID="BtnNormal" />                    
+                    <asp:Button ID="Btnadd" runat="server"  Text="Ê∑ªÂä†Â≠¶Ê°à"  onclick="Btnadd_Click" SkinID="BtnNormal" />                    
                     </div>
                     <div >
                     <div class="centerdiv">
-                    <anthem:GridView ID="GVCourse" runat="server" AllowPaging="True"
+                    <asp:GridView ID="GVCourse" runat="server" AllowPaging="True"
                             AutoGenerateColumns="False"  DataKeyNames="Cid"  
                             PageSize="20" Width="100%"
                             onpageindexchanging="GVCourse_PageIndexChanging" 
                             onrowdatabound="GVCourse_RowDataBound" CellPadding="6" 
-                            EnableModelValidation="True" Font-Size="9pt" 
+                            EnableModelValidation="True" 
                             onrowcommand="GVCourse_RowCommand" ForeColor="#111111" GridLines="None" >
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>                                
-                                <asp:BoundField DataField="Cks" HeaderText="øŒΩ⁄">
+                                <asp:BoundField DataField="Cks" HeaderText="ËØæËäÇ">
                                 <ControlStyle Width="20px" />
                                 </asp:BoundField>
                                 <asp:HyperLinkField DataNavigateUrlFields="Cid" 
-                                    DataNavigateUrlFormatString="~/Teacher/CourseShow.aspx?Cid={0}" 
-                                    DataTextField="Ctitle" HeaderText="—ß∞∏" >
+                                    DataNavigateUrlFormatString="~/teacher/courseshow.aspx?cid={0}" 
+                                    DataTextField="Ctitle" HeaderText="Â≠¶Ê°à" >
                                 <HeaderStyle HorizontalAlign="Left" />
                                 <ItemStyle HorizontalAlign="Left" />
                                 </asp:HyperLinkField>
-                                <asp:BoundField DataField="Cclass" HeaderText="¿‡–Õ" SortExpression="Cclass" >
+                                <asp:BoundField DataField="Cclass" HeaderText="Á±ªÂûã" SortExpression="Cclass" >
                                 <HeaderStyle HorizontalAlign="Left" />
                                 <ItemStyle HorizontalAlign="Left" />
                                 </asp:BoundField>
                                 <asp:HyperLinkField DataNavigateUrlFields="Cid"                                     
-                                    DataNavigateUrlFormatString="~/Teacher/Package.aspx?Cid={0}" HeaderText="¥Ú∞¸" 
-                                    Text="œ¬‘ÿ" />
-                                <asp:TemplateField HeaderText="∑¢≤º" ShowHeader="False">
+                                    DataNavigateUrlFormatString="~/teacher/package.aspx?cid={0}" HeaderText="ÊâìÂåÖ" 
+                                    Text="‰∏ãËΩΩ" />
+                                <asp:TemplateField HeaderText="ÂèëÂ∏É" ShowHeader="False">
                                     <ItemTemplate>
-                                        <anthem:LinkButton ID="LbtnCpublish" runat="server" CausesValidation="false" 
-                                   CommandArgument='<%# Bind("Cid") %>'  CommandName="Cp" Text='<%# Eval("Cpublish") %>'></anthem:LinkButton>
+                                        <asp:LinkButton ID="LbtnCpublish" runat="server" CausesValidation="false" 
+                                   CommandArgument='<%# Bind("Cid") %>'  CommandName="Cp" Text='<%# Eval("Cpublish") %>'></asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:HyperLinkField DataNavigateUrlFields="Cid" 
-                                    DataNavigateUrlFormatString="~/Teacher/courseanalyse.aspx?Cid={0}" Text="∑÷Œˆ" />
-                                <asp:TemplateField HeaderText="ÃΩÃ÷">
+                                    DataNavigateUrlFormatString="~/teacher/courseanalyse.aspx?cid={0}" 
+                                    Text="ÂàÜÊûê" HeaderText="‰ΩúÂìÅ" />
+                                <asp:TemplateField HeaderText="Êé¢ËÆ®">
                                     <ItemTemplate>                                    
-                                        <asp:HyperLink ID="Hl" runat="server" Text="∑¥Àº" ForeColor="Blue"></asp:HyperLink>
+                                        <asp:HyperLink ID="Hl" runat="server" Text="ÂèçÊÄù" ForeColor="Blue"></asp:HyperLink>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Õ∆ºˆ" ShowHeader="False">
+                                <asp:TemplateField HeaderText="Êé®Ëçê" ShowHeader="False">
                                     <ItemTemplate>
-                                        <anthem:LinkButton ID="LbtnCgood" runat="server" CausesValidation="false" 
-                                   CommandArgument='<%# Bind("Cid") %>'  CommandName="Cg" ToolTip="ƒ¨»œŒ™True£¨—ß…˙∆ΩÃ®◊˜∆∑ ’≤ÿ—ß∞∏¡–±Ì÷–œ‘ æ£ªFalse‘Ú≤ªœ‘ æ!" Text='<%# Eval("Cgood") %>'></anthem:LinkButton>
+                                        <asp:LinkButton ID="LbtnCgood" runat="server" CausesValidation="false" 
+                                   CommandArgument='<%# Bind("Cid") %>'  CommandName="Cg" ToolTip="ÈªòËÆ§‰∏∫TrueÔºåÂ≠¶ÁîüÂπ≥Âè∞‰ΩúÂìÅÊî∂ËóèÂ≠¶Ê°àÂàóË°®‰∏≠ÊòæÁ§∫ÔºõFalseÂàô‰∏çÊòæÁ§∫!" Text='<%# Eval("Cgood") %>'></asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:HyperLinkField DataNavigateUrlFields="Cid" 
-                                    DataNavigateUrlFormatString="~/Teacher/CourseEdit.aspx?Cid={0}" Text="±‡º≠">
-                                <ItemStyle Width="30px" />
+                                    DataNavigateUrlFormatString="~/teacher/courseedit.aspx?cid={0}" Text="ÁºñËæë" 
+                                    HeaderText="ÂÜÖÂÆπ">
+                                <ItemStyle Width="40px" />
                                 </asp:HyperLinkField>
-                                <asp:TemplateField HeaderText="»’∆⁄" SortExpression="Cdate">
+                                <asp:TemplateField HeaderText="Êó•Êúü" SortExpression="Cdate">
                                     <ItemTemplate>
                                         <asp:Label ID="Label2" runat="server" 
                                             Text='<%# DataBinder.Eval(Container.DataItem,"Cdate","{0:d}")%>'></asp:Label>
                                     </ItemTemplate>
                                     <ControlStyle Width="70px" />
-                                    <ItemStyle HorizontalAlign="Left" />
+                                    <ItemStyle HorizontalAlign="Center" />
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="»Îø‚" ShowHeader="False">
+                                <asp:TemplateField HeaderText="ÂÖ•Â∫ì" ShowHeader="False">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="LbtnCold" runat="server" CausesValidation="false" 
-                                          CommandArgument='<%# Bind("Cid") %>'  ToolTip="◊™“∆µΩ—ß∞∏≤÷ø‚÷–±£¡Ù" CommandName="Cu" Text="◊™“∆"></asp:LinkButton>
+                                          CommandArgument='<%# Bind("Cid") %>'  ToolTip="ËΩ¨ÁßªÂà∞Â≠¶Ê°à‰ªìÂ∫ì‰∏≠‰øùÁïô" CommandName="Cu" Text="ËΩ¨Áßª"></asp:LinkButton>
                                     </ItemTemplate>
-                                    <ControlStyle Width="30px" />
+                                    <ControlStyle Width="40px" />
                                 </asp:TemplateField>
                             </Columns>
                             <FooterStyle BackColor="#E7E7E7" Font-Bold="True" ForeColor="White" />
@@ -91,43 +93,43 @@
                             <PagerStyle BackColor="#EFEFEF" ForeColor="#111111" HorizontalAlign="Center" />
                             <pagertemplate>
                                 <div style="width:100%; height:13px; text-align:right">
-                                    µ⁄<asp:Label ID="lblPageIndex" runat="server" 
-                                        text="<%# ((Anthem.GridView)Container.Parent.Parent).PageIndex + 1  %>" />
-                                    “≥ π≤<asp:Label ID="lblPageCount" runat="server" 
-                                        text="<%# ((Anthem.GridView)Container.Parent.Parent).PageCount  %>" />
-                                    “≥ 
+                                    Á¨¨<asp:Label ID="lblPageIndex" runat="server" 
+                                        text="<%# ((GridView)Container.Parent.Parent).PageIndex + 1  %>" />
+                                    È°µ ÂÖ±<asp:Label ID="lblPageCount" runat="server" 
+                                        text="<%# ((GridView)Container.Parent.Parent).PageCount  %>" />
+                                    È°µ 
                                     <asp:LinkButton ID="btnFirst" runat="server" causesvalidation="False" 
                                         commandargument="First" commandname="Page" Font-Underline="False" 
-                                        ForeColor="Black" text=" ◊“≥" />
+                                        ForeColor="Black" text="È¶ñÈ°µ" />
                                     <asp:LinkButton ID="btnPrev" runat="server" causesvalidation="False" 
                                         commandargument="Prev" commandname="Page" Font-Underline="False" 
-                                        ForeColor="Black" text="…œ“ª“≥" />
+                                        ForeColor="Black" text="‰∏ä‰∏ÄÈ°µ" />
                                     <asp:LinkButton ID="btnNext" runat="server" causesvalidation="False" 
                                         commandargument="Next" commandname="Page" Font-Underline="False" 
-                                        ForeColor="Black" text="œ¬“ª“≥" />
+                                        ForeColor="Black" text="‰∏ã‰∏ÄÈ°µ" />
                                     <asp:LinkButton ID="btnLast" runat="server" causesvalidation="False" 
                                         commandargument="Last" commandname="Page" Font-Underline="False" 
-                                        ForeColor="Black" text="Œ≤“≥" />
+                                        ForeColor="Black" text="Â∞æÈ°µ" />
                                 </div>
                             </pagertemplate>
                             <RowStyle BackColor="#E7E7E7" />
                             <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                        </anthem:GridView>
+                        </asp:GridView>
                         </div>
                     </div>
                     <div style="height: 10px" ></div>
                     <div style="text-align: right; ">
-                    <asp:Button ID="Btnimport"  runat="server"  Text="µº»Î—ß∞∏"  onclick="Btnimport_Click" SkinID="BtnNormal" />                    
+                    <asp:Button ID="Btnimport"  runat="server"  Text="ÂØºÂÖ•Â≠¶Ê°à"  onclick="Btnimport_Click" SkinID="BtnNormal" />                    
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="Btnold"  runat="server"  Text="—ß∞∏≤÷ø‚"  onclick="Btnold_Click" 
+                    <asp:Button ID="Btnold"  runat="server"  Text="Â≠¶Ê°à‰ªìÂ∫ì"  onclick="Btnold_Click" 
                             SkinID="BtnNormal" />                    
                     &nbsp;                    
                     &nbsp;                    
-        <link href="../Js/tinybox.css" rel="stylesheet" type="text/css" />
-        <script src="../Js/tinybox.js" type="text/javascript"></script>
+        <link href="../js/tinybox.css" rel="stylesheet" type="text/css" />
+        <script src="../js/tinybox.js" type="text/javascript"></script>
         <script type ="text/javascript" >
             function tshow(c) {
-                var urlat = "../Lessons/ThinkShow.aspx?Cid=" + c;
+                var urlat = "../lessons/thinkshow.aspx?cid=" + c;
                 TINY.box.show({ iframe: urlat, boxid: 'frameless', width: 800, height: 500, fixed: false, maskopacity: 40, closejs: function () { closeJS() } })
             }
         </script>               

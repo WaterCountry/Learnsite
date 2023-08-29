@@ -1,0 +1,173 @@
+﻿	body {
+		margin: 0;
+		overflow: hidden;
+		background-color:#F8F8F0;
+	}
+	.button{
+	  border: 1px solid #e0dbcb; 
+	  text-decoration: none;
+	  height: 30px;
+	  margin-top: 5px;
+	  font-size:16px;
+	  color:#333;
+	  border-radius: 6px;
+	}
+	.button:hover{
+	  background-color: #333;
+	  border: 1px solid #555;
+	  color:#eee; 
+	  cursor:pointer;	
+	}
+	.banner {
+		height: 40px;
+		line-height:40px;
+		padding-left: 20px;
+		font-weight: bold;
+		background-color: #ddd;
+		color: #999;
+		user-select: none;
+		box-shadow: 0px 2px 3px Gainsboro;
+		font-size:20px;
+	}
+	
+	.tab {
+	  padding: 6px 12px;
+	  text-decoration: none;
+	  color: #ccc;
+	  border-radius: 20px;
+	  background-color: #eee;
+	}
+		
+	.tab:hover {
+	  color: #eee;
+	  background-color: #333;
+	}
+	#selected {
+	  font-weight: bold;
+	  background-color: #ccc;
+	  border-radius: 20px;
+	}
+	
+	#main {
+		
+	}
+	#left {
+		float:left;
+		width:50%;
+		overflow-y: auto;
+		overflow-x: hidden;
+		color:#999;	
+	}
+	#right {
+		margin-left: 50%;	
+		overflow: auto;
+	}
+	
+	#editor{	
+		position:absolute;	
+		width:50%;
+		height: 100vh;
+		background:#F8F8F0;
+	}
+	
+	#sideby{
+		position:absolute;
+		right:60px;
+		top:0px;	
+		z-index: 999;
+		color: #333;
+		line-height:30px;	
+	}
+	.sp{
+	  width: 30px;
+	  display:inline-block;
+	}
+#savemsg
+{
+  position: absolute;
+  right:10px;
+  bottom: 0px; 
+  z-index: 999;
+  color:#F85B10; 
+  font-size:20px; 
+  text-align:right;
+  width:660px;
+  margin:10px;
+}
+#done{
+  position: absolute;
+  top: 60px; 	
+  right:20px;
+  opacity:0.8;
+  display:none;
+}
+
+#result{
+  position: absolute;
+  right: 0px;
+  bottom:0px;
+  height:300px;
+  width:550px;
+  overflow-x: hidden;
+  color:#333;
+  //background-color: #252d30;
+  opacity:0.9;
+}
+#output{ 
+  width:100%;
+  margin: 0px;
+  font:22px/normal 'Consolas', 'source-code-pro', monospace;
+  padding:20px;
+  
+}
+#cv{ 
+  position: absolute;
+  padding: 0px; 
+  bottom:0px;
+  right:10px;
+  font-size: 20px;
+  color: #ddd;
+  width:600px;
+  height:600px;
+  pointer-events: none;
+}
+#content{
+	position: absolute;	
+	right: 0px;
+	bottom:0px;
+	overflow-y:auto;
+    color: #222;
+	padding:20px;
+    height: 320px;
+	width:44%;
+	//opacity:0.8;
+	word-break:break-all;
+	display:none;
+}
+.input{
+	border:0px solid #999;
+	height:20px;
+    line-height:20px;
+	background-color: #333f42;
+	font-size:20px;
+	color: #ddd;
+}
+.input:focus{
+	outline: none;
+	border:0px solid #999;
+	height:20px;
+	background-color: #333f42;
+	font-size:20px;
+	color: #ddd;
+}
+.map{
+    position: absolute;
+	top: 50px; 	
+	left:500px;
+    z-index: 999;
+	height:160px;	
+	opacity:0.3;
+}
+.mapimg{
+	max-height:160px;
+}

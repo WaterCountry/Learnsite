@@ -1,0 +1,645 @@
+Nodes already connected
+
+Cancel
+
+Close
+
+Collapse/Expand
+
+Contains validation errors
+
+Done
+
+Doubleclick to Change Orientation
+
+Error
+
+Error saving file
+
+OK
+
+Updating Document. Please wait...
+
+Updating Selection. Please wait...
+
+About
+
+Actual Size
+
+Add
+
+Add Layer
+
+Add Property
+
+Add to Existing Drawing
+
+Add Waypoint
+
+Advanced
+
+Align
+
+Alignment
+
+All changes will be lost!
+
+Angle
+
+Apply
+
+Arc
+
+Arrange
+
+Arrow
+
+Arrows
+
+Automatic
+
+Autosave
+
+Autosize
+
+Back
+
+Background
+
+Background Color
+
+Background Image
+
+Basic
+
+Block
+
+Blockquote
+
+Bold
+
+Border
+
+Borderwidth
+
+Border Color
+
+Bottom
+
+Bottom Align
+
+Bottom Left
+
+Bottom Right
+
+Bulleted List
+
+Cannot open file
+
+Center
+
+Change
+
+Change Orientation
+
+Circle
+
+Classic
+
+Clear Default Style
+
+Clear Waypoints
+
+Clipart
+
+Collapse
+
+Collapse/Expand
+
+Collapsible
+
+Comic
+
+Connect
+
+Connection
+
+Connection points
+
+Connection arrows
+
+Constrain Proportions
+
+Copy
+
+Copy on Connect
+
+Copy Size
+
+Create
+
+Curved
+
+Custom
+
+Cut
+
+Dashed
+
+Decrease Indent
+
+Default
+
+Delete
+
+Delete Column
+
+Delete Row
+
+Diagram
+
+Diamond
+
+Diamond (thin)
+
+Direction
+
+Distribute
+
+Divider
+
+Document Properties
+
+Dotted
+
+DPI
+
+Drawing{1}
+
+Drawing is empty
+
+Drawing is too large
+
+Duplicate
+
+Duplicate {1}
+
+East
+
+Edit
+
+Edit Data
+
+Edit Diagram
+
+Edit Image
+
+Edit Link
+
+Edit Style
+
+Edit Tooltip
+
+Enter Group
+
+Enter Value
+
+Enter Name
+
+Enter Property Name
+
+Entity Relation
+
+Exit Group
+
+Expand
+
+Export
+
+Extras
+
+File
+
+File not found
+
+Filename
+
+Fill
+
+Fill Color
+
+One Page
+
+Page Width
+
+Two Pages
+
+Fit Window
+
+Flip
+
+Flip Horizontal
+
+Flip Vertical
+
+Font
+
+Font Family
+
+Font Color
+
+Font Size
+
+Format
+
+Format Panel
+
+Allgemein
+
+PDF
+
+PNG
+
+GIF
+
+JPEG
+
+SVG
+
+XML
+
+Formatted
+
+Formatted Text
+
+Gap
+
+Glass
+
+General
+
+Global
+
+Gradient
+
+Color
+
+Grid
+
+Grid Size
+
+Group
+
+Guides
+
+Heading
+
+Height
+
+Help
+
+Hide
+
+Hide {1}
+
+Hidden
+
+Home
+
+Horizontal
+
+Horizontal Flow
+
+Horizontal Tree
+
+HTML
+
+ID
+
+Image
+
+Images
+
+Import
+
+Increase Indent
+
+Insert
+
+Insert Column Left
+
+Insert Column Right
+
+Insert Horizontal Rule
+
+Insert Image
+
+Insert Link
+
+Insert Row Above
+
+Insert Row Below
+
+Invalid input
+
+Invalid name
+
+Invalid or missing file
+
+Isometric
+
+Italic
+
+Layers
+
+Landscape
+
+Lanecolor
+
+Layout
+
+Left
+
+Left Align
+
+Left to Right
+
+Line
+
+Link
+
+Line jumps
+
+Line End
+
+Line Height
+
+Line Start
+
+Linewidth
+
+Loading
+
+Lock/Unlock
+
+Manual
+
+Middle
+
+Misc
+
+More
+
+More Results
+
+Move
+
+Move Selection to {1}
+
+Navigation
+
+New
+
+No Color
+
+No files
+
+No more results
+
+None
+
+No results for '{1}'
+
+Normal
+
+North
+
+Numbered List
+
+Opacity
+
+Open
+
+Open Arrow
+
+Open File
+
+Open Link
+
+Supported format is .XML files saved from this software
+
+Open in New Window
+
+Open in this Window
+
+Options
+
+Organic
+
+Orthogonal
+
+Outline
+
+Oval
+
+Pages
+
+Page View
+
+Page Scale
+
+Page Setup
+
+Space+Drag to Scroll
+
+Paper Size
+
+Paste
+
+Paste Here
+
+Paste Size
+
+Pattern
+
+Perimeter
+
+Placeholders
+
+Click to connect and clone (ctrl+click to clone, shift+click to connect). Drag to connect (ctrl+drag to clone).
+
+Portrait
+
+Position
+
+Poster Print
+
+Preview
+
+Print
+
+Radial Tree
+
+Redo
+
+Clear Formatting
+
+Remove from Group
+
+Remove {1}
+
+Remove Waypoint
+
+Rename
+
+Rename {1}
+
+Replace
+
+{1} already exists. Do you want to replace it?
+
+Replace existing drawing
+
+Reset
+
+Reset View
+
+Reverse
+
+Right
+
+Right Align
+
+Right to Left
+
+Rotate
+
+Click and drag to rotate, click to turn shape only by 90 degrees
+
+Rotation
+
+Sketch
+
+Rounded
+
+Save
+
+Save as
+
+Saved
+
+Scrollbars
+
+Search
+
+Search Shapes
+
+Select All
+
+Select Edges
+
+Select a Font
+
+Select None
+
+Select Vertices
+
+Set as Default Style
+
+Shadow
+
+Shape
+
+Sharp
+
+Click to expand. Drag and drop shapes into the diagram. Shift+click to change selection. Alt+click to insert and connect.
+
+Simple
+
+Simple Arrow
+
+Size
+
+Solid
+
+Source Spacing
+
+South
+
+Spacing
+
+Straight
+
+Strikethrough
+
+Line Color
+
+Style
+
+Subscript
+
+Superscript
+
+Table
+
+Target Spacing
+
+Text
+
+Text Alignment
+
+Text Opacity
+
+To Back
+
+To Front
+
+Tooltips
+
+Top
+
+Top Align
+
+Top Left
+
+Top Right
+
+Transparent
+
+Rotate shape only by 90
+
+UML
+
+Underline
+
+Undo
+
+Ungroup
+
+URL
+
+Untitled Layer
+
+Vertical
+
+Vertical Flow
+
+Vertical Tree
+
+View
+
+Waypoints
+
+West
+
+Width
+
+Word Wrap
+
+Writing Direction
+
+Zoom
+
+Zoom In
+
+Zoom Out

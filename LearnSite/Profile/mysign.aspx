@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Profile/Pf.master"   StylesheetTheme="Student" AutoEventWireup="true" CodeFile="mysign.aspx.cs" Inherits="Profile_mysign" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/profile/Pf.master" stylesheettheme="Student" autoeventwireup="true" inherits="Profile_mysign, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Cstu" Runat="Server">
 <div>
 签到列表：<asp:Label ID="Labelsignin" runat="server" Font-Size="9pt"></asp:Label>
         <br />
 <asp:GridView ID="GVSignin" runat="server" AutoGenerateColumns="False"            
-            CellPadding="2" PageSize="15"
+            CellPadding="6" PageSize="15"
             Width="100%" ToolTip="签到记录"  SkinID="GridViewInfo"
             onrowdatabound="GVSignin_RowDataBound" AllowPaging="True" 
         onpageindexchanging="GVSignin_PageIndexChanging" 
@@ -24,7 +24,7 @@
                 <asp:BoundField DataField="Qnote" HeaderText="备注" />
                 <asp:BoundField DataField="Qip" HeaderText="IP地址" />
                 <asp:BoundField DataField="Qdate" HeaderText="日期" >
-                <ItemStyle Width="120px" HorizontalAlign="Left" />
+                <ItemStyle Width="180px" HorizontalAlign="Left" />
                 </asp:BoundField>
             </Columns>
             <PagerTemplate>
@@ -52,7 +52,6 @@
         </asp:GridView>
         <br />
         </div>
-        <br />
 <div>
 缺席列表：<asp:Label ID="Labelnosign" runat="server" Font-Size="9pt"></asp:Label>
         <br />

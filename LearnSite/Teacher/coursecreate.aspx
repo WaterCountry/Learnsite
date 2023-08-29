@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" StylesheetTheme="Teacher" AutoEventWireup="true" CodeFile="coursecreate.aspx.cs" Inherits="Teacher_coursecreate" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" stylesheettheme="Teacher" autoeventwireup="true" inherits="Teacher_coursecreate, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
  <div  class="placehold">
@@ -9,28 +9,28 @@
      <br />
         <div  class ="create">
             <div  class="phead">
-     —ß∞∏¥¥Ω®</div>
+     Â≠¶Ê°àÂàõÂª∫</div>
             <br />
             <br />
-&nbsp;&nbsp; —ß∞∏√˚≥∆£∫<asp:TextBox ID="Texttitle" runat="server" Width="280px"  SkinID="TextBoxNormal"></asp:TextBox>
+&nbsp;&nbsp; Â≠¶Ê°àÂêçÁß∞Ôºö<asp:TextBox ID="Texttitle" runat="server" Width="280px"  SkinID="TextBoxNormal"></asp:TextBox>
             <br />
             <br />
-&nbsp;&nbsp; —ß∞∏∑÷¿‡£∫<asp:DropDownList ID="DDLclass" runat="server" Width="100px" 
+&nbsp;&nbsp; Â≠¶Ê°àÂàÜÁ±ªÔºö<asp:DropDownList ID="DDLclass" runat="server" Width="100px" 
             Font-Size="9pt">
             </asp:DropDownList>
             <br />
             <br />
-            &nbsp;&nbsp; ΩÃ—ßƒÍº∂£∫<asp:DropDownList ID="DDLcobj" runat="server" Width="100px" 
+            &nbsp;&nbsp; ÊïôÂ≠¶Âπ¥Á∫ßÔºö<asp:DropDownList ID="DDLcobj" runat="server" Width="100px" 
             Font-Size="9pt" AutoPostBack="True" 
                 onselectedindexchanged="DDLcobj_SelectedIndexChanged">
                 </asp:DropDownList>        
             <br />
             <br />
-&nbsp;&nbsp; ∞¥≈≈øŒΩ⁄£∫<asp:DropDownList ID="DDLCks" runat="server" Font-Size="8pt"
+&nbsp;&nbsp; ÊåâÊéíËØæËäÇÔºö<asp:DropDownList ID="DDLCks" runat="server" Font-Size="8pt"
             Width="50px" Font-Names="Arial">          
         </asp:DropDownList>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:CheckBox ID="Checkcpublish" runat="server" Text=" «∑Ò∑¢≤º" 
+        <asp:CheckBox ID="Checkcpublish" runat="server" Text="ÊòØÂê¶ÂèëÂ∏É" 
             Checked="True" />
             <br />
             <br />
@@ -41,9 +41,9 @@
         </div>
         <br />
         <br />
-                    <asp:Button ID="BtnCreate" runat="server"  Text="¥¥Ω®—ß∞∏"  onclick="BtnCreate_Click"  SkinID="BtnNormal"/>
+                    <asp:Button ID="BtnCreate" runat="server"  Text="ÂàõÂª∫Â≠¶Ê°à"  onclick="BtnCreate_Click"  SkinID="BtnNormal"/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="Btnreturn" runat="server"  Text="—ß∞∏∑µªÿ" onclick="Btnreturn_Click" SkinID="BtnNormal" />
+                    <asp:Button ID="Btnreturn" runat="server"  Text="Â≠¶Ê°àËøîÂõû" onclick="Btnreturn_Click" SkinID="BtnNormal" />
                     <br />
                     <br />
      <br />           

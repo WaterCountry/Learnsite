@@ -1,9 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/Teach.master" AutoEventWireup="true" CodeFile="grouping.aspx.cs" Inherits="Teacher_grouping" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/teacher/Teach.master" autoeventwireup="true" inherits="Teacher_grouping, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
-<div style="margin: auto; padding: 2px; font-family: Arial; font-size: 9pt; font-weight: bold; border-bottom-style: dashed; border-bottom-width: 1px; border-bottom-color: #CCCCCC; width: 96%;">
-    <asp:Label ID="labelclass" runat="server"></asp:Label>分组管理</div><br />
-    <div style="text-align:center; font-size:9pt;">
+<div style="margin: auto; padding: 2px; font-family: Arial; font-size: 11pt; font-weight: bold; border-bottom-style: dashed; border-bottom-width: 1px; border-bottom-color: #CCCCCC; width: 96%;">
+    <asp:Label ID="labelclass" runat="server"></asp:Label>分组管理</div>  
+        <asp:RadioButtonList ID="RBsort" runat="server" AutoPostBack="True" 
+            Font-Size="9pt" onselectedindexchanged="RBsort_SelectedIndexChanged" 
+            RepeatDirection="Horizontal" RepeatLayout="Flow">
+            <Items>
+            <asp:ListItem Value="0" Selected="True">学分排序</asp:ListItem>
+            <asp:ListItem Value="1">学号排序</asp:ListItem>
+            </Items>
+        </asp:RadioButtonList>
+                <br />
+    <div style="text-align:center; font-size:11pt;">
 <div>
         <asp:DataList ID="DLclass" runat="server" RepeatColumns="10" 
             RepeatDirection="Horizontal" DataKeyField="Sid" CellPadding="3" CellSpacing="0"  HorizontalAlign="Center">
@@ -21,18 +30,10 @@
                         </div>
                     </ItemTemplate>
                 </asp:DataList>  
-        <asp:RadioButtonList ID="RBsort" runat="server" AutoPostBack="True" 
-            Font-Size="9pt" onselectedindexchanged="RBsort_SelectedIndexChanged" 
-            RepeatDirection="Horizontal" RepeatLayout="Flow">
-            <Items>
-            <asp:ListItem Value="0" Selected="True">学分排序</asp:ListItem>
-            <asp:ListItem Value="1">学号排序</asp:ListItem>
-            </Items>
-        </asp:RadioButtonList>
                 <br />
 </div>
 <div>
-    <br />
+    说明：将学生列表中学生选中后点击参加小组，点击小组成员姓名退组<br />
     <asp:GridView ID="GVGroups" runat="server" AutoGenerateColumns="False" 
         CellPadding="3" EnableModelValidation="True" 
         GridLines="None" HorizontalAlign="Center" 
@@ -44,7 +45,7 @@
         <Columns>
             <asp:TemplateField HeaderText="小组名称">
                 <ItemTemplate>
-                    <img alt="" src="../Images/gflag.gif" />
+                    <img alt="" src="../images/gflag.gif" />
                     <asp:Label ID="LabelSgtitle" runat="server" Text='<%# Bind("Sgtitle") %>'></asp:Label>
                 </ItemTemplate>                
                 <EditItemTemplate>
@@ -52,8 +53,8 @@
                 </EditItemTemplate>                
                 <ItemStyle Width="150px" HorizontalAlign="Left" />
             </asp:TemplateField>
-            <asp:CommandField CancelImageUrl="~/Images/c.gif" EditImageUrl="~/Images/e.gif" 
-                ShowEditButton="True" UpdateImageUrl="~/Images/u.gif" ButtonType="Image">
+            <asp:CommandField CancelImageUrl="~/images/c.gif" EditImageUrl="~/images/e.gif" 
+                ShowEditButton="True" UpdateImageUrl="~/images/u.gif" ButtonType="Image">
             <ItemStyle Width="60px" />
             </asp:CommandField>
             <asp:TemplateField HeaderText="组长">
@@ -94,9 +95,10 @@
             Height="30px" />
     </asp:GridView>
     <br />
-    说明：将学生列表中学生选中后点击参加小组<br />
-    点击小组成员姓名退组<asp:CheckBox ID="CkQuit" runat="server" Checked="True" Text="锁定成员退组" 
-        ToolTip="默认选中锁定，无法退组；如果要退组请取消" />
+    <asp:CheckBox ID="CkQuit" runat="server" Checked="True" Text="锁定成员退组" 
+        ToolTip="默认选中锁定，无法退组；如果要退组请取消" />&nbsp;&nbsp;
+     <asp:Button ID="Btnauto" runat="server" SkinID="BtnNormal"  Text="自动分组"  
+        ToolTip="根据小组限制人数自动分组，积分最高为组长，如果小组限制人数为0则自动默认为4人" onclick="Btnauto_Click"  />
     <br />
     <br />
 </div>

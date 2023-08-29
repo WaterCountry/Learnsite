@@ -1,11 +1,11 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Manager/Manage.master" AutoEventWireup="true" CodeFile="createroom.aspx.cs" Inherits="Manager_createroom" %>
+Ôªø<%@ page title="" language="C#" masterpagefile="~/manager/Manage.master" autoeventwireup="true" inherits="Manager_createroom, LearnSite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" Runat="Server">
 <div class="manageplace" >                    
         <div  class="roomcreate">
-            <div style="background-color: #EEEEEE; height: 18px; ">»´–£∞‡º∂ÕÍ’˚¡–±Ì</div>
+            <div style="background-color: #EEEEEE; height: 18px; ">ÂÖ®Ê†°Áè≠Á∫ßÂÆåÊï¥ÂàóË°®</div>
             <br />
-            ƒÍº∂∑∂Œß£∫<asp:DropDownList ID="DDLgrademin" runat="server" Font-Size="9pt" 
+            Âπ¥Á∫ßËåÉÂõ¥Ôºö<asp:DropDownList ID="DDLgrademin" runat="server" Font-Size="9pt" 
                 Width="42px">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
@@ -23,7 +23,7 @@
                 <asp:ListItem>14</asp:ListItem>
                 <asp:ListItem>15</asp:ListItem>
                 <asp:ListItem>16</asp:ListItem>
-    </asp:DropDownList>ƒÍº∂µΩ<asp:DropDownList ID="DDLgrademax" runat="server" Font-Size="9pt" 
+    </asp:DropDownList>Âπ¥Á∫ßÂà∞<asp:DropDownList ID="DDLgrademax" runat="server" Font-Size="9pt" 
                 Width="42px">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
@@ -41,14 +41,14 @@
                 <asp:ListItem>14</asp:ListItem>
                 <asp:ListItem>15</asp:ListItem>
                 <asp:ListItem>16</asp:ListItem>
-    </asp:DropDownList>ƒÍº∂&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∞‡º∂ ˝◊Ó¥Û÷µ£∫<asp:DropDownList 
-                ID="DDLclassmax" runat="server" Font-Size="9pt"
+    </asp:DropDownList>Âπ¥Á∫ß&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Áè≠Á∫ßÊï∞ÊúÄÂ§ßÂÄºÔºö<asp:DropDownList 
+                ID="DDLclassmax" runat="server" Font-Size="11pt"
         Width="42px">
     </asp:DropDownList>
         &nbsp;&nbsp;&nbsp;
                     <asp:Button ID="Btncreate" runat="server" BackColor="#E6E6E6" 
                         BorderColor="#D4D4D4" BorderWidth="1px" Font-Names="Arial" 
-                Font-Size="9pt" Text="≈˙¡ø¥¥Ω®" Width="70px" Height="20px" 
+                Font-Size="11pt" Text="ÊâπÈáèÂàõÂª∫" Width="70px" Height="20px" 
                 onclick="Btncreate_Click" />
                 <br />
                 <asp:GridView ID="GVclass" runat="server" AllowPaging="True" 
@@ -58,49 +58,49 @@
                     onrowdatabound="GVclass_RowDataBound" PageSize="15" DataKeyNames="Rid" 
                 onrowcommand="GVclass_RowCommand" EnableModelValidation="True" >
                     <Columns>
-                        <asp:BoundField HeaderText="–Ú∫≈" />
-                        <asp:BoundField DataField="Rhid" HeaderText="ΩÃ ¶" />
-                        <asp:BoundField DataField="Rgrade" HeaderText="ƒÍº∂" />
-                        <asp:BoundField DataField="Rclass" HeaderText="∞‡º∂" />                   
-                        <asp:ButtonField CommandName="Del" HeaderText="≤Ÿ◊˜" Text="…æ≥˝" />
+                        <asp:BoundField HeaderText="Â∫èÂè∑" />
+                        <asp:BoundField DataField="Rhid" HeaderText="ÊïôÂ∏à" />
+                        <asp:BoundField DataField="Rgrade" HeaderText="Âπ¥Á∫ß" />
+                        <asp:BoundField DataField="Rclass" HeaderText="Áè≠Á∫ß" />                   
+                        <asp:ButtonField CommandName="Del" HeaderText="Êìç‰Ωú" Text="Âà†Èô§" />
                     </Columns>
                     <pagertemplate>
                         <div style="width:100%; height:13px; text-align:right">
-                            µ⁄<asp:Label ID="lblPageIndex" runat="server" 
+                            Á¨¨<asp:Label ID="lblPageIndex" runat="server" 
                                 text="<%# ((GridView)Container.Parent.Parent).PageIndex + 1  %>" />
-                            “≥  π≤<asp:Label ID="lblPageCount" runat="server" 
+                            È°µ  ÂÖ±<asp:Label ID="lblPageCount" runat="server" 
                                 text="<%# ((GridView)Container.Parent.Parent).PageCount  %>" />
-                            “≥ 
+                            È°µ 
                             <asp:LinkButton ID="btnFirst" runat="server" causesvalidation="False" 
                                 commandargument="First" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text=" ◊“≥" />
+                                ForeColor="Black" text="È¶ñÈ°µ" />
                             <asp:LinkButton ID="btnPrev" runat="server" causesvalidation="False" 
                                 commandargument="Prev" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text="…œ“ª“≥" />
+                                ForeColor="Black" text="‰∏ä‰∏ÄÈ°µ" />
                             <asp:LinkButton ID="btnNext" runat="server" causesvalidation="False" 
                                 commandargument="Next" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text="œ¬“ª“≥" />
+                                ForeColor="Black" text="‰∏ã‰∏ÄÈ°µ" />
                             <asp:LinkButton ID="btnLast" runat="server" causesvalidation="False" 
                                 commandargument="Last" commandname="Page" Font-Underline="False" 
-                                ForeColor="Black" text="Œ≤“≥" />
+                                ForeColor="Black" text="Â∞æÈ°µ" />
                         </div>
                     </pagertemplate>
-                    <RowStyle BorderStyle="None" Font-Names="Arial" Font-Size="9pt" 
+                    <RowStyle BorderStyle="None" Font-Names="Arial" Font-Size="11pt" 
                         ForeColor="Black" Height="20px" />
                     <HeaderStyle BackColor="#EEEEEE" Font-Bold="False" Font-Names="Arial" 
-                        Font-Size="9pt" />
+                        Font-Size="11pt" />
                     <AlternatingRowStyle BackColor="#E7E7E7" />
-                    <PagerStyle BackColor="#EEEEEE" Font-Names="Arial" Font-Size="9pt" />
+                    <PagerStyle BackColor="#EEEEEE" Font-Names="Arial" Font-Size="11pt" />
                 </asp:GridView>   
                 <br />
                 <div>
-                    <strong> ÷∂ØÃÌº”µ•∏ˆ∞‡º∂£∫</strong> ƒÍº∂ 
+                    <strong>ÊâãÂä®Ê∑ªÂä†Âçï‰∏™Áè≠Á∫ßÔºö</strong> Âπ¥Á∫ß 
                     <asp:TextBox ID="TextBoxGrade" runat="server" Width="30px"></asp:TextBox>
-&nbsp;∞‡º∂<asp:TextBox ID="TextBoxClass" runat="server" Width="30px"></asp:TextBox>
+&nbsp;Áè≠Á∫ß<asp:TextBox ID="TextBoxClass" runat="server" Width="30px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="BtncreateOne" runat="server" BackColor="#E6E6E6" 
                         BorderColor="#D4D4D4" BorderWidth="1px" Font-Names="Arial" 
-                Font-Size="9pt" Text="ÃÌº”∏√∞‡º∂" Width="70px" Height="20px" 
+                Font-Size="11pt" Text="Ê∑ªÂä†ËØ•Áè≠Á∫ß" Width="70px" Height="20px" 
                 onclick="BtncreateOne_Click" />
                 </div>                 
                     </div>

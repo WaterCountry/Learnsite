@@ -12,31 +12,31 @@ font-family: 宋体, Arial, Helvetica, sans-serif;
 <asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
 --%>
 <asp:Button  runat="server"  SkinId="buttonSkin"  BorderWidth="1px" Font-Names="Arial" 
-        Font-Size="9pt" Height="18px"  Width="60px"  BackColor="#C0D6E4" BorderStyle="None" />
+        Font-Size="11pt" Height="24px"  Width="80px"  BackColor="#C0D6E4" BorderStyle="None" />
 <asp:Button  runat="server"  SkinId="buttonSkinGray"  BorderWidth="1px" Font-Names="Arial" 
-        Font-Size="9pt" Height="18px"  Width="60px"  BackColor="#EAEAEA" BorderStyle="None" />
+        Font-Size="11pt" Height="24px"  Width="80px"  BackColor="#EAEAEA" BorderStyle="None" />
 <asp:Button  runat="server"  SkinId="buttonSkinPink"  BorderWidth="1px" Font-Names="Arial" 
-        Font-Size="9pt" Height="20px"  Width="80px"  BackColor="#66A7FF" BorderStyle="None" />
+        Font-Size="11pt" Height="24px"  Width="80px"  BackColor="#66A7FF" BorderStyle="None" />
 <asp:TextBox SkinId="TextBoxPwd" runat="server" BackColor="#E9F1FE" Font-Bold="True"
         BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" Width="60px" Font-Names="Arial" Height="18px"></asp:TextBox> 
 <asp:TextBox SkinId="TextBoxFtp" runat="server" BorderColor="#DFDFDF"  BorderStyle="Solid" BorderWidth="1px" ></asp:TextBox>     
 <asp:TextBox SkinId="TextBox" runat="server" BorderColor="Silver" BorderWidth="1px"  ></asp:TextBox>
 <asp:HyperLink SkinId="HyperLink" runat="server" BackColor="#C0D6E4" Width="60px"  Height="16px"
-                BorderStyle="None" BorderWidth="0px" Font-Size="9pt" 
+                BorderStyle="None" BorderWidth="0px" Font-Size="11pt" 
                 Font-Underline="False" ForeColor="Black"  Target="_blank"></asp:HyperLink>
-<asp:HyperLink SkinId="HyperLinkGray" runat="server" BackColor="#E4E4E4" Width="60px"  Height="16px"
-                BorderStyle="None" BorderWidth="0px" Font-Size="9pt" 
+<asp:HyperLink SkinId="HyperLinkGray" runat="server" BackColor="#E4E4E4" Width="60px"  Height="24px"
+                BorderStyle="None" BorderWidth="0px" Font-Size="11pt" 
                 Font-Underline="False" ForeColor="Black"  Target="_blank"></asp:HyperLink>
-<asp:HyperLink SkinId="HyperLinkPink" runat="server" BackColor="#66A7FF" Width="80px"  Height="18px"
-                BorderStyle="None" BorderWidth="0px" Font-Size="9pt" 
+<asp:HyperLink SkinId="HyperLinkPink" runat="server" BackColor="#66A7FF" Width="80px"  Height="24px"
+                BorderStyle="None" BorderWidth="0px" Font-Size="11pt" 
                 Font-Underline="False" ForeColor="Black"  Target="_blank"></asp:HyperLink>
 <asp:GridView SkinId="GridViewInfo" runat="server"  AutoGenerateColumns="False" BorderColor="#E6E6E6" BorderWidth="1px" BorderStyle="solid"
-                    CellPadding="3" ForeColor="#111111" GridLines="None" >
+                    CellPadding="4" ForeColor="#111111" GridLines="None" >
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />  
-                    <RowStyle BackColor="GhostWhite" Font-Names="Arial" Font-Size="14px" />
+                    <RowStyle  BackColor="GhostWhite" Font-Names="Arial" Font-Size="13pt" />
                     <EditRowStyle BackColor="#7C6F57" />
                     <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#111111" />
-                    <PagerStyle BackColor="WhiteSmoke" Font-Names="Arial" Font-Size="14px" 
+                    <PagerStyle BackColor="WhiteSmoke" Font-Names="Arial" Font-Size="13pt" 
                         ForeColor="White" HorizontalAlign="Center" />
                     <HeaderStyle BackColor="#C0D6E4" Font-Bold="True" ForeColor="#111111" />
                     <AlternatingRowStyle BackColor="#FFFFFF" />
@@ -45,23 +45,23 @@ font-family: 宋体, Arial, Helvetica, sans-serif;
 <asp:GridView SkinId="GridViewMission" runat="server"  AutoGenerateColumns="False" BorderColor="#E6E6E6" BorderWidth="0px" 
                      ForeColor="#111111" GridLines="None" >
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />  
-                    <RowStyle BackColor="#E1E8E1" Font-Names="Arial" Font-Size="14px" />                    
+                    <RowStyle BackColor="#E1E8E1" Font-Names="Arial" Font-Size="13pt" />                    
 </asp:GridView>
  <asp:GridView SkinId="GridViewTopicsk" runat="server"  AutoGenerateColumns="False" BorderColor="#E6E6E6" BorderWidth="0px" 
                      ForeColor="#111111" GridLines="None" >
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />  
-                    <RowStyle BackColor="#F9EFE8" Font-Names="Arial" Font-Size="14px" />                    
+                    <RowStyle BackColor="#F9EFE8" Font-Names="Arial" Font-Size="13pt" />                    
 </asp:GridView>         
 <asp:Label  SkinId="LabelFileShow" runat="server" BorderColor="#E0E0E0" BorderWidth="1px"
                          Font-Family="宋体, Arial, Helvetica, sans-serif"  ></asp:Label>                
 <asp:Label  SkinId="LabelShow" runat="server" BorderColor="#E0E0E0" BorderWidth="1px"
-                         Font-Names="Arial" Font-Size="9pt" ></asp:Label>
-<asp:Label SkinId="LabelMsgBlack" runat="server" Font-Names="Arial" Font-Size="9pt"></asp:Label>
-<asp:Label SkinId="LabelMsgRed" runat="server" ForeColor="Red" Font-Names="Arial" Font-Size="9pt"></asp:Label>
+                         Font-Names="Arial" Font-Size="11pt" ></asp:Label>
+<asp:Label SkinId="LabelMsgBlack" runat="server" Font-Names="Arial" Font-Size="11pt"></asp:Label>
+<asp:Label SkinId="LabelMsgRed" runat="server" ForeColor="Red" Font-Names="Arial" Font-Size="11pt"></asp:Label>
 <asp:Label SkinId="LabelLightBlue" runat="server" BackColor="#DEE7F1" BorderColor="LightSteelBlue" BorderWidth="1px" Font-Names="Arial" 
-        Font-Size="9pt" ></asp:Label>        
+        Font-Size="11pt" ></asp:Label>        
 <asp:Label  SkinId="LabelSize8" runat="server" Font-Names="Arial" Font-Size="8pt" ></asp:Label>        
 <asp:LinkButton SkinId="LinkButtonType" runat="server" BackColor="#EEEEEE" Height="16px" Font-Family="宋体, Arial, Helvetica, sans-serif"
-            BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Size="9pt" 
+            BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Size="12pt" 
             Font-Underline="False" ForeColor="Black" 
             Width="80px"></asp:LinkButton>

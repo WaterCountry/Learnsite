@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Research.aspx.cs" Inherits="Spec_Research" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Spec_Research, LearnSite" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,7 +9,7 @@
 <body style="padding-top:0px;">
     <form id="form1" runat="server">
     <div id="researchlogo" 
-        style="background-image: url('../Images/research.jpg'); background-repeat: no-repeat; height: 80px;">
+        style="background-image: url('../images/research.jpg'); background-repeat: no-repeat; height: 80px;">
     &nbsp;</div>
     <div id="researchform"  runat="server" style="text-align: center; background-color: #FFFFD7;">
          

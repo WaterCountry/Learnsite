@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" Validaterequest="false" AutoEventWireup="true" CodeFile="thinkedit.aspx.cs" Inherits="Lessons_thinkedit" %>
+﻿<%@ page title="" language="C#" validaterequest="false" autoeventwireup="true" inherits="Lessons_thinkedit, LearnSite" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,7 +8,7 @@
 <body>
     <form id="form1" runat="server">
 <div style="text-align: center;">
-    <div style="width: 780px; font-size: 9pt;text-align: left; margin:auto;">
+    <div style="width: 780px; font-size: 11pt;text-align: left; margin:auto;">
         &nbsp;学案名称：<asp:TextBox ID="Texttitle" runat="server" BorderColor="#E7E7E7" BorderStyle="Solid" BackColor="#FFFFE6"
                 BorderWidth="1px" Width="360px" Font-Size="9pt" ReadOnly="True"></asp:TextBox>
         </div>
@@ -35,6 +35,7 @@
     <textarea  id ="mcontent" runat ="server" style="width: 780px; height:350px;" ></textarea>  
     </div>
      <div style="width: 660px;margin:auto;">
+               <br />
                <asp:Label ID="Labelmsg" runat="server" Font-Size="9pt" Width="300px"></asp:Label>
          <br />
               <asp:Button ID="BtnEdit" runat="server" Font-Size="9pt" Height="20px" Text="修改"

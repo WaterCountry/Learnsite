@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pixel Art Maker 像素艺术</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">  
+</head>
+<body>
+  <div id="pick">
+    <h1 >
+	<img id="logo" src="logo.png" />   
+	Pixel  Art  Maker 像素画 <input type="color" id="colorPicker"> </h1>
+  </div>
+
+  <form id="sizePicker" action="">
+  画布尺寸
+  <input type="number" id="input_height" name="height" min="1" max="24" value="38"/> x
+  <input type="number" id="input_width" name="width" min="1" max="32" value="54"/>
+  <input type="submit"  value="创建画布">
+  拾取颜色
+   </form>
+
+<table id="palette"></table>
+<table id="pixel_canvas"></table>
+
+<script src='jquery.min.js'></script>
+<script src="html2canvas.min.js"></script>
+<script src="pixelartmaker.js"></script>
+</body>
+</html>

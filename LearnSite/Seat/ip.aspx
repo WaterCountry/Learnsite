@@ -1,6 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ip.aspx.cs" Inherits="Seat_ip" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Seat_ip, LearnSite" %>
 
-<%@ Register assembly="Anthem" namespace="Anthem" tagprefix="anthem" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -11,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <div style="margin: auto; text-align: center; width: 500px; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 9pt;">
+    <div style="margin: auto; text-align: center; width: 500px; font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 11pt;">
         <b>电脑编号跟IP对应表</b><br />
         <br />
         请填写网段：<asp:TextBox ID="TextBoxIpGate" runat="server" BorderColor="Silver" 
@@ -60,7 +59,7 @@
         <br />
         <hr style="border: 1px dashed #CCCCCC" />
         <br />
-        请选择：<anthem:FileUpload 
+        请选择：<asp:FileUpload 
             ID="FileUploadip" runat="server" Font-Size="9pt" />
 &nbsp;<asp:Button ID="ButtonIpExcel" runat="server" Font-Size="9pt" Text="从Excel导入IP列表" 
             ToolTip="点击后将清除原机房IP列表，并自动创建新IP列表" onclick="ButtonIpExcel_Click" />

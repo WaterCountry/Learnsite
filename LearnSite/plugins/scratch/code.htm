@@ -1,0 +1,14 @@
+  <script type="text/javascript">
+    window.scratchConfig = {
+      handleVmInitialized: (vm) => {
+        window.vm = vm        
+      },
+      handleDefaultProjectLoaded:() => {
+          window.scratch.loadProject("Friend.sb3", () => { 
+          })
+      },
+    }
+  </script>
+<div id="scratch" style=" height:calc(100vh - 80px);"></div>
+<script type="text/javascript" src="../scratch/lib.min.js"></script>
+<script type="text/javascript" src="../scratch/chunks/gui.js"></script>
